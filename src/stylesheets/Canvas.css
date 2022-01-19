@@ -1,0 +1,32 @@
+.canvas {
+  grid-area: canvas;
+  background-color: var(--thirdBackgroundColor);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#button-error { 
+  background-color: var(--errorColor);
+  color: var(--backgroundColor);
+}
+
+#green-100 { 
+  background-color: var(--green-100);
+  color: var(--textColorInverse);
+}
+#green-200 { 
+  background-color: var(--green-200);
+  color: var(--textColorInverse);
+}
+#green-300 { 
+  background-color: var(--green-300);
+  color: var(--textColorInverse);
+}
+#green-400 { 
+  background-color: var(--green-400);
+  color: var(--textColorInverse);
+}
+#green-500 { 
+  background-color: var(--green-500);
+  color: var(--textColorInverse);
+}

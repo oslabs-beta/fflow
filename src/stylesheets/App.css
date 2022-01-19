@@ -1,0 +1,209 @@
+:root {
+  --backgroundColor: #121212; 
+  --secondaryBackgroundColor: #272727;
+  --thirdBackgroundColor: var(--neutral-50);
+  --textColor: #ffffff;
+  --textColorInverse: #000000;
+
+  --lightBlueBackground: #D0F0FD;
+  --darkBlueBackground: #100635;
+
+  /* Shades of Green */
+  --green-500: #03AA99;
+  --green-400: #03B9A7;
+  --green-300: #03C9B5;
+  --green-200: #03DAC6;
+  --green-100: #04ECD5;
+
+  /* Shades of purple */
+  --purple-900: #390089;
+  --purple-700: #4E00BC;
+  --purple-600: #5D00DF;
+  --purple-500: #6200EE;
+  --purple-400: #832BFF;
+  --purple-300: #A565FF;
+  --purple-200: #BB8BFF;
+  --purple-100: #ddc5ff;
+  --purple-electric-violet: #902bf5;
+
+/* Shades of orange */
+--orange-500: #ffc600;
+--orange-400: #FFD523;
+--orange-tang: #ED7E00;
+  
+/* Shades of Grey */
+--medium-grey: #656565;
+--light-grey: #989898;
+--dove-grey: #6c6c6c;
+
+  /* Neutrals Palette */
+  --neutral-50: #F8F9FA;
+  --neutral-100: #F6F7F9;
+  --neutral-200: #E5E7EA;
+  --neutral-300: #CED2D6;
+  --neutral-400: #9EA5AD;
+  --neutral-500: #7F8790;
+  --neutral-600: #676E76;
+  --neutral-700: #596066;
+  --neutral-800: #454C52;
+  --neutral-900: #383F45;
+  --neutral-1000: #24292E;
+}
+
+
+/* LIGHT THEME COLORS */ 
+:root[data-theme='theme-light'] {
+  --backgroundColor:  #eeeeee;
+  --textColor: #000000;
+  /* --secondaryBackgroundColor: #eeeeee; */
+  --thirdBackgroundColor: var(--neutral-50);
+
+  --errorColor: #B00020;
+}
+
+/* DARK THEME COLORS */ 
+:root[data-theme='theme-dark'] {
+  --backgroundColor: #121212; 
+  --textColor: #ffffff;
+  --thirdBackgroundColor: var(--secondaryBackgroundColor);
+  
+  --errorColor: #CF6679;
+  }
+  /* DEFAULT THEME IS DARK */ 
+  body { 
+    --backgroundColor: #121212; 
+    --textColor: #ffffff;
+    --thirdBackgroundColor: var(--secondaryBackgroundColor);
+    --errorColor: #CF6679;
+
+  }
+  .theme-light {
+    --backgroundColor:  #eeeeee;
+    --textColor: #000000;
+    --thirdBackgroundColor: var(--neutral-50);
+    --errorColor: #B00020;
+  }
+
+  
+/* THEME BASED ON USER'S OS PREFERENCE */  
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='theme-dark'] {
+    --backgroundColor: #121212; 
+    --textColor: #ffffff;
+    --thirdBackgroundColor: var(--secondaryBackgroundColor);
+    --errorColor: #CF6679;
+    }
+}
+
+@media (prefers-color-scheme: no-preference) {
+  :root[data-theme='theme-dark'] {
+    --backgroundColor: #121212; 
+    --errorColor: #CF6679;
+    --textColor: #ffffff;
+    --thirdBackgroundColor: var(--secondaryBackgroundColor);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+  :root[data-theme='theme-light'] {
+    --backgroundColor:  #eeeeee;
+    --textColor: #000000;
+    /* --secondaryBackgroundColor: #eeeeee; */
+    --thirdBackgroundColor: var(--neutral-50);
+    --errorColor: #B00020;
+  }  
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition: all 0.2s ease-in;
+}
+/* 
+body {
+ 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* button{
+  height: 4vh;
+  width: 5vw;
+  margin: 1em;
+  border: 1px transparent solid;
+  font-weight: 700;
+  border-radius: 5px;
+} */
+
+.theme-button-toggle { 
+  background-color: var(--orange-400);
+}
+
+#drag-and-drop-components button { 
+  background-color: var(--neutral-100);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+#green-100 { 
+  background-color: var(--green-100);
+  color: var(--textColorInverse);
+}
+#green-200 { 
+  background-color: var(--green-200);
+  color: var(--textColorInverse);
+}
+#green-300 { 
+  background-color: var(--green-300);
+  color: var(--textColorInverse);
+}
+#green-400 { 
+  background-color: var(--green-400);
+  color: var(--textColorInverse);
+}
+#green-500 { 
+  background-color: var(--green-500);
+  color: var(--textColor);
+}
+
+
+#purple-electric-violet { 
+  background-color: var(--purple-electric-violet);
+  color:var(--textColor);
+}
+#purple-900 {
+  background-color: var(--purple-900);
+  color: #ffffff;
+}
+#purple-700 {
+  background-color: var(--purple-700);
+  color: #ffffff;
+}
+#purple-600 {
+  background-color: var(--purple-600);
+  color: #ffffff;
+}
+#purple-500 { 
+  background-color: var(--purple-500);
+  color: #ffffff;
+}
+#purple-400 { 
+  background-color: var(--purple-400);
+  color: var(--textColor);
+}
+#purple-300 { 
+  background-color: var(--purple-300);
+}
+#purple-200 { 
+  background-color: var(--purple-200);
+  color: var(--textColorInverse);
+}
+#button-error { 
+  background-color: var(--lightThemeColorError);
+  color: var(--textColor);
+}
+
+

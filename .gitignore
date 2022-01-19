@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+node_modules
+/.pnp
+.pnp.js
+
+# production
+/build
+build
+dist
+**dist/
+
+ignore_react.tsx
+_ignoreelectron.js
+
+npm-debug.log
+.DS_Store

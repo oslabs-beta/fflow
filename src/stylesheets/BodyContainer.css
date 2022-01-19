@@ -1,0 +1,17 @@
+.bodyContainer {
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: 10% 15% 15% 20% 15% auto;
+  grid-template-areas:
+    'dnd canvas canvas canvas canvas custom'
+    'dnd canvas canvas canvas canvas custom'
+    'dnd code code code code custom';
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.bodyContainer > div {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
