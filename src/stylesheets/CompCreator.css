@@ -1,0 +1,31 @@
+#comp-create-box {
+  display: flex;
+  border: green 1px solid;
+  width: 12rem;
+  padding: 0.3rem;
+}
+
+#comp-create-box label {
+  font-size: 1rem;
+  margin: 0;
+  float: right;
+}
+
+#text-field {
+  width: 8rem;
+}
+
+#root-check {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+}
+
+#inputs {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+  gap: 1rem;
+}
