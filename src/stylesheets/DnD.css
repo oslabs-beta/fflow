@@ -1,4 +1,8 @@
 .dndContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   grid-area: dnd;
   background-color: var(--thirdBackgroundColor);
   border-radius: 10px;
