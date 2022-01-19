@@ -1,24 +1,14 @@
 import * as React from 'react';
 import '../stylesheets/CodePreview.css';
-// import Editor, { useMonaco } from "@monaco-editor/react";
+//import MonacoEditor from 'react-monaco-editor';
+//import Editor, { useMonaco } from "@monaco-editor/react";
 
 const CodePreview = () => {
-
-  // const monaco = useMonaco();
-
-  // const setTheme = () => {
-  //   fetch('../../../../public/Themes/Amy.json')
-  //   .then(data => data.json())
-  //   .then(data => {
-  //     monaco.editor.defineTheme('amy', data);
-  //     monaco.editor.setTheme('amy');
-  //   })
-  // }
-
 
   return (
     <div className="codePreviewContainer">
     CODE PREVIEW
+  
     {/* <Editor
      height="80vh"
      defaultLanguage="javascript"

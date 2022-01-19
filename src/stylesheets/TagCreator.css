@@ -1,0 +1,43 @@
+#tag-create-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid limegreen;
+  margin-bottom: 1rem;
+  width: 250px;
+}
+
+/* WHY CANT WE MOVE TO THE RIGHT */
+.tag-label {
+  /* display: flex; */
+  /* flex-direction: row; */
+  font-size: small;
+  margin: 0.25rem;
+  margin-top: 0.75rem;
+  float: left;
+}
+
+.tag-input {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  margin: 0.7rem;
+  width: 7rem;
+  margin-left: 3rem;
+}
+
+#header {
+  font-size: medium;
+}
+
+#add-element-btn {
+  color: limegreen;
+  background-color: transparent;
+  border: 1px solid limegreen;
+  margin: 1.5rem 0rem 1rem 0rem;
+  padding: 0rem 1.5rem;
+}
+
+.tag-duo {
+  height: 1.5rem;
+}
