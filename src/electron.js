@@ -11,8 +11,14 @@ function createWindow () {
   });
 
   // and load the index.html of the app.
-  win.loadFile('index.html');
-  // win.loadURL('http://localhost:3000/');
+  // win.loadFile('index.html');
+  win.loadURL('http://localhost:3000/');
+  // if(process.env.NODE_ENV !== 'production') {
+  //   win.loadFile('index.html');
+  // }else{
+  //   win.loadURL('http://localhost:3000/');
+  // }
+
   // Open the DevTools.
   win.webContents.openDevTools();
 }
