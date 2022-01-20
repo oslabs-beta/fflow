@@ -3,18 +3,23 @@ const { app, BrowserWindow } = require('electron');
 function createWindow () {
   // Create the browser window.
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1300,
+    height: 864,
+    // width: 800,
+    // height: 600,
+    show: false,
     webPreferences: {
       nodeIntegration: true
     }
   });
 
+  win.maximize();
+  win.show();
   // and load the index.html of the app.
   win.loadFile('index.html');
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);

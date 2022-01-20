@@ -75,7 +75,7 @@ html, body {
   }
   /* DEFAULT THEME IS DARK */ 
   body { 
-    --backgroundColor: #121212; 
+    --backgroundColor: var(--secondaryBackgroundColor); 
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
     --errorColor: #CF6679;

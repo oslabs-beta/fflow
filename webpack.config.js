@@ -1,4 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const path = require('path');
+const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
 
 module.exports = [
   {
@@ -39,6 +42,11 @@ module.exports = [
           exclude: /node_modules/,
           use: ['style-loader', 'css-loader'],
         },
+        {
+          test: /\.css$/,
+          include: MONACO_DIR,
+          use: ['style-loader', 'css-loader'],
+        },
       ],
     },
     resolve: {
@@ -53,16 +61,19 @@ module.exports = [
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
+      new MonacoWebpackPlugin({
+        languages: ['json'],
+      }),
     ],
-    // devServer: { // used for development mode beyond this point
-    //   static: {
-    //     directory: './dist'
-    //   },
-    //   proxy: { //
-    //     '/api': 'http://localhost:3000' // server is listening on port 3000. proxy acts as a bridge to connect frontend and backend of our application
-    //   },
-    //     compress: true,
-    //     port: 8080, // where frontend is served on
-    //   }
+    devServer: { // used for development mode beyond this point
+      'static': {
+        directory: './dist'
+      },
+      proxy: { //
+        '/api': 'http://localhost:3000' // server is listening on port 3000. proxy acts as a bridge to connect frontend and backend of our application
+      },
+        compress: true,
+        port: 8080, // where frontend is served on
+      }
   },
 ];
