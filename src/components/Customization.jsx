@@ -4,7 +4,7 @@ import '../stylesheets/Customization.css';
 const Customization = () => {
   return (
     <div className="customization">
-      Customization
+      <p>Customization</p>
 
       <br/>
       <br/>

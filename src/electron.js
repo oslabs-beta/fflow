@@ -3,16 +3,22 @@ const { app, BrowserWindow } = require('electron');
 function createWindow () {
   // Create the browser window.
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    // width: 1920,
+    // height: 600,
+    show: false,
     webPreferences: {
       nodeIntegration: true
     }
   });
 
+  win.maximize();
+  win.show();
+
+
+
   // and load the index.html of the app.
-  // win.loadFile('index.html');
-  win.loadURL('http://localhost:3000/');
+  win.loadFile('index.html');
+  // win.loadURL('http://localhost:3000/');
   // if(process.env.NODE_ENV !== 'production') {
   //   win.loadFile('index.html');
   // }else{
@@ -20,7 +26,7 @@ function createWindow () {
   // }
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);
