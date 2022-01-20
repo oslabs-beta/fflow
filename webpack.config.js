@@ -54,15 +54,15 @@ module.exports = [
         template: './src/index.html',
       }),
     ],
-    // devServer: { // used for development mode beyond this point
-    //   static: {
-    //     directory: './dist'
-    //   },
-    //   proxy: { //
-    //     '/api': 'http://localhost:3000' // server is listening on port 3000. proxy acts as a bridge to connect frontend and backend of our application
-    //   },
-    //     compress: true,
-    //     port: 8080, // where frontend is served on
-    //   }
+    devServer: { // used for development mode beyond this point
+      'static': {
+        directory: './dist'
+      },
+      proxy: { //
+        '/api': 'http://localhost:3000' // server is listening on port 3000. proxy acts as a bridge to connect frontend and backend of our application
+      },
+        compress: true,
+        port: 8080, // where frontend is served on
+      }
   },
 ];

@@ -4,7 +4,7 @@ import '../stylesheets/Canvas.css';
 const Canvas = () => {
   return (
     <div className="canvas">
-      Canvas
+      <p>Canvas</p>
       <br/>
       <br/>
 

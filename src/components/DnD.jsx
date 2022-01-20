@@ -7,7 +7,7 @@ import Button from './Button';
 const DnD = () => {
   return (
     <div className="dndContainer">
-      Drag & Drop
+      <p>Drag & Drop</p>
       <CompCreator />
       <TagCreator />
       <Button />

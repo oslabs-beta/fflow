@@ -4,6 +4,8 @@ import '../stylesheets/Button.css';
 const Button = () => {
   return (
     <div id='button-container'>
+    <br/>
+    <p>HTML Elements</p>
         <button id='div-component'>Div</button>
         <button id='paragraph-component'>Paragraph</button>
         <button id='anchor-component'>Anchor</button>
