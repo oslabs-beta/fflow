@@ -49,7 +49,7 @@
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
-    "monaco-editor": "^0.31.1",
+    "@uiw/react-monacoeditor": "^3.4.7",
     "monaco-editor-webpack-plugin": "^7.0.1",
     "react-hot-loader": "^4.13.0",
     "react-monaco-editor": "^0.47.0"

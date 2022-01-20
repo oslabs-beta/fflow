@@ -21,7 +21,7 @@ function toggleTheme() {
       </button>
 
     <Editor
-    height="40vh"
+    height="60vh"
      theme={theme}
      loading={<Loader />}
      language="javascript"
