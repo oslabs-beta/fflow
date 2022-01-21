@@ -6,17 +6,15 @@ const Header = () => {
 
   return (
     <div className='headerContainer'>
-      {/* HEADER  */}
+    <span id='app-name'>APP NAME</span>
 
-      <div className='theme-toggle'>
-      
       <input type="checkbox" className="checkbox" id="checkbox" onChange={()=> themeToggle()}/>
-      <label for="checkbox" class="label">
+      <label for="checkbox" className="label">
         <i className="fas fa-moon"></i>
         <i className='fas fa-sun'></i>
         <div className='ball'></div>
       </label>
-      </div>
+    
     </div>
     
   )

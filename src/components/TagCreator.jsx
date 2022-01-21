@@ -4,7 +4,7 @@ import '../stylesheets/TagCreator.css';
 const TagCreator = () => {
   return (
     <div>
-      <label id="header">HTML Elements</label>
+      <label id="header">Add Custom HTML Element</label>
       <div id="tag-create-box">
         <div className='tag-duo'>
           <label className="tag-label">Tag:</label>
@@ -18,7 +18,7 @@ const TagCreator = () => {
           <label className="tag-label">Id:</label>
           <input className="tag-input"></input>
         </div>
-        <button id="add-element-btn">Add Element</button>
+        <button id="add-element-btn">Add</button>
       </div>
     </div>
   )

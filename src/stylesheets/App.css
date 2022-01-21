@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 :root {
   --backgroundColor: #121212; 
   --secondaryBackgroundColor: #272727;
@@ -48,6 +52,7 @@
   --neutral-800: #454C52;
   --neutral-900: #383F45;
   --neutral-1000: #24292E;
+  box-sizing: border-box;
 }
 
 
@@ -71,11 +76,11 @@
   }
   /* DEFAULT THEME IS DARK */ 
   body { 
-    --backgroundColor: #121212; 
+    --backgroundColor: var(--secondaryBackgroundColor); 
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
     --errorColor: #CF6679;
-
+    box-sizing: border-box;
   }
   .theme-light {
     --backgroundColor:  #eeeeee;
@@ -121,6 +126,7 @@
   background-color: var(--backgroundColor);
   color: var(--textColor);
   transition: all 0.2s ease-in;
+  box-sizing: border-box;
 }
 /* 
 body {

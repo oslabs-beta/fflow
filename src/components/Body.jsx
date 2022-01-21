@@ -1,17 +1,18 @@
 import * as React from 'react';
+import Navigation from './Navigation';
 import DnD from './DnD';
 import Canvas from './Canvas';
-import Customization from './Customization';
+import Header from './Header';
 import CodePreview from './CodePreview';
 import '../stylesheets/BodyContainer.css';
 
 const Body = () => {
   return (
     <div className="bodyContainer">
-      {/* I AM THE BODY */}
+      <Navigation />
+      <Header />
       <DnD />
       <Canvas />
-      <Customization />
       <CodePreview />
     </div>
   )

@@ -1,0 +1,29 @@
+.navigation {
+  grid-area: navigation;
+  background-color: var(--thirdBackgroundColor);
+  border: 0.5px solid var(--neutral-600);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.fa-pencil-ruler {
+  color: var(--textColor);
+  opacity: 0.4;
+}
+.fa-drafting-compass{
+  color: var(--textColor);
+  opacity: 0.4;
+}
+.fa-cog{
+  color: var(--textColor);
+  opacity: 0.4;
+}
+.fa-save{
+  color: var(--textColor);
+  opacity: 0.4;
+}
+.fa-download{
+  color: var(--textColor);
+  opacity: 0.4;
+}

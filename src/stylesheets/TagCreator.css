@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid limegreen;
+  /* border: 1px solid limegreen; */
   margin-bottom: 1rem;
   width: 250px;
 }
@@ -22,8 +22,13 @@
   /* flex-direction: row; */
   /* justify-content: center; */
   margin: 0.7rem;
+  background: var(--neutral-600);
   width: 7rem;
   margin-left: 3rem;
+  outline: none;
+  opacity: 0.5;
+  border: none;
+  color: var(--textColor);
 }
 
 #header {
@@ -31,11 +36,15 @@
 }
 
 #add-element-btn {
-  color: limegreen;
-  background-color: transparent;
-  border: 1px solid limegreen;
+  color: var(--textColor);
+  background-color: var(--purple-300);
   margin: 1.5rem 0rem 1rem 0rem;
-  padding: 0rem 1.5rem;
+  padding: 4px 20px;
+  text-transform: uppercase;
+  box-shadow: none;
+  border-radius: 3px;
+  font-weight: 500;
+  border: 0px transparent none;
 }
 
 .tag-duo {

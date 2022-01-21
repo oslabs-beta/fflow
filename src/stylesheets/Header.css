@@ -1,18 +1,23 @@
 .headerContainer {
-  flex: 0 0 5%;
+  flex: 0 0 3%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.theme-toggle { 
-  margin-left: 30px;
+#app-name {
+  font-size: 14px;
 }
+
+/* .theme-toggle { 
+  margin-left: 0.5em;
+} */
 
 .checkbox { 
   opacity: 0;
   position: absolute;
 }
+
 .label {
   width: 45px;
   height: 15px;
@@ -20,23 +25,25 @@
   display: flex;
   border-radius:50px;
   align-items: center;
-  margin-left: 90vw;
+  /* margin-left: 90vw; */
   justify-content: space-between;
-  padding: 5px;
+  padding: 3px;
   position: relative;
   transform: scale(1.5);
 }
 
 .ball {
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  position: absolute;
-  /* top: 2px;*/
-  left: 2px; 
-  right: 2px;
   border-radius: 50%;
   transition: transform 0.2s linear;
+  left: 2px; 
+  right: 2px;
+  background-color: white;
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  /* top: 2px;*/
 }
 
 /*  target the element after the label*/
@@ -46,10 +53,10 @@
 
 .fa-moon {
   color: var(--lightBlueBackground);
-  height: 13px;
+  height: 3px;
 }
 
 .fa-sun {
   color: var(--orange-400);
-  height: 13px;
+  height: 3px;
 }
