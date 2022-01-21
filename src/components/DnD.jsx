@@ -7,7 +7,7 @@ import DragList from './DragList';
 const DnD = () => {
   return (
     <div className="dndContainer">
-      <button id='explorer'>File Explorer</button>
+      {/* <button id='explorer'>File Explorer</button> */}
       <div id="dndBody">
         Drag & Drop
         <CompCreator />
