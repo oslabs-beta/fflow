@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 :root {
   --backgroundColor: #121212; 
   --secondaryBackgroundColor: #272727;
