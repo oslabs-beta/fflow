@@ -37,11 +37,13 @@
     "wait-on": "^6.0.0",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-dev-server": "^4.7.3",
+    "xterm": "^4.16.0"
   },
   "dependencies": {
     "@uiw/react-monacoeditor": "^3.4.7",
     "monaco-editor-webpack-plugin": "^7.0.1",
+    "node-pty": "^0.10.1",
     "react-monaco-editor": "^0.47.0"
   }
 }

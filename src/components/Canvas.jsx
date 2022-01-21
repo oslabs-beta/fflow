@@ -4,7 +4,7 @@ import '../stylesheets/Canvas.css';
 const Canvas = () => {
   return (
     <div className="canvas">
-      Canvas
+      {/* Canvas
       <br/>
       <br/>
 
@@ -26,7 +26,7 @@ const Canvas = () => {
         <button id='green-300'>300</button>
         <button id='green-200'>200</button>
         <button id='green-100'>100</button>
-      </div>
+      </div> */}
     </div>
   )
 }

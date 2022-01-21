@@ -1,20 +1,18 @@
 const { app, BrowserWindow } = require('electron');
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   let win = new BrowserWindow({
     // width: 1920,
     // height: 600,
     show: false,
     webPreferences: {
-      nodeIntegration: true
-    }
+      nodeIntegration: true,
+    },
   });
 
   win.maximize();
   win.show();
-
-
 
   // and load the index.html of the app.
   // win.loadFile('index.html');
@@ -31,17 +29,16 @@ function createWindow () {
 
 // app.on('ready', createWindow);
 app.whenReady().then(() => {
-  createWindow()
-})
+  createWindow();
+});
 
-// quit app when all windows are closed 
+// quit app when all windows are closed
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit()
-})
+  if (process.platform !== 'darwin') app.quit();
+});
 
 // Open a window if none are open (macOS)
 
-
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
