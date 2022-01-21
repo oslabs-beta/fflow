@@ -10,7 +10,8 @@
     "dev": "NODE_ENV=development webpack server --open & nodemon server/server.js",
     "edev": "NODE_ENV=development webpack server & electron .",
     "dev-all": "concurrently \"cross-env NODE_ENV=development webpack server\"  \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-    "start-app": "webpack serve --hot --mode development"
+    "start-app": "webpack serve --hot --mode development",
+    "start-dev": "cross-env NODE_ENV=development webpack serve --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "electron-reloader": "^1.2.1",
     "eslint": "^8.7.0",
     "eslint-plugin-react": "^7.28.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.7",
     "monaco-editor": "^0.31.1",

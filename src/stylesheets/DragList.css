@@ -2,11 +2,31 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  /* align-items: space-between; */
   border: 0.5px solid var(--neutral-700);
-  width: 20rem;
+  width: 200px;
   height: 350px;
+  row-gap: none;
 }
+
+.dragItems p {
+  /* position: relative;
+  margin: 0.5vh; */
+  /* font-size: 1rem; */
+  /* font-size: 15px;
+  min-height: 3vh; */
+  color: var(--purple-200);
+  text-transform: uppercase;
+  font-size: 13px;
+  background-color: var(--thirdBackgroundColor);
+  /* margin: 1.5rem 0rem 1rem 0rem; */
+  padding: 4px 15px;
+  box-shadow: none;
+  border-radius: 3px;
+  font-weight: 500;
+  border: 0.5px solid var(--neutral-700);
+  overflow: none;
+}
+
 /* 
 #button-container div { */
   /* flex: 0 0 5rem; */
@@ -21,28 +41,4 @@
   font-size: 12px;
   text-transform: uppercase;
   border: 0.5px solid var(--neutral-700);
-} */
-
-
-.dragItems p {
-  /* position: relative;
-  margin: 0.5vh; */
-  /* font-size: 1rem; */
-  /* font-size: 15px;
-  min-height: 3vh; */
-  color: var(--purple-200);
-  text-transform: uppercase;
-  font-size: 16px;
-  background-color: var(--thirdBackgroundColor);
-  /* margin: 1.5rem 0rem 1rem 0rem; */
-  padding: 4px 15px;
-  box-shadow: none;
-  border-radius: 3px;
-  font-weight: 500;
-  border: 0.5px solid var(--neutral-700);
-}
-
-/* #button-container div {
-  flex: 0 0 2rem;
-
 } */

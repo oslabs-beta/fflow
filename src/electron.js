@@ -1,5 +1,11 @@
 const { app, BrowserWindow } = require('electron');
 
+let dev = false;
+if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development') {
+  dev = true
+}
+
+
 function createWindow() {
   // Create the browser window.
   let win = new BrowserWindow({
@@ -15,7 +21,25 @@ function createWindow() {
   win.show();
 
   // and load the index.html of the app.
-  win.loadFile('index.html');
+  // win.loadFile('index.html');
+
+  let indexPath
+  if (dev && process.argv.indexOf('--noDevServer') === -1) {
+    indexPath = url.format({
+      protocol: 'http:',
+      host: 'localhost:8080',
+      pathname: 'index.html',
+      slashes: true
+    })
+  } else {
+    indexPath = url.format({
+      protocol: 'file:',
+      pathname: path.join(__dirname, 'dist', 'index.html'),
+      slashes: true
+    })
+  }
+
+  win.loadURL(indexPath)
   // win.loadURL('http://localhost:3000/');
   // if(process.env.NODE_ENV !== 'production') {
   //   win.loadFile('index.html');

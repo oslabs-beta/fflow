@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import '../stylesheets/CodePreview.css';
 //import MonacoEditor from 'react-monaco-editor';
 import Editor from "@monaco-editor/react";
-// import { ClockLoader as Loader } from "react-spinners";
 import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
@@ -12,16 +11,14 @@ import "ace-builds/src-noconflict/theme-github";
 
 const CodePreview = () => {
 
+  const [theme, setTheme] = useState("dark");
   const [tabState, setTabState] = useState(1);
 
   const toggleTab = (tabNum) => {
     setTabState(tabNum);
   }
 
- 
-  const [theme, setTheme] = useState("dark");
-
-  function toggleTheme() {
+  const toggleTheme = () => {
     // if (theme === 'dark') setTheme('monokai');
     // setTheme('github');
     setTheme(theme === "dark" ? "monokai" : "github");
@@ -125,6 +122,7 @@ const CodePreview = () => {
                     wordWrap: "on",
                   }}
           />
+          
         </div></div>
       </div>
     {/* <div className='code-compiler'>

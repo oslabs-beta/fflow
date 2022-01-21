@@ -14,9 +14,9 @@
   top: 5%;
   height: 90%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 #explorer {

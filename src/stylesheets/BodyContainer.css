@@ -8,7 +8,6 @@
   grid-template-columns: 2% 18% 40% 40%;
   grid-template-rows: 3% auto 25%;
   /* gap: 0.5rem; */
-  padding: 0.5rem;
 }
 
 .bodyContainer > div {
