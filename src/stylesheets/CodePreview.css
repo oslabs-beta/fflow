@@ -1,7 +1,61 @@
 .codePreviewContainer {
   grid-area: code;
   background-color: var(--thirdBackgroundColor);
-  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tabContainer {
+  display: flex;
+}
+
+.tabs {
+  text-align: center;
+  width: 50%;
+  background: #272727;
+  color: white;
+  cursor: pointer;
+  border-bottom: 1px solid #6200ee;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+
+.active-tabs {
+  background: #272727;
+  border-bottom: 1px solid transparent;
+  /* border-bottom: 1px solid #6200ee; */
+}
+
+.active-tabs::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(50%);
+  width: 100%;
+  height: 2px;
+}
+
+.contentContainer {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
+.codeEditorContainer {
+  grid-area: code;
+  background-color: var(--thirdBackgroundColor);
+  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 0;
   margin: 0;

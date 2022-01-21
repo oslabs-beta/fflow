@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from "react-dom";
 import '../stylesheets/CodePreview.css';
 //import MonacoEditor from 'react-monaco-editor';
-// import Editor from "@monaco-editor/react";
+import Editor from "@monaco-editor/react";
 // import { ClockLoader as Loader } from "react-spinners";
 import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/mode-javascript";
@@ -12,6 +12,13 @@ import "ace-builds/src-noconflict/theme-github";
 
 const CodePreview = () => {
 
+  const [tabState, setTabState] = useState(1);
+
+  const toggleTab = (tabNum) => {
+    setTabState(tabNum);
+  }
+
+ 
   const [theme, setTheme] = useState("dark");
 
   function toggleTheme() {
@@ -34,8 +41,36 @@ const CodePreview = () => {
 
 
   return (
+
     <div className="codePreviewContainer">
-    <div className='code-compiler'>
+      <div className="tabContainer">
+        <button 
+        className={tabState === 1 ? "tabs active-tabs" : "tabs"}
+        onClick={() => toggleTab(1)}>Code Preview</button>
+         <button
+          className={tabState === 2 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(2)}>Terminal</button>
+        <button
+          className={tabState === 3 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(3)}>CSS Editor</button>
+      </div>
+      <div className="contentContainer">
+      <div className={tabState === 1 ? "content  active-content" : "content"}><div className="codeEditorContainer">
+        {/* <Editor
+        height="80vh"
+        defaultLanguage="javascript"
+        defaultValue="see your code here..."
+        theme="vs-dark"
+          options={{
+                    minimap: {
+                      enabled: false,
+                    },
+                    fontSize: 14,
+                    cursorStyle: "block",
+                    wordWrap: "on",
+                  }}
+          /> */}
+           <div className='code-compiler'>
     <label for="code-editor-themes">Choose a Theme:</label>
       <select name="code-editor-themes" id="editor-names">
         <option value="monokai">Monokai</option>
@@ -43,7 +78,6 @@ const CodePreview = () => {
       </select>
 
       <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="mode" onchange="changeMode()">
-              {/* <option value="JSX" id="JSX" selected>JSX</option> */}
               <option value="CSS" id="CSS" selected>CSS</option>
               <option value="JavaScript" id="JavaScript" selected>JavaScript</option>
             </select>
@@ -51,8 +85,7 @@ const CodePreview = () => {
      <button onClick={toggleTheme}>
         Toggle theme
       </button>
-
-      <AceEditor
+          <AceEditor
         width="100%"
         height="100%"
       placeholder="// Your code will show up here when you drag in a component or HTML element "
@@ -73,23 +106,66 @@ const CodePreview = () => {
   showLineNumbers: true,
   tabSize: 2,
   }}/>
+        </div>
+        </div>
+        <div className={tabState === 2 ? "content  active-content" : "content"}>
+        </div>
+        <div className={tabState === 3 ? "content  active-content" : "content"}><div className="codeEditorContainer">
+        <Editor
+        height="80vh"
+        defaultLanguage="javascript"
+        defaultValue="see your code here..."
+        theme="vs-dark"
+          options={{
+                    minimap: {
+                      enabled: false,
+                    },
+                    fontSize: 14,
+                    cursorStyle: "block",
+                    wordWrap: "on",
+                  }}
+          />
+        </div></div>
+      </div>
+    {/* <div className='code-compiler'>
+    <label for="code-editor-themes">Choose a Theme:</label>
+      <select name="code-editor-themes" id="editor-names">
+        <option value="monokai">Monokai</option>
+        <option value="github">Github</option>
+      </select>
+
+      <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="mode" onchange="changeMode()">
+              <option value="CSS" id="CSS" selected>CSS</option>
+              <option value="JavaScript" id="JavaScript" selected>JavaScript</option>
+            </select>
+    </div>
+     <button onClick={toggleTheme}>
+        Toggle theme
+      </button> */}
+
+      {/* <AceEditor
+        width="100%"
+        height="100%"
+      placeholder="// Your code will show up here when you drag in a component or HTML element "
+    mode="javascript"
+    theme={theme}
+    onChange={onChange}
+    fontSize={16}
+    showPrintMargin={true}
+    showGutter={true}
+    readOnly={false}
+    highlightActiveLine={true}
+    name="editor"
+    editorProps={{ $blockScrolling: false }}
+    setOptions={{
+  enableBasicAutocompletion: true,
+  enableLiveAutocompletion: true,
+  enableSnippets: true,
+  showLineNumbers: true,
+  tabSize: 2,
+  }}/> */}
             
-    {/* <Editor
-    height="75vh"
-     theme={theme}
-     loading={<Loader />}
-     language="javascript"
-     defaultValue=""
-     editorDidMount={handleEditorDidMount}
-     options={{
-              minimap: {
-                enabled: false,
-              },
-              fontSize: 14,
-              cursorStyle: "block",
-              wordWrap: "on",
-            }}
-    /> */}
+  
     </div>
   )
 }
