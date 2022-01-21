@@ -1,12 +1,13 @@
 .bodyContainer {
   flex: 1 0 auto;
   display: grid;
-  grid-template-columns: auto 15% 15% 20% 15% auto;
-  grid-template-areas:
-    'dnd canvas canvas canvas canvas custom'
-    'dnd canvas canvas canvas canvas custom'
-    'dnd code code code code custom';
-  gap: 0.5rem;
+  grid-template-areas: 
+  "navigation dnd header header"
+  "navigation dnd canvas code"
+  "navigation dnd canvas code";
+  grid-template-columns: 2% 18% 40% 40%;
+  grid-template-rows: 3% auto 25%;
+  /* gap: 0.5rem; */
   padding: 0.5rem;
 }
 

@@ -3,7 +3,7 @@
   padding: 0 !important;
   grid-area: dnd;
   background-color: var(--thirdBackgroundColor);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

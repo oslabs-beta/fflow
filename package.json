@@ -50,7 +50,9 @@
   },
   "dependencies": {
     "@uiw/react-monacoeditor": "^3.4.7",
+    "ace-builds": "^1.4.13",
     "monaco-editor-webpack-plugin": "^7.0.1",
+    "react-ace": "^9.5.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-hot-loader": "^4.13.0",
     "react-monaco-editor": "^0.47.0"
