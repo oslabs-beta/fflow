@@ -5,45 +5,45 @@
   margin-left: 2.5%;
   margin-right: 2.5%;
   /* margin-bottom: 3%; */
-  margin-top: 2%; 
+  margin-top: 2%;
   border-radius: 8px;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
-p { 
+p {
   font-size: 18px;
 }
 
-#canvas-instruction { 
+#canvas-instruction {
   color: var(--neutral-600);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
 
-#button-error { 
+#button-error {
   background-color: var(--errorColor);
   color: var(--backgroundColor);
 }
 
-#green-100 { 
+#green-100 {
   background-color: var(--green-100);
   color: var(--textColorInverse);
 }
-#green-200 { 
+#green-200 {
   background-color: var(--green-200);
   color: var(--textColorInverse);
 }
-#green-300 { 
+#green-300 {
   background-color: var(--green-300);
   color: var(--textColorInverse);
 }
-#green-400 { 
+#green-400 {
   background-color: var(--green-400);
   color: var(--textColorInverse);
 }
-#green-500 { 
+#green-500 {
   background-color: var(--green-500);
   color: var(--textColorInverse);
 }

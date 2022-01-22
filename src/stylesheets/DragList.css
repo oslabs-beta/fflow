@@ -3,7 +3,7 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
   /* border: 0.5px solid var(--neutral-700); */
-  width: 200px;
+  width: 180px;
   height: 350px;
   row-gap: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -30,7 +30,7 @@
   overflow: none;
 }
 
-.dragItems p:hover { 
+.dragItems p:hover {
   background-color: var(--neutral-200);
   border-radius: 3px;
 }

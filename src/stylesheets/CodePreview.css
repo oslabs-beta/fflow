@@ -1,5 +1,7 @@
 .codePreviewContainer {
   grid-area: code;
+  position: relative;
+  padding: 0 !important;
   background-color: var(--thirdBackgroundColor);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-left: 5%;
