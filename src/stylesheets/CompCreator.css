@@ -25,7 +25,8 @@
 } */
 
 #text-field {
-  width: 6rem;
+  width: 8rem;
+  border-radius: 5px;
   height: 20px;
   outline: none;
   background: var(--neutral-700);

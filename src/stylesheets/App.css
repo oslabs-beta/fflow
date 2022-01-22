@@ -87,6 +87,8 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    --navigation-panel-background-color: var(--neutral-700);
+    --navigation-panel-textColor: #ffffff;
   }
   .theme-light {
     --backgroundColor:  #eeeeee;
@@ -97,6 +99,8 @@ html, body {
     margin: 0;
     padding: 0;    
     overflow: hidden;
+    --navigation-panel-background-color: var(--purple-300);
+    --navigation-panel-textColor: #ffffff;
   }
 
   
@@ -160,7 +164,7 @@ body {
 
 #drag-and-drop-components button { 
   background-color: var(--neutral-100);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 

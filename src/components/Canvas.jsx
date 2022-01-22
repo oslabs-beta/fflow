@@ -4,6 +4,7 @@ import '../stylesheets/Canvas.css';
 const Canvas = () => {
   return (
     <div className="canvas">
+    <p id='canvas-instruction'>Drag & Drop <br/> HTML elements here</p>
       {/* Canvas
       <p>Canvas</p>
       <br/>

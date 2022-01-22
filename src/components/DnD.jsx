@@ -9,7 +9,7 @@ const DnD = () => {
     <div className="dndContainer">
       {/* <button id='explorer'>File Explorer</button> */}
       <div id="dndBody">
-        <p style={{ fontSize: '20px' }}>Drag & Drop</p>
+      <p style={{ fontSize: '20px', marginBottom: '30px', fontWeight: '700' }}>App Name</p>
         <CompCreator />
         <TagCreator />
         <DragList />

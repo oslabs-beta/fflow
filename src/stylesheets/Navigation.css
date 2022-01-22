@@ -2,30 +2,30 @@
   grid-area: navigation;
   /* background-color: var(--thirdBackgroundColor); */
   /* border: 0.5px solid var(--neutral-600); */
-  background-color: var(--neutral-700);
+  background-color: var(--navigation-panel-background-color);
   display: flex;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   flex-direction: column;
   justify-content: space-around;
 }
 
 .fa-pencil-ruler {
-  color: var(--textColor);
+  color: #ffffff;
   opacity: 0.8;
 }
 .fa-drafting-compass{
-  color: var(--textColor);
+  color: #ffffff;
   opacity: 0.8;
 }
 .fa-cog{
-  color: var(--textColor);
+  color: #ffffff;
   opacity: 0.8;
 }
 .fa-save{
-  color: var(--textColor);
+  color: #ffffff;
   opacity: 0.8;
 }
 .fa-download{
-  color: var(--textColor);
+  color: #ffffff;
   opacity: 0.8;
 }

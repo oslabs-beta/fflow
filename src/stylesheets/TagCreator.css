@@ -22,6 +22,7 @@
   /* justify-content: center; */
   margin: 0.7rem;
   background: var(--neutral-600);
+  border-radius: 5px;
   width: 7rem;
   margin-left: 3rem;
   outline: none;

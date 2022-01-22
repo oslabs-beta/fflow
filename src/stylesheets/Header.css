@@ -1,7 +1,7 @@
 .headerContainer {
   flex: 0 0 3%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -19,8 +19,8 @@
 }
 
 .label {
-  width: 45px;
-  height: 15px;
+  width: 32px;
+  height: 10px;
   background-color: #454C52;
   display: flex;
   border-radius:50px;
@@ -40,15 +40,15 @@
   background-color: white;
   position: absolute;
 
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 
   /* top: 2px;*/
 }
 
 /*  target the element after the label*/
 .checkbox:checked + .label .ball{
-  transform: translateX(32px);
+  transform: translateX(25px);
 }
 
 .fa-moon {
