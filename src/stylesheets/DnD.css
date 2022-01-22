@@ -4,7 +4,10 @@
   grid-area: dnd;
   background-color: var(--thirdBackgroundColor);
   /* border-radius: 10px; */
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  overflow: hidden;
+  max-width: 250px;
+  min-width: 220px;
 }
 
 #dndBody {
@@ -13,9 +16,9 @@
   top: 5%;
   height: 90%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 #explorer {

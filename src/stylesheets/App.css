@@ -1,5 +1,8 @@
 html, body {
-  height: 100%;
+  /* height: 100%; */
+  box-sizing: border-box;
+  max-height: 1200px;
+  overflow-y: none;
 }
 
 :root {
@@ -81,12 +84,23 @@ html, body {
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
     --errorColor: #CF6679;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    --navigation-panel-background-color: var(--neutral-700);
+    --navigation-panel-textColor: #ffffff;
   }
   .theme-light {
     --backgroundColor:  #eeeeee;
     --textColor: #000000;
     --thirdBackgroundColor: var(--neutral-50);
     --errorColor: #B00020;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+    overflow: hidden;
+    --navigation-panel-background-color: var(--purple-300);
+    --navigation-panel-textColor: #ffffff;
   }
 
   
@@ -150,7 +164,7 @@ body {
 
 #drag-and-drop-components button { 
   background-color: var(--neutral-100);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 

@@ -1,25 +1,52 @@
 const { app, BrowserWindow } = require('electron');
 
+// let dev = false;
+// if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development') {
+//   dev = true
+// }
+
+
 function createWindow () {
   // Create the browser window.
   let win = new BrowserWindow({
-    width: 1300,
-    height: 864,
+    width: 1600,
+    height: 1050,
     // width: 800,
     // height: 600,
     show: false,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    minWidth: 1024,
+    minHeight: 768,
   });
 
-  win.maximize();
+
+  // let indexPath
+  // if (dev && process.argv.indexOf('--noDevServer') === -1) {
+  //   indexPath = url.format({
+  //     protocol: 'http:',
+  //     host: 'localhost:8080',
+  //     pathname: 'index.html',
+  //     slashes: true
+  //   })
+  // } else {
+  //   indexPath = url.format({
+  //     protocol: 'file:',
+  //     pathname: path.join(__dirname, 'dist', 'index.html'),
+  //     slashes: true
+  //   })
+  // }
+
+  // win.loadURL(indexPath)
+
+  // win.maximize();
   win.show();
   // and load the index.html of the app.
   win.loadFile('index.html');
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);

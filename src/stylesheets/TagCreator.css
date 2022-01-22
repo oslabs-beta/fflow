@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid limegreen; */
   margin-bottom: 1rem;
   width: 250px;
 }
@@ -23,6 +22,7 @@
   /* justify-content: center; */
   margin: 0.7rem;
   background: var(--neutral-600);
+  border-radius: 5px;
   width: 7rem;
   margin-left: 3rem;
   outline: none;

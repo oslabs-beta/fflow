@@ -1,12 +1,23 @@
 .canvas {
   grid-area: canvas;
   background-color: var(--thirdBackgroundColor);
-  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-radius: 8px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
 }
-
 p { 
   font-size: 18px;
+}
+
+#canvas-instruction { 
+  color: var(--neutral-600);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 #button-error { 

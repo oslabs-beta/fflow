@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import '../stylesheets/CodePreview.css';
 //import MonacoEditor from 'react-monaco-editor';
 import Editor from "@monaco-editor/react";
-// import { ClockLoader as Loader } from "react-spinners";
 import AceEditor from 'react-ace';
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
@@ -12,16 +11,14 @@ import "ace-builds/src-noconflict/theme-github";
 
 const CodePreview = () => {
 
+  const [theme, setTheme] = useState("dark");
   const [tabState, setTabState] = useState(1);
 
   const toggleTab = (tabNum) => {
     setTabState(tabNum);
   }
 
- 
-  const [theme, setTheme] = useState("dark");
-
-  function toggleTheme() {
+  const toggleTheme = () => {
     // if (theme === 'dark') setTheme('monokai');
     // setTheme('github');
     setTheme(theme === "dark" ? "monokai" : "github");
@@ -41,8 +38,27 @@ const CodePreview = () => {
 
 
   return (
-
+  
     <div className="codePreviewContainer">
+
+<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+      <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+
+        <li class="mr-2" role="presentation">
+        <button class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300" id="code-editor-tab" data-tabs-target="#code-editor" type="button" role="tab" aria-controls="code-editor" aria-selected="false">Code Preview</button>
+        </li>
+
+        <li class="mr-2" role="presentation">
+        <button class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 active" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="true">Terminal</button>
+        </li>
+
+        <li class="mr-2" role="presentation">
+        <button class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">CSS Editor</button>
+        </li>
+
+      </ul>
+    </div>
+
       <div className="tabContainer">
         <button 
         className={tabState === 1 ? "tabs active-tabs" : "tabs"}
@@ -56,6 +72,9 @@ const CodePreview = () => {
       </div>
       <div className="contentContainer">
       <div className={tabState === 1 ? "content  active-content" : "content"}><div className="codeEditorContainer">
+
+
+
         {/* <Editor
         height="80vh"
         defaultLanguage="javascript"
@@ -109,7 +128,9 @@ const CodePreview = () => {
         </div>
         </div>
         <div className={tabState === 2 ? "content  active-content" : "content"}>
-        </div>
+      </div>
+        
+        
         <div className={tabState === 3 ? "content  active-content" : "content"}><div className="codeEditorContainer">
         <Editor
         height="80vh"
@@ -125,6 +146,7 @@ const CodePreview = () => {
                     wordWrap: "on",
                   }}
           />
+          
         </div></div>
       </div>
     {/* <div className='code-compiler'>
