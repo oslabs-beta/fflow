@@ -64,6 +64,7 @@
     "react-ace": "^9.5.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-hot-loader": "^4.13.0",
-    "react-monaco-editor": "^0.47.0"
+    "react-monaco-editor": "^0.47.0",
+    "xterm-addon-fit": "^0.5.0"
   }
 }
