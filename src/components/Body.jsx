@@ -8,14 +8,14 @@ import '../stylesheets/BodyContainer.css';
 
 const Body = () => {
   return (
-    <div className="bodyContainer">
+    <div className='bodyContainer'>
       <Navigation />
       <Header />
       <DnD />
       <Canvas />
       <CodePreview />
     </div>
-  )
-}
+  );
+};
 
 export default Body;

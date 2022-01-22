@@ -6,13 +6,14 @@
   /* border-radius: 10px; */
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   overflow: hidden;
+  margin-right: 10%;
   max-width: 250px;
-  min-width: 220px;
+  min-width: 230px;
 }
 
 #dndBody {
   display: flex;
-  position: relative;
+  position: fixed;
   top: 5%;
   height: 90%;
   flex-direction: column;
