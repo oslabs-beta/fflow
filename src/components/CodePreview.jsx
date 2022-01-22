@@ -97,10 +97,9 @@ const CodePreview = () => {
           onClick={() => toggleTab(3)}>CSS Editor</button>
       </div>
       <div className="contentContainer">
-      <div className={tabState === 1 ? "content  active-content" : "content"}><div className="codeEditorContainer">
-
-
-
+      <div className={tabState === 1 ? "content  active-content" : "content"}>
+      
+      <div className="codeEditorContainer">
         {/* <Editor
         height="80vh"
         defaultLanguage="javascript"
@@ -116,20 +115,20 @@ const CodePreview = () => {
                   }}
           /> */}
            <div className='code-compiler'>
-    <label for="code-editor-themes">Choose a Theme:</label>
+    {/* <label for="code-editor-themes">Choose a Theme:</label>
       <select name="code-editor-themes" id="editor-names">
         <option value="monokai">Monokai</option>
         <option value="github">Github</option>
-      </select>
+      </select> */}
 
-      <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="mode" onchange="changeMode()">
+      {/* <select class="selectpicker" data-live-search="true" class="form-control" name="Language" id="mode" onchange="changeMode()">
               <option value="CSS" id="CSS" selected>CSS</option>
               <option value="JavaScript" id="JavaScript" selected>JavaScript</option>
-            </select>
+            </select> */}
     </div>
-     <button onClick={toggleTheme}>
+     {/* <button id='code-editor-theme-toggle' onClick={toggleTheme}>
         Toggle theme
-      </button>
+      </button> */}
           <AceEditor
         width="100%"
         height="100%"
