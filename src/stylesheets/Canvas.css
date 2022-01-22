@@ -4,6 +4,8 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-left: 2.5%;
   margin-right: 2.5%;
+  /* margin-bottom: 3%; */
+  margin-top: 2%; 
   border-radius: 8px;
   display: flex; 
   flex-direction: column;

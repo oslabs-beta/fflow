@@ -16,7 +16,8 @@
   /* font-size: 1rem; */
   /* font-size: 15px;
   min-height: 3vh; */
-  color: var(--purple-200);
+  /* color: var(--purple-200); */
+  color: #4338ca;
   text-transform: uppercase;
   font-size: 13px;
   background-color: var(--thirdBackgroundColor);
@@ -33,19 +34,3 @@
   background-color: var(--neutral-200);
   border-radius: 3px;
 }
-
-/* 
-#button-container div { */
-  /* flex: 0 0 5rem; */
-  /* margin: 0.5rem; */
-  /* background-color: var(--neutral-100); */
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-  /* color: var(--purple-200);
-  flex: 0 0 2rem;
-  background-color: var(--thirdBackgroundColor);
-  height: 5vh;
-  padding: 5px 8px;
-  font-size: 12px;
-  text-transform: uppercase;
-  border: 0.5px solid var(--neutral-700);
-} */

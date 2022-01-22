@@ -4,7 +4,9 @@ html, body {
   max-height: 1200px;
   overflow-y: none;
 }
-
+body { 
+  margin: 0;
+}
 :root {
   --backgroundColor: #121212; 
   --secondaryBackgroundColor: #272727;
@@ -87,8 +89,9 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    --navigation-panel-background-color: var(--neutral-700);
+    --navigation-panel-background-color: var(--backgroundColor);
     --navigation-panel-textColor: #ffffff;
+    --tab-bottom-borderColor: var(--textColor);
   }
   .theme-light {
     --backgroundColor:  #eeeeee;
@@ -99,8 +102,9 @@ html, body {
     margin: 0;
     padding: 0;    
     overflow: hidden;
-    --navigation-panel-background-color: var(--purple-300);
+    --navigation-panel-background-color: #4338ca;
     --navigation-panel-textColor: #ffffff;
+    --tab-bottom-borderColor: var(--neutral-200);
   }
 
   

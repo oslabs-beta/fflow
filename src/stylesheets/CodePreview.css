@@ -3,6 +3,9 @@
   background-color: var(--thirdBackgroundColor);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-left: 5%;
+  margin-right: 2%;
+  border-radius: 8px;
+  margin-top: 5%;
 }
 
 .tabContainer {
@@ -12,19 +15,21 @@
 .tabs {
   text-align: center;
   width: 50%;
-  background: #272727;
-  color: white;
+  background: var(--thirdBackgroundColor);
+  color: var(--neutral-600);
   cursor: pointer;
-  border-bottom: 1px solid #6200ee;
+  border-bottom: 1px solid var(--tab-bottom-borderColor);
   box-sizing: content-box;
   position: relative;
   outline: none;
+  font-size: 14px;
+  padding: 10px;
 }
 
 .active-tabs {
-  background: #272727;
-  border-bottom: 1px solid transparent;
-  /* border-bottom: 1px solid #6200ee; */
+  background: var(--thirdBackgroundColor);
+  border-bottom: 1px solid #4f46e5;
+  color: #4f46e5;
 }
 
 .active-tabs::before {
@@ -61,7 +66,7 @@
   padding: 0;
   margin: 0;
 }
-
+/* 
 [role="tab"].active {
   @apply text-red-600 border-red-600 dark:text-red-500 dark:border-red-500 hover:text-red-600 hover:border-red-600 dark:hover:text-red-500 dark:hover:border-red-500;
-}
+} */
