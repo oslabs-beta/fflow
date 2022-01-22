@@ -8,16 +8,20 @@ import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-github";
 
+import { Terminal } from 'xterm';
+import { FitAddon } from 'xterm-addon-fit';
+
 
 const CodePreview = () => {
 
   const [theme, setTheme] = useState("dark");
   const [tabState, setTabState] = useState(1);
+  let [terminalState, setTerminalState] = useState("hi"); // set initial terminal state to empty string
+  
 
   const toggleTab = (tabNum) => {
     setTabState(tabNum);
   }
-
   const toggleTheme = () => {
     // if (theme === 'dark') setTheme('monokai');
     // setTheme('github');
@@ -26,38 +30,60 @@ const CodePreview = () => {
   // function handleEditorDidMount() {
   //   setIsEditorReady(true);
   // }
-
   function onChange(newValue) {
     console.log("change", newValue);
   }
-
   // add a theme dropdown option here
-  const changeTheme = e => {
-    setTheme(e.target.value);
-  };
+  // const changeTheme = e => {
+  //   setTheme(e.target.value);
+  // };
+
+  const terminal = new Terminal();
+  const fitAddon = new FitAddon();
+  
+  useEffect(() => {
+    // render terminal onto div with id terminal 
+    terminal.loadAddon(fitAddon);
+    terminal.open(document.getElementById("terminal"));
+
+    console.log('this is terminalState:', terminalState);
+    
+  })
+  
+      terminal.onData(key => {
+        console.log('onKey', key);
+        
+        if (key === "Backspace") {
+          terminal.write("\b \b");
+          setTerminalState(terminalState.slice(0,-1)); 
+          console.log('backspace state', terminalState);
+        }
+        else {
+          terminal.write(key)
+          setTerminalState(terminalState += key);
+          console.log('state', terminalState);
+        }
+      })
+
+
+    
+    // terminal.onData(e => {
+    //   console.log('onData', e)
+    //   terminal.write(e)
+    // });
+
+
+  // const terminalChange = (e) => {
+  //   setTerminalState(e.target.value);
+  //   terminal.write(terminalState);
+  // }
+
+
 
 
   return (
   
     <div className="codePreviewContainer">
-
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-      <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-
-        <li class="mr-2" role="presentation">
-        <button class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300" id="code-editor-tab" data-tabs-target="#code-editor" type="button" role="tab" aria-controls="code-editor" aria-selected="false">Code Preview</button>
-        </li>
-
-        <li class="mr-2" role="presentation">
-        <button class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 active" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="true">Terminal</button>
-        </li>
-
-        <li class="mr-2" role="presentation">
-        <button class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">CSS Editor</button>
-        </li>
-
-      </ul>
-    </div>
 
       <div className="tabContainer">
         <button 
@@ -127,8 +153,7 @@ const CodePreview = () => {
   }}/>
         </div>
         </div>
-        <div className={tabState === 2 ? "content  active-content" : "content"}>
-      </div>
+        <div className={tabState === 2 ? "content  active-content" : "content"}><div id='terminal'/></div>
         
         
         <div className={tabState === 3 ? "content  active-content" : "content"}><div className="codeEditorContainer">
