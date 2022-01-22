@@ -7,6 +7,8 @@ import './stylesheets/App.css';
 import './stylesheets/index.css';
 // import { hot } from 'react-hot-loader/root';
 import '@themesberg/flowbite';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
 const App = () => {
   return (
@@ -16,4 +18,9 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
