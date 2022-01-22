@@ -3,12 +3,12 @@ import '../stylesheets/Navigation.css';
 
 const Navigation = () => {
   return (
-    <div className='navigation'>
-      <i class="fas fa-pencil-ruler"></i>
-      <i class="fas fa-drafting-compass"></i>
-      <i class="fas fa-cog"></i>
-      <i class="fas fa-save"></i>
-      <i class="fas fa-download"></i>
+    <div className='navigation-bar'>
+      <a href="#"><i class="fas fa-pencil-ruler"></i></a>
+      <a href="#"><i class="fas fa-drafting-compass"></i></a>
+      <a href="#"><i class="fas fa-cog"></i></a>
+      <a href="#"><i class="fas fa-save"></i></a>
+      <a href="#"><i class="fas fa-download"></i></a>
     </div>
   )
 }

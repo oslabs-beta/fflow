@@ -1,4 +1,4 @@
-.navigation {
+.navigation-bar {
   grid-area: navigation;
   /* background-color: var(--thirdBackgroundColor); */
   /* border: 0.5px solid var(--neutral-600); */
@@ -6,7 +6,7 @@
   display: flex;
   /* opacity: 0.5; */
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .fa-pencil-ruler {
@@ -29,3 +29,8 @@
   color: #ffffff;
   opacity: 0.8;
 }
+
+.navigation-bar a:hover { 
+  background-color: #000;
+}
+

@@ -1,13 +1,13 @@
 .bodyContainer {
   flex: 1 0 auto;
   display: grid;
-  grid-template-areas: 
-  "navigation dnd header header"
-  "navigation dnd canvas code"
-  "navigation dnd canvas code";
-  grid-template-columns: 2.5% 15% 55% 30%;
+  grid-template-areas:
+    'navigation dnd header header'
+    'navigation dnd canvas code'
+    'navigation dnd canvas code';
+  grid-template-columns: 2.5% 15% auto 25%;
   grid-template-rows: 3% auto 25%;
-  /* gap: 0.5rem; */
+  /* gap: 5%; */
 }
 
 .bodyContainer > div {
