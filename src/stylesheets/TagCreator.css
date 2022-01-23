@@ -1,26 +1,60 @@
-#tag-create-box {
+#tag-create-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
   width: 250px;
 }
-
-/* WHY CANT WE MOVE TO THE RIGHT */
-.tag-label {
-  /* display: flex; */
-  /* flex-direction: row; */
-  font-size: small;
-  margin: 0.25rem;
-  margin-top: 0.75rem;
-  float: left;
+#html-tag-creator-container-header {
+  font-size: 16px;
+  color: var(--textColor);
+  margin-bottom: 10px;
 }
 
-.tag-input {
+.tag-name-input-field [type=text] { 
   display: flex;
+  outline: none;
   /* flex-direction: row; */
   /* justify-content: center; */
   margin: 0.7rem;
+  background: var(--neutral-600);
+  border-radius: 5px;
+  width: 5rem;
+  font-size: 14px;
+  margin-left: 3rem;
+  outline: none;
+  opacity: 0.5;
+  border: none;
+  color: var(--textColor);
+}
+
+.tag-name-labels {
+  font-size: 12px;
+  display: in-line block;
+}
+
+#tag-id-input-field { 
+  display: flex;
+  outline: none;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  margin: 0.7rem;
+  background: var(--neutral-600);
+  border-radius: 5px;
+  width: 5rem;
+  font-size: 14px;
+  margin-left: 3rem;
+  outline: none;
+  opacity: 0.5;
+  border: none;
+  color: var(--textColor);
+}
+
+/* .html-tag-input {
+  display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* margin: 0.7rem;
   background: var(--neutral-600);
   border-radius: 5px;
   width: 7rem;
@@ -29,24 +63,22 @@
   opacity: 0.5;
   border: none;
   color: var(--textColor);
-}
+} */
 
-#header {
-  font-size: medium;
-}
-
-#add-element-btn {
-  color: var(--textColor);
-  background-color: var(--purple-300);
+#create-html-tag-submit-button {
+  color: white;
+  /* background-color: var(--purple-300); */
+  background-color: var(--navigation-panel-background-color);
   margin: 1.5rem 0rem 1rem 0rem;
   padding: 4px 20px;
   text-transform: uppercase;
   box-shadow: none;
-  border-radius: 3px;
+  border-radius: 8px;
   font-weight: 500;
   border: 0px transparent none;
+  font-size: 14px;
 }
 
-.tag-duo {
+/* .tag-duo {
   height: 1.5rem;
-}
+} */

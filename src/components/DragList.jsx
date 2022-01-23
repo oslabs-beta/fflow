@@ -25,7 +25,7 @@ const DragList = () => {
   return (
     <Droppable droppableId='htmlTags'>
       {(provided) => (
-        <div id='button-container' {...provided.droppableProps} ref={provided.innerRef}>
+        <div id='draggable-elements-container' {...provided.droppableProps} ref={provided.innerRef}>
           {tags}
           {provided.placeholder}
         </div>

@@ -6,7 +6,10 @@ const Header = () => {
 
   return (
     <div className='headerContainer'>
-    {/* <span id='app-name'>APP NAME</span> */}
+        {/* <!-- Modal toggle --> */}
+        <button class="block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" type="button" data-modal-toggle="popup-modal" id='clear-canvas-button'>
+        Clear Canvas
+        </button>
 
       <input type="checkbox" className="checkbox" id="checkbox" onChange={()=> themeToggle()}/>
       <label for="checkbox" className="label"> 
@@ -15,10 +18,6 @@ const Header = () => {
         <div className='ball'></div>
       </label>
 
-      {/* <!-- Modal toggle --> */}
-      <button class="block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" type="button" data-modal-toggle="popup-modal">
-        Clear Canvas
-      </button>
 
         {/* <!-- Delete HTML or React Component Modal --> */}
         <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="popup-modal">

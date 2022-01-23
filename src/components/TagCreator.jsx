@@ -4,27 +4,21 @@ import '../stylesheets/TagCreator.css';
 const TagCreator = () => {
   return (
     <div>
-      <label id="header">Custom HTML Element</label>
-      <div id="tag-create-box">
-        <div className='tag-duo'>
-          <label className="tag-label">Tag</label>
-          <input className="tag-input"></input>
-        </div>
-        <div className='tag-duo' >
-          <label className="tag-label">Class</label>
-          <input className="tag-input"></input>
-        </div>
-        <div className='tag-duo'>
-          <label className="tag-label">Id</label>
-          <input className="tag-input"></input>
-        </div>
-        {/* <button id="add-element-btn">Add</button> */}
-        <button class="block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" type="button" data-modal-toggle="popup-modal">
-          ADD
-        </button>
-      </div>
+      <p id='html-tag-creator-container-header'>Custom HTML Elements</p>
+      <form action='#' id="tag-create-form">
+          <label for="tag-name" class='tag-name-labels' placeholder="Tag Name">Tag Name</label>
+          <input type="text" class='tag-name-input-field' id="tag-name" name="tag-name" />
+          <label for="tag-class" class='tag-name-labels' placeholder="Tag Class">Tag Class</label>
+          <input type="text" class='tag-name-input-field' id="tag-class-input-field" name="tag-class" />
+          <label for="tag-name" class='tag-name-labels' placeholder="Tag Id">Tag ID</label>
+          <input type="tag-id" class='tag-name-input-field' id="tag-id-input-field" name="tag-id"/>
+          <input type="submit" id="create-html-tag-submit-button" value="ADD"/>
+      </form>
     </div>
+   
+
   )
 }
 
 export default TagCreator;
+

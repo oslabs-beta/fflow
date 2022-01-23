@@ -30,7 +30,7 @@ const Body = () => {
       <Header />
       <DragDropContext onDragEnd={dragEnd}>
         <DnD />
-        <Canvas components={components}/>
+      <Canvas components={components}/>
       </DragDropContext>
       <CodePreview />
     </div>
