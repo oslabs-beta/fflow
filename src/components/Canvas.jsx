@@ -8,6 +8,7 @@ import CanvasItem from './CanvasItem';
 import { Draggable } from 'react-beautiful-dnd';
 
 const Canvas = (props) => {
+  
   return (
     <Droppable droppableId='canvas'>
       {(provided) => (
@@ -19,9 +20,9 @@ const Canvas = (props) => {
          
           {props.components.map((ele, ind) => {
             return (
-              <Draggable key={ind} draggableId={ele} index={ind}>
-                {(provided) => (
-                  <CanvasItem name={ele} ind={ind} provided={provided}/>
+              <Draggable key={ind} draggableId={'' + ind + ele} index={ind}>
+                {(provided, snapshot) => (
+                  <CanvasItem name={ele} ind={ind} provided={provided} isDragging={snapshot.isDragging}/>
                 )}
               </Draggable>
             );

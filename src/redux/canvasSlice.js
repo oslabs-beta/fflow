@@ -14,11 +14,15 @@ export const canvasSlice = createSlice({
     },
     deleteComponent: (state, action) => {
       
+    },
+    reorderComponent: (state, action) => {
+      console.log('reorderComponent fired');
+      state.components = action.payload;
     }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addComponent } = canvasSlice.actions;
+export const { addComponent, reorderComponent } = canvasSlice.actions;
 
 export default canvasSlice.reducer;
