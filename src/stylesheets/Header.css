@@ -1,7 +1,7 @@
 .headerContainer {
   flex: 0 0 3%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -45,6 +45,10 @@
 
   /* top: 2px;*/
 }
+
+/* #clear-canvas-button { 
+  margin-top: 5px;
+} */
 
 /*  target the element after the label*/
 .checkbox:checked + .label .ball{

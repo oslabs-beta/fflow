@@ -10,17 +10,16 @@ const CanvasItem = (props) => {
         {...props.provided.draggableProps}
         {...props.provided.dragHandleProps}
       >
-        <div className='w-1/3 text-center'>
+        <div className='w-1/3 text-center max-w-7xl'>
           <p key={props.ind}>{props.name} </p>
         </div>
 
         <div
           className='absolute top-0 right-0 col-span-1'
-
-          // onClick={(e) => {
-          //   e.preventDefault();
-          //   deleteCoin(canvasItem.id);
-          // }}
+          onClick={(e) => {
+            e.preventDefault();
+            deleteCanvasItem(canvasItem.id);
+          }}
         >
           <DeleteCanvasItem />
         </div>

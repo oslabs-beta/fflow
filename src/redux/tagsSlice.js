@@ -14,6 +14,7 @@ const initialState = {
     spanTag: 'Span',
     h1Tag: 'Header 1',
     h2Tag: 'Header 2',
+    h3Tag: 'Header 3',
   },
 };
 

@@ -1,19 +1,13 @@
 .navigation-bar {
   grid-area: navigation;
-  /* background-color: var(--thirdBackgroundColor); */
-  /* border: 0.5px solid var(--neutral-600); */
   background-color: var(--navigation-panel-background-color);
+  border-right: 1px solid var(--navigation-panel-border-color);
   display: flex;
   /* opacity: 0.5; */
   flex-direction: column;
-  /* justify-content: space-around; */
 }
 
 .fa-pencil-ruler {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-drafting-compass{
   color: #ffffff;
   opacity: 0.8;
 }
@@ -29,7 +23,6 @@
   color: #ffffff;
   opacity: 0.8;
 }
-
 .navigation-bar a:hover { 
   background-color: #000;
 }

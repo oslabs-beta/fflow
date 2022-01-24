@@ -1,36 +1,41 @@
-#button-container {
+#draggable-elements-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   /* border: 0.5px solid var(--neutral-700); */
   width: 180px;
   height: 350px;
-  row-gap: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
+  align-self: center;
+  padding-top: 10px;
 }
 
 .dragItems p {
+  padding: 4px 15px;
+  box-shadow: none;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #4338ca;
+  text-transform: uppercase;
+  font-size: 13px;
+  overflow: none;
+  background-color: var(--thirdBackgroundColor);
   /* position: relative;
   margin: 0.5vh; */
   /* font-size: 1rem; */
   /* font-size: 15px;
   min-height: 3vh; */
   /* color: var(--purple-200); */
-  color: #4338ca;
-  text-transform: uppercase;
-  font-size: 13px;
-  background-color: var(--thirdBackgroundColor);
   /* margin: 1.5rem 0rem 1rem 0rem; */
-  padding: 4px 15px;
-  box-shadow: none;
-  border-radius: 3px;
-  font-weight: 600;
   /* border: 0.5px solid var(--neutral-700); */
-  overflow: none;
 }
-
 .dragItems p:hover {
-  background-color: var(--neutral-200);
+  /* background-color: var(--neutral-200); */
   border-radius: 3px;
+  border: 1px solid  #4338ca;
+}
+.dragItems p:active {
+  border-radius: 3px;
+  border: 1px solid  #4338ca;
 }
