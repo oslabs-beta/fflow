@@ -16,8 +16,8 @@ body {
   --textColor: #ffffff;
   --textColorInverse: #000000;
 
-  --lightBlueBackground: #D0F0FD;
-  --darkBlueBackground: #100635;
+  --lightBlueBackgroundColor: #D0F0FD;
+  --darkBlueBackgroundColor: #100635;
 
   /* Shades of Green */
   --green-500: #03AA99;
