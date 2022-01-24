@@ -1,46 +1,54 @@
 import React, {useState } from 'react';
-import ReactDOM from "react-dom";
-import AceEditor from 'react-ace';
-
-import '../stylesheets/CodePreview.css';
-import "ace-builds/src-noconflict/theme-monokai";
+import Editor from "@monaco-editor/react";
+import files from "./files";
 
 const CodeEditor = () => {
 
-  const [theme, setTheme] = useState("dark");
-  const toggleTheme = () => (theme === "dark" ? "monokai" : "github");
+  const [fileName, setFileName] = useState("script.js");
+  const file = files[fileName];
   
-  // function handleEditorDidMount() {
-  //   setIsEditorReady(true);
-  // }
   function onChange(newValue) {
     console.log("change", newValue);
   }
 
   return (
     <div>
-    <AceEditor
-            width="100%"
-            height="100%"
-          placeholder="// Your code will show up here when you drag in a component or HTML element "
-        mode="javascript"
-        theme='monokai'
-        onChange={onChange}
-        fontSize={16}
-        showPrintMargin={true}
-        showGutter={true}
-        readOnly={false}
-        highlightActiveLine={true}
-        name="editor"
-        editorProps={{ $blockScrolling: false }}
-        setOptions={{
-      enableBasicAutocompletion: true,
-      enableLiveAutocompletion: true,
-      enableSnippets: true,
-      showLineNumbers: true,
-      tabSize: 2,
-  }}/>
-    </div>
+    <div id='language-chooser-container'>
+    <button className='multi-editor-buttons'
+        disabled={fileName === "script.js"}
+        onClick={() => setFileName("script.js")}
+      >
+        JavaScript
+      </button>
+      <button className='multi-editor-buttons'
+        disabled={fileName === "style.css"}
+        onClick={() => setFileName("style.css")}
+      >
+       CSS
+      </button>
+      <button className='multi-editor-buttons'
+        disabled={fileName === "index.html"}
+        onClick={() => setFileName("index.html")}
+      >
+        HTML
+      </button>
+</div>
+      <Editor
+        height="100vh"
+        theme="vs-dark"
+        path={file.name}
+        defaultLanguage={file.language}
+        defaultValue={file.value}
+        options={{
+                minimap: {
+                enabled: false,
+                },
+                fontSize: 16,
+                cursorStyle: "block",
+                wordWrap: "on",
+              }}
+      />
+  </div>
   )
 };
 
