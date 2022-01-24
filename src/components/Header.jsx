@@ -1,10 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import '../stylesheets/Header.css';
 
 const Header = () => {
+
   const themeToggle = () => document.body.classList.toggle('theme-light');  
+  // link this classList toggle to VS code theme 
+  // if classList includes 'theme-light' set theme state to 'vs-light'
 
   return (
+    
     <div className='headerContainer'>
         {/* <!-- Modal toggle --> */}
         <button class="block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" type="button" data-modal-toggle="popup-modal" id='clear-canvas-button'>

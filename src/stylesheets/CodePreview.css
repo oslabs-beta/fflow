@@ -24,14 +24,19 @@
   box-sizing: content-box;
   position: relative;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px;
+}
+
+.tabs:hover { 
+  background-color: #AAA;
 }
 
 .active-tabs {
   background: var(--thirdBackgroundColor);
-  border-bottom: 1px solid #4f46e5;
+  border-bottom: 1px solid #5b5a5f;
   color: #4f46e5;
+  font-weight: 600;
 }
 
 .active-tabs::before {
@@ -73,4 +78,39 @@
 
 #terminal { 
   box-sizing: content-box;
+}
+
+#code-editor-theme-selector {
+  font-size: 12px;
+  color: var(--neutral-600);
+ }
+
+ #code-editor-theme-selector select {
+  background-color: var(--thirdBackgroundColor);
+  padding: 10px;
+  color: #4f46e5;
+  outline: none;
+  height: 20px;
+  border: 0px none transparent;
+}
+#language-chooser-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.multi-editor-buttons {
+  text-align: center;
+  width: 50%;
+  background: var(--thirdBackgroundColor);
+  color: var(--neutral-600);
+  cursor: pointer;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  font-size: 12px;
+  padding: 8px;
+}
+.multi-editor-buttons:hover {
+  background: var(--neutral-300);
 }
