@@ -17,16 +17,14 @@ const Body = () => {
 
   function dragEnd(dragItem) {
     //update state with what's dragged onto canvas
-    if (dragItem.destination.droppableId === 'canvas' && dragItem.source.droppableId === 'htmlTags') {
-      console.log('droppableId is: ', dragItem.destination.droppableId);
-      dispatch(addComponent(dragItem.draggableId));
-    }else if(dragItem.destination.droppableId === 'canvas' && dragItem.source.droppableId === 'canvas'){
-      const copy = Array.from(components);
-      const [reorderedItem] = copy.splice(dragItem.source.index, 1);
-      copy.splice(dragItem.destination.index, 0, reorderedItem);
-      dispatch(reorderComponent(copy));
+    if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') {
+      dispatch(addComponent(dragItem));
+      
+    }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){
+      dispatch(reorderComponent(dragItem));
     }
     console.log('dragItem is: ', dragItem);
+    console.log('components is: ', components);
   }
 
   return (
