@@ -8,20 +8,23 @@ import '../stylesheets/BodyContainer.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { addComponent } from '../redux/canvasSlice';
+import { addComponent, reorderComponent } from '../redux/canvasSlice';
 
 const Body = () => {
   const dispatch = useDispatch();
   // to pull array of all components that were dragged on
-  const components = useSelector(state => state.canvas.components);
+  const components = useSelector((state) => state.canvas.components);
 
   function dragEnd(dragItem) {
     //update state with what's dragged onto canvas
-    if(dragItem.destination.droppableId === 'canvas' && dragItem.source.droppableId === 'htmlTags'){
-      console.log('droppableId is: ', dragItem.destination.droppableId);
-      dispatch(addComponent(dragItem.draggableId));
+    if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') {
+      dispatch(addComponent(dragItem));
+      
+    }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){
+      dispatch(reorderComponent(dragItem));
     }
     console.log('dragItem is: ', dragItem);
+    console.log('components is: ', components);
   }
 
   return (
@@ -30,7 +33,7 @@ const Body = () => {
       <Header />
       <DragDropContext onDragEnd={dragEnd}>
         <DnD />
-      <Canvas components={components}/>
+        <Canvas components={components} />
       </DragDropContext>
       <CodePreview />
     </div>
