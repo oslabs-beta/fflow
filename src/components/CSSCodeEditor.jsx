@@ -13,14 +13,14 @@ function CSSCodeEditor() {
   
   return (
   <div>
-      <div id='code-editor-theme-selector'>Code Editor Theme:
+      {/* <div id='code-editor-theme-selector'>Code Editor Theme: */}
           {/* <select name="theme" onChange={e => setTheme(e.currentTarget.value)}>
             <option value="vs-dark">vs-dark</option>
             <option value="vs-light">vs-light</option>
           </select> */}
-      </div>
+      {/* </div> */}
           <Editor
-              height="100vh"
+              height="95%"
               defaultLanguage="css"
               value={editorValue}
               onChanged={setEditorValue}

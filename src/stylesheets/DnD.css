@@ -1,12 +1,9 @@
-.dndContainer {
+/* .dndContainer {
   position: relative;
   padding: 0 !important;
   grid-area: dnd;
   background-color: var(--thirdBackgroundColor);
-  /* border-radius: 10px; */
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   overflow: hidden;
-  margin-right: 10%;
   max-width: 250px;
   min-width: 230px;
 }
@@ -20,4 +17,18 @@
   justify-content: space-around;
   align-items: center;
   overflow-y: hidden;
+} */
+
+.dndContainer { 
+  display: flex;
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--thirdBackgroundColor);
+  overflow: hidden;
+  max-width: 270px;
+  min-width: 230px;
+  padding: 30px auto;
 }

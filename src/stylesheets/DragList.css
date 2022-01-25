@@ -16,7 +16,7 @@
   box-shadow: none;
   border-radius: 3px;
   font-weight: 600;
-  color: #4338ca;
+  color: var(--navigation-panel-background-color);
   text-transform: uppercase;
   font-size: 13px;
   overflow: none;
@@ -33,9 +33,9 @@
 .dragItems p:hover {
   /* background-color: var(--neutral-200); */
   border-radius: 3px;
-  border: 1px solid  #4338ca;
+  border: 1px solid  var(--navigation-panel-background-color);
 }
 .dragItems p:active {
   border-radius: 3px;
-  border: 1px solid  #4338ca;
+  border: 1px solid  var(--navigation-panel-background-color);
 }

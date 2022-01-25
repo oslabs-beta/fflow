@@ -1,13 +1,14 @@
 * { box-sizing: border-box; }
 
-html, body {
-  /* height: 100%; */
-  box-sizing: border-box;
-  max-height: 1200px;
-  overflow-y: none;
+html {
+  height: 100%;
+  /* max-height: 1200px; */
+  overflow: hidden;
+  /* overflow-y: none; */
 }
 body { 
   margin: 0;
+  overflow: hidden;
 }
 :root {
   --backgroundColor: #121212; 
@@ -67,7 +68,6 @@ body {
 :root[data-theme='theme-light'] {
   --backgroundColor:  #eeeeee;
   --textColor: #000000;
-  /* --secondaryBackgroundColor: #eeeeee; */
   --thirdBackgroundColor: var(--neutral-50);
 
   --errorColor: #B00020;
@@ -89,12 +89,13 @@ body {
     --errorColor: #CF6679;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    /* padding: 10px 0; */
     overflow: hidden;
-    --navigation-panel-background-color: var(--backgroundColor);
+    --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600); 
     --navigation-panel-textColor: #ffffff;
-    --tab-bottom-borderColor: var(--textColor);
+    --navigation-panel-backgroundColor: var(--green-200);
+    --tab-bottom-borderColor: #5b5a5f;
   }
   .theme-light {
     --backgroundColor:  #eeeeee;
@@ -103,11 +104,15 @@ body {
     --errorColor: #B00020;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;    
     overflow: hidden;
+    /* padding: 0;    
+    /* padding: 10px 0; */
     --navigation-panel-background-color: #4338ca;
     --navigation-panel-border-color: none; 
     --navigation-panel-textColor: #ffffff;
+    --tag-inputs-backgroundColor: var(--neutral-200);
+    --tag-inputs-borderColor: #4338ca;
+    --navigation-panel-backgroundColor: #4338ca;
     --tab-bottom-borderColor: var(--neutral-200);
   }
 
@@ -143,7 +148,7 @@ body {
 
 .App {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   height: 100vh;
   background-color: var(--backgroundColor);
   color: var(--textColor);

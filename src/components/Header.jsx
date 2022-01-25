@@ -33,12 +33,19 @@ const Header = () => {
         Clear Canvas
       </button>
 
+      {/* <!-- App Theme Toggle  --> */}
       <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
       <label for='checkbox' className='label'>
         {/* <i className="fas fa-moon"></i>
         <i className='fas fa-sun'></i> */}
         <div className='ball'></div>
       </label>
+
+      {/* <!-- Delete HTML or React Component Modal --> */}
+        
+
+
+
 
       {/* <!-- Delete HTML or React Component Modal --> */}
       <div

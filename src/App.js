@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Body from './components/Body';
+import Navigation from './components/Navigation';
 import './stylesheets/App.css';
 import './stylesheets/index.css';
 import '@themesberg/flowbite';
@@ -11,6 +12,7 @@ import { Provider } from 'react-redux';
 const App = () => {  
     return (
     <div className='App'>
+      <Navigation/>
       <Body />
     </div>
   );

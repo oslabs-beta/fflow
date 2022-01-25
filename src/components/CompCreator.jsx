@@ -15,9 +15,9 @@ const CompCreator = () => {
         </div>
 
         <button id='create-react-component-button' type='submit'>Add</button>
-        <button class="block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" type="button" data-modal-toggle="popup-modal">
+        {/* <button class="block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800" type="button" data-modal-toggle="popup-modal">
           ADD
-        </button>
+        </button> */}
 
       </form>
     </div>

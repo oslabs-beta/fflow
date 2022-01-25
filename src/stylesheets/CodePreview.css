@@ -1,4 +1,4 @@
-.codePreviewContainer {
+/* .codePreviewContainer {
   grid-area: code;
   position: relative;
   padding: 0 !important; 
@@ -8,7 +8,7 @@
   margin-right: 2%;
   border-radius: 8px;
   margin-top: 5%;
-}
+} */
 
 .tabContainer {
   display: flex;
@@ -20,26 +20,35 @@
   background: var(--thirdBackgroundColor);
   color: var(--neutral-600);
   cursor: pointer;
-  border-bottom: 1px solid var(--tab-bottom-borderColor);
+  /* border-bottom: 1px solid var(--tab-bottom-borderColor); */
   box-sizing: content-box;
+  border-bottom: 1px solid var(--tab-bottom-borderColor);
   position: relative;
   outline: none;
   font-size: 16px;
   padding: 10px;
 }
-
 .tabs:hover { 
   background-color: #AAA;
 }
 
-.active-tabs {
+
+.active-tab {
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
   background: var(--thirdBackgroundColor);
-  border-bottom: 1px solid #5b5a5f;
-  color: #4f46e5;
+  border-bottom: 1px solid var(--navigation-panel-background-color); 
+  color: var(--navigation-panel-background-color);
   font-weight: 600;
 }
 
-.active-tabs::before {
+.active-tab::before {
   content: '';
   display: block;
   position: absolute;
@@ -50,27 +59,27 @@
 }
 
 .contentContainer {
-  flex-grow: 1;
-  height: 100%;
+  /* flex-grow: 1; */
+  /* height: 100%; */
   width: 100%;
+  height: 100%;
+  position: absolute;
 }
-
 .content {
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: none;
 }
-
 .active-content {
-  display: block;
+  /* display: block; */
   width: 100%;
-  height: 80%;
+  height: 100%;
+  /* position: absolute; */
 }
 
 .codeEditorContainer {
-  grid-area: code;
   background-color: var(--thirdBackgroundColor);
-  height: 100%;
+  height: 80%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 0;
   margin: 0;

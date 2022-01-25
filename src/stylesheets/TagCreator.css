@@ -11,20 +11,18 @@
   margin-bottom: 10px;
 }
 
-.tag-name-input-field [type=text] { 
+.tag-name-input-field { 
   display: flex;
   outline: none;
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  margin: 0.7rem;
-  background: var(--neutral-600);
+  margin: 0.3rem 0;
+  background: var(--tag-inputs-backgroundColor);
   border-radius: 5px;
-  width: 5rem;
+  width: 8rem;
   font-size: 14px;
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   outline: none;
   opacity: 0.5;
-  border: none;
+  border: 1px solid var(--navigation-panel-background-color);
   color: var(--textColor);
 }
 
@@ -33,52 +31,16 @@
   display: in-line block;
 }
 
-#tag-id-input-field { 
-  display: flex;
-  outline: none;
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  margin: 0.7rem;
-  background: var(--neutral-600);
-  border-radius: 5px;
-  width: 5rem;
-  font-size: 14px;
-  margin-left: 3rem;
-  outline: none;
-  opacity: 0.5;
-  border: none;
-  color: var(--textColor);
-}
-
-/* .html-tag-input {
-  display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  /* margin: 0.7rem;
-  background: var(--neutral-600);
-  border-radius: 5px;
-  width: 7rem;
-  margin-left: 3rem;
-  outline: none;
-  opacity: 0.5;
-  border: none;
-  color: var(--textColor);
-} */
-
 #create-html-tag-submit-button {
-  color: white;
-  /* background-color: var(--purple-300); */
-  background-color: var(--navigation-panel-background-color);
-  margin: 1.5rem 0rem 1rem 0rem;
-  padding: 4px 20px;
+  margin-top: 0;
   text-transform: uppercase;
   box-shadow: none;
-  border-radius: 8px;
+  font-size: 12px;
+  background-color: var(--navigation-panel-background-color);
+  color: white;
+  padding: 4px 20px;
+  margin-top: 1rem;
+  border-radius: 7px;
   font-weight: 500;
   border: 0px transparent none;
-  font-size: 14px;
 }
-
-/* .tag-duo {
-  height: 1.5rem;
-} */

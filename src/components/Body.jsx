@@ -29,13 +29,18 @@ const Body = () => {
 
   return (
     <div className='bodyContainer'>
-      <Navigation />
-      <Header />
+      {/* <Navigation /> */}
+      
       <DragDropContext onDragEnd={dragEnd}>
         <DnD />
         <Canvas components={components} />
       </DragDropContext>
-      <CodePreview />
+      
+      <div id='headerAndCodePreviewContainer'>
+        <Header />
+        <CodePreview />
+      </div>
+      
     </div>
   );
 };

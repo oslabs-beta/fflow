@@ -1,18 +1,15 @@
 .canvas {
   display: flex;
   flex-direction: column;
-  grid-area: canvas;
+  /* grid-area: canvas; */
+  flex: 1 1 40%;
   background-color: var(--thirdBackgroundColor);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-left: 2.5%;
   position: relative;
-  margin-right: 2.5%;
-  margin-bottom: 3%;
-  margin-top: 2%;
+  /* margin-bottom: 5%;
+  margin-top: 2%; */
+  margin: 60px 0;
   border-radius: 8px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 }
 p {
   font-size: 18px;

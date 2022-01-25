@@ -1,10 +1,17 @@
 .navigation-bar {
-  grid-area: navigation;
+  /* grid-area: navigation; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+  width: 50px;
+  /* opacity: 0.5; */
   background-color: var(--navigation-panel-background-color);
   border-right: 1px solid var(--navigation-panel-border-color);
-  display: flex;
-  /* opacity: 0.5; */
-  flex-direction: column;
+  font-size: 1.8rem;
+}
+.fas {
+  margin: 1.2rem auto;
 }
 
 .fa-pencil-ruler {
@@ -20,6 +27,10 @@
   opacity: 0.8;
 }
 .fa-download{
+  color: #ffffff;
+  opacity: 0.8;
+}
+.fa-user{
   color: #ffffff;
   opacity: 0.8;
 }

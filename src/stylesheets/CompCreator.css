@@ -16,12 +16,6 @@
   gap: 0.5rem;
 }
 
-/* #comp-create-box label {
-  font-size: 1rem;
-  margin: 0;
-  float: right;
-} */
-
 #create-react-component-input-field {
   width: 8rem;
   font-size: 14px;
@@ -54,10 +48,10 @@
   text-transform: uppercase;
   box-shadow: none;
   font-size: 12px;
-  background-color: #4338ca;
+  background-color: var(--navigation-panel-background-color);
   color: white;
   padding: 4px 20px;
-  border-radius: 5px;
+  border-radius: 7px;
   font-weight: 500;
   border: 0px transparent none;
 }

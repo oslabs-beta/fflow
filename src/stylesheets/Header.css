@@ -1,12 +1,11 @@
 .headerContainer {
-  flex: 0 0 3%;
+  flex: 0 0 5%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-}
-
-#app-name {
-  font-size: 14px;
+  /* top | right | bottom | left */
+  margin: 10px 1em 10px 0;
+  
 }
 
 /* .theme-toggle { 
