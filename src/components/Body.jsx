@@ -8,30 +8,43 @@ import '../stylesheets/BodyContainer.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { addComponent, reorderComponent } from '../redux/canvasSlice';
+import { addComponent, combineComponents, reorderComponent } from '../redux/canvasSlice';
 
 const Body = () => {
   const dispatch = useDispatch();
   // to pull array of all components that were dragged on
   const components = useSelector((state) => state.canvas.components);
 
-  function dragEnd(dragItem) {
-    //update state with what's dragged onto canvas
-    if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') {
-      dispatch(addComponent(dragItem));
-      
-    }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){
-      dispatch(reorderComponent(dragItem));
+  function dragStart(dragItem) {
+    // console.log(dragItem);
+    if(dragItem.source.droppableId === 'canvas'){
+      document.getElementById(dragItem.draggableId).style.backgroundColor = 'lightblue';
     }
+  }
+
+  function dragEnd(dragItem) {
     console.log('dragItem is: ', dragItem);
     console.log('components is: ', components);
+    //update state with what's dragged onto canvas
+    if(dragItem.source.droppableId === 'canvas'){ //if dragged from canvas
+      document.getElementById(dragItem.draggableId).style.backgroundColor = 'inherit';
+      if(dragItem.combine !== null){ //if dragged onto another draggable
+        dispatch(combineComponents(dragItem));
+      }
+    }
+    if(!dragItem.destination) return;
+    if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') { //if dragged from tags to canvas
+      dispatch(addComponent(dragItem));
+    }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){//if dragged to and from canvas
+      dispatch(reorderComponent(dragItem));
+    }
   }
 
   return (
     <div className='bodyContainer'>
       <Navigation />
       <Header />
-      <DragDropContext onDragEnd={dragEnd}>
+      <DragDropContext onDragEnd={dragEnd} onDragStart={dragStart}>
         <DnD />
         <Canvas components={components} />
       </DragDropContext>

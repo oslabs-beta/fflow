@@ -20,7 +20,7 @@ const CodePreview = () => {
     terminal.loadAddon(fitAddon);
     terminal.open(document.getElementById("terminal"));
 
-    console.log('this is terminalState:', terminalState);
+    // console.log('this is terminalState:', terminalState);
   })
   
     terminal.onData(key => {

@@ -9,7 +9,7 @@ function CSSCodeEditor() {
   
   const theme = useSelector(state => state.theme.currTheme);
   
-  console.log('theme: ', theme);
+  // console.log('theme: ', theme);
   
   return (
   <div>
