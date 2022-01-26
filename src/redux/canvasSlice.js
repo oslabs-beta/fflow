@@ -32,7 +32,6 @@ export const canvasSlice = createSlice({
       const [item] = state.components.splice(action.payload.source.index, 1);
       const index = action.payload.combine.draggableId.split('-')[0];
       console.log('index is: ', index);
-      console.log('ele is: ', state.components[index]);
       if(Array.isArray(state.components[index])){
         state.components[index].push(item);
       }else{

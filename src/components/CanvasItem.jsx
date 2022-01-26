@@ -2,6 +2,7 @@ import React from 'react';
 import DeleteCanvasItem from './DeleteCanvasItem';
 
 const CanvasItem = (props) => {
+  console.log('canvas item props: ', props)
   return (
     <div className='container mx-auto px-2 md:px-4 my-4 md:mb-4'>
       <div
