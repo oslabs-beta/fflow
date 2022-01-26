@@ -25,3 +25,4 @@ const CanvasItem = (props) => {
 };
 
 export default CanvasItem;
+
