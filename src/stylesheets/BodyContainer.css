@@ -1,15 +1,19 @@
-.bodyContainer {
-  flex: 1 0 auto;
-  display: grid;
-  grid-template-areas:
-    'navigation dnd canvas header'
-    'navigation dnd canvas code'
-    'navigation dnd canvas code';
-  grid-template-columns: 2.5% 15% auto 25%;
-  grid-template-rows: 3% auto 25%;
+.bodyContainer { 
+  display: flex;
+  flex: 1 1;
+  gap: 40px;
+  height: 100%;
 }
+
 .bodyContainer > div {
   text-align: center;
-  padding: 1rem 0;
-  font-size: 2rem;
+  /* font-size: 2rem; */
+}
+
+#headerAndCodePreviewContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 380px;
+  max-width: 28%;
+  height: 100%;
 }

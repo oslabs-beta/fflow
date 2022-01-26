@@ -13,7 +13,7 @@ const Canvas = (props) => {
     <Droppable droppableId='canvas'>
       {(provided) => (
         <div className='canvas' {...provided.droppableProps} ref={provided.innerRef}>
-        {/* {props.components} */}
+     
           <p id='canvas-instruction'>
             Drag & Drop <br /> HTML elements here
           </p>
