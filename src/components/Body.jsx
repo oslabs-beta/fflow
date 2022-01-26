@@ -41,8 +41,6 @@ const Body = () => {
 
   return (
     <div className='bodyContainer'>
-      <Navigation />
-      <Header />
       <DragDropContext onDragEnd={dragEnd} onDragStart={dragStart}>
         <DnD />
         <Canvas components={components} />
