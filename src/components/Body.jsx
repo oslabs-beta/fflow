@@ -33,7 +33,7 @@ const Body = () => {
     }
     if(!dragItem.destination) return;
     if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') { //if dragged from tags to canvas
-      dispatch(addComponent(dragItem));
+      dispatch(addComponent(dragItem)); 
     }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){//if dragged to and from canvas
       dispatch(reorderComponent(dragItem));
     }

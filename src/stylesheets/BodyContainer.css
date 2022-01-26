@@ -13,7 +13,7 @@
 #headerAndCodePreviewContainer {
   display: flex;
   flex-direction: column;
-  flex: 1 1 380px;
-  max-width: 28%;
+  flex: 1 1 450px;
+  max-width: 35%;
   height: 100%;
 }
