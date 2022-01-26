@@ -7,10 +7,7 @@ import DragList from './DragList';
 const DnD = () => {
   return (
     <div className='dndContainer'>
-        <p id='app-name'
-          style={{ fontSize: '20px', fontWeight: '700', color: 'var(--navigation-panel-background-color)'}}>
-          App Name
-        </p>
+        <p id='app-name'>App Name</p>
         <CompCreator />
         <TagCreator />
         <DragList />

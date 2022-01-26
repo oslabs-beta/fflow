@@ -9,10 +9,8 @@ const { app, BrowserWindow } = require('electron');
 function createWindow () {
   // Create the browser window.
   let win = new BrowserWindow({
-    width: 1024,
-    height: 768,
-    // width: 800,
-    // height: 600,
+    width: 1280,
+    height: 720,
     show: false,
     webPreferences: {
       nodeIntegration: true
@@ -46,7 +44,7 @@ function createWindow () {
   win.loadFile('index.html');
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);

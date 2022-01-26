@@ -7,7 +7,6 @@ import './stylesheets/index.css';
 import '@themesberg/flowbite';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
-// import { hot } from 'react-hot-loader/root';
 
 const App = () => {  
     return (

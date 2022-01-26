@@ -1,24 +1,3 @@
-/* .dndContainer {
-  position: relative;
-  padding: 0 !important;
-  grid-area: dnd;
-  background-color: var(--thirdBackgroundColor);
-  overflow: hidden;
-  max-width: 250px;
-  min-width: 230px;
-}
-
-#dndBody {
-  display: flex;
-  position: fixed;
-  top: 5%;
-  height: 90%;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  overflow-y: hidden;
-} */
-
 .dndContainer { 
   display: flex;
   position: relative;
@@ -32,3 +11,10 @@
   min-width: 230px;
   padding: 30px auto;
 }
+
+#app-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navigation-panel-background-color);
+}
+ 

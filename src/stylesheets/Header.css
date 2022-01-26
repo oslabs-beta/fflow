@@ -3,14 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* top | right | bottom | left */
-  margin: 10px 1em 10px 0;
-  
+  margin: 10px 1.5em 10px 0;
 }
-
-/* .theme-toggle { 
-  margin-left: 0.5em;
-} */
 
 .checkbox { 
   opacity: 0;
@@ -18,13 +12,12 @@
 }
 
 .label {
-  width: 32px;
-  height: 10px;
+  width: 45px;
+  height: 20px;
   background-color: #454C52;
   display: flex;
-  border-radius:50px;
+  border-radius: 50px;
   align-items: center;
-  /* margin-left: 90vw; */
   justify-content: space-between;
   padding: 3px;
   position: relative;
@@ -38,16 +31,10 @@
   right: 2px;
   background-color: white;
   position: absolute;
-
-  width: 10px;
-  height: 10px;
-
-  /* top: 2px;*/
+  width: 12px;
+  height: 12px;
 }
 
-/* #clear-canvas-button { 
-  margin-top: 5px;
-} */
 
 /*  target the element after the label*/
 .checkbox:checked + .label .ball{
@@ -56,10 +43,12 @@
 
 .fa-moon {
   color: var(--lightBlueBackground);
-  height: 3px;
+  height: 1.5px;
+  margin-top: -3px;
 }
 
 .fa-sun {
   color: var(--orange-400);
-  height: 3px;
+  height: 1.5px;
+  margin-top: -3px;
 }

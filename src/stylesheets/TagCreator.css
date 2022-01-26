@@ -17,9 +17,8 @@
   margin: 0.3rem 0;
   background: var(--tag-inputs-backgroundColor);
   border-radius: 5px;
-  width: 8rem;
+  width: 10rem;
   font-size: 14px;
-  /* margin-left: 3rem; */
   outline: none;
   opacity: 0.5;
   border: 1px solid var(--navigation-panel-background-color);
@@ -29,6 +28,10 @@
 .tag-name-labels {
   font-size: 12px;
   display: in-line block;
+}
+
+::placeholder {
+  color: var(--navigation-panel-background-color);
 }
 
 #create-html-tag-submit-button {

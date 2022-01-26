@@ -4,7 +4,6 @@ html {
   height: 100%;
   /* max-height: 1200px; */
   overflow: hidden;
-  /* overflow-y: none; */
 }
 body { 
   margin: 0;
@@ -89,7 +88,6 @@ body {
     --errorColor: #CF6679;
     box-sizing: border-box;
     margin: 0;
-    /* padding: 10px 0; */
     overflow: hidden;
     --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600); 
@@ -164,63 +162,3 @@ body {
   background-color: var(--neutral-100);
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
-
-#green-100 { 
-  background-color: var(--green-100);
-  color: var(--textColorInverse);
-}
-#green-200 { 
-  background-color: var(--green-200);
-  color: var(--textColorInverse);
-}
-#green-300 { 
-  background-color: var(--green-300);
-  color: var(--textColorInverse);
-}
-#green-400 { 
-  background-color: var(--green-400);
-  color: var(--textColorInverse);
-}
-#green-500 { 
-  background-color: var(--green-500);
-  color: var(--textColor);
-}
-
-
-#purple-electric-violet { 
-  background-color: var(--purple-electric-violet);
-  color:var(--textColor);
-}
-#purple-900 {
-  background-color: var(--purple-900);
-  color: #ffffff;
-}
-#purple-700 {
-  background-color: var(--purple-700);
-  color: #ffffff;
-}
-#purple-600 {
-  background-color: var(--purple-600);
-  color: #ffffff;
-}
-#purple-500 { 
-  background-color: var(--purple-500);
-  color: #ffffff;
-}
-#purple-400 { 
-  background-color: var(--purple-400);
-  color: var(--textColor);
-}
-#purple-300 { 
-  background-color: var(--purple-300);
-}
-#purple-200 { 
-  background-color: var(--purple-200);
-  color: var(--textColorInverse);
-}
-#button-error { 
-  background-color: var(--lightThemeColorError);
-  color: var(--textColor);
-}
-
-

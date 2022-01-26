@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  /* border: 0.5px solid var(--neutral-700); */
   width: 180px;
   height: 350px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -10,7 +9,6 @@
   align-self: center;
   padding-top: 10px;
 }
-
 .dragItems p {
   padding: 4px 15px;
   box-shadow: none;
@@ -21,17 +19,8 @@
   font-size: 13px;
   overflow: none;
   background-color: var(--thirdBackgroundColor);
-  /* position: relative;
-  margin: 0.5vh; */
-  /* font-size: 1rem; */
-  /* font-size: 15px;
-  min-height: 3vh; */
-  /* color: var(--purple-200); */
-  /* margin: 1.5rem 0rem 1rem 0rem; */
-  /* border: 0.5px solid var(--neutral-700); */
 }
 .dragItems p:hover {
-  /* background-color: var(--neutral-200); */
   border-radius: 3px;
   border: 1px solid  var(--navigation-panel-background-color);
 }

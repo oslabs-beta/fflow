@@ -1,21 +1,17 @@
 .canvas {
   display: flex;
   flex-direction: column;
-  /* grid-area: canvas; */
   flex: 1 1 40%;
   background-color: var(--thirdBackgroundColor);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
-  /* margin-bottom: 5%;
-  margin-top: 2%; */
   margin: 60px 0;
   border-radius: 8px;
-}
-p {
-  font-size: 18px;
+  padding: 10px 30px
 }
 .canvas:hover { 
-  border: 3px dotted var(--neutral-600);
+  /* border: 3px dotted var(--neutral-600); */
+  border: 3px dotted var(--navigation-panel-background-color);
 }
 #canvas-instruction {
   color: var(--neutral-600);
@@ -23,28 +19,7 @@ p {
   font-size: 16px;
   font-weight: 700;
 }
+#canvas-item {
+  border: 1px solid #4338ca;
+}
 
-#button-error {
-  background-color: var(--errorColor);
-  color: var(--backgroundColor);
-}
-#green-100 {
-  background-color: var(--green-100);
-  color: var(--textColorInverse);
-}
-#green-200 {
-  background-color: var(--green-200);
-  color: var(--textColorInverse);
-}
-#green-300 {
-  background-color: var(--green-300);
-  color: var(--textColorInverse);
-}
-#green-400 {
-  background-color: var(--green-400);
-  color: var(--textColorInverse);
-}
-#green-500 {
-  background-color: var(--green-500);
-  color: var(--textColorInverse);
-}

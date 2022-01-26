@@ -33,9 +33,10 @@ const CodeEditor = () => {
       >
         HTML
       </button>
-</div>
-      <Editor
-        // height="100%"
+      </div>
+     
+     <Editor
+        height="100vh"
         theme="vs-dark"
         path={file.name}
         defaultLanguage={file.language}

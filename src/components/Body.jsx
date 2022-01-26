@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Navigation from './Navigation';
 import DnD from './DnD';
 import Canvas from './Canvas';
 import Header from './Header';
@@ -16,11 +15,11 @@ const Body = () => {
   const components = useSelector((state) => state.canvas.components);
 
   function dragEnd(dragItem) {
-    //update state with what's dragged onto canvas
+    // update state with what's dragged onto canvas
     if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') {
       dispatch(addComponent(dragItem));
       
-    }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){
+    } else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){
       dispatch(reorderComponent(dragItem));
     }
     console.log('dragItem is: ', dragItem);
@@ -29,7 +28,6 @@ const Body = () => {
 
   return (
     <div className='bodyContainer'>
-      {/* <Navigation /> */}
       
       <DragDropContext onDragEnd={dragEnd}>
         <DnD />
@@ -40,7 +38,7 @@ const Body = () => {
         <Header />
         <CodePreview />
       </div>
-      
+
     </div>
   );
 };
