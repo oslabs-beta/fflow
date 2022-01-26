@@ -16,14 +16,8 @@
   gap: 0.5rem;
 }
 
-/* #comp-create-box label {
-  font-size: 1rem;
-  margin: 0;
-  float: right;
-} */
-
 #create-react-component-input-field {
-  width: 8rem;
+  /* width: 8rem;
   font-size: 14px;
   border-radius: 5px;
   height: 20px;
@@ -31,7 +25,18 @@
   background: var(--neutral-600);
   border: none;
   color: var(--textColor);
+  opacity: 0.5; */
+  display: flex;
+  outline: none;
+  margin: 0.3rem 0;
+  background: var(--tag-inputs-backgroundColor);
+  border-radius: 5px;
+  width: 7rem;
+  font-size: 14px;
+  outline: none;
   opacity: 0.5;
+  border: 1px solid var(--navigation-panel-background-color);
+  color: var(--textColor);
 }
 
 #create-react-component-root-check {
@@ -54,11 +59,15 @@
   text-transform: uppercase;
   box-shadow: none;
   font-size: 12px;
-  background-color: #4338ca;
+  background-color: var(--navigation-panel-background-color);
   color: white;
   padding: 4px 20px;
-  border-radius: 5px;
+  border-radius: 7px;
   font-weight: 500;
   border: 0px transparent none;
 }
 
+#create-react-component-button:active { 
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}

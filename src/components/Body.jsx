@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Navigation from './Navigation';
 import DnD from './DnD';
 import Canvas from './Canvas';
 import Header from './Header';
@@ -48,7 +47,12 @@ const Body = () => {
         <DnD />
         <Canvas components={components} />
       </DragDropContext>
-      <CodePreview />
+      
+      <div id='headerAndCodePreviewContainer'>
+        <Header />
+        <CodePreview />
+      </div>
+
     </div>
   );
 };

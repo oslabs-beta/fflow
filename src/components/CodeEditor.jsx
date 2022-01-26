@@ -12,7 +12,8 @@ const CodeEditor = () => {
   }
 
   return (
-    <div>
+    <div id='main-code-editor'>
+    
     <div id='language-chooser-container'>
     <button className='multi-editor-buttons'
         disabled={fileName === "script.js"}
@@ -32,8 +33,9 @@ const CodeEditor = () => {
       >
         HTML
       </button>
-</div>
-      <Editor
+      </div>
+     
+     <Editor
         height="100vh"
         theme="vs-dark"
         path={file.name}

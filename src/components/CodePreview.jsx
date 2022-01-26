@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import TabContainer from "./TabContainer";
 import '../stylesheets/CodePreview.css';
 import '../stylesheets/Terminal.css';
-
-import TabContainer from "./TabContainer";
-
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 
@@ -38,21 +35,11 @@ const CodePreview = () => {
         }
       })
 
-        // terminal.onData(e => {
-    //   console.log('onData', e)
-    //   terminal.write(e)
-    // });
-  // const terminalChange = (e) => {
-  //   setTerminalState(e.target.value);
-  //   terminal.write(terminalState);
-  // }
-
   return (
-    <div className="codePreviewContainer">
-    <TabContainer />       
+    <div className='codePreviewContainer'>
+      <TabContainer />       
     </div>
   )
 }
-
 
 export default CodePreview;

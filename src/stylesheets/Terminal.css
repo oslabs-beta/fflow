@@ -1,4 +1,6 @@
+
 .xterm {
+  /* position: absolute; */
   position: relative;
   user-select: none;
   -ms-user-select: none;
