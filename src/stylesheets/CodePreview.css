@@ -9,7 +9,6 @@
 
 .tabContainer {
   display: flex;
-  text-align: center;
 }
 
 .tabs {
@@ -22,6 +21,7 @@
   outline: none;
   font-size: 16px;
   padding: 10px;
+  text-align: center;
 }
 
 .active-tab {
@@ -49,17 +49,25 @@
 .contentContainer {
   flex-grow: 1;
   width: 100%;
-  height: 100%;
+  /* height: 100%; 
+  this is what rain changed*/
   position: absolute;
+  height: 100vh;
+  text-align: left;
 }
 .content {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: none;
+  text-align: left;
 }
 .active-content {
   width: 100%;
-  height: 100%;
+  /* height: 100%;
+  this is what rain changed */
+  /* height: 100%;  */
+  height: 100vh;
+  text-align: left;
 }
 
 #language-chooser-container{
@@ -83,4 +91,8 @@
 
 .multi-editor-buttons:hover {
   background: var(--neutral-300);
+}
+
+#cssContainer {
+  height: 100%;
 }

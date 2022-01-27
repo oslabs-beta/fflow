@@ -15,8 +15,6 @@ const TagCreator = () => {
           <input type="submit" id="create-html-tag-submit-button" value="ADD"/>
       </form>
     </div>
-   
-
   )
 }
 

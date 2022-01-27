@@ -2,6 +2,23 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   components: [],
+  tags: '',
+  code: 'test',
+  codeList: {
+    Div: `<div></div>`,
+    Paragraph: `<p></p>`,
+    Anchor: `<a></a>`,
+    Image: `<img></img>`,
+    'Unordered List': `<ul></ul>`,
+    Form: `<form></form>`,
+    'Ordered List': `<ol></ol>`,
+    Button: `<button></button>`,
+    'List Item': `<li></li>`,
+    Span: `<span></span>`,
+    'Header 1': `<h1></h1>`,
+    'Header 2': `<h2></h2>`,
+    'Header 3': `<h3></h3>`,
+  },
 };
 
 export const canvasSlice = createSlice({
@@ -11,6 +28,8 @@ export const canvasSlice = createSlice({
     addComponent: (state, action) => {
       console.log('addComponent fired');
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
+      state.tags += '\n\t\t' + state.codeList[action.payload.draggableId];
+      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t<div className='App'>\t${state.tags}\n</div>\n\t)\n}\nexport default App;`
     },
     deleteComponent: (state, action) => {
       console.log('deleteComponent fired');
@@ -26,6 +45,7 @@ export const canvasSlice = createSlice({
     clearComponents: (state) => {
       console.log('clearComponents fired');
       state.components = [];
+      state.tags = '';
     },
     combineComponents: (state, action) => {
       console.log('combineComponents fired');
