@@ -61,9 +61,7 @@ module.exports = [
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-      new MonacoWebpackPlugin({
-        languages: ['json'],
-      }),
+      new MonacoWebpackPlugin(),
     ],
     devServer: { // used for development mode beyond this point
       'static': {
