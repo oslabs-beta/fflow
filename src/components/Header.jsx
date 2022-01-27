@@ -15,7 +15,7 @@ const Header = () => {
   const clear = () => {
     if(confirm('Would you like to clear canvas?')){
       dispatch(clearComponents());
-      dispatch(refreshCode());
+      // dispatch(refreshCode());
     }
   }
 
