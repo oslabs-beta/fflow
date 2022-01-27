@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 function CSSCodeEditor() {
   // const [editorValue, setEditorValue] = useState(`// Give your project some styling here\n`);
 
-  // const theme = useSelector((state) => state.theme.currTheme);
+  const theme = useSelector((state) => state.theme.currTheme);
 
   // const cssContainer = document.createElement('div');
   // cssContainer.id = 'cssContainer';

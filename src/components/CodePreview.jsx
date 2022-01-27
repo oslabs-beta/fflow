@@ -17,17 +17,7 @@ const CodePreview = () => {
     // render terminal onto div with id terminal
     terminal.loadAddon(fitAddon);
     terminal.open(document.getElementById('terminal'));
-    // monaco.editor.create(document.getElementById('editor-container'), {
-    //   // language: this._getLanguage(this.props.path),
-    //   // theme: 'ayu-dark',
-    //   // lineNumbers: 'on',
-    //   // wordWrap: 'on',
-    //   // scrollBeyondLastLine: false,
-    //   // automaticLayout: true,
-    //   // glyphMargin: true,
-    //   value: "function hello() {\n\talert('Hello world!');\n}",
-    //   language: 'javascript',
-    // });
+
     // console.log('this is terminalState:', terminalState);
   });
 
