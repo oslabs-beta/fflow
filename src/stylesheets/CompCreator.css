@@ -17,15 +17,6 @@
 }
 
 #create-react-component-input-field {
-  /* width: 8rem;
-  font-size: 14px;
-  border-radius: 5px;
-  height: 20px;
-  outline: none;
-  background: var(--neutral-600);
-  border: none;
-  color: var(--textColor);
-  opacity: 0.5; */
   display: flex;
   outline: none;
   margin: 0.3rem 0;
@@ -37,6 +28,18 @@
   opacity: 0.5;
   border: 1px solid var(--navigation-panel-background-color);
   color: var(--textColor);
+}
+
+#root-checkbox { 
+  position: absolute;
+  opacity: 0; 
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+}
+
+input[type="checkbox"]:focus{
+  outline:0;
 }
 
 #create-react-component-root-check {

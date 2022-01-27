@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50px;
+  width: 40px;
   background-color: var(--navigation-panel-background-color);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .fas {
   padding: 1.2rem;

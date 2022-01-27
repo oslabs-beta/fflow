@@ -23,8 +23,10 @@
 .dragItems p:hover {
   border-radius: 3px;
   border: 1px solid  var(--navigation-panel-background-color);
+  cursor: move;
 }
 .dragItems p:active {
+  cursor: move;
   border-radius: 3px;
   border: 1px solid  var(--navigation-panel-background-color);
 }

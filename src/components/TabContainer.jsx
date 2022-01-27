@@ -38,11 +38,11 @@ const TabContainer = () => {
       </div>
       <div className='contentContainer'>
         <div className={tabState === 1 ? 'active-content' : 'content'}>
-          <CSSCodeEditor />
-        </div>
-        <div id='terminal' className={tabState === 2 ? 'active-content' : 'content'}></div>
-        <div id='editor-container' style={{ height: '100vh', width: '100%' }} className={tabState === 3 ? 'active-content' : 'content'}>
           <CodeEditor />
+        </div>
+        <div id='terminal' style={{ height: '50vh', width: '100%' }} className={tabState === 2 ? 'active-content' : 'content'}></div>
+        <div id='editor-container' style={{ height: '100vh', width: '100%' }} className={tabState === 3 ? 'active-content' : 'content'}>
+          <CSSCodeEditor />
         </div>
       </div>
     </div>

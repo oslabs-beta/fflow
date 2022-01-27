@@ -35,20 +35,19 @@
   height: 12px;
 }
 
-
 /*  target the element after the label*/
-.checkbox:checked + .label .ball{
+.checkbox:checked + .label .ball {
   transform: translateX(25px);
 }
 
 .fa-moon {
-  color: var(--lightBlueBackground);
-  height: 1.5px;
-  margin-top: -3px;
+  color: var(--lightBlueBackgroundColor);
+  height: 1.4px;
+  margin-top: -9px;
 }
 
 .fa-sun {
-  color: var(--orange-400);
-  height: 1.5px;
-  margin-top: -3px;
+  color: #FFD523;
+  height: 1.4px;
+  margin-top: -9px;
 }

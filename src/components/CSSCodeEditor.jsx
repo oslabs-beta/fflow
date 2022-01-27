@@ -6,12 +6,24 @@ import { useSelector } from 'react-redux';
 function CSSCodeEditor() {
   // const [editorValue, setEditorValue] = useState(`// Give your project some styling here\n`);
 
-  // const theme = useSelector((state) => state.theme.currTheme);
+  const theme = useSelector((state) => state.theme.currTheme);
 
   // const cssContainer = document.createElement('div');
   // cssContainer.id = 'cssContainer';
 
   // monaco.editor.create(document.getElementById('editor-container')
+
+  // validation settings
+  monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
+    noSemanticValidation: true,
+    noSyntaxValidation: true
+  });
+  
+// compiler options
+monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+	target: monaco.languages.typescript.ScriptTarget.ES6,
+	allowNonTsExtensions: true
+});
 
   const code = useSelector((state) => state.canvas.code);
   // console.log('code is: ', code);

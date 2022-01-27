@@ -3,22 +3,22 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   components: [],
   tags: [],
-  code: 'test',
+  code: '',
   codeList: {
-    Div: `<div></div>`,
+    Div: `<div className=''></div>`,
     Paragraph: `<p></p>`,
     Anchor: `<a></a>`,
     Image: `<img></img>`,
-    'Unordered List': `<ul></ul>`,
-    Form: `<form></form>`,
-    'Ordered List': `<ol></ol>`,
-    Button: `<button></button>`,
+    'Unordered List': `<ul className=''></ul>`,
+    Form: `<form className=''></form>`,
+    'Ordered List': `<ol className=''></ol>`,
+    Button: `<button className=''></button>`,
     'List Item': `<li></li>`,
-    Span: `<span></span>`,
-    'Header 1': `<h1></h1>`,
-    'Header 2': `<h2></h2>`,
-    'Header 3': `<h3></h3>`,
-  }
+    Span: `<span className=''></span>`,
+    'Header 1': `<h1 className=''></h1>`,
+    'Header 2': `<h2 className=''></h2>`,
+    'Header 3': `<h3 className=''></h3>`,
+  },
 };
 
 export const canvasSlice = createSlice({
@@ -62,7 +62,7 @@ export const canvasSlice = createSlice({
       }
     },
     refreshCode: (state) => {
-      state.code = `import React from 'react';\nconst componentName = () => {\n\treturn (\t\t${state.tags}\n\t)\n}\nexport default componentName;`
+      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div className='App'>\t\t${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`
     }
   },
 });

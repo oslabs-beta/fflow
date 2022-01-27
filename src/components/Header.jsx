@@ -36,7 +36,7 @@ const Header = () => {
       <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
       <label for='checkbox' className='label'>
         {/* <i className="fas fa-moon"></i>
-        <i className='fas fa-sun'></i> */}
+        <i className="fas fa-sun"></i> */}
         <div className='ball'></div>
       </label>
       

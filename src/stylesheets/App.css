@@ -2,7 +2,6 @@
 
 html {
   height: 100%;
-  /* max-height: 1200px; */
   overflow: hidden;
 }
 body { 
@@ -62,33 +61,12 @@ body {
   box-sizing: border-box;
 }
 
-
-/* LIGHT THEME COLORS */ 
-:root[data-theme='theme-light'] {
-  --backgroundColor:  #eeeeee;
-  --textColor: #000000;
-  --thirdBackgroundColor: var(--neutral-50);
-
-  --errorColor: #B00020;
-}
-
-/* DARK THEME COLORS */ 
-:root[data-theme='theme-dark'] {
-  --backgroundColor: #121212; 
-  --textColor: #ffffff;
-  --thirdBackgroundColor: var(--secondaryBackgroundColor);
-  
-  --errorColor: #CF6679;
-  }
   /* DEFAULT THEME IS DARK */ 
   body { 
     --backgroundColor: var(--secondaryBackgroundColor); 
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
     --errorColor: #CF6679;
-    box-sizing: border-box;
-    margin: 0;
-    overflow: hidden;
     --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600); 
     --navigation-panel-textColor: #ffffff;
@@ -100,11 +78,6 @@ body {
     --textColor: #000000;
     --thirdBackgroundColor: var(--neutral-50);
     --errorColor: #B00020;
-    box-sizing: border-box;
-    margin: 0;
-    overflow: hidden;
-    /* padding: 0;    
-    /* padding: 10px 0; */
     --navigation-panel-background-color: #4338ca;
     --navigation-panel-border-color: none; 
     --navigation-panel-textColor: #ffffff;
@@ -117,36 +90,49 @@ body {
   
 /* THEME BASED ON USER'S OS PREFERENCE */  
 @media (prefers-color-scheme: dark) {
-  :root[data-theme='theme-dark'] {
-    --backgroundColor: #121212; 
+  body { 
+    --backgroundColor: var(--secondaryBackgroundColor); 
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
     --errorColor: #CF6679;
-    }
+    --navigation-panel-background-color: var(--purple-200);
+    --navigation-panel-border-color: var(--neutral-600); 
+    --navigation-panel-textColor: #ffffff;
+    --navigation-panel-backgroundColor: var(--green-200);
+    --tab-bottom-borderColor: #5b5a5f;
+  }
 }
 
 @media (prefers-color-scheme: no-preference) {
-  :root[data-theme='theme-dark'] {
-    --backgroundColor: #121212; 
-    --errorColor: #CF6679;
+  body { 
+    --backgroundColor: var(--secondaryBackgroundColor); 
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
-    }
+    --errorColor: #CF6679;
+    --navigation-panel-background-color: var(--purple-200);
+    --navigation-panel-border-color: var(--neutral-600); 
+    --navigation-panel-textColor: #ffffff;
+    --navigation-panel-backgroundColor: var(--green-200);
+    --tab-bottom-borderColor: #5b5a5f;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-  :root[data-theme='theme-light'] {
-    --backgroundColor:  #eeeeee;
-    --textColor: #000000;
-    /* --secondaryBackgroundColor: #eeeeee; */
-    --thirdBackgroundColor: var(--neutral-50);
-    --errorColor: #B00020;
-  }  
+  body { 
+    --backgroundColor: var(--secondaryBackgroundColor); 
+    --textColor: #ffffff;
+    --thirdBackgroundColor: var(--secondaryBackgroundColor);
+    --errorColor: #CF6679;
+    --navigation-panel-background-color: var(--purple-200);
+    --navigation-panel-border-color: var(--neutral-600); 
+    --navigation-panel-textColor: #ffffff;
+    --navigation-panel-backgroundColor: var(--green-200);
+    --tab-bottom-borderColor: #5b5a5f;
+  }
 }
 
 .App {
   display: flex;
-  /* flex-direction: column; */
   height: 100vh;
   background-color: var(--backgroundColor);
   color: var(--textColor);

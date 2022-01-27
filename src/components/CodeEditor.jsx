@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Editor from '@monaco-editor/react';
 import files from './files';
 import { useSelector } from 'react-redux';
 
+
 const CodeEditor = () => {
   const [fileName, setFileName] = useState('script.js');
   const file = files[fileName];
+  const theme = useSelector((state) => state.theme.currTheme);
 
   const code = useSelector((state) => state.canvas.code);
-
-  function onChange(newValue) {
-    console.log('change', newValue);
-  }
+  
+  const onChange = (newValue) => console.log('change', newValue);
 
   return (
     <div id='main-code-editor'>
@@ -29,16 +29,18 @@ const CodeEditor = () => {
 
       <Editor
         height='100vh'
-        theme='vs-dark'
+        theme={theme}
         path={file.name}
         defaultLanguage={file.language}
+        defaultValue='// Drag components onto canvas and see your code rendered here'
         // defaultValue={file.value}
+        onChange={onChange}
         value={code}
         options={{
           minimap: {
             enabled: false,
           },
-          fontSize: 14,
+          fontSize: 15,
           cursorStyle: 'block',
           wordWrap: 'on',
         }}
