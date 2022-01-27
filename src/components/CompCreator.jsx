@@ -12,10 +12,8 @@ const CompCreator = () => {
           <span id='create-react-component-root-check'>
             <label name='root-check'>Root</label>
             <input className='root-checkbox' type='checkbox' name="root-check"></input>
-          </span>
-          
+          </span> 
         </div>
-
         <button id='create-react-component-button' type='submit'>Add</button>
       </form>
     </div>
