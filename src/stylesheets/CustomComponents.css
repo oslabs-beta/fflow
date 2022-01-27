@@ -1,0 +1,13 @@
+#custom-components-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-components {
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  margin: 0.5rem;
+  font-size: 1vh;
+  color: var(--navigation-panel-background-color);
+  border: 1px solid var(--navigation-panel-background-color);
+}

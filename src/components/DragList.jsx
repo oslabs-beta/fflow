@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '../stylesheets/DragList.css';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
