@@ -39,6 +39,9 @@ const Body = () => {
     }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){//if dragged to and from canvas
       dispatch(reorderComponent(dragItem));
       dispatch(refreshCode());
+    }else if(dragItem.source.droppableId === 'customComponents' && dragItem.destination.droppableId === 'canvas'){
+      dispatch(addComponent(dragItem));
+      dispatch(refreshCode());
     }
   }
 

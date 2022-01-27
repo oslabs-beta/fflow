@@ -2,18 +2,19 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   components: [],
+  customComponents: [],
   tags: [],
   code: '',
   codeList: {
     Div: `<div className=''></div>`,
-    Paragraph: `<p></p>`,
-    Anchor: `<a></a>`,
-    Image: `<img></img>`,
+    Paragraph: `<p className=''></p>`,
+    Anchor: `<a className=''></a>`,
+    Image: `<img className=''></img>`,
     'Unordered List': `<ul className=''></ul>`,
     Form: `<form className=''></form>`,
     'Ordered List': `<ol className=''></ol>`,
     Button: `<button className=''></button>`,
-    'List Item': `<li></li>`,
+    'List Item': `<li className=''></li>`,
     Span: `<span className=''></span>`,
     'Header 1': `<h1 className=''></h1>`,
     'Header 2': `<h2 className=''></h2>`,
@@ -28,7 +29,7 @@ export const canvasSlice = createSlice({
     addComponent: (state, action) => {
       console.log('addComponent fired');
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
-      state.tags.push('\n\t\t' + state.codeList[action.payload.draggableId]);
+      state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
     deleteComponent: (state, action) => {
       console.log('deleteComponent fired');
@@ -48,6 +49,7 @@ export const canvasSlice = createSlice({
       console.log('clearComponents fired');
       state.components = [];
       state.tags = [];
+      state.code = '';
     },
     combineComponents: (state, action) => {
       console.log('combineComponents fired');
@@ -55,19 +57,37 @@ export const canvasSlice = createSlice({
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       const index = action.payload.combine.draggableId.split('-')[0];
       console.log('index is: ', index);
-      if(Array.isArray(state.components[index])){
+      if (Array.isArray(state.components[index])) {
         state.components[index].push(item);
-      }else{
+      } else {
         state.components.splice(index, 1, [state.components[index], item]);
       }
     },
     refreshCode: (state) => {
-      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div className='App'>\t\t${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`
+      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div className='App'>${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`;
+    },
+    createComponent: (state, action) => {
+      console.log('createComponent fired');
+      const { text, check } = action.payload;
+      //add to tags array for code preview
+      // text = text[0].toUpperCase() + text.slice(1);
+      const newTag = `\n\t\t\t<${text} />`;
+      // state.tags.splice(0, 0, newTag);
+      state.tags.push(newTag);
+      state.customComponents.push(text);
+      //add to component array for canvas
+      // state.components.splice(0, 0, text);
+      state.components.push(text);
+    },
+    addCustom: (state) => {
+      // console.log('addCustom fired');
+      // state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
+      // state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
     }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode } = canvasSlice.actions;
+export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode, createComponent } = canvasSlice.actions;
 
 export default canvasSlice.reducer;

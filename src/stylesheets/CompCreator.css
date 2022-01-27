@@ -32,7 +32,7 @@
 
 #root-checkbox { 
   position: absolute;
-  opacity: 0; 
+  /* opacity: 0;  */
   cursor: pointer;
   padding: 0;
   box-shadow: none;
@@ -49,7 +49,8 @@ input[type="checkbox"]:focus{
   flex-direction: row;
   justify-content: center;
   align-content: flex-end; 
-  /* width: 2rem; */
+  width: 2rem;
+  height: 2.2rem;
 }
 
 #create-react-component-root-check input {
