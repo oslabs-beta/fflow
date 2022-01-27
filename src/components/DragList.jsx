@@ -3,6 +3,7 @@ import '../stylesheets/DragList.css';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import drag from '../img/drag.png';
 
 const DragList = () => {
   const items = useSelector(state => state.tags.tagList);
@@ -15,7 +16,7 @@ const DragList = () => {
       <Draggable key={count} draggableId={label} index={count++}>
         {(provided) => (
           <div className='dragItems' id={id} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-            <p>{label}</p>
+            <span id='individual-drag-item' style={{ display: 'inline-flex' }}><img src={drag} alt='drag-icon' style={{ height: '18px', width: '18px', color: 'var(--navigation-panel-border-color)'}}/>{label}</span>
           </div>
         )}
       </Draggable>
