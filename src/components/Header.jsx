@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { clearComponents } from '../redux/canvasSlice';
+import { clearComponents, refreshCode } from '../redux/canvasSlice';
 import { changeTheme } from '../redux/themeSlice';
 import '../stylesheets/Header.css';
 
@@ -15,6 +15,7 @@ const Header = () => {
   const clear = () => {
     if(confirm('Would you like to clear canvas?')){
       dispatch(clearComponents());
+      dispatch(refreshCode());
     }
   }
 
