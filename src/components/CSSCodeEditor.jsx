@@ -14,7 +14,7 @@ function CSSCodeEditor() {
   // monaco.editor.create(document.getElementById('editor-container')
 
   const code = useSelector((state) => state.canvas.code);
-  console.log('code is: ', code);
+  // console.log('code is: ', code);
   let hold;
 
   useEffect(() => {
@@ -30,8 +30,8 @@ function CSSCodeEditor() {
       value: code,
       language: 'javascript',
     });
-    console.log('hold is: ', hold);
-    console.log('code in useEffect: ', code);
+    // console.log('hold is: ', hold);
+    // console.log('code in useEffect: ', code);
     hold.getModel().onDidChangeContent((event) => {
       console.log('getModel ran');
       render();
