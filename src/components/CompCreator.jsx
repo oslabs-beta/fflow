@@ -14,10 +14,10 @@ const CompCreator = () => {
     const check = document.getElementById('root-checkbox');
     const text = input.value[0].toUpperCase() + input.value.slice(1);
     console.log(custom);
-    if(!custom.includes(text)){
-      dispatch(createComponent({text, check}));
+    if (!custom.includes(text)) {
+      dispatch(createComponent({ text, check }));
       dispatch(refreshCode());
-    }else{
+    } else {
       alert('Component with that name already exists');
     }
     text.value = '';
