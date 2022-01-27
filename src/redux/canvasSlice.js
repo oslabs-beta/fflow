@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   components: [],
-  tags: '',
+  tags: [],
   code: '',
   codeList: {
     Div: `<div className=''></div>`,
@@ -28,31 +28,31 @@ export const canvasSlice = createSlice({
     addComponent: (state, action) => {
       console.log('addComponent fired');
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
-      state.tags += '\n\t\t' + state.codeList[action.payload.draggableId];
-      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t<div className='App'>\t${state.tags}\n\t</div>\n\t)\n}\nexport default App;`
+      state.tags.push('\n\t\t' + state.codeList[action.payload.draggableId]);
     },
     deleteComponent: (state, action) => {
       console.log('deleteComponent fired');
       if (confirm(`Delete this component?\n${action.payload.name + ' in position ' + action.payload.index}`)) {
-        let deleted = state.components.splice(action.payload.index, 1);
-        state.tags -= deleted;
-        state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t<div className='App'>\t${state.tags}\n\t</div>\n\t)\n}\n\nexport default App;`
+        state.components.splice(action.payload.index, 1);
+        state.tags.splice(action.payload.index, 1);
       }
     },
     reorderComponent: (state, action) => {
       console.log('reorderComponent fired');
       const [item] = state.components.splice(action.payload.source.index, 1);
       state.components.splice(action.payload.destination.index, 0, item);
+      const [tag] = state.tags.splice(action.payload.source.index, 1);
+      state.tags.splice(action.payload.destination.index, 0, tag);
     },
     clearComponents: (state) => {
       console.log('clearComponents fired');
       state.components = [];
-      state.tags = '';
-      state.code = '';
+      state.tags = [];
     },
     combineComponents: (state, action) => {
       console.log('combineComponents fired');
       const [item] = state.components.splice(action.payload.source.index, 1);
+      const [tag] = state.tags.splice(action.payload.source.index, 1);
       const index = action.payload.combine.draggableId.split('-')[0];
       console.log('index is: ', index);
       if(Array.isArray(state.components[index])){
@@ -61,10 +61,13 @@ export const canvasSlice = createSlice({
         state.components.splice(index, 1, [state.components[index], item]);
       }
     },
+    refreshCode: (state) => {
+      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div className='App'>\t\t${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents } = canvasSlice.actions;
+export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode } = canvasSlice.actions;
 
 export default canvasSlice.reducer;

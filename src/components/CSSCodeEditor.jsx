@@ -26,7 +26,7 @@ monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
 });
 
   const code = useSelector((state) => state.canvas.code);
-  console.log('code is: ', code);
+  // console.log('code is: ', code);
   let hold;
 
   useEffect(() => {
@@ -42,12 +42,12 @@ monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
       value: code,
       language: 'javascript',
     });
-    console.log('hold is: ', hold);
-    console.log('code in useEffect: ', code);
-    // hold.getModels().onDidChangeContent((event) => {
-    //   console.log('getModel ran');
-    //   render();
-    // });
+    // console.log('hold is: ', hold);
+    // console.log('code in useEffect: ', code);
+    hold.getModel().onDidChangeContent((event) => {
+      console.log('getModel ran');
+      render();
+    });
   }, [code]);
 
 
