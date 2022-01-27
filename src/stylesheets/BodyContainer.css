@@ -1,19 +1,18 @@
 .bodyContainer { 
   display: flex;
   flex: 1 1;
-  gap: 40px;
+  gap: 30px;
   height: 100%;
 }
 
 .bodyContainer > div {
   text-align: center;
-  /* font-size: 2rem; */
 }
 
 #headerAndCodePreviewContainer {
   display: flex;
   flex-direction: column;
-  flex: 1 1 450px;
+  flex: 1 1 400px;
   max-width: 35%;
   height: 100%;
 }

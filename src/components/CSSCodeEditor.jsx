@@ -13,6 +13,18 @@ function CSSCodeEditor() {
 
   // monaco.editor.create(document.getElementById('editor-container')
 
+  // validation settings
+  monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
+    noSemanticValidation: true,
+    noSyntaxValidation: true
+  });
+  
+// compiler options
+monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+	target: monaco.languages.typescript.ScriptTarget.ES6,
+	allowNonTsExtensions: true
+});
+
   const code = useSelector((state) => state.canvas.code);
   console.log('code is: ', code);
   let hold;
@@ -32,10 +44,10 @@ function CSSCodeEditor() {
     });
     console.log('hold is: ', hold);
     console.log('code in useEffect: ', code);
-    hold.getModel().onDidChangeContent((event) => {
-      console.log('getModel ran');
-      render();
-    });
+    // hold.getModels().onDidChangeContent((event) => {
+    //   console.log('getModel ran');
+    //   render();
+    // });
   }, [code]);
 
 

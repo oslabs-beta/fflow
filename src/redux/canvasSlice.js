@@ -29,7 +29,7 @@ export const canvasSlice = createSlice({
       console.log('addComponent fired');
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
       state.tags += '\n\t\t' + state.codeList[action.payload.draggableId];
-      state.code = `import React from 'react';\nconst componentName = () => {\n\treturn (\t\t${state.tags}\n\t)\nexport default componentName;`
+      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t<div className='App'>\t${state.tags}\n</div>\n\t)\n}\nexport default App;`
     },
     deleteComponent: (state, action) => {
       console.log('deleteComponent fired');
