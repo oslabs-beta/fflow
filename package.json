@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/electron.js",
   "scripts": {
+    "server": "node src/server/server.js",
     "start": "npm run build && electron ./dist/electron.js",
     "electron": "electron src/electron.js",
     "build": "webpack --config ./webpack.config.js",
