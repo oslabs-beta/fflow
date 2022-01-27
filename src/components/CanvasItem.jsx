@@ -1,5 +1,6 @@
 import React from 'react';
 import DeleteCanvasItem from './DeleteCanvasItem';
+import '../stylesheets/Canvas.css';
 
 const CanvasItem = (props) => {
   console.log('canvas item props: ', props)
