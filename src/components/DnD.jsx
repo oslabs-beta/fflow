@@ -3,6 +3,7 @@ import '../stylesheets/DnD.css';
 import CompCreator from './compCreator';
 import TagCreator from './TagCreator';
 import DragList from './DragList';
+import CustomComponents from './CustomComponents';
 
 const DnD = () => {
   return (

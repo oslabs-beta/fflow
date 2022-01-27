@@ -1,10 +1,16 @@
 import React from 'react';
-import '../stylesheets/Login.css'
+import '../stylesheets/Login.css';
 import '../stylesheets/Navigation.css';
 
-const Login = () => {
-
+const Login = (props) => {
+  //console.log(props);
   // if (!props.showFormModal) return null;
+
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   console.log(e);
+  //   console.log('clicked handleClick');
+  // };
 
   return (
   <div id='login-component'>
@@ -52,3 +58,37 @@ const Login = () => {
 };
 
 export default Login;
+
+// const handleSignup = (e) => {
+//   e.preventDefault();
+//   const username = e.target.username.value;
+//   const password = e.target.password.value;
+//   fetch('http://localhost:8080/signup', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//       username: username,
+//       password: password,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .catch((err) => console.log(err));
+// };
+
+// const handleLogin = () => {
+//   e.preventDefault();
+//   const username = e.target.username.value;
+//   const password = e.target.password.value;
+//   fetch('http://localhost:8080/login', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({
+//       username: username,
+//       password: password,
+//     }),
+//   })
+//     .then((res) => res.json())
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };

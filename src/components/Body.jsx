@@ -7,7 +7,7 @@ import '../stylesheets/BodyContainer.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { addComponent, combineComponents, reorderComponent } from '../redux/canvasSlice';
+import { addComponent, combineComponents, refreshCode, reorderComponent } from '../redux/canvasSlice';
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -29,13 +29,19 @@ const Body = () => {
       document.getElementById(dragItem.draggableId).style.backgroundColor = 'inherit';
       if(dragItem.combine !== null){ //if dragged onto another draggable
         dispatch(combineComponents(dragItem));
+        dispatch(refreshCode());
       }
     }
     if(!dragItem.destination) return;
     if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') { //if dragged from tags to canvas
       dispatch(addComponent(dragItem)); 
+      dispatch(refreshCode());
     }else if(dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas'){//if dragged to and from canvas
       dispatch(reorderComponent(dragItem));
+      dispatch(refreshCode());
+    }else if(dragItem.source.droppableId === 'customComponents' && dragItem.destination.droppableId === 'canvas'){
+      dispatch(addComponent(dragItem));
+      dispatch(refreshCode());
     }
   }
 

@@ -8,6 +8,7 @@
   margin: 60px 0;
   border-radius: 8px;
   padding: 10px 30px;
+  border: 3px solid transparent;
 }
 
 .canvas:hover { 
@@ -25,7 +26,7 @@
   margin: 2px 0;
 }
 .flex-auto:hover {
-  border: 2px solid  var(--navigation-panel-background-color);
+  border: 1px solid  var(--navigation-panel-background-color);
 }
 
 

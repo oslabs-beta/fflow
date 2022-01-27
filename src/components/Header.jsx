@@ -1,22 +1,24 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { clearComponents } from '../redux/canvasSlice';
+import { clearComponents, refreshCode } from '../redux/canvasSlice';
 import { changeTheme } from '../redux/themeSlice';
 import '../stylesheets/Header.css';
+import Export from './Export';
 
 const Header = () => {
   const dispatch = useDispatch();
 
-  const themeToggle = () =>{
+  const themeToggle = () => {
     document.body.classList.toggle('theme-light');
     dispatch(changeTheme());
-  }
-  
+  };
+
   const clear = () => {
-    if(confirm('Would you like to clear canvas?')){
+    if (confirm('Would you like to clear canvas?')) {
       dispatch(clearComponents());
+      // dispatch(refreshCode());
     }
-  }
+  };
 
   return (
     <div className='headerContainer'>
@@ -30,7 +32,7 @@ const Header = () => {
       >
         Clear Canvas
       </button>
-
+      <Export />
       {/* <!-- App Theme Toggle  --> */}
       <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
       <label for='checkbox' className='label'>
@@ -38,7 +40,6 @@ const Header = () => {
         <i className="fas fa-sun"></i> */}
         <div className='ball'></div>
       </label>
-      
     </div>
   );
 };
