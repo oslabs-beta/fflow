@@ -8,10 +8,11 @@ const initialState = {
   codeList: {
     Div: `<div className=''></div>`,
     Paragraph: `<p className=''></p>`,
-    Anchor: `<a className=''></a>`,
+    Anchor: `<a href='' className=''></a>`,
     Image: `<img className=''></img>`,
     'Unordered List': `<ul className=''></ul>`,
     Form: `<form className=''></form>`,
+    Input: `<input className=''></input>`,
     'Ordered List': `<ol className=''></ol>`,
     Button: `<button className=''></button>`,
     'List Item': `<li className=''></li>`,
@@ -19,6 +20,9 @@ const initialState = {
     'Header 1': `<h1 className=''></h1>`,
     'Header 2': `<h2 className=''></h2>`,
     'Header 3': `<h3 className=''></h3>`,
+    'Line Break': `<br>`,
+    Table: `<table className=''></table>`,
+    THead: `<thead className=''></thead>`
   },
 };
 

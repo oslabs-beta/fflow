@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { clearComponents, refreshCode } from '../redux/canvasSlice';
 import { changeTheme } from '../redux/themeSlice';
 import '../stylesheets/Header.css';
-import Export from './Export';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -32,7 +31,7 @@ const Header = () => {
       >
         Clear Canvas
       </button>
-      <Export />
+
       {/* <!-- App Theme Toggle  --> */}
       <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
       <label for='checkbox' className='label'>

@@ -41,7 +41,7 @@ const CodeEditor = () => {
             enabled: false,
           },
           fontSize: 15,
-          cursorStyle: 'block',
+          cursorStyle: 'line',
           wordWrap: 'on',
         }}
       />

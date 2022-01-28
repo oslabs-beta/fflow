@@ -15,8 +15,10 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
+    title: 'fflow',
     minWidth: 850,
     minHeight: 600,
+    backgroundColor:' #121212'
   });
 
 
@@ -38,7 +40,8 @@ function createWindow () {
 
   // win.loadURL(indexPath)
 
-  win.maximize();
+  // uncomment out to maximise app on load 
+  // win.maximize();
   win.show();
   // and load the index.html of the app.
   win.loadFile('index.html');
