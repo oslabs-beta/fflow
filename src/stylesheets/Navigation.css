@@ -30,6 +30,9 @@
   opacity: 0.8;
 }
 .navigation-bar a:hover { 
-  background-color: #000;
+  background-color: #000000;
+}
+.navigation-bar button:hover { 
+  background-color: #000000;
 }
 

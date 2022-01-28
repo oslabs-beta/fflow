@@ -58,7 +58,6 @@ body {
   --neutral-800: #454C52;
   --neutral-900: #383F45;
   --neutral-1000: #24292E;
-  box-sizing: border-box;
 }
 
   /* DEFAULT THEME IS DARK */ 
@@ -70,7 +69,6 @@ body {
     --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600); 
     --navigation-panel-textColor: #ffffff;
-    --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
   }
   .theme-light {
@@ -83,10 +81,8 @@ body {
     --navigation-panel-textColor: #ffffff;
     --tag-inputs-backgroundColor: var(--neutral-200);
     --tag-inputs-borderColor: #4338ca;
-    --navigation-panel-backgroundColor: #4338ca;
     --tab-bottom-borderColor: var(--neutral-200);
   }
-
   
 /* THEME BASED ON USER'S OS PREFERENCE */  
 @media (prefers-color-scheme: dark) {
@@ -142,9 +138,4 @@ body {
 
 .theme-button-toggle { 
   background-color: var(--orange-400);
-}
-
-#drag-and-drop-components button { 
-  background-color: var(--neutral-100);
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }

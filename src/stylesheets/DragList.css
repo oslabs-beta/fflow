@@ -3,7 +3,8 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
   width: 180px;
-  height: 350px;
+  /* height: 350px; */
+  height: 450px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
   align-self: center;
@@ -11,6 +12,7 @@
 }
 .dragItems p {
   padding: 4px 15px;
+  margin: 0;
   box-shadow: none;
   border-radius: 3px;
   font-weight: 600;

@@ -15,8 +15,10 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
+    title: 'fflow',
     minWidth: 850,
     minHeight: 600,
+    backgroundColor:' #121212'
   });
 
 
@@ -38,13 +40,14 @@ function createWindow () {
 
   // win.loadURL(indexPath)
 
+  // uncomment out to maximise app on load 
   // win.maximize();
   win.show();
   // and load the index.html of the app.
   win.loadFile('index.html');
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);

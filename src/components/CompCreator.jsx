@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createComponent, refreshCode } from '../redux/canvasSlice';
 import '../stylesheets/CompCreator.css';
+import CustomComponents from './CustomComponents';
 
 const CompCreator = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ const CompCreator = () => {
           Add
         </button>
       </form>
+      <CustomComponents />
     </div>
   );
 };

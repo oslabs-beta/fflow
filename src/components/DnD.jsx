@@ -8,9 +8,8 @@ import CustomComponents from './CustomComponents';
 const DnD = () => {
   return (
     <div className='dndContainer'>
-        <p id='app-name'>App Name</p>
+        <p id='app-name'>fflow.</p>
         <CompCreator />
-        <CustomComponents />
         <TagCreator />
         <DragList />
       </div>

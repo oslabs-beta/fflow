@@ -18,10 +18,48 @@
   flex: 0 1 300px;
   max-height: 450px;
   border-radius: 8px;
-  padding: 20px 20px;
+  padding-bottom: 20px;
+  /* padding: 20px 20px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+#login-email-label { 
+  size: 13px;
+  text-align: left;
+  color: white;
+}
+
+#login-password-label { 
+  size: 13px;
+  text-align: left;
+  color: white;
+}
+
+#login-email-input-field { 
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--neutral-700);
+}
+
+::placeholder { 
+  color: white;
+  font-size: 12px;
+}
+
+#login-password-input-field { 
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--neutral-700);
+}
+#login-submit-button { 
+  width: 70%;
+}
+#close-login-form-modal { 
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 90%;
 }

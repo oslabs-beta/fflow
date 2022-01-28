@@ -60,6 +60,7 @@ input[type="checkbox"]:focus{
 
 #create-react-component-button { 
   margin-top: 0;
+  margin-bottom: 20px;
   text-transform: uppercase;
   box-shadow: none;
   font-size: 12px;
