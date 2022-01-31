@@ -8,7 +8,7 @@ const TreeRecursive = ({ data }) => {
   return data.map((item) => {
     // if its a file render <File />
     if (item.type === 'file') {
-      return <File name={item.name} />;
+      return <File name={item.name} code={item.code} />;
     }
     // if its a folder render <Folder />
     if (item.type === 'folder') {

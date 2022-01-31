@@ -28,6 +28,7 @@ const initialState = {
     {
       type: 'file',
       name: 'App.jsx',
+      fileCode: 'hihihi',
     },
   ],
 };
@@ -74,7 +75,7 @@ export const canvasSlice = createSlice({
       }
     },
     refreshCode: (state) => {
-      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div className='App'>${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`;
+      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`;
     },
     createComponent: (state, action) => {
       console.log('createComponent fired');
@@ -97,10 +98,19 @@ export const canvasSlice = createSlice({
       // state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
       // state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
+    renderComponentCode: (state, action) => {
+      console.log('renderComponentCode fired');
+      const { componentName } = action.payload;
+      console.log('componentName:', componentName);
+      state.tags = [];
+
+      state.code = `import React from 'react';\n\nconst ${componentName} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${componentName};`;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode, createComponent } = canvasSlice.actions;
+export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode, createComponent, renderComponentCode } =
+  canvasSlice.actions;
 
 export default canvasSlice.reducer;
