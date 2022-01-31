@@ -14,7 +14,7 @@ const CompCreator = () => {
     const input = document.getElementById('create-react-component-input-field');
     const check = document.getElementById('root-checkbox');
     const text = input.value[0].toUpperCase() + input.value.slice(1);
-    console.log(custom);
+    console.log('customComponents:', custom);
     if (!custom.includes(text)) {
       dispatch(createComponent({ text, check }));
       dispatch(refreshCode());

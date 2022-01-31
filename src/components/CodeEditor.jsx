@@ -11,6 +11,7 @@ const CodeEditor = () => {
 
   const code = useSelector((state) => state.canvas.code);
   
+  
   const onChange = (newValue) => console.log('change', newValue);
 
   return (
