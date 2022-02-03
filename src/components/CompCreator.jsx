@@ -30,10 +30,10 @@ const CompCreator = () => {
         <div id='create-react-component-inputs'>
           <input id='create-react-component-input-field' placeholder='Component Name'></input>
 
-          <span id='create-react-component-root-check'>
+          {/* <span id='create-react-component-root-check'>
             <label name='root-check'>Root</label>
             <input id='root-checkbox' type='checkbox' name='root-check'></input>
-          </span>
+          </span> */}
         </div>
 
         <button id='create-react-component-button' type='submit' onClick={(e) => onClick(e)}>

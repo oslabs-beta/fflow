@@ -22,7 +22,8 @@
   margin: 0.3rem 0;
   background: var(--tag-inputs-backgroundColor);
   border-radius: 5px;
-  width: 7rem;
+  width: 10rem;
+  padding-left: 1vh;
   font-size: 14px;
   outline: none;
   opacity: 0.5;
