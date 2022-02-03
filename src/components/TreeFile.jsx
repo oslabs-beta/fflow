@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AiOutlineFile from 'react-icons/ai';
+// import AiOutlineFile from 'react-icons/ai';
 import styled from 'styled-components';
 import { DiJavascript1, DiCss3Full, DiHtml5, DiReact } from 'react-icons/di';
 import { useSelector, useDispatch } from 'react-redux';
@@ -41,7 +41,7 @@ const TreeFile = ({ name, code }) => {
   return (
     <StyledFile>
       {/* render the extension or fallback to generic file icon  */}
-      {FILE_ICONS[ext] || <AiOutlineFile />}
+      {FILE_ICONS[ext]}
       <span onClick={() => handleClick()}>{name}</span>
     </StyledFile>
   );
