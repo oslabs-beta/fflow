@@ -5,6 +5,7 @@ const initialState = {
   customComponents: [],
   tags: [],
   code: '',
+  imports: "import React from 'react';\n",
   codeList: {
     Div: `<div className=''></div>`,
     Paragraph: `<p className=''></p>`,
@@ -28,7 +29,8 @@ const initialState = {
     {
       type: 'file',
       name: 'App.jsx',
-      fileCode: 'hihihi', //transfer code - line 7 into fileCode before we display new component code in the onclick
+      fileCode: 'hihihi',
+      fileTags: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
     },
   ],
   currentFile: 'App.jsx',
@@ -76,7 +78,7 @@ export const canvasSlice = createSlice({
       }
     },
     refreshCode: (state) => {
-      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`;
+      state.code = `${state.imports}\nconst App = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`;
     },
     createComponent: (state, action) => {
       console.log('createComponent fired');
@@ -88,9 +90,10 @@ export const canvasSlice = createSlice({
       // state.tags.splice(0, 0, newTag);
       state.tags.push(newTag);
       state.customComponents.push(text);
-      //add to component array for canvas
+      // add to component array for canvas
       // state.components.splice(0, 0, text);
       state.components.push(text);
+      state.imports += `import ${text} from '${text}.jsx';\n`
       state.files.push({ type: 'file', name: fileName });
       console.log('fileState:', [...state.files]);
     },
