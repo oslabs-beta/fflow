@@ -32,8 +32,8 @@ const TreeFile = ({ name, code }) => {
   const files = useSelector((state) => state.canvas.files);
 
   const handleClick = () => {
+    console.log('name is: ', name);
     dispatch(saveComponentCode({ currentCode, currentFile }));
-    console.log('files: ', files);
     dispatch(setCurrentFile(name));
     currentFile = name;
     dispatch(renderComponentCode({ currentFile, componentName }));

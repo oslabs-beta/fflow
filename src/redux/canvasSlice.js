@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   components: [],
-  customComponents: [],
-  tags: [],
   code: '',
+  tags: [],
+  customComponents: [],
   imports: "import React from 'react';\n",
   codeList: {
     Div: `<div className=''></div>`,
@@ -30,7 +30,8 @@ const initialState = {
       type: 'file',
       name: 'App.jsx',
       fileCode: 'hihihi',
-      fileTags: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
+      fileTags: [],
+      fileImports: '', //transfer code - line 7 into fileCode before we display new component code in the onclick
     },
   ],
   currentFile: 'App.jsx',
@@ -82,25 +83,21 @@ export const canvasSlice = createSlice({
     },
     createComponent: (state, action) => {
       console.log('createComponent fired');
-      const { text, check } = action.payload;
-      //add to tags array for code preview
-      // text = text[0].toUpperCase() + text.slice(1);
+      const { text } = action.payload;
       const newTag = `\n\t\t\t<${text} />`;
       const fileName = `${text}.jsx`;
-      // state.tags.splice(0, 0, newTag);
       state.tags.push(newTag);
       state.customComponents.push(text);
-      // add to component array for canvas
-      // state.components.splice(0, 0, text);
       state.components.push(text);
       state.imports += `import ${text} from '${text}.jsx';\n`
-      state.files.push({ type: 'file', name: fileName });
+      state.files.push({ 
+        type: 'file', 
+        name: fileName,
+        fileCode: '',
+        fileTags: [],
+        fileImports: "import React from 'react';\n",
+      });
       console.log('fileState:', [...state.files]);
-    },
-    addCustom: (state) => {
-      // console.log('addCustom fired');
-      // state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
-      // state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
     renderComponentCode: (state, action) => {
       console.log('renderComponentCode fired');

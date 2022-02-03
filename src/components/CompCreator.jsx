@@ -12,17 +12,15 @@ const CompCreator = () => {
   function onClick(e) {
     e.preventDefault();
     const input = document.getElementById('create-react-component-input-field');
-    const check = document.getElementById('root-checkbox');
     const text = input.value[0].toUpperCase() + input.value.slice(1);
     console.log('customComponents:', custom);
     if (!custom.includes(text)) {
-      dispatch(createComponent({ text, check }));
+      dispatch(createComponent({ text }));
       dispatch(refreshCode());
     } else {
       alert('Component with that name already exists');
     }
-    text.value = '';
-    check.checked = false;
+    input.value = '';
   }
 
   return (
@@ -42,7 +40,7 @@ const CompCreator = () => {
           Add
         </button>
       </form>
-      <CustomComponents />
+      {/* <CustomComponents /> */}
     </div>
   );
 };
