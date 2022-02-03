@@ -43,7 +43,7 @@ const Body = () => {
       dispatch(addComponent(dragItem));
       dispatch(refreshCode());
     }
-  }
+  } 
 
   return (
     <div className='bodyContainer'>

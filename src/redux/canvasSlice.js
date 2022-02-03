@@ -28,9 +28,10 @@ const initialState = {
     {
       type: 'file',
       name: 'App.jsx',
-      fileCode: 'hihihi',
+      fileCode: 'hihihi', //transfer code - line 7 into fileCode before we display new component code in the onclick
     },
   ],
+  currentFile: 'App.jsx',
 };
 
 export const canvasSlice = createSlice({
@@ -100,17 +101,50 @@ export const canvasSlice = createSlice({
     },
     renderComponentCode: (state, action) => {
       console.log('renderComponentCode fired');
-      const { componentName } = action.payload;
-      console.log('componentName:', componentName);
+      const { currentFile, componentName } = action.payload;
+      console.log('current File:', currentFile);
+      console.log('component name:', componentName);
       state.tags = [];
 
-      state.code = `import React from 'react';\n\nconst ${componentName} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${componentName};`;
+      let storedCode = false;
+
+      for (const file of state.files) {
+        if (file['name'] === currentFile) {
+          storedCode = file['fileCode'];
+        }
+      }
+      storedCode
+        ? (state.code = storedCode)
+        : (state.code = `import React from 'react';\n\nconst ${componentName} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${componentName};`);
+    },
+    setCurrentFile: (state, action) => {
+      console.log('current file payload:', action.payload);
+      state.currentFile = action.payload;
+    },
+    saveComponentCode: (state, action) => {
+      const { currentCode, currentFile } = action.payload;
+      state.files.forEach((file) => {
+        if (file['name'] === currentFile) {
+          file['fileCode'] = currentCode;
+        }
+      });
+      // state.code = currentCode;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode, createComponent, renderComponentCode } =
-  canvasSlice.actions;
+export const {
+  addComponent,
+  deleteComponent,
+  reorderComponent,
+  clearComponents,
+  combineComponents,
+  refreshCode,
+  createComponent,
+  renderComponentCode,
+  saveComponentCode,
+  setCurrentFile,
+} = canvasSlice.actions;
 
 export default canvasSlice.reducer;

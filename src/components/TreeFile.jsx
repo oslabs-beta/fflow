@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import AiOutlineFile from 'react-icons/ai';
 import styled from 'styled-components';
 import { DiJavascript1, DiCss3Full, DiHtml5, DiReact } from 'react-icons/di';
-import { useDispatch } from 'react-redux';
-import { renderComponentCode } from '../redux/canvasSlice';
+import { useSelector, useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+import { renderComponentCode, setCurrentFile, saveComponentCode } from '../redux/canvasSlice';
 
 const StyledFile = styled.div`
   padding-left: 20px;
@@ -26,8 +27,14 @@ const TreeFile = ({ name, code }) => {
   const componentName = name.split('.')[0];
   const dispatch = useDispatch();
 
+  let currentFile = useSelector((state) => state.canvas.currentFile);
+  const currentCode = useSelector((state) => state.canvas.code);
+
   const handleClick = () => {
-    dispatch(renderComponentCode({ componentName }));
+    dispatch(saveComponentCode({ currentCode, currentFile }));
+    dispatch(setCurrentFile(name));
+    currentFile = name;
+    dispatch(renderComponentCode({ currentFile, componentName }));
     console.log('filename clicked');
   };
 
