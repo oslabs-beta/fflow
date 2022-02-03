@@ -3,6 +3,8 @@ import CodeEditor from './CodeEditor';
 import CSSCodeEditor from './CSSCodeEditor';
 import '../stylesheets/CodePreview.css';
 import * as monaco from 'monaco-editor';
+import Tree from './Tree';
+import { useSelector } from 'react-redux';
 
 const TabContainer = () => {
   const [tabState, setTabState] = useState(1);
@@ -23,27 +25,51 @@ const TabContainer = () => {
   //   });
   // });
 
+  // Tree.File = File;
+  // Tree.Folder = Folder;
+  const fileState = useSelector((state) => state.canvas.files);
+
+  const structure = [
+    {
+      type: 'folder',
+      name: 'public',
+      childrens: [
+        {
+          type: 'file',
+          name: 'index.html',
+        },
+      ],
+    },
+    {
+      type: 'folder',
+      name: 'src',
+      childrens: fileState,
+    },
+  ];
+
   return (
     <div>
       <div className='tabContainer'>
         <button className={tabState === 1 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(1)}>
           Code Preview
         </button>
-        <button className={tabState === 2 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(2)}>
+        {/* <button className={tabState === 2 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(2)}>
           Terminal
         </button>
         <button className={tabState === 3 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(3)}>
           CSS Editor
-        </button>
+        </button> */}
       </div>
       <div className='contentContainer'>
         <div className={tabState === 1 ? 'active-content' : 'content'}>
           <CodeEditor />
         </div>
-        <div id='terminal' style={{ height: '50vh', width: '100%' }} className={tabState === 2 ? 'active-content' : 'content'}></div>
+        {/* <div id='terminal' style={{ height: '50vh', width: '100%' }} className={tabState === 2 ? 'active-content' : 'content'}>
+          <Tree data={structure} />
+        </div>
         <div id='editor-container' style={{ height: '100vh', width: '100%' }} className={tabState === 3 ? 'active-content' : 'content'}>
           <CSSCodeEditor />
-        </div>
+        </div> */}
       </div>
     </div>
   );

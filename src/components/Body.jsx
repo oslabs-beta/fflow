@@ -22,8 +22,8 @@ const Body = () => {
   }
 
   function dragEnd(dragItem) {
-    console.log('dragItem is: ', dragItem);
-    console.log('components is: ', components);
+    // console.log('dragItem is: ', dragItem);
+    // console.log('components is: ', components);
     //update state with what's dragged onto canvas
     if(dragItem.source.droppableId === 'canvas'){ //if dragged from canvas
       document.getElementById(dragItem.draggableId).style.backgroundColor = 'inherit';
@@ -43,7 +43,7 @@ const Body = () => {
       dispatch(addComponent(dragItem));
       dispatch(refreshCode());
     }
-  }
+  } 
 
   return (
     <div className='bodyContainer'>

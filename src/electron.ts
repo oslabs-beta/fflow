@@ -5,22 +5,20 @@ const { app, BrowserWindow } = require('electron');
 //   dev = true
 // }
 
-
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   let win = new BrowserWindow({
     width: 1280,
     height: 720,
     show: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
     },
     title: 'fflow',
     minWidth: 850,
     minHeight: 600,
-    backgroundColor:' #121212'
+    backgroundColor: ' #121212',
   });
-
 
   // let indexPath
   // if (dev && process.argv.indexOf('--noDevServer') === -1) {
@@ -40,27 +38,27 @@ function createWindow () {
 
   // win.loadURL(indexPath)
 
-  // uncomment out to maximise app on load 
+  // uncomment out to maximise app on load
   // win.maximize();
   win.show();
   // and load the index.html of the app.
   win.loadFile('index.html');
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);
 app.whenReady().then(() => {
-  createWindow()
-})
+  createWindow();
+});
 
-// quit app when all windows are closed 
+// quit app when all windows are closed
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit()
-})
+  if (process.platform !== 'darwin') app.quit();
+});
 
 // Open a window if none are open (macOS)
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
