@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import '../stylesheets/Navigation.css';
 // import Login from './Login';
-import { useSelector } from 'react-redux';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleLeftPanel } from '../redux/navigationSlice';
 
 const Navigation = () => {
-  const [showFormModal, setShowFormModal] = useState(false);
+  // const [showFormModal, setShowFormModal] = useState(false);
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    console.log('clicked');
-    setShowFormModal(false);
-  };
-  const handleShow = () => setShowFormModal(true);
+  // const handleClose = (e) => {
+  //   e.preventDefault();
+  //   console.log('clicked');
+  //   setShowFormModal(false);
+  // };
+  // const handleShow = () => setShowFormModal(true);
 
   const codePreviewState = useSelector((state) => state.canvas.code);
 
@@ -24,12 +24,27 @@ const Navigation = () => {
     link.click();
   };
 
+  const dispatch = useDispatch();
+
+  const openFileTree = () => {
+    dispatch(toggleLeftPanel('fileTree'));
+  };
+
+  const openDnD = () => {
+    dispatch(toggleLeftPanel('DnD'));
+  };
+
   return (
     <div className='navigation-bar'>
-      <a href='#'>
+      <button onClick={openDnD}>
         <i class='fas fa-pencil-ruler'></i>
+      </button>
+      <button onClick={openFileTree}>
+        <i class='fas fa-folder-open'></i>
+      </button>
+      <a href='#'>
+        <i class='fas fa-user'></i>
       </a>
-      <a href="#"><i class="fas fa-user"></i></a>
       <a href='#'>
         <i class='fas fa-cog'></i>
       </a>
@@ -42,9 +57,9 @@ const Navigation = () => {
 
       {/* <button id='profileButton' onClick={() => setShowFormModal(true)}>
         <i class='fas fa-user'></i> */}
-        {/* {showFormModal ? <Login handleClose={handleClose} /> : null} */}
-        {/* {<Login showFormModal={showFormModal} setShowFormModal={setShowFormModal} />} */}
-        {/* {<Login showFormModal={showFormModal} handleClose={handleClose} />} */}
+      {/* {showFormModal ? <Login handleClose={handleClose} /> : null} */}
+      {/* {<Login showFormModal={showFormModal} setShowFormModal={setShowFormModal} />} */}
+      {/* {<Login showFormModal={showFormModal} handleClose={handleClose} />} */}
       {/* </button> */}
     </div>
   );
