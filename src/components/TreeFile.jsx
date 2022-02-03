@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { DiJavascript1, DiCss3Full, DiHtml5, DiReact } from 'react-icons/di';
 import { useSelector, useDispatch } from 'react-redux';
 // import { useDispatch } from 'react-redux';
-import { renderComponentCode, setCurrentFile, saveComponentCode } from '../redux/canvasSlice';
+import { renderComponentCode, setCurrentFile, saveComponentCode, refreshCode } from '../redux/canvasSlice';
 
 const StyledFile = styled.div`
   padding-left: 20px;
@@ -29,7 +29,6 @@ const TreeFile = ({ name, code }) => {
 
   let currentFile = useSelector((state) => state.canvas.currentFile);
   const currentCode = useSelector((state) => state.canvas.code);
-  const files = useSelector((state) => state.canvas.files);
 
   const handleClick = () => {
     console.log('name is: ', name);
@@ -38,6 +37,7 @@ const TreeFile = ({ name, code }) => {
     currentFile = name;
     dispatch(renderComponentCode({ currentFile, componentName }));
     console.log('filename clicked');
+    // dispatch(refreshCode());
   };
 
   return (

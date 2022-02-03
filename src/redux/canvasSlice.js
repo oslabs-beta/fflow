@@ -31,7 +31,8 @@ const initialState = {
       name: 'App.jsx',
       fileCode: 'hihihi',
       fileTags: [],
-      fileImports: '', //transfer code - line 7 into fileCode before we display new component code in the onclick
+      fileImports: '',
+      fileComponents: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
     },
   ],
   currentFile: 'App.jsx',
@@ -44,7 +45,7 @@ export const canvasSlice = createSlice({
     addComponent: (state, action) => {
       // console.log('addComponent fired');
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
-      state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
+      state.tags.splice(action.payload.destination.index, 0, ('\n\t\t\t' + state.codeList[action.payload.draggableId]));
     },
     deleteComponent: (state, action) => {
       // console.log('deleteComponent fired');
@@ -86,46 +87,42 @@ export const canvasSlice = createSlice({
       const { text } = action.payload;
       const newTag = `\n\t\t\t<${text} />`;
       const fileName = `${text}.jsx`;
-      state.tags.push(newTag);
-      state.customComponents.push(text);
-      state.components.push(text);
-      state.imports += `import ${text} from '${text}.jsx';\n`
-      state.files.push({ 
+      state.tags.push(newTag);  // add custom comp to code
+      state.customComponents.push(text);  // add to list of custom comps
+      state.components.push(text);  // add to canvas
+      state.imports += `import ${text} from '${text}.jsx';\n` // add as import
+      state.files.push({ // add to file system
         type: 'file', 
         name: fileName,
         fileCode: '',
         fileTags: [],
         fileImports: "import React from 'react';\n",
+        fileComponents: [],
       });
-      console.log('fileState:', [...state.files]);
     },
     renderComponentCode: (state, action) => {
-      console.log('renderComponentCode fired');
       const { currentFile, componentName } = action.payload;
-      console.log('current File:', currentFile);
-      console.log('component name:', componentName);
-      state.tags = [];
-
-      let storedCode = false;
-
-      for (const file of state.files) {
-        if (file['name'] === currentFile) {
-          storedCode = file['fileCode'];
+      for (const file of state.files) { //iterate thru list of files to find match
+        if (file.name === currentFile) { // if match, pull all values and update outer state
+          state.code = file.fileCode;
+          state.tags = file.fileTags;
+          state.imports = file.fileImports;
+          state.components = file.fileComponents;
         }
       }
-      storedCode
-        ? (state.code = storedCode)
-        : (state.code = `import React from 'react';\n\nconst ${componentName} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${componentName};`);
     },
     setCurrentFile: (state, action) => {
       console.log('current file payload:', action.payload);
-      state.currentFile = action.payload;
+      state.currentFile = action.payload; 
     },
     saveComponentCode: (state, action) => {
       const { currentCode, currentFile } = action.payload;
       state.files.forEach((file) => {
-        if (file['name'] === currentFile) {
-          file['fileCode'] = currentCode;
+        if (file['name'] === currentFile) { // find file in list and take snapshot of code
+          file.fileCode = currentCode;
+          file.fileTags = state.tags;
+          file.fileImports = state.imports;
+          file.fileComponents = state.components;
         }
       });
       // state.code = currentCode;
