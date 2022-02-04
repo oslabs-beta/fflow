@@ -2,6 +2,7 @@ import React from 'react';
 import DeleteCanvasItem from './DeleteCanvasItem';
 import '../stylesheets/Canvas.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { refreshCode, renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
 
 const CanvasItem = (props) => {
   const dispatch = useDispatch();
@@ -10,10 +11,11 @@ const CanvasItem = (props) => {
 
   function onClick(e){
     const name = e.target.innerText;
+    console.log('clicked: ', name);
     dispatch(saveComponentCode({ currentCode, currentFile }));
-    currentFile = name;
-    dispatch(renderComponentCode({ currentFile }));
+    dispatch(renderComponentCode({ name }));
   }
+
   return (
     <div className='container mx-auto px-2 md:px-4 my-4 md:mb-4'>
       <div

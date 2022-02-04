@@ -24,7 +24,6 @@ const FILE_ICONS = {
 
 const TreeFile = ({ name, code }) => {
   const ext = name.split('.')[1];
-  const componentName = name.split('.')[0];
   const dispatch = useDispatch();
 
   let currentFile = useSelector((state) => state.canvas.currentFile);
@@ -34,10 +33,8 @@ const TreeFile = ({ name, code }) => {
     console.log('name is: ', name);
     dispatch(saveComponentCode({ currentCode, currentFile }));
     // dispatch(setCurrentFile(name));
-    currentFile = name;
-    dispatch(renderComponentCode({ currentFile, componentName }));
+    dispatch(renderComponentCode({ name }));
     console.log('filename clicked');
-    // dispatch(refreshCode());
   };
 
   return (

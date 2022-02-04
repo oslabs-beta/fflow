@@ -112,10 +112,10 @@ export const canvasSlice = createSlice({
       });
     },
     renderComponentCode: (state, action) => {
-      const { currentFile } = action.payload;
+      const { name } = action.payload;
       for (const file of state.files) {
         //iterate thru list of files to find match
-        if (file.name === currentFile) {
+        if (file.name ===  name) {
           // if match, pull all values and update outer state
           state.code = file.fileCode;
           state.tags = file.fileTags;
