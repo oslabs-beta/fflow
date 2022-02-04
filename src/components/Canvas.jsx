@@ -6,6 +6,7 @@ import { textSpanOverlap } from 'typescript';
 import '../stylesheets/Canvas.css';
 import CanvasItem from './CanvasItem';
 import { Draggable } from 'react-beautiful-dnd'
+import { useSelector } from 'react-redux';
 
 const Canvas = (props) => {
   // function createItem(ele, ind, provided, snapshot){
@@ -36,14 +37,14 @@ const Canvas = (props) => {
   //     )
   //   }
   // }
-  
+  const fileName = useSelector(state => state.canvas.currentFile);
   return (
     <Droppable droppableId='canvas'>
       {(provided) => (
         <div className='canvas' {...provided.droppableProps} ref={provided.innerRef}>
      
           <p id='canvas-instruction'>
-            Drag & Drop <br /> HTML elements here
+            Drag & Drop<br /> HTML elements into {fileName}
           </p>
          
           {props.components.map((ele, ind) => {
