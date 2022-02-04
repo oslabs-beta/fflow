@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import AiOutlineFile from 'react-icons/ai';
+// import AiOutlineFile from 'react-icons/ai';
 import styled from 'styled-components';
 import { DiJavascript1, DiCss3Full, DiHtml5, DiReact } from 'react-icons/di';
 import { useSelector, useDispatch } from 'react-redux';
 // import { useDispatch } from 'react-redux';
-import { renderComponentCode, setCurrentFile, saveComponentCode } from '../redux/canvasSlice';
+import { renderComponentCode, setCurrentFile, saveComponentCode, refreshCode } from '../redux/canvasSlice';
 
 const StyledFile = styled.div`
   padding-left: 20px;
@@ -31,17 +31,19 @@ const TreeFile = ({ name, code }) => {
   const currentCode = useSelector((state) => state.canvas.code);
 
   const handleClick = () => {
+    console.log('name is: ', name);
     dispatch(saveComponentCode({ currentCode, currentFile }));
-    dispatch(setCurrentFile(name));
+    // dispatch(setCurrentFile(name));
     currentFile = name;
     dispatch(renderComponentCode({ currentFile, componentName }));
     console.log('filename clicked');
+    // dispatch(refreshCode());
   };
 
   return (
     <StyledFile>
       {/* render the extension or fallback to generic file icon  */}
-      {FILE_ICONS[ext] || <AiOutlineFile />}
+      {FILE_ICONS[ext]}
       <span onClick={() => handleClick()}>{name}</span>
     </StyledFile>
   );
