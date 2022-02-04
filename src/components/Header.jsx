@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { clearComponents, refreshCode } from '../redux/canvasSlice';
+import { clearProject, refreshCode } from '../redux/canvasSlice';
 import { changeTheme } from '../redux/themeSlice';
 import '../stylesheets/Header.css';
 
@@ -13,9 +13,8 @@ const Header = () => {
   };
 
   const clear = () => {
-    if (confirm('Would you like to clear canvas?')) {
-      dispatch(clearComponents());
-      // dispatch(refreshCode());
+    if (confirm('Would you like to clear your project?')) {
+      dispatch(clearProject());
     }
   };
 
@@ -29,7 +28,7 @@ const Header = () => {
         id='clear-canvas-button'
         onClick={clear}
       >
-        Clear Canvas
+        Clear Project
       </button>
 
       {/* <!-- App Theme Toggle  --> */}

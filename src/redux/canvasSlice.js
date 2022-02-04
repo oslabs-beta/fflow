@@ -29,7 +29,7 @@ const initialState = {
     {
       type: 'file',
       name: 'App.jsx',
-      fileCode: 'hihihi',
+      fileCode: '',
       fileTags: [],
       fileImports: [],
       fileComponents: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
@@ -70,11 +70,24 @@ export const canvasSlice = createSlice({
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       state.tags.splice(action.payload.destination.index, 0, tag);
     },
-    clearComponents: (state) => {
+    clearProject: (state) => {
       // console.log('clearComponents fired');
       state.components = [];
       state.tags = [];
       state.code = '';
+      state.imports = ["import React from 'react';\n"];
+      state.customComponents = [];
+      state.files = [
+        {
+          type: 'file',
+          name: 'App.jsx',
+          fileCode: '',
+          fileTags: [],
+          fileImports: [],
+          fileComponents: [], 
+        },
+      ];
+      state.currentFile = 'App.jsx';
     },
     combineComponents: (state, action) => {
       // console.log('combineComponents fired');
@@ -149,7 +162,7 @@ export const {
   addComponent,
   deleteComponent,
   reorderComponent,
-  clearComponents,
+  clearProject,
   combineComponents,
   refreshCode,
   createComponent,
