@@ -1,15 +1,33 @@
 const { app, BrowserWindow } = require('electron');
-
+const Store = require('electron-store');
+const storage = new Store();
 // let dev = false;
 // if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development') {
 //   dev = true
 // }
 
 function createWindow() {
+
+  const getWinSettings = () => {
+    const defaultBounds = [1280, 720];
+    const size = storage.get('win-size');
+
+    if (size) return size;
+    else {
+      storage.set('win-size', defaultBounds);
+      return defaultBounds;
+    }
+  };
+
+  const bounds = getWinSettings();
+
+  const saveBounds = (bounds) => {
+    storage.set('win-size', bounds);
+  };
   // Create the browser window.
   let win = new BrowserWindow({
-    width: 1280,
-    height: 720,
+    width: bounds[0],
+    height: bounds[1],
     show: false,
     webPreferences: {
       nodeIntegration: true,
@@ -43,6 +61,9 @@ function createWindow() {
   win.show();
   // and load the index.html of the app.
   win.loadFile('index.html');
+  win.on('resized', () => {
+    saveBounds(win.getSize());
+  });
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
   win.webContents.openDevTools();
