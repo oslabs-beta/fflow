@@ -1,4 +1,4 @@
-.dndContainer { 
+.dndContainer {
   display: flex;
   position: relative;
   height: 100%;
@@ -12,10 +12,26 @@
   padding: 30px auto;
 }
 
+.fileTreeContainer {
+  display: flex;
+  position: relative;
+  height: 100%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--thirdBackgroundColor);
+  overflow: hidden;
+  max-width: 270px;
+  min-width: 230px;
+  padding: 3rem auto;
+}
+
+h3 {
+  padding-bottom: 1.5rem;
+}
+
 #app-name {
   font-size: 20px;
   font-weight: 700;
   color: var(--navigation-panel-background-color);
 }
- 
- 

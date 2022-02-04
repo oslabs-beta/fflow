@@ -13,26 +13,29 @@
   color: #ffffff;
   opacity: 0.8;
 }
-.fa-cog{
+.fa-cog {
   color: #ffffff;
   opacity: 0.8;
 }
-.fa-save{
+.fa-save {
   color: #ffffff;
   opacity: 0.8;
 }
-.fa-download{
+.fa-download {
   color: #ffffff;
   opacity: 0.8;
 }
-.fa-user{
+.fa-user {
   color: #ffffff;
   opacity: 0.8;
 }
-.navigation-bar a:hover { 
+.fa-folder-open {
+  color: #ffffff;
+  opacity: 0.8;
+}
+.navigation-bar a:hover {
   background-color: #000000;
 }
-.navigation-bar button:hover { 
+.navigation-bar button:hover {
   background-color: #000000;
 }
-

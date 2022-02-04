@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Editor from '@monaco-editor/react';
 import files from './files';
-import { useSelector } from 'react-redux';
-
+import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const CodeEditor = () => {
   const [fileName, setFileName] = useState('script.js');
   const file = files[fileName];
   const theme = useSelector((state) => state.theme.currTheme);
 
+  // const currentFile = useSelector((state) => state.canvas.currentFile);
   const code = useSelector((state) => state.canvas.code);
-  
+
+  // const dispatch = useDispatch();
+
+  // const onChanged = (componentCode) => {
+  //   console.log('change', componentCode);
+  //   dispatch(saveComponentCode({ componentCode, currentFile }));
+  // };
   const onChange = (newValue) => console.log('change', newValue);
 
   return (

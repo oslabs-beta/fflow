@@ -16,14 +16,14 @@ function CSSCodeEditor() {
   // validation settings
   monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
     noSemanticValidation: true,
-    noSyntaxValidation: true
+    noSyntaxValidation: true,
   });
-  
-// compiler options
-monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
-	target: monaco.languages.typescript.ScriptTarget.ES6,
-	allowNonTsExtensions: true
-});
+
+  // compiler options
+  monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
+    target: monaco.languages.typescript.ScriptTarget.ES6,
+    allowNonTsExtensions: true,
+  });
 
   const code = useSelector((state) => state.canvas.code);
   // console.log('code is: ', code);
@@ -39,7 +39,7 @@ monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
       },
       // glyphMargin: true,
       // value: "function hello() {\n\talert('Hello world!');\n}",
-      value: code,
+      value: 'code',
       language: 'javascript',
     });
     // console.log('hold is: ', hold);
@@ -49,7 +49,6 @@ monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
       render();
     });
   }, [code]);
-
 
   return <div id='cssContainer'>{/* {cssContainer} */}</div>;
 }

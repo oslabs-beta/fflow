@@ -7,6 +7,7 @@ const storage = new Store();
 // }
 
 function createWindow() {
+
   const getWinSettings = () => {
     const defaultBounds = [1280, 720];
     const size = storage.get('win-size');
@@ -65,7 +66,7 @@ function createWindow() {
   });
   // win.loadURL('http://localhost:3000/');
   // Open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 }
 
 // app.on('ready', createWindow);

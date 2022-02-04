@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import File from './TreeFile';
+import Folder from './TreeFolder';
+
+const TreeRecursive = ({ data }) => {
+  // loop through the data
+  return data.map((item) => {
+    // if its a file render <File />
+    if (item.type === 'file') {
+      return <File name={item.name} code={item.code} />;
+    }
+    // if its a folder render <Folder />
+    if (item.type === 'folder') {
+      return (
+        <Folder name={item.name}>
+          {/* Call the <TreeRecursive /> component with the current item.childrens */}
+          <TreeRecursive data={item.childrens} />
+        </Folder>
+      );
+    }
+  });
+};
+
+export default TreeRecursive;
