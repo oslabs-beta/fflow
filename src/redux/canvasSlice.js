@@ -112,7 +112,7 @@ export const canvasSlice = createSlice({
       });
     },
     renderComponentCode: (state, action) => {
-      const { currentFile, componentName } = action.payload;
+      const { currentFile } = action.payload;
       for (const file of state.files) {
         //iterate thru list of files to find match
         if (file.name === currentFile) {
