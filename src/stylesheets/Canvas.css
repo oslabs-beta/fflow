@@ -8,13 +8,12 @@
   margin: 60px 0;
   border-radius: 8px;
   padding: 10px 30px;
-  border: 3px solid transparent;
+  border: 2.5px dashed var(--neutral-600);
   overflow-y: scroll;
 }
 
-.canvas:hover { 
-  /* border: 3px dotted var(--neutral-600); */
-  border: 3px dashed var(--navigation-panel-background-color);
+.canvas:hover {
+  border: 2.5px dashed var(--navigation-panel-background-color);
 }
 #canvas-instruction {
   color: var(--neutral-600);
@@ -22,12 +21,15 @@
   font-size: 16px;
   font-weight: 700;
 }
+
+#current-canvas-file-name {
+  color: #03dac6;
+}
+
 .flex-auto {
   border: 1px dashed var(--textColor);
   margin: 2px 0;
 }
 .flex-auto:hover {
-  border: 1px solid  var(--navigation-panel-background-color);
+  border: 1px solid var(--navigation-panel-background-color);
 }
-
-

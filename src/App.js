@@ -8,10 +8,10 @@ import '@themesberg/flowbite';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 
-const App = () => {  
-    return (
+const App = () => {
+  return (
     <div className='App'>
-      <Navigation/>
+      <Navigation />
       <Body />
     </div>
   );

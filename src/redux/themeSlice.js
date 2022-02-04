@@ -9,9 +9,7 @@ export const themeSlice = createSlice({
   initialState,
   reducers: {
     changeTheme: (state) => {
-      console.log('changeTheme fired');
-      console.log('state:', state.currTheme);
-      state.currTheme = (state.currTheme === 'vs-dark') ? 'vs-light' : 'vs-dark';
+      state.currTheme = state.currTheme === 'vs-dark' ? 'vs-light' : 'vs-dark';
     },
   },
 });

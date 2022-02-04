@@ -7,7 +7,6 @@ const storage = new Store();
 // }
 
 function createWindow() {
-
   const getWinSettings = () => {
     const defaultBounds = [1280, 720];
     const size = storage.get('win-size');
@@ -46,17 +45,6 @@ function createWindow() {
   // and load the index.html of the app.
   win.loadFile('index.html');
 
-  var splash = new BrowserWindow({
-    width: 500,
-    height: 300,
-    transparent: true,
-    frame: false,
-    alwaysOnTop: true,
-  });
-
-  splash.loadFile('./src/assets/splash.html');
-
-
   win.on('resized', () => {
     saveBounds(win.getSize());
   });
@@ -64,25 +52,23 @@ function createWindow() {
   // Open the DevTools.
   win.webContents.openDevTools();
 
-
-  win.once('ready-to-show', () => { 
-    splash.close();
+  win.once('ready-to-show', () => {
     win.show();
     win.focus();
     win.center();
-  })
-}  
+  });
+}
 
 app.whenReady().then(() => {
   createWindow();
-})
+});
 
 // quit app when all windows are closed
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
-})
+});
 
 // Open a window if none are open (macOS)
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
-})
+});

@@ -5,37 +5,11 @@
   width: 40px;
   background-color: var(--navigation-panel-background-color);
   font-size: 1.6rem;
-}
-.fas {
   padding: 1.2rem;
 }
-.fa-pencil-ruler {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-cog {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-save {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-download {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-user {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-folder-open {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.navigation-bar a:hover {
-  background-color: #000000;
-}
-.navigation-bar button:hover {
-  background-color: #000000;
-}
+
+/* the below styles will be applied to the react icons
+padding: 1.2rem
+color: #ffffff;
+opacity: 0.8
+on hover: background-color: black*/

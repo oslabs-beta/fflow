@@ -23,7 +23,8 @@
   overflow: hidden;
   max-width: 270px;
   min-width: 230px;
-  padding: 3rem auto;
+  padding: 30px auto;
+  /* padding: 3rem auto; */
 }
 
 h3 {

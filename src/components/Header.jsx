@@ -12,7 +12,7 @@ const Header = () => {
     dispatch(changeTheme());
   };
 
-  const clear = () => {
+  const clearProject = () => {
     if (confirm('Would you like to clear canvas?')) {
       dispatch(clearComponents());
       // dispatch(refreshCode());
@@ -27,7 +27,7 @@ const Header = () => {
         type='button'
         data-modal-toggle='popup-modal'
         id='clear-canvas-button'
-        onClick={clear}
+        onClick={clearProject}
       >
         Clear Canvas
       </button>

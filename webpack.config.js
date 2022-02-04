@@ -53,15 +53,19 @@ module.exports = [
             {
               loader: 'url-loader',
               options: {
-                mimetype: 'image/png'
-              }
-            }
-          ]
+                mimetype: 'image/png',
+              },
+            },
+          ],
         },
         {
           test: /\.svg$/,
-          use: 'file-loader'
-        }
+          use: 'file-loader',
+        },
+        {
+          test: /\.node$/,
+          use: ['node-loader'],
+        },
       ],
     },
     resolve: {
@@ -78,15 +82,17 @@ module.exports = [
       }),
       new MonacoWebpackPlugin(),
     ],
-    devServer: { // used for development mode beyond this point
-      'static': {
-        directory: './dist'
+    devServer: {
+      // used for development mode beyond this point
+      static: {
+        directory: './dist',
       },
-      proxy: { //
-        '/api': 'http://localhost:3000' // server is listening on port 3000. proxy acts as a bridge to connect frontend and backend of our application
+      proxy: {
+        //
+        '/api': 'http://localhost:3000', // server is listening on port 3000. proxy acts as a bridge to connect frontend and backend of our application
       },
-        compress: true,
-        port: 8080, // where frontend is served on
-      }
+      compress: true,
+      port: 8080, // where frontend is served on
+    },
   },
 ];

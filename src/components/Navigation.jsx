@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import '../stylesheets/Navigation.css';
-// import Login from './Login';
+// import ExportApp from './ExportApp';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLeftPanel } from '../redux/navigationSlice';
 
+import { FaPencilRuler, FaFolderOpen, FaDownload, FaTrash, FaRegWindowRestore } from 'react-icons/fa';
+
+// import Login from './Login';
+
 const Navigation = () => {
+  // const exportData = () => ExportApp();
+
+  const dispatch = useDispatch();
+
+  const clearProject = () => {
+    if (confirm('Would you like to start fresh?')) {
+      dispatch(clearComponents());
+      // dispatch(refreshCode());
+    }
+  };
+
   // const [showFormModal, setShowFormModal] = useState(false);
 
   // const handleClose = (e) => {
   //   e.preventDefault();
-  //   console.log('clicked');
   //   setShowFormModal(false);
   // };
   // const handleShow = () => setShowFormModal(true);
-
-  const codePreviewState = useSelector((state) => state.canvas.code);
-
-  const exportData = () => {
-    const exportCode = `data:text\;chatset=utf-8,${encodeURIComponent(codePreviewState)}`;
-    const link = document.createElement('a');
-    link.href = exportCode;
-    link.download = 'App.jsx';
-    link.click();
-  };
-
-  const dispatch = useDispatch();
 
   const openFileTree = () => {
     dispatch(toggleLeftPanel('fileTree'));
@@ -36,31 +38,11 @@ const Navigation = () => {
 
   return (
     <div className='navigation-bar'>
-      <button onClick={openDnD}>
-        <i class='fas fa-pencil-ruler'></i>
-      </button>
-      <button onClick={openFileTree}>
-        <i class='fas fa-folder-open'></i>
-      </button>
-      <a href='#'>
-        <i class='fas fa-user'></i>
-      </a>
-      <a href='#'>
-        <i class='fas fa-cog'></i>
-      </a>
-      <a href='#'>
-        <i class='fas fa-save'></i>
-      </a>
-      <button onClick={exportData}>
-        <i class='fas fa-download'></i>
-      </button>
-
-      {/* <button id='profileButton' onClick={() => setShowFormModal(true)}>
-        <i class='fas fa-user'></i> */}
-      {/* {showFormModal ? <Login handleClose={handleClose} /> : null} */}
-      {/* {<Login showFormModal={showFormModal} setShowFormModal={setShowFormModal} />} */}
-      {/* {<Login showFormModal={showFormModal} handleClose={handleClose} />} */}
-      {/* </button> */}
+      <FaPencilRuler onClick={openDnD} />
+      <FaFolderOpen onClick={openFileTree} />
+      <FaDownload />
+      <FaTrash onClick={clearProject} />
+      <FaRegWindowRestore />
     </div>
   );
 };

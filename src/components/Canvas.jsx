@@ -1,12 +1,9 @@
 import * as React from 'react';
-import { Droppable } from 'react-beautiful-dnd';
-import { DragDropContext } from 'react-beautiful-dnd';
-import { useDispatch } from 'react-redux';
-import { textSpanOverlap } from 'typescript';
+import { Droppable, DragDropContext, Draggable } from 'react-beautiful-dnd';
+import { useDispatch, useSelector } from 'react-redux';
+import { textSpanOverlap } from 'typescript'; // why or where is this being used?
 import '../stylesheets/Canvas.css';
 import CanvasItem from './CanvasItem';
-import { Draggable } from 'react-beautiful-dnd'
-import { useSelector } from 'react-redux';
 
 const Canvas = (props) => {
   // function createItem(ele, ind, provided, snapshot){
@@ -37,29 +34,25 @@ const Canvas = (props) => {
   //     )
   //   }
   // }
-  const fileName = useSelector(state => state.canvas.currentFile);
+
+  const fileName = useSelector((state) => state.canvas.currentFile);
+
   return (
     <Droppable droppableId='canvas'>
       {(provided) => (
         <div className='canvas' {...provided.droppableProps} ref={provided.innerRef}>
-     
           <p id='canvas-instruction'>
-            Drag & Drop<br /> HTML elements into {fileName}
+            Add elements into
+            <br />
+            <span id='current-canvas-file-name'>{fileName}</span>
           </p>
-         
+
           {props.components.map((ele, ind) => {
-              return (
-                // <Draggable key={ind} draggableId={ind + '-' + ele} index={ind}>
-                //   {(providedDrag, snapshotDrag) => (
-                //     createItem(ele,ind, providedDrag, snapshotDrag)
-                //   )}
-                // </Draggable>
-                <Draggable key={ind} draggableId={ind + '-' + ele} index={ind}>
-                  {(provided, snapshot) => (
-                    <CanvasItem name={ele} ind={ind} provided={provided} isDragging={snapshot.isDragging}/>
-                  )}
-                </Draggable>
-              );
+            return (
+              <Draggable key={ind} draggableId={ind + '-' + ele} index={ind}>
+                {(provided, snapshot) => <CanvasItem name={ele} ind={ind} provided={provided} isDragging={snapshot.isDragging} />}
+              </Draggable>
+            );
           })}
           {provided.placeholder}
         </div>
