@@ -4,17 +4,15 @@
   "description": "",
   "main": "src/electron.js",
   "scripts": {
-    "server": "node src/server/server.js",
     "start": "npm run build && electron ./dist/electron.js",
-    "electron": "electron src/electron.js",
     "build": "webpack --config ./webpack.config.js",
     "dev": "NODE_ENV=development webpack server --open & nodemon server/server.js",
-    "edev": "NODE_ENV=development webpack server & electron .",
     "start-app": "webpack serve --hot --mode development",
     "start-dev": "cross-env NODE_ENV=development webpack serve --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
-    "package": "npm run build",
-    "buildapp": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
-    "postpackage": "electron-packager ./ --out=./builds"
+    "prod": "cross-env NODE_ENV=production webpack --mode production --config webpack.build.config.js && electron --noDevServer .",
+    "package": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
+    "postpackage": "electron-packager ./ --out=./builds",
+    "server": "node src/server/server.js"
   },
   "keywords": [
     "app",
