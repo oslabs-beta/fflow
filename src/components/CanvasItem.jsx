@@ -2,16 +2,15 @@ import React from 'react';
 import DeleteCanvasItem from './DeleteCanvasItem';
 import '../stylesheets/Canvas.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { refreshCode, renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
+import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
 
 const CanvasItem = (props) => {
   const dispatch = useDispatch();
   let currentFile = useSelector((state) => state.canvas.currentFile);
   const currentCode = useSelector((state) => state.canvas.code);
 
-  function onClick(e){
-    const name = e.target.innerText;
-    console.log('clicked: ', name);
+  function onClick(e) {
+    const name = e.target.innerText + '.jsx';
     dispatch(saveComponentCode({ currentCode, currentFile }));
     dispatch(renderComponentCode({ name }));
   }
@@ -19,7 +18,8 @@ const CanvasItem = (props) => {
   return (
     <div className='container mx-auto px-2 md:px-4 my-4 md:mb-4'>
       <div
-        id='canvas-item' className='flex-auto items-center justify-around p-2 md:p-4 shadow-md rounded-lg relative'
+        id='canvas-item'
+        className='flex-auto items-center justify-around p-2 md:p-4 shadow-md rounded-lg relative'
         ref={props.provided.innerRef}
         {...props.provided.draggableProps}
         {...props.provided.dragHandleProps}
@@ -39,4 +39,3 @@ const CanvasItem = (props) => {
 };
 
 export default CanvasItem;
-

@@ -55,7 +55,7 @@ export const canvasSlice = createSlice({
         //if custom component, remove from customComp array, files array, and imports
         for (let i = 0; i < state.customComponents.length; i++) {
           const curr = state.customComponents[i];
-          if(curr === action.payload.name){
+          if (curr === action.payload.name) {
             state.customComponents.splice(i, 1);
             state.files.splice(i + 1, 1);
             state.imports.splice(i + 1, 1);
@@ -115,7 +115,7 @@ export const canvasSlice = createSlice({
       const { name } = action.payload;
       for (const file of state.files) {
         //iterate thru list of files to find match
-        if (file.name ===  name) {
+        if (file.name === name) {
           // if match, pull all values and update outer state
           state.code = file.fileCode;
           state.tags = file.fileTags;
@@ -132,7 +132,7 @@ export const canvasSlice = createSlice({
     saveComponentCode: (state, action) => {
       const { currentCode, currentFile } = action.payload;
       state.files.forEach((file) => {
-        if (file['name'] === currentFile) {
+        if (file.name === currentFile) {
           // find file in list and take snapshot of code
           file.fileCode = currentCode;
           file.fileTags = state.tags;
@@ -140,7 +140,6 @@ export const canvasSlice = createSlice({
           file.fileComponents = state.components;
         }
       });
-      // state.code = currentCode;
     },
   },
 });
