@@ -12,17 +12,19 @@ const CompCreator = () => {
   function onClick(e) {
     e.preventDefault();
     const input = document.getElementById('create-react-component-input-field');
-    const check = document.getElementById('root-checkbox');
-    const text = input.value[0].toUpperCase() + input.value.slice(1);
-    console.log('customComponents:', custom);
-    if (!custom.includes(text)) {
-      dispatch(createComponent({ text, check }));
-      dispatch(refreshCode());
-    } else {
-      alert('Component with that name already exists');
+    if (input.value.length < 1) alert('Please enter a name first');
+    else{
+      const text = input.value[0].toUpperCase() + input.value.slice(1);
+      console.log('input:', input);
+      console.log('text: ', text);
+      if (!custom.includes(text)) {
+        dispatch(createComponent({ text }));
+        dispatch(refreshCode());
+      } else {
+        alert('Component with that name already exists');
+      }
+      input.value = '';
     }
-    text.value = '';
-    check.checked = false;
   }
 
   return (
@@ -32,10 +34,10 @@ const CompCreator = () => {
         <div id='create-react-component-inputs'>
           <input id='create-react-component-input-field' placeholder='Component Name'></input>
 
-          <span id='create-react-component-root-check'>
+          {/* <span id='create-react-component-root-check'>
             <label name='root-check'>Root</label>
             <input id='root-checkbox' type='checkbox' name='root-check'></input>
-          </span>
+          </span> */}
         </div>
 
         <button id='create-react-component-button' type='submit' onClick={(e) => onClick(e)}>
