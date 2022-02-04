@@ -11,6 +11,7 @@ const DeleteCanvasItem = (props) => {
       viewBox="0 0 20 20"
       onClick={(e) => {
         e.preventDefault();
+        console.log('delete item is: ', props);
         dispatch(deleteComponent(props));
         dispatch(refreshCode());
       }}

@@ -12,15 +12,19 @@ const CompCreator = () => {
   function onClick(e) {
     e.preventDefault();
     const input = document.getElementById('create-react-component-input-field');
-    const text = input.value[0].toUpperCase() + input.value.slice(1);
-    console.log('customComponents:', custom);
-    if (!custom.includes(text)) {
-      dispatch(createComponent({ text }));
-      dispatch(refreshCode());
-    } else {
-      alert('Component with that name already exists');
+    if (input.value.length < 1) alert('Please enter a name first');
+    else{
+      const text = input.value[0].toUpperCase() + input.value.slice(1);
+      console.log('input:', input);
+      console.log('text: ', text);
+      if (!custom.includes(text)) {
+        dispatch(createComponent({ text }));
+        dispatch(refreshCode());
+      } else {
+        alert('Component with that name already exists');
+      }
+      input.value = '';
     }
-    input.value = '';
   }
 
   return (
@@ -40,7 +44,7 @@ const CompCreator = () => {
           Add
         </button>
       </form>
-      {/* <CustomComponents /> */}
+      <CustomComponents />
     </div>
   );
 };

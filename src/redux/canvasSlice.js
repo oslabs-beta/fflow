@@ -5,7 +5,7 @@ const initialState = {
   code: '',
   tags: [],
   customComponents: [],
-  imports: "import React from 'react';\n",
+  imports: ["import React from 'react';\n"],
   codeList: {
     Div: `<div className=''></div>`,
     Paragraph: `<p className=''></p>`,
@@ -31,7 +31,7 @@ const initialState = {
       name: 'App.jsx',
       fileCode: 'hihihi',
       fileTags: [],
-      fileImports: '',
+      fileImports: [],
       fileComponents: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
     },
   ],
@@ -52,6 +52,15 @@ export const canvasSlice = createSlice({
       if (confirm(`Delete this component?\n${action.payload.name + ' in position ' + action.payload.index}`)) {
         state.components.splice(action.payload.index, 1);
         state.tags.splice(action.payload.index, 1);
+        //if custom component, remove from customComp array, files array, and imports
+        for (let i = 0; i < state.customComponents.length; i++) {
+          const curr = state.customComponents[i];
+          if(curr === action.payload.name){
+            state.customComponents.splice(i, 1);
+            state.files.splice(i + 1, 1);
+            state.imports.splice(i + 1, 1);
+          }
+        }
       }
     },
     reorderComponent: (state, action) => {
@@ -81,7 +90,7 @@ export const canvasSlice = createSlice({
     },
     refreshCode: (state) => {
       const name = state.currentFile.split('.')[0];
-      state.code = `${state.imports}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
+      state.code = `${state.imports.join('')}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
     },
     createComponent: (state, action) => {
       console.log('createComponent fired');
@@ -91,14 +100,14 @@ export const canvasSlice = createSlice({
       state.tags.push(newTag); // add custom comp to code
       state.customComponents.push(text); // add to list of custom comps
       state.components.push(text); // add to canvas
-      state.imports += `import ${text} from './${text}.jsx';\n`; // add as import
+      state.imports.push(`import ${text} from './${text}.jsx';\n`); // add as import
       state.files.push({
         // add to file system
         type: 'file',
         name: fileName,
         fileCode: `import React from 'react';\n\nconst ${text} = () => {\n\treturn (\n\t\t<div>\n\t\t</div>\n\t)\n}\nexport default ${text};`,
         fileTags: [],
-        fileImports: "import React from 'react';\n",
+        fileImports: ["import React from 'react';\n"],
         fileComponents: [],
       });
     },
