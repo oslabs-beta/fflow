@@ -33,7 +33,7 @@ const TreeFile = ({ name, code }) => {
   const handleClick = () => {
     console.log('name is: ', name);
     dispatch(saveComponentCode({ currentCode, currentFile }));
-    dispatch(setCurrentFile(name));
+    // dispatch(setCurrentFile(name));
     currentFile = name;
     dispatch(renderComponentCode({ currentFile, componentName }));
     console.log('filename clicked');
