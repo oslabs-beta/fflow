@@ -44,7 +44,7 @@ const CompCreator = () => {
           Add
         </button>
       </form>
-      <CustomComponents />
+      {/* <CustomComponents /> */}
     </div>
   );
 };
