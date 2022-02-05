@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { saveState } from '../localStorage'
 
 const initialState = {
   components: [],
@@ -142,6 +143,13 @@ export const canvasSlice = createSlice({
       });
       // state.code = currentCode;
     },
+    saveCurrentState: (state) => {
+      console.log('save fired')
+      saveState(state)
+    },
+    loadPrevState: ( state, action ) => {
+      state = action.payload
+    }
   },
 });
 
@@ -157,6 +165,8 @@ export const {
   renderComponentCode,
   saveComponentCode,
   setCurrentFile,
+  saveCurrentState,
+  loadPrevState
 } = canvasSlice.actions;
 
 export default canvasSlice.reducer;

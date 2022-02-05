@@ -3,6 +3,7 @@ import '../stylesheets/Navigation.css';
 // import Login from './Login';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLeftPanel } from '../redux/navigationSlice';
+import { saveCurrentState } from '../redux/canvasSlice'
 
 const Navigation = () => {
   // const [showFormModal, setShowFormModal] = useState(false);
@@ -15,6 +16,7 @@ const Navigation = () => {
   // const handleShow = () => setShowFormModal(true);
 
   const codePreviewState = useSelector((state) => state.canvas.code);
+  const currentState = useSelector((state) => state.canvas.state)
 
   const exportData = () => {
     const exportCode = `data:text\;chatset=utf-8,${encodeURIComponent(codePreviewState)}`;
@@ -34,6 +36,10 @@ const Navigation = () => {
     dispatch(toggleLeftPanel('DnD'));
   };
 
+  const handleSave = () => {
+    dispatch(saveCurrentState())
+  }
+
   return (
     <div className='navigation-bar'>
       <button onClick={openDnD}>
@@ -48,9 +54,9 @@ const Navigation = () => {
       <a href='#'>
         <i class='fas fa-cog'></i>
       </a>
-      <a href='#'>
+      <button onClick={handleSave}>
         <i class='fas fa-save'></i>
-      </a>
+      </button>
       <button onClick={exportData}>
         <i class='fas fa-download'></i>
       </button>
