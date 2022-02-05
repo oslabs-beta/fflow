@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { clearComponents, refreshCode } from '../redux/canvasSlice';
 import { changeTheme } from '../redux/themeSlice';
 import '../stylesheets/Header.css';
+import { IconContext } from 'react-icons';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -35,8 +37,18 @@ const Header = () => {
       {/* <!-- App Theme Toggle  --> */}
       <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
       <label for='checkbox' className='label'>
-        {/* <i className="fas fa-moon"></i>
-        <i className="fas fa-sun"></i> */}
+        <IconContext.Provider value={{ color: '#FFD523', size: '12px' }}>
+          <div>
+            <FaSun />
+          </div>
+        </IconContext.Provider>
+
+        <IconContext.Provider value={{ color: 'var(--lightBlueBackgroundColor)', size: '12px' }}>
+          <div>
+            <FaMoon />
+          </div>
+        </IconContext.Provider>
+
         <div className='ball'></div>
       </label>
     </div>

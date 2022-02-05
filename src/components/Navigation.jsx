@@ -3,7 +3,7 @@ import '../stylesheets/Navigation.css';
 // import ExportApp from './ExportApp';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLeftPanel } from '../redux/navigationSlice';
-
+import { IconContext } from 'react-icons';
 import { FaPencilRuler, FaFolderOpen, FaDownload, FaTrash, FaRegWindowRestore } from 'react-icons/fa';
 
 // import Login from './Login';
@@ -38,11 +38,15 @@ const Navigation = () => {
 
   return (
     <div className='navigation-bar'>
-      <FaPencilRuler onClick={openDnD} />
-      <FaFolderOpen onClick={openFileTree} />
-      <FaDownload />
-      <FaTrash onClick={clearProject} />
-      <FaRegWindowRestore />
+      <IconContext.Provider value={{ color: '#ffffff', opacity: '0.8', padding: '1.2rem', className: 'nav-icons' }}>
+        <div>
+          <FaPencilRuler onClick={openDnD} />
+          <FaFolderOpen onClick={openFileTree} />
+          <FaDownload onClick={() => console.log(`Export Button Clicked`)} />
+          <FaTrash onClick={clearProject} />
+          <FaRegWindowRestore />
+        </div>
+      </IconContext.Provider>
     </div>
   );
 };

@@ -8,8 +8,9 @@
   background-color: var(--thirdBackgroundColor);
   overflow: hidden;
   max-width: 270px;
-  min-width: 230px;
+  min-width: 220px;
   padding: 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .fileTreeContainer {

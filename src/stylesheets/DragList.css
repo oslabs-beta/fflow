@@ -5,8 +5,9 @@
   width: 180px;
   /* height: 350px; */
   height: 450px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   border-radius: 5px;
+  border: 0.5px solid var(--navigation-panel-background-color);
   align-self: center;
   padding-top: 10px;
 }
