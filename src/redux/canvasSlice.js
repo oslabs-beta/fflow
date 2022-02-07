@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { saveState } from '../localStorage'
 
 const initialState = {
   components: [],
@@ -56,7 +55,7 @@ export const canvasSlice = createSlice({
         //if custom component, remove from customComp array, files array, and imports
         for (let i = 0; i < state.customComponents.length; i++) {
           const curr = state.customComponents[i];
-          if(curr === action.payload.name){
+          if (curr === action.payload.name) {
             state.customComponents.splice(i, 1);
             state.files.splice(i + 1, 1);
             state.imports.splice(i + 1, 1);
@@ -143,13 +142,17 @@ export const canvasSlice = createSlice({
       });
       // state.code = currentCode;
     },
-    saveCurrentState: (state) => {
-      console.log('save fired')
-      saveState(state)
+    loadPrevState: (state, action) => {
+      const newState = action.payload;
+      state.components = newState.components;
+      state.code = newState.code;
+      state.tags = newState.tags;
+      state.customComponents = newState.customComponents;
+      state.imports = newState.imports;
+      state.codeList = newState.codeList;
+      state.files = newState.files;
+      state.currentFile = newState.currentFile;
     },
-    loadPrevState: ( state, action ) => {
-      state = action.payload
-    }
   },
 });
 
@@ -165,8 +168,7 @@ export const {
   renderComponentCode,
   saveComponentCode,
   setCurrentFile,
-  saveCurrentState,
-  loadPrevState
+  loadPrevState,
 } = canvasSlice.actions;
 
 export default canvasSlice.reducer;

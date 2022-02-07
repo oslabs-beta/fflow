@@ -3,7 +3,7 @@ import '../stylesheets/Navigation.css';
 // import Login from './Login';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLeftPanel } from '../redux/navigationSlice';
-import { saveCurrentState } from '../redux/canvasSlice'
+import { saveState } from '../localStorage';
 
 const Navigation = () => {
   // const [showFormModal, setShowFormModal] = useState(false);
@@ -16,7 +16,7 @@ const Navigation = () => {
   // const handleShow = () => setShowFormModal(true);
 
   const codePreviewState = useSelector((state) => state.canvas.code);
-  const currentState = useSelector((state) => state.canvas.state)
+  const currState = useSelector((state) => state.canvas);
 
   const exportData = () => {
     const exportCode = `data:text\;chatset=utf-8,${encodeURIComponent(codePreviewState)}`;
@@ -37,8 +37,9 @@ const Navigation = () => {
   };
 
   const handleSave = () => {
-    dispatch(saveCurrentState())
-  }
+    saveState(currState);
+    alert('Current project saved');
+  };
 
   return (
     <div className='navigation-bar'>
