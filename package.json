@@ -48,12 +48,9 @@
     "bootstrap": "^5.1.3",
     "downloads-folder": "^3.0.1",
     "electron-store": "^8.0.1",
-<<<<<<< HEAD
     "fs-extra": "^10.0.0",
-=======
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
->>>>>>> dev
     "jscodeshift": "^0.13.1",
     "monaco-editor-electron": "^1.0.6",
     "monaco-editor-webpack-plugin": "^7.0.1",
