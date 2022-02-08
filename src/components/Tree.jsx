@@ -7,7 +7,9 @@ const StyledTree = styled.div`
 `;
 
 const Tree = ({ data, children }) => {
+  console.log(children, 'children');
   const isImparative = data && !children;
+  console.log('isImparative', isImparative);
 
   return <StyledTree>{isImparative ? <TreeRecursive data={data} /> : children}</StyledTree>;
 };
