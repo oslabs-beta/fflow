@@ -6,20 +6,20 @@
   margin: 10px 1.5em 10px 0;
 }
 
-.checkbox { 
+.checkbox {
   opacity: 0;
   position: absolute;
 }
 
 .label {
-  width: 45px;
+  width: 40px;
   height: 20px;
-  background-color: #454C52;
+  background-color: #454c52;
   display: flex;
   border-radius: 50px;
   align-items: center;
   justify-content: space-between;
-  padding: 3px;
+  padding: 2px;
   position: relative;
   transform: scale(1.5);
 }
@@ -27,27 +27,15 @@
 .ball {
   border-radius: 50%;
   transition: transform 0.2s linear;
-  left: 2px; 
-  right: 2px;
+  left: 1px;
+  right: 1px;
   background-color: white;
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
 }
 
 /*  target the element after the label*/
 .checkbox:checked + .label .ball {
-  transform: translateX(25px);
-}
-
-.fa-moon {
-  color: var(--lightBlueBackgroundColor);
-  height: 1.4px;
-  margin-top: -9px;
-}
-
-.fa-sun {
-  color: #FFD523;
-  height: 1.4px;
-  margin-top: -9px;
+  transform: translateX(23px);
 }

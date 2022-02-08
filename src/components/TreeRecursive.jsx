@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import File from './TreeFile';
 import Folder from './TreeFolder';
 

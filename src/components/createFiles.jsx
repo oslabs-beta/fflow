@@ -1,0 +1,1 @@
+// Creates all component files (but not the full application files) and places them in a "components" directory

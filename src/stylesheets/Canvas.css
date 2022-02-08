@@ -1,6 +1,7 @@
 .canvas {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   flex: 1 1 30%;
   background-color: var(--thirdBackgroundColor);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -8,26 +9,32 @@
   margin: 60px 0;
   border-radius: 8px;
   padding: 10px 30px;
-  border: 3px solid transparent;
-  overflow-y: scroll;
+  border: 2.5px dashed var(--neutral-600);
+  overflow-y: overlay;
 }
 
-.canvas:hover { 
-  /* border: 3px dotted var(--neutral-600); */
-  border: 3px dashed var(--navigation-panel-background-color);
+.canvas:hover {
+  border: 2.5px dashed var(--navigation-panel-background-color);
+  cursor: move;
 }
 #canvas-instruction {
   color: var(--neutral-600);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
+
+#current-canvas-file-name {
+  color: var(--canvas-file-name-color);
+}
+
 .flex-auto {
   border: 1px dashed var(--textColor);
-  margin: 2px 0;
+  text-align: center;
 }
 .flex-auto:hover {
-  border: 1px solid  var(--navigation-panel-background-color);
+  border: 1px solid var(--navigation-panel-background-color);
 }
-
-
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
