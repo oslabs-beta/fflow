@@ -14,7 +14,6 @@ const Navigation = () => {
 
   // const show = (e) => dispatch(modalToggle(true));
   const snapshot = useSelector((state) => state.canvas);
-  const handleSnap = () => {};
 
   // functions to toggle between DnD and fileTree
   const openDnD = () => {
@@ -22,6 +21,7 @@ const Navigation = () => {
     console.log('snapshot: ', snapshot);
     dispatch(toggleLeftPanel('DnD'));
   };
+
   const openFileTree = () => {
     console.log('clicked tree');
     console.log('snapshot: ', snapshot);
@@ -45,10 +45,7 @@ const Navigation = () => {
       </span>
       <span className='nav-icons'>
         <FaDownload
-          onClick={(e) => {
-            exportApp();
-            // show(e);
-          }}
+          onClick={() => exportApp(snapshot)}
         />
       </span>
       {/* <FaDownload onClick={(e) => show(e)} /> */}
