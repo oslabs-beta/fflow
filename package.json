@@ -12,10 +12,8 @@
     "electron",
     "open",
     "open-source",
-    "postcss",
     "react",
     "reactjs",
-    "source",
     "webpack"
   ],
   "engines": {
