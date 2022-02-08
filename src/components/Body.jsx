@@ -15,7 +15,7 @@ const Body = () => {
   const components = useSelector((state) => state.canvas.components);
 
   function dragStart(dragItem) {
-    // console.log(dragItem);
+    
     if (dragItem.source.droppableId === 'canvas') {
       document.getElementById(dragItem.draggableId).style.backgroundColor = 'lightblue';
     }

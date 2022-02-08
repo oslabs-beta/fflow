@@ -3,8 +3,7 @@ import Navigation from './Navigation';
 import Body from './Body';
 import '../stylesheets/App.css';
 
-
-function App() {
+const App = () => {
   return (
     <div className='App'>
       <Navigation/>
