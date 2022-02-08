@@ -1,11 +1,9 @@
-import * as React from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import styled from 'styled-components';
-import TreeFiles from './TreeFile';
 import TreeRecursive from './TreeRecursive';
 
 const StyledTree = styled.div`
-  line-height: 1.5;
+  line-height: 1.6;
 `;
 
 const Tree = ({ data, children }) => {

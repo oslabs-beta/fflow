@@ -15,7 +15,7 @@
   display: flex;
   outline: none;
   margin: 0.3rem 0;
-  background: var(--tag-inputs-backgroundColor);
+  background: var(--backgroundColor);
   border-radius: 5px;
   width: 10rem;
   font-size: 14px;

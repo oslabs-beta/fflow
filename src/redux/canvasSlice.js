@@ -28,14 +28,14 @@ const initialState = {
   files: [
     {
       type: 'file',
-      name: 'App.jsx',
-      fileCode: 'hihihi',
+      name: 'App.js',
+      fileCode: '',
       fileTags: [],
       fileImports: [],
       fileComponents: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
     },
   ],
-  currentFile: 'App.jsx',
+  currentFile: 'App.js',
 };
 
 export const canvasSlice = createSlice({
@@ -70,11 +70,23 @@ export const canvasSlice = createSlice({
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       state.tags.splice(action.payload.destination.index, 0, tag);
     },
-    clearComponents: (state) => {
-      // console.log('clearComponents fired');
+    clearProject: (state) => {
       state.components = [];
       state.tags = [];
       state.code = '';
+      state.imports = ["import React from 'react';\n"];
+      state.customComponents = [];
+      state.files = [
+        {
+          type: 'file',
+          name: 'App.js',
+          fileCode: '',
+          fileTags: [],
+          fileImports: [],
+          fileComponents: [],
+        },
+      ];
+      state.currentFile = 'App.js';
     },
     combineComponents: (state, action) => {
       // console.log('combineComponents fired');
@@ -112,10 +124,10 @@ export const canvasSlice = createSlice({
       });
     },
     renderComponentCode: (state, action) => {
-      const { currentFile, componentName } = action.payload;
+      const { name } = action.payload;
       for (const file of state.files) {
         //iterate thru list of files to find match
-        if (file.name === currentFile) {
+        if (file.name === name) {
           // if match, pull all values and update outer state
           state.code = file.fileCode;
           state.tags = file.fileTags;
@@ -129,18 +141,17 @@ export const canvasSlice = createSlice({
       console.log('current file payload:', action.payload);
       state.currentFile = action.payload;
     },
-    saveComponentCode: (state, action) => {
-      const { currentCode, currentFile } = action.payload;
+    saveComponentCode: (state) => {
+      // const { currentCode, currentFile } = action.payload;
       state.files.forEach((file) => {
-        if (file['name'] === currentFile) {
+        if (file.name === state.currentFile) {
           // find file in list and take snapshot of code
-          file.fileCode = currentCode;
+          file.fileCode = state.code;
           file.fileTags = state.tags;
           file.fileImports = state.imports;
           file.fileComponents = state.components;
         }
       });
-      // state.code = currentCode;
     },
     loadPrevState: (state, action) => {
       const newState = action.payload;
@@ -161,7 +172,7 @@ export const {
   addComponent,
   deleteComponent,
   reorderComponent,
-  clearComponents,
+  clearProject,
   combineComponents,
   refreshCode,
   createComponent,
