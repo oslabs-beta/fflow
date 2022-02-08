@@ -154,7 +154,3 @@ body {
   transition: all 0.2s ease-in;
   box-sizing: border-box;
 }
-
-.theme-button-toggle {
-  background-color: var(--orange-400);
-}

@@ -138,7 +138,7 @@ Open the file 'dist/index.html' in your browser
 
 ## Credits
 
-Made with [fflow.io](https://fflow.io/)`;
+Made with [fflow.io](https://fflow.dev/)`;
 
   const templateGitIgnore = `.cache/
 coverage/
@@ -224,7 +224,7 @@ module.exports = config;`;
 }`;
 
   const path = df();
-  const name = 'Exported_Project';
+  const name = 'Exported_Project_' + Math.floor(Math.random() * 100).toString();
 
   //iterate through files array, create file for each, fill with its code key
 
@@ -244,5 +244,5 @@ module.exports = config;`;
   fse.outputFile(path + `/${name}/README.md`, templateReadMe);
   fse.outputFile(path + `/${name}/webpack.config.js`, templateWebpack);
   fse.outputFile(path + `/${name}/.babelrc`, templateBabel);
-  alert('Files downloaded to download folder');
+  alert('App downloaded to your downloads folder');
 }
