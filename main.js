@@ -1,11 +1,14 @@
 'use strict';
-
 // Import parts of electron to use
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const Store = require('electron-store');
-const storage = new Store();
+const os = require('os');
 const path = require('path');
 const url = require('url');
+const pty = require('node-pty');
+
+// Determines the type of shell needed for the terminal based on the user's platform
+const shell = os.platform === 'win32' ? 'powershell.exe' : 'bash';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -18,8 +21,11 @@ if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development'
   dev = true;
 }
 
+const storage = new Store();
+
 function createWindow() {
   const getWinSettings = () => {
+    //Gets and stores the previous window's size upon close and restores them
     const defaultBounds = [1280, 768];
     const size = storage.get('win-size');
 
@@ -31,7 +37,6 @@ function createWindow() {
   };
 
   const bounds = getWinSettings();
-
   const saveBounds = (bounds) => {
     storage.set('win-size', bounds);
   };
@@ -77,6 +82,25 @@ function createWindow() {
 
   mainWindow.loadURL(indexPath);
 
+  // For the Terminal
+  const ptyProcess = pty.spawn(shell, [], {
+    name: 'xterm-color',
+    cols: 80,
+    rows: 80,
+    cwd: process.env.HOME,
+    env: process.env,
+  });
+
+  // We send incoming data to the Terminal
+  ptyProcess.on('data', (data) => {
+    app.webContents.send('terminal.sentData', data);
+  });
+
+  // in the main process, when data is received in the terminal,
+  // main process will write and add to ptyProcess
+  ipcMain.on('terminal.toTerm', (event, data) => {
+    ptyProcess.write(data);
+  });
 
   var splash = new BrowserWindow({
     width: 500,

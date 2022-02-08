@@ -50,12 +50,7 @@ const Navigation = () => {
         <FaSave onClick={handleSave} />
       </span>
       <span className='nav-icons'>
-        <FaDownload
-          onClick={(e) => {
-            exportApp();
-            // show(e);
-          }}
-        />
+        <FaDownload onClick={exportApp(snapshot)} />
       </span>
       <span className='nav-icons'>
         <FaTrash onClick={clear} />
