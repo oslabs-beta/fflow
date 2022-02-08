@@ -5,37 +5,16 @@
   width: 40px;
   background-color: var(--navigation-panel-background-color);
   font-size: 1.6rem;
+  padding-top: 1rem;
 }
-.fas {
-  padding: 1.2rem;
-}
-.fa-pencil-ruler {
+
+.nav-icons {
+  padding: 0.8rem;
   color: #ffffff;
-  opacity: 0.8;
+  opacity: 0.9;
 }
-.fa-cog {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-save {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-download {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-user {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.fa-folder-open {
-  color: #ffffff;
-  opacity: 0.8;
-}
-.navigation-bar a:hover {
-  background-color: #000000;
-}
-.navigation-bar button:hover {
-  background-color: #000000;
+
+.nav-icons:hover {
+  color: black;
+  cursor: pointer;
 }

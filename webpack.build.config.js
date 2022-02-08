@@ -1,11 +1,7 @@
-// node: {
-//   fs: 'empty'
-// }
-
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { spawn } = require('child_process');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const APP_DIR = path.resolve(__dirname, './src');
 const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
@@ -18,26 +14,21 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        // include: APP_DIR,
-        exclude: /node_modules/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'postcss-loader' }],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
         include: defaultInclude,
       },
       {
-        test: /\.(jsx|js)$/,
-        exclude: /node_modules/,
+        test: /\.jsx?$/,
         use: [{ loader: 'babel-loader', options: { presets: ['@babel/preset-env', '@babel/preset-react'] } }],
         include: defaultInclude,
       },
       {
         test: /\.(jpe?g|png|gif)$/,
-        exclude: /node_modules/,
         use: [{ loader: 'file-loader?name=img/[name]__[hash:base64:5].[ext]' }],
         include: defaultInclude,
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        exclude: /node_modules/,
         use: [{ loader: 'file-loader?name=font/[name]__[hash:base64:5].[ext]' }],
         include: defaultInclude,
       },
@@ -54,30 +45,28 @@ module.exports = {
   },
   target: 'electron-renderer',
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'fflow',
-      // template: 'public/index.html'
+    new HtmlWebpackPlugin({ title: 'fflow' }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: 'bundle.css',
+      chunkFilename: '[id].css',
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    new MonacoWebpackPlugin(),
+    // new MinifyPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  devtool: 'cheap-source-map',
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    stats: {
-      colors: true,
-      chunks: false,
-      children: false,
-    },
-    before() {
-      spawn('electron', ['.'], { shell: true, env: process.env, stdio: 'inherit' })
-        .on('close', (code) => process.exit(0))
-        .on('error', (spawnError) => console.error(spawnError));
-    },
+  stats: {
+    colors: true,
+    children: false,
+    chunks: false,
+    modules: false,
+  },
+  optimization: {
+    minimize: true,
   },
 };

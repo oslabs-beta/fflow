@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createComponent, refreshCode } from '../redux/canvasSlice';
 import '../stylesheets/CompCreator.css';
-import CustomComponents from './CustomComponents';
+// import CustomComponents from './CustomComponents';
 
 const CompCreator = () => {
   const dispatch = useDispatch();
@@ -12,19 +12,17 @@ const CompCreator = () => {
   function onClick(e) {
     e.preventDefault();
     const input = document.getElementById('create-react-component-input-field');
-    if (input.value.length < 1) alert('Please enter a name first');
-    else{
-      const text = input.value[0].toUpperCase() + input.value.slice(1);
-      console.log('input:', input);
-      console.log('text: ', text);
-      if (!custom.includes(text)) {
-        dispatch(createComponent({ text }));
-        dispatch(refreshCode());
-      } else {
-        alert('Component with that name already exists');
-      }
-      input.value = '';
+    const check = document.getElementById('root-checkbox');
+    const text = input.value[0].toUpperCase() + input.value.slice(1);
+    console.log(custom);
+    if (!custom.includes(text)) {
+      dispatch(createComponent({ text, check }));
+      dispatch(refreshCode());
+    } else {
+      alert('Component with that name already exists');
     }
+    text.value = '';
+    check.checked = false; // should this be here?
   }
 
   return (
@@ -44,7 +42,7 @@ const CompCreator = () => {
           Add
         </button>
       </form>
-      <CustomComponents />
+      {/* <CustomComponents /> */}
     </div>
   );
 };

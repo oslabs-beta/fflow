@@ -1,56 +1,57 @@
-import React, { useEffect } from 'react';
-import * as monaco from 'monaco-editor';
-import '../stylesheets/CodePreview.css';
+import React from 'react';
+import Editor from '@monaco-editor/react';
 import { useSelector } from 'react-redux';
 
-function CSSCodeEditor() {
-  // const [editorValue, setEditorValue] = useState(`// Give your project some styling here\n`);
-
+const CSSCodeEditor = () => {
   const theme = useSelector((state) => state.theme.currTheme);
+  const onChange = (newValue) => console.log('change', newValue);
 
-  // const cssContainer = document.createElement('div');
-  // cssContainer.id = 'cssContainer';
+  const cssCode = `html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  body { 
+    margin: 0;
+    padding-top: 20%;
+    overflow: hidden;
+    background-color: #272727;
+    font-family: "Helvetica Neue";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  p {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .default-spans {
+    color: #4338ca;
+  }`;
 
-  // monaco.editor.create(document.getElementById('editor-container')
-
-  // validation settings
-  monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
-    noSemanticValidation: true,
-    noSyntaxValidation: true,
-  });
-
-  // compiler options
-  monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
-    target: monaco.languages.typescript.ScriptTarget.ES6,
-    allowNonTsExtensions: true,
-  });
-
-  const code = useSelector((state) => state.canvas.code);
-  // console.log('code is: ', code);
-  let hold;
-
-  useEffect(() => {
-    hold = monaco.editor.create(document.getElementById('cssContainer'), {
-      wordWrap: 'on',
-      scrollBeyondLastLine: false,
-      automaticLayout: true,
-      minimap: {
-        enabled: false,
-      },
-      // glyphMargin: true,
-      // value: "function hello() {\n\talert('Hello world!');\n}",
-      value: 'code',
-      language: 'javascript',
-    });
-    // console.log('hold is: ', hold);
-    // console.log('code in useEffect: ', code);
-    hold.getModel().onDidChangeContent((event) => {
-      console.log('getModel ran');
-      render();
-    });
-  }, [code]);
-
-  return <div id='cssContainer'>{/* {cssContainer} */}</div>;
-}
+  return (
+    <div id='css-code-editor'>
+      <Editor
+        height='100vh'
+        theme={theme}
+        defaultLanguage='css'
+        defaultValue={cssCode}
+        onChange={onChange}
+        options={{
+          minimap: {
+            enabled: false,
+          },
+          fontSize: 15,
+          cursorStyle: 'line',
+          wordWrap: 'on',
+        }}
+      />
+    </div>
+  );
+};
 
 export default CSSCodeEditor;
