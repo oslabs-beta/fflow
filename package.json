@@ -31,6 +31,9 @@
     "path": false,
     "os": false
   },
+  "jest": {
+    "testPathIgnorePatterns": ["/builds"]
+  },
   "main": "main.js",
   "scripts": {
     "prod": "cross-env NODE_ENV=production webpack --mode production --config webpack.build.config.js && electron --noDevServer .",
@@ -38,7 +41,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
     "package": "npm run build",
     "postpackage": "electron-packager ./ --out=./builds",
-    "test": "jest --verbose"
+    "test": "jest --verbose --env=jsdom"
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.17",
