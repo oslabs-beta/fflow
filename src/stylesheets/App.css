@@ -80,8 +80,10 @@ body {
   --navigation-panel-textColor: #ffffff;
   --tab-bottom-borderColor: #5b5a5f;
   --drag-items-hover-background-color: var(--purple-200);
-  --file-tree-folder-color: #ffffff; 
+  --file-tree-folder-color: #ffffff;
   --canvas-file-name-color: #61dbfb;
+  --javascript-icon-color: #f7df1e;
+  --javascript-icon-background-color: transparent;
 }
 .theme-light {
   --backgroundColor: #eeeeee;
@@ -97,6 +99,8 @@ body {
   --drag-items-hover-background-color: var(--lightBlueBackgroundColor);
   --file-tree-folder-color: var(--orange-500);
   --canvas-file-name-color: #4338ca;
+  --javascript-icon-color: black;
+  --javascript-icon-background-color: #f7df1e;
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */

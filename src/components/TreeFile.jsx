@@ -17,7 +17,7 @@ const StyledFile = styled.div`
 
 const FILE_ICONS = {
   js: (
-    <span className='nested-files' style={{ color: '#f7df1e' }}>
+    <span className='nested-files' style={{ backgroundColor: 'var(--javascript-icon-background-color)', color: 'var(--javascript-icon-color' }}>
       <DiJavascript1 />
     </span>
   ),
@@ -54,7 +54,7 @@ const TreeFile = ({ name, code }) => {
   };
 
   return (
-    <StyledFile>
+    <StyledFile className='nested-files'>
       {/* render the extension or fallback to generic file icon  */}
       {FILE_ICONS[ext]}
       <span onClick={() => handleClick()}>{name}</span>

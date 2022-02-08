@@ -224,7 +224,8 @@ module.exports = config;`;
   const name = 'Exported_Project';
 
   //iterate through files array, create file for each, fill with its code key
-  // const files = snapshot.files;
+
+  const files = snapshot.files;
   files.forEach((ele) => {
     fse.outputFile(path + `/${name}/src/${ele.name}`, ele.fileCode);
   });

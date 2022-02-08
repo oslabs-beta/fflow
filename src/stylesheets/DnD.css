@@ -47,6 +47,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  height: 40%;
 }
 
 .file-tree-heading {
@@ -64,7 +65,7 @@ h3 {
 }
 
 .nested-files:hover {
-  background-color: var(--neutral-700);
+  background-color: var(--neutral-800);
 }
 
 h2 {

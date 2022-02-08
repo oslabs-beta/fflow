@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../stylesheets/DnD.css';
 import CompCreator from './compCreator';
-import TagCreator from './TagCreator';
+// import TagCreator from './TagCreator';
 import DragList from './DragList';
 import CustomComponents from './CustomComponents';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,7 +15,7 @@ const DnD = () => {
   const structure = [
     {
       type: 'folder',
-      name: 'public',
+      name: 'dist',
       childrens: [
         {
           type: 'file',

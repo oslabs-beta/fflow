@@ -7,7 +7,7 @@
 #create-react-component-header {
   font-size: 16px;
   color: var(--textColor);
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 #create-react-component-inputs {
   display: flex;

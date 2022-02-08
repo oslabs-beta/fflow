@@ -27,6 +27,7 @@ const Collapsible = styled.div`
 `;
 
 const TreeFolder = ({ name, children }) => {
+  // sets default view of filetree to be expanded 
   const [isOpen, setIsOpen] = useState(true);
 
   const handleToggle = (e) => {
