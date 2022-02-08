@@ -1,98 +1,117 @@
-* { box-sizing: border-box; }
-
-html {
-  height: 100%;
-  overflow: hidden;
+* {
+  box-sizing: border-box;
 }
-body { 
+
+html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
   margin: 0;
   overflow: hidden;
 }
 :root {
-  --backgroundColor: #121212; 
+  --backgroundColor: #121212;
   --secondaryBackgroundColor: #272727;
   --thirdBackgroundColor: var(--neutral-50);
   --textColor: #ffffff;
   --textColorInverse: #000000;
 
-  --lightBlueBackgroundColor: #D0F0FD;
+  --lightBlueBackgroundColor: #d0f0fd;
   --darkBlueBackgroundColor: #100635;
 
   /* Shades of Green */
-  --green-500: #03AA99;
-  --green-400: #03B9A7;
-  --green-300: #03C9B5;
-  --green-200: #03DAC6;
-  --green-100: #04ECD5;
+  --green-500: #03aa99;
+  --green-400: #03b9a7;
+  --green-300: #03c9b5;
+  --green-200: #03dac6;
+  --green-100: #04ecd5;
 
   /* Shades of purple */
   --purple-900: #390089;
-  --purple-700: #4E00BC;
-  --purple-600: #5D00DF;
-  --purple-500: #6200EE;
-  --purple-400: #832BFF;
-  --purple-300: #A565FF;
-  --purple-200: #BB8BFF;
+  --purple-700: #4e00bc;
+  --purple-600: #5d00df;
+  --purple-500: #6200ee;
+  --purple-400: #832bff;
+  --purple-300: #a565ff;
+  --purple-200: #bb8bff;
   --purple-100: #ddc5ff;
   --purple-electric-violet: #902bf5;
 
-/* Shades of orange */
---orange-500: #ffc600;
---orange-400: #FFD523;
---orange-tang: #ED7E00;
-  
-/* Shades of Grey */
---medium-grey: #656565;
---light-grey: #989898;
---dove-grey: #6c6c6c;
+  /* Shades of orange */
+  --orange-500: #ffc600;
+  --orange-400: #ffd523;
+  --orange-tang: #ed7e00;
+
+  /* Shades of Grey */
+  --medium-grey: #656565;
+  --light-grey: #989898;
+  --dove-grey: #6c6c6c;
 
   /* Neutrals Palette */
-  --neutral-50: #F8F9FA;
-  --neutral-100: #F6F7F9;
-  --neutral-200: #E5E7EA;
-  --neutral-300: #CED2D6;
-  --neutral-400: #9EA5AD;
-  --neutral-500: #7F8790;
-  --neutral-600: #676E76;
+  --neutral-50: #f8f9fa;
+  --neutral-100: #f6f7f9;
+  --neutral-200: #e5e7ea;
+  --neutral-300: #ced2d6;
+  --neutral-400: #9ea5ad;
+  --neutral-500: #7f8790;
+  --neutral-600: #676e76;
   --neutral-700: #596066;
-  --neutral-800: #454C52;
-  --neutral-900: #383F45;
-  --neutral-1000: #24292E;
+  --neutral-800: #454c52;
+  --neutral-900: #383f45;
+  --neutral-1000: #24292e;
 }
 
-  /* DEFAULT THEME IS DARK */ 
-  body { 
-    --backgroundColor: var(--secondaryBackgroundColor); 
-    --textColor: #ffffff;
-    --thirdBackgroundColor: var(--secondaryBackgroundColor);
-    --errorColor: #CF6679;
-    --navigation-panel-background-color: var(--purple-200);
-    --navigation-panel-border-color: var(--neutral-600); 
-    --navigation-panel-textColor: #ffffff;
-    --tab-bottom-borderColor: #5b5a5f;
-  }
-  .theme-light {
-    --backgroundColor:  #eeeeee;
-    --textColor: #000000;
-    --thirdBackgroundColor: var(--neutral-50);
-    --errorColor: #B00020;
-    --navigation-panel-background-color: #4338ca;
-    --navigation-panel-border-color: none; 
-    --navigation-panel-textColor: #ffffff;
-    --tag-inputs-backgroundColor: var(--neutral-200);
-    --tag-inputs-borderColor: #4338ca;
-    --tab-bottom-borderColor: var(--neutral-200);
-  }
-  
-/* THEME BASED ON USER'S OS PREFERENCE */  
+/* DEFAULT THEME IS DARK */
+body {
+  --backgroundColor: var(--secondaryBackgroundColor);
+  --textColor: #ffffff;
+  --thirdBackgroundColor: var(--secondaryBackgroundColor);
+  --errorColor: #cf6679;
+  --navigation-panel-background-color: var(--purple-200);
+  --navigation-panel-border-color: var(--neutral-600);
+  --navigation-panel-textColor: #ffffff;
+  --tab-bottom-borderColor: #5b5a5f;
+  --drag-items-hover-background-color: var(--purple-200);
+  --file-tree-folder-color: #ffffff;
+  --canvas-file-name-color: #61dbfb;
+  --javascript-icon-color: #f7df1e;
+  --javascript-icon-background-color: transparent;
+}
+.theme-light {
+  --backgroundColor: #eeeeee;
+  --textColor: #000000;
+  --thirdBackgroundColor: var(--neutral-50);
+  --errorColor: #b00020;
+  --navigation-panel-background-color: #4338ca;
+  --navigation-panel-border-color: none;
+  --navigation-panel-textColor: #ffffff;
+  --tag-inputs-backgroundColor: var(--neutral-200);
+  --tag-inputs-borderColor: #4338ca;
+  --tab-bottom-borderColor: var(--neutral-200);
+  --drag-items-hover-background-color: var(--lightBlueBackgroundColor);
+  --file-tree-folder-color: var(--orange-500);
+  --canvas-file-name-color: #4338ca;
+  --javascript-icon-color: black;
+  --javascript-icon-background-color: #f7df1e;
+}
+
+/* THEME BASED ON USER'S OS PREFERENCE */
 @media (prefers-color-scheme: dark) {
-  body { 
-    --backgroundColor: var(--secondaryBackgroundColor); 
+  body {
+    --backgroundColor: var(--secondaryBackgroundColor);
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
-    --errorColor: #CF6679;
+    --errorColor: #cf6679;
     --navigation-panel-background-color: var(--purple-200);
-    --navigation-panel-border-color: var(--neutral-600); 
+    --navigation-panel-border-color: var(--neutral-600);
     --navigation-panel-textColor: #ffffff;
     --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
@@ -100,13 +119,13 @@ body {
 }
 
 @media (prefers-color-scheme: no-preference) {
-  body { 
-    --backgroundColor: var(--secondaryBackgroundColor); 
+  body {
+    --backgroundColor: var(--secondaryBackgroundColor);
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
-    --errorColor: #CF6679;
+    --errorColor: #cf6679;
     --navigation-panel-background-color: var(--purple-200);
-    --navigation-panel-border-color: var(--neutral-600); 
+    --navigation-panel-border-color: var(--neutral-600);
     --navigation-panel-textColor: #ffffff;
     --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
@@ -114,13 +133,13 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-  body { 
-    --backgroundColor: var(--secondaryBackgroundColor); 
+  body {
+    --backgroundColor: var(--secondaryBackgroundColor);
     --textColor: #ffffff;
     --thirdBackgroundColor: var(--secondaryBackgroundColor);
-    --errorColor: #CF6679;
+    --errorColor: #cf6679;
     --navigation-panel-background-color: var(--purple-200);
-    --navigation-panel-border-color: var(--neutral-600); 
+    --navigation-panel-border-color: var(--neutral-600);
     --navigation-panel-textColor: #ffffff;
     --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
@@ -136,6 +155,6 @@ body {
   box-sizing: border-box;
 }
 
-.theme-button-toggle { 
+.theme-button-toggle {
   background-color: var(--orange-400);
 }
