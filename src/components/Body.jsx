@@ -15,23 +15,16 @@ const Body = () => {
   const components = useSelector((state) => state.canvas.components);
 
   function dragStart(dragItem) {
-    
     if (dragItem.source.droppableId === 'canvas') {
       document.getElementById(dragItem.draggableId).style.backgroundColor = 'lightblue';
     }
   }
 
   function dragEnd(dragItem) {
-    // console.log('dragItem is: ', dragItem);
-    // console.log('components is: ', components);
     //update state with what's dragged onto canvas
     if (dragItem.source.droppableId === 'canvas') {
       //if dragged from canvas
       document.getElementById(dragItem.draggableId).style.backgroundColor = 'inherit';
-      // if(dragItem.combine !== null){ //if dragged onto another draggable
-      //   dispatch(combineComponents(dragItem));
-      //   dispatch(refreshCode());
-      // }
     }
     if (!dragItem.destination) return;
     if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') {
@@ -43,13 +36,9 @@ const Body = () => {
       dispatch(reorderComponent(dragItem));
       dispatch(refreshCode());
     }
-    // else if(dragItem.source.droppableId === 'customComponents' && dragItem.destination.droppableId === 'canvas'){
-    //   dispatch(addComponent(dragItem));
-    //   dispatch(refreshCode());
-    // }
   }
 
-  const show = useSelector((state) => state.nav.showModal);
+  // const show = useSelector((state) => state.nav.showModal);
 
   return (
     <div className='bodyContainer'>

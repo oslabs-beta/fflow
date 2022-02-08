@@ -1,16 +1,25 @@
 #comp-create-box {
   display: flex;
   flex-direction: column;
-  width: 12rem;
-  padding: 0.3rem;
+  margin-bottom: 1.5rem;
+  /* width: 12rem;
+  padding: 0.3rem; */
 }
-#create-react-component-header {
+/* #create-react-component-header {
   font-size: 16px;
   color: var(--textColor);
   margin-top: 10px;
+} */
+
+.create-component-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
+
 #create-react-component-inputs {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin: 5px;
   gap: 0.5rem;
@@ -20,20 +29,25 @@
   display: flex;
   outline: none;
   margin: 0.3rem 0;
+  margin-right: 0.3rem;
   background: var(--tag-inputs-backgroundColor);
   border-radius: 5px;
-  width: 10rem;
-  padding-left: 1vh;
-  font-size: 14px;
+  width: 7rem;
+  font-size: 13px;
   outline: none;
-  opacity: 0.5;
+  height: 1.8rem;
   border: 1px solid var(--navigation-panel-background-color);
   color: var(--textColor);
 }
 
-#root-checkbox {
+::placeholder {
+  font-size: 0.8em;
+  padding-left: 5px;
+  margin: 0;
+}
+
+/* #root-checkbox {
   position: absolute;
-  /* opacity: 0;  */
   cursor: pointer;
   padding: 0;
   box-shadow: none;
@@ -52,28 +66,33 @@ input[type='checkbox']:focus {
   align-content: flex-end;
   width: 2rem;
   height: 2.2rem;
-}
+} */
 
-#create-react-component-root-check input {
+/* #create-react-component-root-check input {
   position: absolute;
   outline: none;
-}
+} */
 
 #create-react-component-button {
   margin-top: 0;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   text-transform: uppercase;
   box-shadow: none;
   font-size: 12px;
   background-color: var(--navigation-panel-background-color);
   color: white;
-  padding: 4px 20px;
-  border-radius: 7px;
+  padding: 4px 12px;
+  border-radius: 5px;
   font-weight: 500;
   border: 0px transparent none;
+  background-position: center;
+  transition: background 0.8s;
 }
 
 #create-react-component-button:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+  box-shadow: 0 0 4px #666;
+  transform: translateY(1px);
+  background-color: var(--purple-100);
+  background-size: 100%;
+  transition: background 0s;
 }

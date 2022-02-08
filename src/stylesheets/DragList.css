@@ -1,28 +1,22 @@
 #draggable-elements-container {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  /* width: 180px; */
-  /* height: 350px; */
+  flex-direction: column;
   height: 470px;
   width: 100%;
   padding: 0px 60px;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   border-radius: 5px;
-  /* border: 0.5px solid var(--navigation-panel-background-color); */
   align-self: center;
-  /* padding-top: 10px; */
   overflow-y: overlay;
 }
 .dragItems p {
-  padding: 4px 15px;
+  padding: 3px 15px;
   margin: 0;
   box-shadow: none;
   border-radius: 3px;
   font-weight: 600;
   color: var(--navigation-panel-background-color);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
   overflow: none;
   background-color: var(--thirdBackgroundColor);
   border: 1px solid var(--navigation-panel-background-color);

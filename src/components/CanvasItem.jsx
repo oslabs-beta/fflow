@@ -27,7 +27,7 @@ const CanvasItem = (props) => {
         onClick={onClick}
       >
         <div className='w-1/3 text-center max-w-7xl'>
-          <p key={props.ind}>{props.name}</p>
+          <p key={props.ind} id='canvas-item-label'>{props.name}</p>
         </div>
 
         <div className='flex justify-center items-center absolute top-0 right-0 col-span-1'>

@@ -13,6 +13,7 @@ const StyledFolder = styled.div`
     }
     color: var(--textColor);
     width: 250px;
+    font-size: 15px;
   }
 
   .folder--label:hover {
@@ -27,7 +28,7 @@ const Collapsible = styled.div`
 `;
 
 const TreeFolder = ({ name, children }) => {
-  // sets default view of filetree to be expanded 
+  // sets default view of filetree to be expanded
   const [isOpen, setIsOpen] = useState(true);
 
   const handleToggle = (e) => {
