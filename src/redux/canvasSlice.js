@@ -58,7 +58,7 @@ const initialState = {
       fileCode: '',
       fileTags: [],
       fileImports: [],
-      fileComponents: [], //transfer code - line 7 into fileCode before we display new component code in the onclick
+      fileComponents: [], 
     },
   ],
   currentFile: 'App.js',

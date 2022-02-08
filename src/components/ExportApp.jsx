@@ -25,7 +25,7 @@ import "./styles.css";
 var mountNode = document.getElementById("root");
 ReactDOM.render(<App />, mountNode);`;
 
-  const tags = snapshot.tags.map((ele) => {
+  const tags = snapshot.tags.map(ele => {
     return ele.slice(1);
   });
 

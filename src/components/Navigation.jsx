@@ -10,7 +10,6 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   const snapshot = useSelector((state) => state.canvas);
-  const handleSnap = () => {};
 
   // functions to toggle between DnD and fileTree
   const openDnD = () => {
@@ -18,6 +17,7 @@ const Navigation = () => {
     console.log('snapshot: ', snapshot);
     dispatch(toggleLeftPanel('DnD'));
   };
+
   const openFileTree = () => {
     console.log('clicked tree');
     console.log('snapshot: ', snapshot);
