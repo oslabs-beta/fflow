@@ -1,36 +1,24 @@
 import React from 'react';
 import { render, screen, fireEvent } from '../src/test-utils.js';
-import Header from '../src/components/Header';
 import '@testing-library/jest-dom/extend-expect';
+import Header from '../src/components/Header';
 
 describe('Header', () => {
-  test('renders Header component with Clear Project button', () => {
-    render(<Header />);
-    expect(screen.getByRole('button', { name: /Clear Project/i }));
+  test('renders Header component with Clear Project button with on click functionality', () => {
+    const { getByTestId } = render(<Header />);
+    const clearProjectButton = getByTestId('clear-project-button');
+    expect(clearProjectButton).toBeInTheDocument();
+    const mockFunction = jest.fn(() => true);
+    fireEvent.click(clearProjectButton);
+    expect(mockFunction()).toBe(true);
   });
 
-  test('renders Header component with light/dark mode Toggle', () => {
+  test('renders Header component with light/dark mode Toggle with on click functionality', () => {
     const { getByTestId } = render(<Header />);
-    expect(getByTestId('toggle-theme-btn')).toBeInTheDocument();
-  });
-
-  test('ClearProject button onClick functionality', () => {
-    const { getByTestId } = render(<Header />);
-
-    const mockFunc = jest.fn(() => true);
-
-    const button = getByTestId('clear-project-button');
-    fireEvent.click(button);
-    expect(mockFunc()).toBe(true);
-  });
-
-  test('light/dark mode Toggle onClick functionality', () => {
-    const { getByTestId } = render(<Header />);
-
-    const mockFunc = jest.fn(() => true);
-
-    const button = getByTestId('toggle-theme-btn');
-    fireEvent.click(button);
-    expect(mockFunc()).toBe(true);
+    const mockFunction = jest.fn(() => true);
+    const themeToggle = getByTestId('toggle-theme-btn');
+    expect(themeToggle).toBeInTheDocument();
+    fireEvent.click(themeToggle);
+    expect(mockFunction()).toBe(true);
   });
 });
