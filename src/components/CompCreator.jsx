@@ -38,7 +38,7 @@ const CompCreator = () => {
           </span> */}
         </div>
 
-        <button id='create-react-component-button' type='submit' onClick={(e) => onClick(e)}>
+        <button id='create-react-component-button' data-testid='add-button' type='submit' onClick={(e) => onClick(e)}>
           Add
         </button>
       </form>

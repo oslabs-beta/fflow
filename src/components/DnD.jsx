@@ -44,7 +44,7 @@ const DnD = () => {
     <>
       {toggleState === 'DnD' ? (
         <div className='dndContainer'>
-          <p id='app-name' onClick={showAppCodeHandleClick}>
+          <p id='app-name' data-testid="app-logo" onClick={showAppCodeHandleClick}>
             fflow.
           </p>
 

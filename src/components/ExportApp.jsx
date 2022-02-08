@@ -4,7 +4,7 @@ const fse = require('fs-extra');
 const df = require('downloads-folder');
 // const dialog = electron.remote.dialog;
 
-export default function exportApp() {
+export default function exportApp(snapshot) {
   const templateHTML = `<!DOCTYPE html>
 <html>
     <head>

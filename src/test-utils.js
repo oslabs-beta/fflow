@@ -4,8 +4,22 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import canvasReducer from './redux/canvasSlice';
+import tagReducer from './redux/tagsSlice';
+import themeReducer from './redux/themeSlice';
+import fileTreeReducer from './redux/fileTreeSlice';
+import navigationReducer from './redux/navigationSlice';
 
-function render(ui, { preloadedState, store = configureStore({ reducer: { canvas: canvasReducer }, preloadedState }), ...renderOptions } = {}) {
+function render(
+  ui,
+  {
+    preloadedState,
+    store = configureStore({
+      reducer: { canvas: canvasReducer, tags: tagReducer, theme: themeReducer, fileTree: fileTreeReducer, nav: navigationReducer },
+      preloadedState,
+    }),
+    ...renderOptions
+  } = {}
+) {
   function Wrapper({ children }) {
     return <Provider store={store}>{children}</Provider>;
   }

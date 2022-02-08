@@ -45,9 +45,9 @@ const Navigation = () => {
       </span>
       <span className='nav-icons'>
         <FaDownload
-        data-testid='export-button'
+          data-testid='export-button'
           onClick={(e) => {
-            exportApp();
+            exportApp(snapshot);
             // show(e);
           }}
         />
