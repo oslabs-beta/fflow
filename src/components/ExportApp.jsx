@@ -4,7 +4,7 @@ const fse = require('fs-extra');
 const df = require('downloads-folder');
 // const dialog = electron.remote.dialog;
 
-export default function exportApp() {
+export default function exportApp(snapshot) {
   const templateHTML = `<!DOCTYPE html>
 <html>
     <head>
@@ -25,15 +25,18 @@ import "./styles.css";
 var mountNode = document.getElementById("root");
 ReactDOM.render(<App />, mountNode);`;
 
-  const templateAppJS = `import React from 'react';
-import { hot } from 'react-hot-loader/root';
+  const tags = snapshot.tags.map((ele) => {
+    return ele.slice(1);
+  });
+
+  const templateAppJS = `${snapshot.imports}import { hot } from 'react-hot-loader/root';
 
 const App = () => {
   return (
   <div className="App">
     <h1>Hello <span className='default-spans'>there!</span></h1>
     <p>Thanks for using <span className='default-spans'>fflow</span></p>
-    <p>LOGO HERE</p>
+    <p>LOGO HERE</p>\n${tags.join('\n')}
   </div>
   )
 };
@@ -135,7 +138,7 @@ Open the file 'dist/index.html' in your browser
 
 ## Credits
 
-Made with [fflow.io](https://fflow.io/)`;
+Made with [fflow.io](https://fflow.dev/)`;
 
   const templateGitIgnore = `.cache/
 coverage/
@@ -221,23 +224,25 @@ module.exports = config;`;
 }`;
 
   const path = df();
-  const name = 'Exported_Project';
+  const name = 'Exported_Project_' + Math.floor(Math.random() * 100).toString();
 
   //iterate through files array, create file for each, fill with its code key
 
   const files = snapshot.files;
-  files.forEach((ele) => {
-    fse.outputFile(path + `/${name}/src/${ele.name}`, ele.fileCode);
-  });
+  for (let i = 1; i < files.length; i++) {
+    //start at one to skip app file which has it's own template
+    const curr = files[i];
+    fse.outputFile(path + `/${name}/src/${curr.name}`, curr.fileCode);
+  }
 
   fse.outputFile(path + `/${name}/dist/index.html`, templateHTML);
   fse.outputFile(path + `/${name}/src/index.js`, templateIndexJS);
-  // fse.outputFile(path + `/${name}/src/App.js`, templateAppJS);
+  fse.outputFile(path + `/${name}/src/App.js`, templateAppJS);
   fse.outputFile(path + `/${name}/src/styles.css`, templateCSS);
   fse.outputFile(path + `/${name}/.gitignore`, templateGitIgnore);
   fse.outputFile(path + `/${name}/package.json`, templatePackage);
   fse.outputFile(path + `/${name}/README.md`, templateReadMe);
   fse.outputFile(path + `/${name}/webpack.config.js`, templateWebpack);
   fse.outputFile(path + `/${name}/.babelrc`, templateBabel);
-  alert('Files downloaded to download folder');
+  alert('App downloaded to your downloads folder');
 }

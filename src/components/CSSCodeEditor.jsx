@@ -4,34 +4,11 @@ import { useSelector } from 'react-redux';
 
 const CSSCodeEditor = () => {
   const theme = useSelector((state) => state.theme.currTheme);
-  const onChange = (newValue) => console.log('change', newValue);
+  const cssCode = useSelector((state) => state.canvas.cssCode);
 
-  const cssCode = `html {
-    box-sizing: border-box;
-    height: 100%;
-  }
-  body { 
-    margin: 0;
-    padding-top: 20%;
-    overflow: hidden;
-    background-color: #272727;
-    font-family: "Helvetica Neue";
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-  }
-  h1 {
-    color: white;
-    font-size: 3rem;
-  }
-  p {
-    color: white;
-    font-size: 1.5rem;
-  }
-  .default-spans {
-    color: #4338ca;
-  }`;
+  const onChange = (newValue) => console.log('cssEditorCode after edits: ', newValue);
+
+  console.log('code in CSSCodeEditor: ', cssCode);
 
   return (
     <div id='css-code-editor'>

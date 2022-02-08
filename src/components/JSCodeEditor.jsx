@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Editor, { monaco, loader } from '@monaco-editor/react';
 import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const path = require('path');
 
@@ -20,11 +20,11 @@ loader.config({
   },
 });
 
-const CodeEditor = () => {
+const JSCodeEditor = () => {
   const theme = useSelector((state) => state.theme.currTheme);
   const code = useSelector((state) => state.canvas.code);
 
-  // const onChange = (newValue) => console.log('change', newValue);
+  const onChange = (newValue) => console.log('updatedValue:', newValue);
   console.log('code in JSCodeEditor: ', code);
 
   return (
@@ -34,7 +34,7 @@ const CodeEditor = () => {
         theme={theme}
         defaultLanguage='javascript'
         defaultValue='// Drag components onto canvas and see your code rendered'
-        // onChange={onChange}
+        onChange={onChange}
         value={code}
         options={{
           minimap: {
@@ -49,4 +49,4 @@ const CodeEditor = () => {
   );
 };
 
-export default CodeEditor;
+export default JSCodeEditor;

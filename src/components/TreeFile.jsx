@@ -13,6 +13,7 @@ const StyledFile = styled.div`
   },
   color: blue;
   width: 250px;
+  font-size: 15px;
 `;
 
 const FILE_ICONS = {

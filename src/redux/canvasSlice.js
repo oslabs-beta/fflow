@@ -3,6 +3,32 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   components: [],
   code: '',
+  cssCode: `html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    padding-top: 20%;
+    overflow: hidden;
+    background-color: #272727;
+    font-family: "Helvetica Neue";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  p {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .default-spans {
+    color: #4338ca;
+  }`,
   tags: [],
   customComponents: [],
   imports: ["import React from 'react';\n"],
@@ -43,12 +69,12 @@ export const canvasSlice = createSlice({
   initialState,
   reducers: {
     addComponent: (state, action) => {
-      // console.log('addComponent fired');
+      
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
       state.tags.splice(action.payload.destination.index, 0, '\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
     deleteComponent: (state, action) => {
-      // console.log('deleteComponent fired');
+      
       if (confirm(`Delete this component?\n${action.payload.name + ' in position ' + action.payload.index}`)) {
         state.components.splice(action.payload.index, 1);
         state.tags.splice(action.payload.index, 1);
@@ -64,7 +90,7 @@ export const canvasSlice = createSlice({
       }
     },
     reorderComponent: (state, action) => {
-      // console.log('reorderComponent fired');
+      
       const [item] = state.components.splice(action.payload.source.index, 1);
       state.components.splice(action.payload.destination.index, 0, item);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
