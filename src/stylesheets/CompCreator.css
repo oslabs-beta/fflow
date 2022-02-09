@@ -94,7 +94,12 @@ input[type='checkbox']:focus {
   font-weight: 500;
   border: 0px transparent none;
   background-position: center;
-  transition: background 0.8s;
+  transition: background 0.2s;
+}
+
+#create-react-component-button:hover {
+  background-color: var(--purple-300);
+  transition: 200ms;
 }
 
 #create-react-component-button:active {

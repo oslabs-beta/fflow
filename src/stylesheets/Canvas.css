@@ -13,14 +13,16 @@
   /* padding: 10px 30px; */
   padding: 0.5rem 1rem;
   /* border: 2.5px dashed var(--neutral-600); */
-  border: 0.15rem solid transparent;
+  border: 0.15rem dashed transparent;
   overflow-y: overlay;
   box-shadow: 0.3rem 0.3rem 1.5rem var(--shadow-color), -0.3rem -0.3rem 1.5rem var(--shadow-color);
+  transition: 200ms;
 }
 
 .canvas:hover {
   border: 0.15rem dashed var(--navigation-panel-background-color);
   cursor: move;
+  transition: 200ms;
 }
 
 #canvas-instruction {
@@ -36,14 +38,14 @@
 }
 
 .flex-auto {
-  /* border: 1px dashed var(--textColor); */
+  border: 1px dashed var(--textColor);
   border: 0.1rem dashed var(--textColor);
   text-align: center;
 }
 
 .flex-auto:hover {
   /* border: 1px solid var(--navigation-panel-background-color); */
-  border: 0.1rem solid var(--navigation-panel-background-color);
+  /* border: 0.1rem solid var(--navigation-panel-background-color); */
   cursor: move;
 }
 

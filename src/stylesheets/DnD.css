@@ -55,6 +55,11 @@ h3 {
   align-items: flex-start;
   width: 100%;
   height: 40%;
+  transition: 300ms;
+}
+
+.homePageFileTreeContainer div {
+  transition: 300ms;
 }
 
 .file-tree-heading {
