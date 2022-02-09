@@ -36,19 +36,24 @@ const Navigation = () => {
   return (
     <div className='navigation-bar'>
       <span className='nav-icons'>
-        <FaPencilRuler onClick={openDnD} />
+        <FaPencilRuler data-testid='dnd-button' onClick={openDnD} />
       </span>
       <span className='nav-icons'>
-        <FaFolderOpen onClick={openFileTree} />
+        <FaFolderOpen data-testid='filetree-button' onClick={openFileTree} />
       </span>
       <span className='nav-icons'>
-        <FaSave onClick={handleSave} />
+        <FaSave data-testid='save-button' onClick={handleSave} />{' '}
       </span>
       <span className='nav-icons'>
-        <FaDownload onClick={exportApp(snapshot)} />
+        <FaDownload
+          data-testid='export-button'
+          onClick={() => {
+            exportApp(snapshot);
+          }}
+        />
       </span>
       <span className='nav-icons'>
-        <FaTrash onClick={clear} />
+        <FaTrash data-testid='trash-button' onClick={clear} />
       </span>
     </div>
   );

@@ -11,7 +11,7 @@ const Tree = ({ data, children }) => {
   const isImparative = data && !children;
   console.log('isImparative', isImparative);
 
-  return <StyledTree>{isImparative ? <TreeRecursive data={data} /> : children}</StyledTree>;
+  return <StyledTree data-testid='filetree'>{isImparative ? <TreeRecursive data={data} /> : children}</StyledTree>;
 };
 
 export default Tree;

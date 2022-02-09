@@ -7,6 +7,11 @@ import { useDispatch } from 'react-redux';
 import { loadPrevState, refreshCode } from '../redux/canvasSlice';
 import { loadState } from '../localStorage';
 
+// WIP to fix monaco-editor not displaying in dev mode
+// delete window.require;
+// delete window.exports;
+// delete window.module;
+
 const App = () => {
   const dispatch = useDispatch();
 

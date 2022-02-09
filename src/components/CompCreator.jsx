@@ -34,7 +34,7 @@ const CompCreator = () => {
             <label name='root-check'>Root</label>
             <input id='root-checkbox' type='checkbox' name='root-check'></input>
           </span> */}
-          <button id='create-react-component-button' type='submit' onClick={(e) => onClick(e)}>
+          <button id='create-react-component-button' data-testid='add-button' type='submit' onClick={(e) => onClick(e)}>
             Add
           </button>
         </div>
