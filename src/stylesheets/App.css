@@ -84,7 +84,9 @@ body {
   --canvas-file-name-color: #61dbfb;
   --javascript-icon-color: #f7df1e;
   --javascript-icon-background-color: transparent;
+  --shadow-color: rgb(27, 27, 27);
 }
+
 .theme-light {
   --backgroundColor: #eeeeee;
   --textColor: #000000;
@@ -101,6 +103,7 @@ body {
   --canvas-file-name-color: #4338ca;
   --javascript-icon-color: black;
   --javascript-icon-background-color: #f7df1e;
+  --shadow-color: rgba(0, 0, 0, 0.24);
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */

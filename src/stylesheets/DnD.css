@@ -10,8 +10,7 @@
   max-width: 270px;
   min-width: 230px;
   padding: 30px auto;
-
-  box-shadow: 0.3rem 0.3rem 0.5rem rgb(27, 27, 27);
+  box-shadow: 0.3rem 0.3rem 0.5rem var(--shadow-color);
 }
 
 .fileTreeContainer {

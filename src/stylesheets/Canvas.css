@@ -11,7 +11,7 @@
   padding: 10px 30px;
   /* border: 2.5px dashed var(--neutral-600); */
   overflow-y: overlay;
-  box-shadow: 0.3rem 0.3rem 1.5rem rgb(27, 27, 27), -0.3rem -0.3rem 1.5rem rgb(27, 27, 27);
+  box-shadow: 0.3rem 0.3rem 1.5rem var(--shadow-color), -0.3rem -0.3rem 1.5rem var(--shadow-color);
 }
 
 .canvas:hover {
