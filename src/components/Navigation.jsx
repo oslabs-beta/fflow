@@ -4,7 +4,7 @@ import { toggleLeftPanel, saveComponentCode } from '../redux/navigationSlice';
 import { clearProject } from '../redux/canvasSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import exportApp from './ExportApp';
-import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash, FaRegWindowRestore } from 'react-icons/fa';
+import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash } from 'react-icons/fa';
 
 const Navigation = () => {
   const dispatch = useDispatch();
