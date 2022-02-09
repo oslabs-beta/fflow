@@ -1,7 +1,8 @@
 .bodyContainer { 
   display: flex;
   flex: 1 1;
-  gap: 30px;
+  /* gap: 30px; */
+  gap: 3rem;
   height: 100%;
 }
 
@@ -12,7 +13,8 @@
 #headerAndCodePreviewContainer {
   display: flex;
   flex-direction: column;
-  flex: 1 1 400px;
+  /* flex: 1 1 400px; */
+  flex: 1 1 20rem;
   max-width: 35%;
   height: 100%;
 }
