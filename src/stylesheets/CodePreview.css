@@ -8,6 +8,7 @@
 
 .tabContainer {
   display: flex;
+  box-shadow: -0.3rem 0rem 1rem rgb(27, 27, 27);
 }
 
 .tabs {
@@ -42,6 +43,7 @@
   position: absolute;
   height: 100vh;
   text-align: left;
+  box-shadow: -0.3rem 0rem 1rem rgb(27, 27, 27);
 }
 .content {
   width: 100%;
