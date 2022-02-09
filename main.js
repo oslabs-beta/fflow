@@ -83,18 +83,26 @@ function createWindow() {
     transparent: true,
     frame: false,
     alwaysOnTop: true,
+    center: true,
   });
 
   splash.loadFile('./src/assets/splash.html');
 
   // Don't show until we are ready and loaded
   mainWindow.once('ready-to-show', () => {
-    splash.close();
+    setTimeout(function () {
+      mainWindow.center();
+      splash.destroy();
+      // mainWindow.maximize();
+      mainWindow.show();
+      mainWindow.focus();
+    }, 3000);
+
     // uncomment out to maximise app on load
-    mainWindow.maximize();
-    mainWindow.show();
-    mainWindow.focus();
-    mainWindow.center();
+    // mainWindow.maximize();
+    // mainWindow.show();
+    // mainWindow.focus();
+    // mainWindow.center();
 
     // Open the DevTools automatically if developing
     if (dev) {

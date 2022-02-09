@@ -30,7 +30,9 @@
     "os": false
   },
   "jest": {
-    "testPathIgnorePatterns": ["/builds"],
+    "testPathIgnorePatterns": [
+      "/builds"
+    ],
     "moduleNameMapper": {
       ".(css|less|scss|sass)$": "<rootDir>/styleMock.js"
     }
@@ -72,6 +74,7 @@
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.6",
     "regenerator-runtime": "^0.13.9",
+    "rxjs": "^7.5.4",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -122,5 +125,4 @@
     "xterm": "^4.16.0",
     "xterm-addon-fit": "^0.5.0"
   }
-  
 }
