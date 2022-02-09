@@ -7,14 +7,16 @@ import { renderComponentCode, saveComponentCode, setCurrentFile } from '../redux
 const CanvasItem = (props) => {
   const dispatch = useDispatch();
   // let currentFile = useSelector((state) => state.canvas.currentFile);
-  // const currentCode = useSelector((state) => state.canvas.code);
+  const custom = useSelector((state) => state.canvas.customComponents);
 
   function onClick(e) {
     const name = e.target.innerText + '.jsx';
     // dispatch(saveComponentCode({ currentCode, currentFile }));
-    dispatch(saveComponentCode());
-    dispatch(setCurrentFile(name));
-    dispatch(renderComponentCode({ name }));
+    if (custom.includes(e.target.innerText)) {
+      dispatch(saveComponentCode());
+      dispatch(setCurrentFile(name));
+      dispatch(renderComponentCode({ name }));
+    }
   }
 
   return (
@@ -29,7 +31,9 @@ const CanvasItem = (props) => {
         onClick={onClick}
       >
         <div className='text-center max-w-7xl'>
-          <p key={props.ind} id='canvas-item-label'>{props.name}</p>
+          <p key={props.ind} id='canvas-item-label'>
+            {props.name}
+          </p>
         </div>
 
         <div className='flex justify-center items-center absolute top-0 right-0 col-span-1'>
