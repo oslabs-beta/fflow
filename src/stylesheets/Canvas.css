@@ -15,7 +15,7 @@
   /* border: 2.5px dashed var(--neutral-600); */
   border: 0.15rem dashed transparent;
   overflow-y: overlay;
-  box-shadow: 0.3rem 0.3rem 1.5rem var(--shadow-color), -0.3rem -0.3rem 1.5rem var(--shadow-color);
+  box-shadow: 0.3rem 0.3rem 0.5rem var(--shadow-color), -0.3rem -0.3rem 0.5rem var(--shadow-color);
   transition: 200ms;
 }
 

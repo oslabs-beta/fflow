@@ -28,6 +28,7 @@
   border: 0.1rem solid var(--navigation-panel-background-color);
   margin-bottom: 0.2rem;
   transition: 300ms;
+  user-select: none;
 }
 .dragItems p:hover {
   /* border-radius: 3px; */
