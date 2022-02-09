@@ -12,7 +12,7 @@ const TreeRecursive = ({ data }) => {
     // if its a folder render <Folder />
     if (item.type === 'folder') {
       return (
-        <Folder name={item.name}>
+        <Folder data-testid='folder' name={item.name}>
           {/* Call the <TreeRecursive /> component with the current item.childrens */}
           <TreeRecursive data={item.childrens} />
         </Folder>

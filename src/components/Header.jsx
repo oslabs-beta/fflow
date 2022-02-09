@@ -33,10 +33,11 @@ const Header = () => {
     <div className='headerContainer'>
       {/* <!-- Modal toggle --> */}
       <button
-        class='block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800'
+        className='block text-white bg-indigo-700 hover:bg-indigo-800 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800'
         type='button'
         data-modal-toggle='popup-modal'
         id='clear-canvas-button'
+        data-testid='clear-project-button'
         onClick={clear}
         // onClick={handleShow}
       >
@@ -44,8 +45,8 @@ const Header = () => {
       </button>
 
       {/* <!-- App Theme Toggle  --> */}
-      <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
-      <label for='checkbox' className='label'>
+      <input type='checkbox' className='checkbox' id='checkbox' data-testid='toggle-theme-btn' onChange={() => themeToggle()} />
+      <label htmlFor='checkbox' className='label'>
         <IconContext.Provider value={{ color: '#FFD523', size: '12px' }}>
           <div>
             <FaSun />

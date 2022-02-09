@@ -10,7 +10,7 @@ import '../stylesheets/App.css';
 
 const App = () => {
   return (
-    <div className='App'>
+    <div className='App' data-testid='app'>
       <Navigation />
       <Body />
     </div>
