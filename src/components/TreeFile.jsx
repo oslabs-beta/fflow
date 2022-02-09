@@ -55,7 +55,7 @@ const TreeFile = ({ name, code }) => {
   };
 
   return (
-    <StyledFile className='nested-files'>
+    <StyledFile data-testid='file' className='nested-files'>
       {/* render the extension or fallback to generic file icon  */}
       {FILE_ICONS[ext]}
       <span onClick={() => handleClick()}>{name}</span>
