@@ -26,7 +26,7 @@ const storage = new Store();
 function createWindow() {
   const getWinSettings = () => {
     //Gets and stores the previous window's size upon close and restores them
-    const defaultBounds = [1280, 768];
+    const defaultBounds = [1280, 1024];
     const size = storage.get('win-size');
 
     if (size) return size;
@@ -37,6 +37,7 @@ function createWindow() {
   };
 
   const bounds = getWinSettings();
+
   const saveBounds = (bounds) => {
     storage.set('win-size', bounds);
   };
@@ -73,12 +74,6 @@ function createWindow() {
       slashes: true,
     });
   }
-  // if (is.development) {
-  //   mainWindow.webContents.openDevTools({ mode: 'detach' });
-  //   mainWindow.loadURL('http://localhost:3000');
-  // } else {
-  //   mainWindow.loadURL(`file://${path.join(__dirname, 'dist', 'index.html')}`);
-  // }
 
   mainWindow.loadURL(indexPath);
 
@@ -117,10 +112,10 @@ function createWindow() {
   mainWindow.once('ready-to-show', () => {
     splash.close();
     // uncomment out to maximise app on load
-    mainWindow.maximize();
+    // mainWindow.maximize();
     mainWindow.show();
     mainWindow.focus();
-    mainWindow.center();
+    // mainWindow.center();
 
     // Open the DevTools automatically if developing
     if (dev) {
@@ -131,6 +126,7 @@ function createWindow() {
     }
   });
 
+  mainWindow.on('resize', () => saveBounds(mainWindow.getSize()));
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
