@@ -1,21 +1,15 @@
 import React from 'react';
 import '../stylesheets/Navigation.css';
-import { toggleLeftPanel } from '../redux/navigationSlice';
-import { saveState } from '../localStorage';
+import { toggleLeftPanel, saveComponentCode } from '../redux/navigationSlice';
 import { clearProject } from '../redux/canvasSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import exportApp from './ExportApp';
 import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash, FaRegWindowRestore } from 'react-icons/fa';
 
-// import { modalToggle } from '../redux/navigationSlice';
-
 const Navigation = () => {
-  // const exportData = () => exportApp();
   const dispatch = useDispatch();
 
-  // const show = (e) => dispatch(modalToggle(true));
   const snapshot = useSelector((state) => state.canvas);
-  const handleSnap = () => {};
 
   // functions to toggle between DnD and fileTree
   const openDnD = () => {
@@ -23,6 +17,7 @@ const Navigation = () => {
     console.log('snapshot: ', snapshot);
     dispatch(toggleLeftPanel('DnD'));
   };
+
   const openFileTree = () => {
     console.log('clicked tree');
     console.log('snapshot: ', snapshot);
@@ -54,9 +49,6 @@ const Navigation = () => {
       </span>
       <span className='nav-icons'>
         <FaTrash onClick={clear} />
-      </span>
-      <span className='nav-icons'>
-        <FaRegWindowRestore />
       </span>
     </div>
   );

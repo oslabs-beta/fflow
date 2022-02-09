@@ -13,6 +13,7 @@ const StyledFolder = styled.div`
     }
     color: var(--textColor);
     width: 250px;
+    font-size: 15px;
   }
 
   .folder--label:hover {
