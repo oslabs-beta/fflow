@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/Navigation.css';
-import { toggleLeftPanel, saveComponentCode } from '../redux/navigationSlice';
-import { clearProject } from '../redux/canvasSlice';
+import { toggleLeftPanel } from '../redux/navigationSlice';
+import { clearProject, saveComponentCode } from '../redux/canvasSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import exportApp from './ExportApp';
 import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash } from 'react-icons/fa';

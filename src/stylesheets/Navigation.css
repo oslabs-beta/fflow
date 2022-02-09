@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40px;
+  /* width: 40px; */
+  width: 2.5rem;
+  gap: 1rem;
   background-color: var(--navigation-panel-background-color);
   font-size: 1.6rem;
   padding-top: 1rem;
@@ -12,9 +14,11 @@
   padding: 0.8rem;
   color: #ffffff;
   opacity: 0.9;
+  transition: 300ms;
 }
 
 .nav-icons:hover {
   color: black;
   cursor: pointer;
+  transition: 300ms;
 }
