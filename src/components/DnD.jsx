@@ -1,7 +1,6 @@
 import * as React from 'react';
 import '../stylesheets/DnD.css';
 import CompCreator from './compCreator';
-// import TagCreator from './TagCreator';
 import DragList from './DragList';
 import CustomComponents from './CustomComponents';
 import { useSelector, useDispatch } from 'react-redux';
@@ -49,7 +48,6 @@ const DnD = () => {
           </p>
 
           <CompCreator />
-          {/* <TagCreator /> */}
           <DragList />
           <div className='homePageFileTreeContainer'>
             <h2 className='file-tree-heading'>FOLDERS</h2>

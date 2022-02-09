@@ -77,7 +77,6 @@ function createWindow() {
 
   mainWindow.loadURL(indexPath);
 
-
   var splash = new BrowserWindow({
     width: 500,
     height: 300,
@@ -92,7 +91,7 @@ function createWindow() {
   mainWindow.once('ready-to-show', () => {
     splash.close();
     // uncomment out to maximise app on load
-    // mainWindow.maximize();
+    mainWindow.maximize();
     mainWindow.show();
     mainWindow.focus();
     mainWindow.center();
