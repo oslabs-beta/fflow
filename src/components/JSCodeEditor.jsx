@@ -1,6 +1,5 @@
 import React from 'react';
 import Editor, { monaco, loader } from '@monaco-editor/react';
-import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
 import { useSelector } from 'react-redux';
 
 const path = require('path');
@@ -25,7 +24,6 @@ const JSCodeEditor = () => {
   const code = useSelector((state) => state.canvas.code);
 
   const onChange = (newValue) => console.log('updatedValue:', newValue);
-  console.log('code in JSCodeEditor: ', code);
 
   return (
     <div id='main-code-editor'>

@@ -8,8 +8,6 @@ const CSSCodeEditor = () => {
 
   const onChange = (newValue) => console.log('cssEditorCode after edits: ', newValue);
 
-  console.log('code in CSSCodeEditor: ', cssCode);
-
   return (
     <div id='css-code-editor'>
       <Editor

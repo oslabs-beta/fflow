@@ -16,7 +16,7 @@ const initialState = {
     h2Tag: 'Header 2',
     h3Tag: 'Header 3',
     tableTag: 'Table',
-    tHeadTag: 'THead'
+    tHeadTag: 'THead',
   },
 };
 
@@ -25,8 +25,5 @@ export const tagsSlice = createSlice({
   initialState,
   reducers: {},
 });
-
-// Action creators are generated for each case reducer function
-// export const {  } = tagsSlice.actions;
 
 export default tagsSlice.reducer;

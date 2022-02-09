@@ -2,7 +2,6 @@ import * as React from 'react';
 import '../stylesheets/DnD.css';
 import CompCreator from './compCreator';
 import DragList from './DragList';
-import CustomComponents from './CustomComponents';
 import { useSelector, useDispatch } from 'react-redux';
 import Tree from './Tree';
 import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
@@ -43,10 +42,9 @@ const DnD = () => {
     <>
       {toggleState === 'DnD' ? (
         <div className='dndContainer'>
-          <p id='app-name' data-testid="app-logo" onClick={showAppCodeHandleClick}>
+          <p id='app-name' data-testid='app-logo' onClick={showAppCodeHandleClick}>
             fflow.
           </p>
-
           <CompCreator />
           <DragList />
           <div className='homePageFileTreeContainer'>

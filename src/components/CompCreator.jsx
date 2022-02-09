@@ -6,7 +6,6 @@ import '../stylesheets/CompCreator.css';
 const CompCreator = () => {
   const dispatch = useDispatch();
   const custom = useSelector((state) => state.canvas.customComponents);
-  const tags = useSelector((state) => state.canvas.tags);
 
   function onClick(e) {
     e.preventDefault();
@@ -23,17 +22,9 @@ const CompCreator = () => {
 
   return (
     <div id='comp-create-box'>
-      {/* <p id='create-react-component-header'>React Component</p> */}
       <form className='create-component-form'>
         <div id='create-react-component-inputs'>
           <input id='create-react-component-input-field' placeholder='Component Name'></input>
-          {/* <label for='component' className='form-label'>
-          Create Component
-        </label> */}
-          {/* <span id='create-react-component-root-check'>
-            <label name='root-check'>Root</label>
-            <input id='root-checkbox' type='checkbox' name='root-check'></input>
-          </span> */}
           <button id='create-react-component-button' data-testid='add-button' type='submit' onClick={(e) => onClick(e)}>
             Add
           </button>

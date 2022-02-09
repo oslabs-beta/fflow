@@ -24,7 +24,6 @@
 }
 .dragItems p:hover {
   border-radius: 3px;
-  /* border: 1px solid var(--navigation-panel-background-color); */
   background-color: var(--navigation-panel-background-color);
   cursor: move;
   color: var(--thirdBackgroundColor);

@@ -58,7 +58,15 @@ const initialState = {
       fileCode: '',
       fileTags: [],
       fileImports: [],
-      fileComponents: [], 
+      fileComponents: [],
+    },
+    {
+      type: 'file',
+      name: 'styles.css',
+      fileCode: '',
+      fileTags: [],
+      fileImports: [],
+      fileComponents: [],
     },
   ],
   currentFile: 'App.js',
@@ -69,12 +77,10 @@ export const canvasSlice = createSlice({
   initialState,
   reducers: {
     addComponent: (state, action) => {
-      
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
       state.tags.splice(action.payload.destination.index, 0, '\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
     deleteComponent: (state, action) => {
-      
       if (confirm(`Delete this component?\n${action.payload.name + ' in position ' + action.payload.index}`)) {
         state.components.splice(action.payload.index, 1);
         state.tags.splice(action.payload.index, 1);
@@ -90,7 +96,6 @@ export const canvasSlice = createSlice({
       }
     },
     reorderComponent: (state, action) => {
-      
       const [item] = state.components.splice(action.payload.source.index, 1);
       state.components.splice(action.payload.destination.index, 0, item);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
@@ -115,11 +120,10 @@ export const canvasSlice = createSlice({
       state.currentFile = 'App.js';
     },
     combineComponents: (state, action) => {
-      // console.log('combineComponents fired');
       const [item] = state.components.splice(action.payload.source.index, 1);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       const index = action.payload.combine.draggableId.split('-')[0];
-      // console.log('index is: ', index);
+
       if (Array.isArray(state.components[index])) {
         state.components[index].push(item);
       } else {
@@ -131,7 +135,6 @@ export const canvasSlice = createSlice({
       state.code = `${state.imports.join('')}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
     },
     createComponent: (state, action) => {
-      console.log('createComponent fired');
       const { text } = action.payload;
       const newTag = `\n\t\t\t<${text} />`;
       const fileName = `${text}.jsx`;
@@ -164,11 +167,9 @@ export const canvasSlice = createSlice({
       }
     },
     setCurrentFile: (state, action) => {
-      console.log('current file payload:', action.payload);
       state.currentFile = action.payload;
     },
     saveComponentCode: (state) => {
-      // const { currentCode, currentFile } = action.payload;
       state.files.forEach((file) => {
         if (file.name === state.currentFile) {
           // find file in list and take snapshot of code
