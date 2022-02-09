@@ -37,7 +37,7 @@
   cursor: move;
 }
 #canvas-item-label {
-  width: 38vw;
+  width: 32vw;
 }
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2);

@@ -18,13 +18,13 @@ const App = () => {
   const checkForPrevState = async () => {
     const isPrev = await loadState();
     console.log(isPrev, 'checkForPrevState');
-    return isPrev ? isPrev : false;
+    return isPrev ? isPrev : null;
   };
 
   useEffect(() => {
     console.log('useEffect ran');
     checkForPrevState().then((res) => {
-      if (res !== false) {
+      if (res) {
         dispatch(loadPrevState(res));
         dispatch(refreshCode());
       }
