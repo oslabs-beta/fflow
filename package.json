@@ -30,7 +30,10 @@
     "os": false
   },
   "jest": {
-    "testPathIgnorePatterns": ["/builds"]
+    "testPathIgnorePatterns": ["/builds"],
+    "moduleNameMapper": {
+      ".(css|less|scss|sass)$": "<rootDir>/styleMock.js"
+    }
   },
   "main": "main.js",
   "scripts": {
@@ -118,10 +121,6 @@
     "webpack-dev-server": "^3.11.3",
     "xterm": "^4.16.0",
     "xterm-addon-fit": "^0.5.0"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      ".(css|less|scss|sass)$": "<rootDir>/styleMock.js"
-    }
   }
+  
 }
