@@ -25,11 +25,12 @@ import "./styles.css";
 var mountNode = document.getElementById("root");
 ReactDOM.render(<App />, mountNode);`;
 
-  const tags = snapshot.tags.map(ele => {
+  const appFile = snapshot.files[0];
+  const tags = appFile.fileTags.map((ele) => {
     return ele.slice(1);
   });
 
-  const templateAppJS = `${snapshot.imports}import { hot } from 'react-hot-loader/root';
+  const templateAppJS = `${appFile.fileImports.join('')}import { hot } from 'react-hot-loader/root';
 
 const App = () => {
   return (
@@ -42,33 +43,6 @@ const App = () => {
 };
 
 export default hot(App);`;
-
-  const templateCSS = `html {
-  box-sizing: border-box;
-  height: 100%;
-}
-body { 
-  margin: 0;
-  padding-top: 20%;
-  overflow: hidden;
-  background-color: #272727;
-  font-family: "Helvetica Neue";
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  height: 100%;
-}
-h1 {
-  color: white;
-  font-size: 3rem;
-}
-p {
-  color: white;
-  font-size: 1.5rem;
-}
-.default-spans {
-  color: #4338ca;
-}`;
 
   const templatePackage = `{
 "name": "exported-project",
@@ -223,7 +197,7 @@ module.exports = config;`;
   ]
 }`;
 
-  const path = df();
+  const path = df(); //module to find download folder
   const name = 'Exported_Project_' + Math.floor(Math.random() * 100).toString();
 
   //iterate through files array, create file for each, fill with its code key
@@ -235,10 +209,12 @@ module.exports = config;`;
     fse.outputFile(path + `/${name}/src/${curr.name}`, curr.fileCode);
   }
 
+  const css = snapshot.cssCode;
+
   fse.outputFile(path + `/${name}/dist/index.html`, templateHTML);
   fse.outputFile(path + `/${name}/src/index.js`, templateIndexJS);
   fse.outputFile(path + `/${name}/src/App.js`, templateAppJS);
-  fse.outputFile(path + `/${name}/src/styles.css`, templateCSS);
+  fse.outputFile(path + `/${name}/src/styles.css`, css);
   fse.outputFile(path + `/${name}/.gitignore`, templateGitIgnore);
   fse.outputFile(path + `/${name}/package.json`, templatePackage);
   fse.outputFile(path + `/${name}/README.md`, templateReadMe);

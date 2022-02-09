@@ -1612,9 +1612,9 @@
     "@babel/runtime" "^7.6.2"
 
 "@reduxjs/toolkit@^1.7.1":
-  "integrity" "sha512-wwr3//Ar8ZhM9bS58O+HCIaMlR4Y6SNHfuszz9hKnQuFIKvwaL3Kmjo6fpDKUOjo4Lv54Yi299ed8rofCJ/Vjw=="
-  "resolved" "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.7.2.tgz"
-  "version" "1.7.2"
+  "integrity" "sha512-wXwXYjBVz/ItxB7SMzEAMmEE/FBiY1ze18N+VVVX7NtVbRUrdOGKhpQMHivIJfkbJvSdLUU923a/yAagJQzY0Q=="
+  "resolved" "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.7.1.tgz"
+  "version" "1.7.1"
   dependencies:
     "immer" "^9.0.7"
     "redux" "^4.1.2"

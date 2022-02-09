@@ -6,7 +6,7 @@ import CodePreview from './CodePreview';
 import '../stylesheets/BodyContainer.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
-import { addComponent, combineComponents, refreshCode, reorderComponent } from '../redux/canvasSlice';
+import { addComponent, combineComponents, refreshCode, reorderComponent, saveComponentCode } from '../redux/canvasSlice';
 // import ExportModal from './ExportModal';
 
 const Body = () => {
@@ -36,6 +36,7 @@ const Body = () => {
       dispatch(reorderComponent(dragItem));
       dispatch(refreshCode());
     }
+    dispatch(saveComponentCode());
   }
 
   // const show = useSelector((state) => state.nav.showModal);
