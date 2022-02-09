@@ -2,16 +2,18 @@ import React from 'react';
 import DeleteCanvasItem from './DeleteCanvasItem';
 import '../stylesheets/Canvas.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
+import { renderComponentCode, saveComponentCode, setCurrentFile } from '../redux/canvasSlice';
 
 const CanvasItem = (props) => {
   const dispatch = useDispatch();
-  let currentFile = useSelector((state) => state.canvas.currentFile);
-  const currentCode = useSelector((state) => state.canvas.code);
+  // let currentFile = useSelector((state) => state.canvas.currentFile);
+  // const currentCode = useSelector((state) => state.canvas.code);
 
   function onClick(e) {
     const name = e.target.innerText + '.jsx';
-    dispatch(saveComponentCode({ currentCode, currentFile }));
+    // dispatch(saveComponentCode({ currentCode, currentFile }));
+    dispatch(saveComponentCode());
+    dispatch(setCurrentFile(name));
     dispatch(renderComponentCode({ name }));
   }
 
@@ -26,7 +28,7 @@ const CanvasItem = (props) => {
         id={props.ind + '-' + props.name}
         onClick={onClick}
       >
-        <div className='w-1/3 text-center max-w-7xl'>
+        <div className='text-center max-w-7xl'>
           <p key={props.ind} id='canvas-item-label'>{props.name}</p>
         </div>
 

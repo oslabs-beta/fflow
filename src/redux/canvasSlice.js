@@ -58,7 +58,7 @@ const initialState = {
       fileCode: '',
       fileTags: [],
       fileImports: [],
-      fileComponents: [], 
+      fileComponents: [],
     },
   ],
   currentFile: 'App.js',
@@ -69,12 +69,10 @@ export const canvasSlice = createSlice({
   initialState,
   reducers: {
     addComponent: (state, action) => {
-      
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
       state.tags.splice(action.payload.destination.index, 0, '\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
     deleteComponent: (state, action) => {
-      
       if (confirm(`Delete this component?\n${action.payload.name + ' in position ' + action.payload.index}`)) {
         state.components.splice(action.payload.index, 1);
         state.tags.splice(action.payload.index, 1);
@@ -90,7 +88,6 @@ export const canvasSlice = createSlice({
       }
     },
     reorderComponent: (state, action) => {
-      
       const [item] = state.components.splice(action.payload.source.index, 1);
       state.components.splice(action.payload.destination.index, 0, item);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
@@ -179,6 +176,12 @@ export const canvasSlice = createSlice({
         }
       });
     },
+    updateCss: (state, action) => {
+      state.cssCode = action.payload;
+    },
+    updateJs: (state, action) => {
+      state.code = action.payload;
+    },
   },
 });
 
@@ -194,6 +197,8 @@ export const {
   renderComponentCode,
   saveComponentCode,
   setCurrentFile,
+  updateCss,
+  updateJs,
 } = canvasSlice.actions;
 
 export default canvasSlice.reducer;
