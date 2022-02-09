@@ -27,7 +27,7 @@ const CompCreator = () => {
       {/* <p id='create-react-component-header'>React Component</p> */}
       <form className='create-component-form'>
         <div id='create-react-component-inputs'>
-          <input id='create-react-component-input-field' placeholder='Component Name'></input>
+          <input id='create-react-component-input-fiheld' placeholder='Component Name'></input>
           {/* <label for='component' className='form-label'>
           Create Component
         </label> */}

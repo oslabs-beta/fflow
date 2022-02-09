@@ -29,8 +29,9 @@
 #create-react-component-input-field {
   display: flex;
   outline: none;
-  margin: 0.3rem 0;
-  margin-right: 0.3rem;
+  margin: 0.3rem;
+  margin-left: 0;
+  padding-left: 0.5rem;
   background: var(--tag-inputs-backgroundColor);
   /* border-radius: 5px; */
   border-radius: 0.5rem;
@@ -47,7 +48,6 @@
 ::placeholder {
   font-size: 0.8em;
   /* padding-left: 5px; */
-  padding-left: 0.5rem;
   margin: 0;
 }
 
