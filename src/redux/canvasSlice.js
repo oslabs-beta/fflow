@@ -69,6 +69,14 @@ const initialState = {
       fileImports: [],
       fileComponents: [],
     },
+    {
+      type: 'file',
+      name: 'styles.css',
+      fileCode: '',
+      fileTags: [],
+      fileImports: [],
+      fileComponents: [],
+    },
   ],
   currentFile: 'App.js',
 };

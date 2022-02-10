@@ -42,7 +42,12 @@ const DnD = () => {
     <>
       {toggleState === 'DnD' ? (
         <div className='dndContainer'>
-          <p id='app-name' data-testid='app-logo' onClick={showAppCodeHandleClick}>
+          <p
+            // id='app-name'
+            className='bg-clip-text text-transparent mt-3.5 text-2xl font-bold bg-gradient-to-r from-violet-700 to-cyan-400'
+            data-testid='app-logo'
+            onClick={showAppCodeHandleClick}
+          >
             fflow.
           </p>
           <CompCreator />
@@ -54,7 +59,11 @@ const DnD = () => {
         </div>
       ) : (
         <div className='fileTreeContainer'>
-          <p id='app-name' onClick={showAppCodeHandleClick}>
+          <p
+            // id='app-name'
+            className='bg-clip-text text-transparent mt-3.5 text-2xl font-bold bg-gradient-to-r from-violet-700 to-cyan-400'
+            onClick={showAppCodeHandleClick}
+          >
             fflow.
           </p>
           <h2 id='file-tree-heading-page2'>FOLDERS</h2>

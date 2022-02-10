@@ -25,7 +25,6 @@ const TabContainer = () => {
         <div className={tabState === 1 ? 'active-content' : 'content'}>
           <JSCodeEditor />
         </div>
-        {/* style={{ height: '50vh', width: '10px' }} */}
         <div id='terminal-viewer' className={tabState === 2 ? 'active-content' : 'content'}>
           <TerminalView />
         </div>

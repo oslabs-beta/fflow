@@ -23,7 +23,7 @@ const FILE_ICONS = {
     </span>
   ),
   css: (
-    <span className='nested-files' style={{ color: 'var(--css-icon-color)' }}>
+    <span className='nested-files' style={{ backgroundColor: 'var(--css-icon-background-color)', color: 'var(--css-icon-color' }}>
       <DiCss3Full />
     </span>
   ),
@@ -47,10 +47,13 @@ const TreeFile = ({ name, code }) => {
   let currentFile = useSelector((state) => state.canvas.currentFile);
 
   const handleClick = () => {
-    dispatch(saveComponentCode());
+    if (ext != 'css'){
+      dispatch(saveComponentCode());
+  
+      currentFile = name;
+      dispatch(renderComponentCode({ name }));
+    }
 
-    currentFile = name;
-    dispatch(renderComponentCode({ name }));
   };
 
   return (

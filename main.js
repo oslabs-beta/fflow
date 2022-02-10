@@ -114,7 +114,7 @@ function createWindow() {
     setTimeout(function () {
       mainWindow.center();
       splash.destroy();
-       // uncomment out to maximise app on load
+
       // mainWindow.maximize();
       mainWindow.show();
       mainWindow.focus();

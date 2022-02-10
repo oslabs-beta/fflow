@@ -27,7 +27,7 @@
   padding-left: 0.5rem;
   background: var(--tag-inputs-backgroundColor);
   /* border-radius: 5px; */
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   width: 7rem;
   /* font-size: 13px; */
   font-size: 0.8rem;
@@ -55,7 +55,7 @@
   /* padding: 4px 12px; */
   padding: 0.3rem 0.8rem;
   /* border-radius: 5px; */
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   font-weight: 500;
   border: 0px transparent none;
   background-position: center;
@@ -68,7 +68,7 @@
 }
 
 #create-react-component-button:active {
-  box-shadow: 0 0 0.5rem #666;
+  box-shadow: 0 0 4px #666;
   transform: translateY(1px);
   background-color: var(--purple-100);
   background-size: 100%;
