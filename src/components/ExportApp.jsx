@@ -36,8 +36,7 @@ const App = () => {
   return (
   <div className="App">
     <h1>Hello <span className='default-spans'>there!</span></h1>
-    <p>Thanks for using <span className='default-spans'>fflow</span></p>
-    <p>LOGO HERE</p>\n${tags.join('\n')}
+    <p>Thanks for using <span className='default-spans'>fflow</span></p>\n${tags.join('\n')}
   </div>
   )
 };
@@ -56,7 +55,7 @@ export default hot(App);`;
   "clean": "rm dist/bundle.js",
   "build-dev": "webpack --mode development",
   "build-prod": "webpack --mode production",
-  "start": "webpack serve --hot --mode development"
+  "start": "webpack serve --open --hot --mode development"
 },
 "dependencies": {
   "react": "^17.0.2",

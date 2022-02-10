@@ -49,7 +49,7 @@ const DnD = () => {
             data-testid='app-logo'
             onClick={showAppCodeHandleClick}
           >
-            fflow.
+            fflow
           </p>
 
           <CompCreator />
@@ -66,7 +66,7 @@ const DnD = () => {
             className='bg-clip-text text-transparent mt-3.5 text-2xl font-bold bg-gradient-to-r from-violet-700 to-cyan-400'
             onClick={showAppCodeHandleClick}
           >
-            fflow.
+            fflow
           </p>
           <h2 id='file-tree-heading-page2'>FOLDERS</h2>
           <Tree data={structure} />

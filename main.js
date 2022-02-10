@@ -44,8 +44,10 @@ function createWindow() {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: bounds[0],
-    height: bounds[1],
+    // width: bounds[0],
+    // height: bounds[1],
+    width: 1440,
+    height: 880,
     show: false,
     webPreferences: {
       preload: path.join(__dirname, './src/electron/preload.js'),
@@ -55,6 +57,8 @@ function createWindow() {
     backgroundColor: '#121212',
     minWidth: 850,
     minHeight: 600,
+    maxWidth: 1440,
+    maxHeight: 880,
   });
 
   // and load the index.html of the app.
@@ -80,8 +84,10 @@ function createWindow() {
   // For the Terminal
   const ptyProcess = pty.spawn(shell, [], {
     name: 'xterm-color',
-    cols: 60,
-    rows: 80,
+    // cols: 60,
+    // cols: 40,
+    rows: 25,
+    cols: 70,
     cwd: process.env.HOME,
     env: process.env,
   });

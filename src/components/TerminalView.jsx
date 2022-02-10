@@ -7,13 +7,13 @@ const ipc = ipcRenderer;
 
 const terminalArgs = {
   fontSize: 15,
-  cols: 53,
-  rows: 35,
+  cols: 49,
+  rows: 38,
   fontFamily: 'monospace',
   theme: {
     background: 'black',
   },
-  cursoeStyle: 'bar',
+  cursorStyle: 'bar',
   cursorBlink: 'block',
 };
 

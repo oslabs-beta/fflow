@@ -34,16 +34,16 @@ const Navigation = () => {
   };
 
   return (
-    <div className='navigation-bar text-white bg-gradient-to-r from-violet-700 to-indigo-500'>
+    <div className='navigation-bar text-white bg-gradient-to-r from-violet-700 to-indigo-600'>
       <span className='nav-icons'>
         <FaPencilRuler data-testid='dnd-button' onClick={openDnD} />
       </span>
       <span className='nav-icons'>
         <FaFolderOpen data-testid='filetree-button' onClick={openFileTree} />
       </span>
-      <span className='nav-icons'>
+      {/* <span className='nav-icons'>
         <FaSave data-testid='save-button' onClick={handleSave} />{' '}
-      </span>
+      </span> */}
       <span className='nav-icons'>
         <FaDownload
           data-testid='export-button'

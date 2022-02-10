@@ -99,8 +99,7 @@ GIFS to be inserted here and centered aligned
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Xterm.js](https://xtermjs.org/)
 - [node-pty](https://www.npmjs.com/package/node-pty)
-- [TypeScript](https://www.typescriptlang.org/)
-- [React Modal](https://github.com/reactjs/react-modal)
+- [Jest](https://jestjs.io)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -152,7 +151,7 @@ Note there is currently an issue where the Monaco Code Editor keeps showing 'loa
 
 #### Running tests
 
-Instructions coming soon.
+Electron, React and Redux tests can be run using `npm run test`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -167,7 +166,6 @@ Below is the generated directory structure of the React and Webpack application 
 │    └── App.js
 │    └── index.js
 │    └── styles.css
-├── test                    # Automated tests (alternatively `spec` or `tests`)
 ├── webpack.config.js       # Webpack configuration
 ├── .babelrc                # Babel configuration
 ├── .gitignore              # Git ignore file
@@ -178,7 +176,7 @@ Below is the generated directory structure of the React and Webpack application 
 
 1. Using the inbuilt terminal, `cd` into the Exported Project in your `Downloads` folder
 2. In the root of the Exported Project folder, install dependencies `npm install`
-3. Start an instance
+3. Start an instance `npm run start`
 4. If `Localhost:8080` does not open automatically in your default browser, navigate to the specified port to see your running app with Hot Module Reloading and a pre-configured webpack
 
 <br />

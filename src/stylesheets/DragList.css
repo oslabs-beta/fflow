@@ -23,6 +23,7 @@
   /* color: #6366f1; */
   /* color: #4f46e5; */
   color: var(--tab-container-color);
+  border: 0.1rem solid var(--tab-container-color);
   text-transform: uppercase;
   /* font-size: 11px;  */
   font-size: 0.7rem;
@@ -39,16 +40,18 @@
   /* border: 1px solid var(--navigation-panel-background-color); */
   /* background-color: var(--navigation-panel-background-color); */
 
-  border: 1px solid var(--tab-container-color);
-  /* color: var(--thirdBackgroundColor); */
+  border: 0.1rem solid var(--tab-container-color);
+
+  background-color: var(--tab-container-color);
+  color: var(--thirdBackgroundColor);
   cursor: move;
-  /* transition: 200ms; */
+  transition: 100ms;
 }
 .dragItems p:active {
   /* border-radius: 3px; */
   border-radius: 0.3rem;
   /* border: 0.1rem solid var(--navigation-panel-background-color); */
-  background-color: var(--navigation-panel-background-color);
+  background-color: var(--tab-container-color);
   color: var(--thirdBackgroundColor);
   cursor: move;
 }

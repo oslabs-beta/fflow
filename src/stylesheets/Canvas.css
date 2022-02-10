@@ -47,14 +47,15 @@
 }
 
 .flex-auto {
-  border: 0.1rem dashed var(--textColor);
+  border: 0.1rem solid var(--textColor);
   text-align: center;
+  /* transition: 200ms; */
 }
 
 .flex-auto:hover {
-  /* border: 0.1rem solid var(--navigation-panel-background-color); */
+  border: 0.1rem solid var(--tab-container-color);
   cursor: move;
-  /* transition: 500ms; */
+  transition: 200ms;
 }
 
 ::-webkit-scrollbar-track {
