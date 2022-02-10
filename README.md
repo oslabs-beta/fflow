@@ -100,6 +100,21 @@ Visit our website here 👉 https://fflow.dev
 - [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Drag and Drop Interface
+<img src="./src/assets/dnd.gif">
+
+### Loading Screen
+<img src="./src/assets/splashDemo.gif">
+
+### Dark Mode
+<img src="./src/assets/darkMode.gif">
+
+### Create Custom Components
+<img src="./src/assets/customComps.gif">
+
+### Export Working App
+<img src="./src/assets/export.gif">
+
 ## Getting Started
 
 The following instructions are split into two sections for:
