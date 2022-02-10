@@ -1,5 +1,5 @@
 import React from 'react';
-import Editor from '@monaco-editor/react';
+import MonacoEditor from 'react-monaco-editor';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { updateCss } from '../redux/canvasSlice';
@@ -9,16 +9,16 @@ const CSSCodeEditor = () => {
   const cssCode = useSelector((state) => state.canvas.cssCode);
   const dispatch = useDispatch();
 
-  const onChange = (newValue) =>{
+  const onChange = (newValue) => {
     console.log('cssEditorCode after edits: ', newValue);
     dispatch(updateCss(newValue));
-  }
+  };
 
   console.log('code in CSSCodeEditor: ', cssCode);
 
   return (
     <div id='css-code-editor'>
-      <Editor
+      <MonacoEditor
         height='100vh'
         theme={theme}
         defaultLanguage='css'

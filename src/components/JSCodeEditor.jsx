@@ -1,25 +1,26 @@
 import React from 'react';
-import Editor, { monaco, loader } from '@monaco-editor/react';
+// import Editor, { monaco, loader } from '@monaco-editor/react';
+import MonacoEditor from 'react-monaco-editor';
 import { renderComponentCode, saveComponentCode, updateJs } from '../redux/canvasSlice';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-const path = require('path');
+// const path = require('path');
 
-function ensureFirstBackSlash(str) {
-  return str.length > 0 && str.charAt(0) !== '/' ? '/' + str : str;
-}
+// function ensureFirstBackSlash(str) {
+//   return str.length > 0 && str.charAt(0) !== '/' ? '/' + str : str;
+// }
 
-function uriFromPath(_path) {
-  const pathName = path.resolve(_path).replace(/\\/g, '/');
-  return encodeURI('file://' + ensureFirstBackSlash(pathName));
-}
+// function uriFromPath(_path) {
+//   const pathName = path.resolve(_path).replace(/\\/g, '/');
+//   return encodeURI('file://' + ensureFirstBackSlash(pathName));
+// }
 
-loader.config({
-  paths: {
-    vs: uriFromPath(path.join(__dirname, '../node_modules/monaco-editor/min/vs')),
-  },
-});
+// loader.config({
+//   paths: {
+//     vs: uriFromPath(path.join(__dirname, '../node_modules/monaco-editor/min/vs')),
+//   },
+// });
 
 const JSCodeEditor = () => {
   const theme = useSelector((state) => state.theme.currTheme);
@@ -30,13 +31,11 @@ const JSCodeEditor = () => {
     console.log('updatedValue:', newValue);
     dispatch(updateJs(newValue));
     dispatch(saveComponentCode());
-  }
-    
-  console.log('code in JSCodeEditor: ', code);
+  };
 
   return (
     <div id='main-code-editor'>
-      <Editor
+      <MonacoEditor
         height='100vh'
         theme={theme}
         defaultLanguage='javascript'
