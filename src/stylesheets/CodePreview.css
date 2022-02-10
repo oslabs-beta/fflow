@@ -1,13 +1,14 @@
 .codePreviewContainer {
   position: relative;
   background-color: var(--thirdBackgroundColor);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: -0.2rem 0rem 0.5rem var(--shadow-color);
   margin-right: 2%;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .tabContainer {
   display: flex;
+  box-shadow: -0.3rem 0rem 1rem var(--shadow-color);
 }
 
 .tabs {
@@ -15,12 +16,20 @@
   background: var(--thirdBackgroundColor);
   color: var(--neutral-600);
   cursor: pointer;
-  border-bottom: 1px solid var(--tab-bottom-borderColor);
+  border-bottom: 0.1rem solid var(--tab-bottom-borderColor);
   position: relative;
   outline: none;
-  font-size: 16px;
-  padding: 10px;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  /* padding: 10px; */
+  padding: 0.8rem;
   text-align: center;
+  transition: 300ms;
+}
+
+.tabs:hover {
+  color: var(--navigation-panel-background-color);
+  transition: 300ms;
 }
 
 .active-tab {
@@ -28,12 +37,15 @@
   cursor: pointer;
   position: relative;
   outline: none;
-  font-size: 16px;
-  padding: 10px;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  /* padding: 10px; */
+  padding: 0.8rem;
   background: var(--thirdBackgroundColor);
   border-bottom: 1px solid var(--navigation-panel-background-color);
   color: var(--navigation-panel-background-color);
   font-weight: 600;
+  transition: 300ms;
 }
 
 .contentContainer {
@@ -42,13 +54,16 @@
   position: absolute;
   height: 100vh;
   text-align: left;
+  box-shadow: -0.3rem 0rem 0.5rem var(--shadow-color);
 }
+
 .content {
   width: 100%;
   height: 100%;
   display: none;
   text-align: left;
 }
+
 .active-content {
   width: 100%;
   height: 100vh;

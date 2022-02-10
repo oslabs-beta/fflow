@@ -2,6 +2,7 @@ import React from 'react';
 import '../stylesheets/Navigation.css';
 import { toggleLeftPanel } from '../redux/navigationSlice';
 import { clearProject } from '../redux/canvasSlice';
+import { clearProject, saveComponentCode } from '../redux/canvasSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import exportApp from './ExportApp';
 import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash } from 'react-icons/fa';
@@ -23,6 +24,11 @@ const Navigation = () => {
   const clear = () => {
     if (confirm('Are you sure you want to clear project?')) dispatch(clearProject());
   };
+
+  const exportClick = () => {
+    exportApp(snapshot);
+  }
+
 
   return (
     <div className='navigation-bar'>

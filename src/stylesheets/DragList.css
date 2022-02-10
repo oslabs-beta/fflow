@@ -1,37 +1,49 @@
 #draggable-elements-container {
   display: flex;
   flex-direction: column;
-  height: 470px;
+  /* height: 470px; */
+  height: 32rem;
   width: 100%;
-  padding: 0px 60px;
-  border-radius: 5px;
+  /* padding: 0px 60px; */
+  padding: 0rem 3.75rem;
+  /* border-radius: 5px; */
+  border-radius: 0.5rem;
   align-self: center;
   overflow-y: overlay;
 }
 .dragItems p {
-  padding: 3px 15px;
+  /* padding: 3px 15px; */
+  padding: 0.3rem 1rem;
   margin: 0;
   box-shadow: none;
-  border-radius: 3px;
+  /* border-radius: 3px; */
+  border-radius: 0.3rem;
   font-weight: 600;
   color: var(--navigation-panel-background-color);
   text-transform: uppercase;
-  font-size: 11px;
+  /* font-size: 11px;  */
+  font-size: 0.7rem;
   overflow: none;
   background-color: var(--thirdBackgroundColor);
-  border: 1px solid var(--navigation-panel-background-color);
-  margin-bottom: 5px;
+  border: 0.1rem solid var(--navigation-panel-background-color);
+  margin-bottom: 0.2rem;
+  transition: 300ms;
+  user-select: none;
 }
 .dragItems p:hover {
   border-radius: 3px;
+  /* border-radius: 3px; */
+  /* border: 1px solid var(--navigation-panel-background-color); */
   background-color: var(--navigation-panel-background-color);
-  cursor: move;
   color: var(--thirdBackgroundColor);
   cursor: move;
+  transition: 300ms;
 }
 .dragItems p:active {
-  cursor: move;
-  border-radius: 3px;
-  border: 1px solid var(--navigation-panel-background-color);
+  /* border-radius: 3px; */
+  border-radius: 0.3rem;
+  /* border: 0.1rem solid var(--navigation-panel-background-color); */
+  background-color: var(--navigation-panel-background-color);
+  color: var(--thirdBackgroundColor);
   cursor: move;
 }

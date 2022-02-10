@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createComponent, refreshCode } from '../redux/canvasSlice';
+import { createComponent, refreshCode, saveComponentCode } from '../redux/canvasSlice';
 import '../stylesheets/CompCreator.css';
 
 const CompCreator = () => {
@@ -14,6 +14,7 @@ const CompCreator = () => {
     if (!custom.includes(text)) {
       dispatch(createComponent({ text }));
       dispatch(refreshCode());
+      dispatch(saveComponentCode());
     } else {
       alert('Component with that name already exists');
     }

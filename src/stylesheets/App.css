@@ -85,7 +85,9 @@ body {
   --javascript-icon-color: #f7df1e;
   --javascript-icon-background-color: transparent;
   --css-icon-color: lightblue;
+  --shadow-color: rgb(31, 31, 31);
 }
+
 .theme-light {
   --backgroundColor: #eeeeee;
   --textColor: #000000;
@@ -103,6 +105,7 @@ body {
   --javascript-icon-color: black;
   --javascript-icon-background-color: #f7df1e;
   --css-icon-color: darkblue;
+  --shadow-color: rgba(32, 32, 32, 0.24);
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */

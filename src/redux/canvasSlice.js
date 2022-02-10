@@ -59,6 +59,7 @@ const initialState = {
       fileTags: [],
       fileImports: [],
       fileComponents: [],
+
     },
     {
       type: 'file',
@@ -180,6 +181,12 @@ export const canvasSlice = createSlice({
         }
       });
     },
+    updateCss: (state, action) => {
+      state.cssCode = action.payload;
+    },
+    updateJs: (state, action) => {
+      state.code = action.payload;
+    },
   },
 });
 
@@ -195,6 +202,8 @@ export const {
   renderComponentCode,
   saveComponentCode,
   setCurrentFile,
+  updateCss,
+  updateJs,
 } = canvasSlice.actions;
 
 export default canvasSlice.reducer;
