@@ -23,7 +23,7 @@ const FILE_ICONS = {
     </span>
   ),
   css: (
-    <span className='nested-files' style={{ color: '##264de4' }}>
+    <span className='nested-files' style={{ color: 'var(--css-icon-color)' }}>
       <DiCss3Full />
     </span>
   ),
@@ -47,7 +47,6 @@ const TreeFile = ({ name, code }) => {
   let currentFile = useSelector((state) => state.canvas.currentFile);
 
   const handleClick = () => {
-    // console.log('filename is: ', name);
     dispatch(saveComponentCode());
 
     currentFile = name;
@@ -56,7 +55,6 @@ const TreeFile = ({ name, code }) => {
 
   return (
     <StyledFile data-testid='file' className='nested-files'>
-      {/* render the extension or fallback to generic file icon  */}
       {FILE_ICONS[ext]}
       <span onClick={() => handleClick()}>{name}</span>
     </StyledFile>

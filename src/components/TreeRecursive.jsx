@@ -14,7 +14,6 @@ const TreeRecursive = ({ data }) => {
     if (item.type === 'folder') {
       return (
         <Folder data-testid='folder' name={item.name}>
-          {/* Call the <TreeRecursive /> component with the current item.childrens */}
           <TreeRecursive data={item.childrens} />
         </Folder>
       );

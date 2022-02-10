@@ -84,6 +84,7 @@ body {
   --canvas-file-name-color: #61dbfb;
   --javascript-icon-color: #f7df1e;
   --javascript-icon-background-color: transparent;
+  --css-icon-color: lightblue;
   --shadow-color: rgb(31, 31, 31);
 }
 
@@ -103,6 +104,7 @@ body {
   --canvas-file-name-color: #4338ca;
   --javascript-icon-color: black;
   --javascript-icon-background-color: #f7df1e;
+  --css-icon-color: darkblue;
   --shadow-color: rgba(32, 32, 32, 0.24);
 }
 
