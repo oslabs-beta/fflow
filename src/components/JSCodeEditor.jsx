@@ -38,7 +38,7 @@ const JSCodeEditor = () => {
       <MonacoEditor
         height='100vh'
         theme={theme}
-        defaultLanguage='javascript'
+        language='javascript'
         defaultValue='// Drag components onto canvas and see your code rendered'
         onChange={onChange}
         value={code}
