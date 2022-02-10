@@ -12,7 +12,7 @@
     <a href="https://github.com/oslabs-beta/fflow"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/oslabs-beta/fflow">View Demo</a>
+    <a href="https://github.com/oslabs-beta/fflow/tree/ronak/gifs#about-fflow">View Demo</a>
     ·
     <a href="https://github.com/oslabs-beta/fflow/issues">Report Bug</a>
     ·
