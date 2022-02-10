@@ -60,17 +60,13 @@
 
 ## About fflow
 
-Ever feel like getting started with a React App takes too many files and too much boilerplate code?
+React is the most popular library used by frontend developers today. Yet, getting a React application started requires a too much boilerplate code and unnecessary time.
 
-Meet fflow.
+fflow is a free, open-source developer tool to create React applications rapidly and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. Here is a medium article describing the philosophy behind fflow and you can download it here.
 
-fflow is a frontend developer tool to create React applications in no time and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience.
-
-We are really excited to launch our alpha version and hope you will download, play around with it, and provide us feedback.
+We are really excited to launch this alpha version and hope you will download, play around with it, and provide us with feedback.
 
 Visit our website here 👉 https://fflow.dev
-
-GIFS to be inserted here and centered aligned
 
 ### Features
 
