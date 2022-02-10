@@ -4,7 +4,7 @@ import { toggleLeftPanel } from '../redux/navigationSlice';
 import { clearProject, saveComponentCode } from '../redux/canvasSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import exportApp from './ExportApp';
-import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash, FaRegWindowRestore } from 'react-icons/fa';
+import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash } from 'react-icons/fa';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -28,18 +28,10 @@ const Navigation = () => {
     if (confirm('Are you sure you want to clear project?')) dispatch(clearProject());
   };
 
-  const exportClick = () => {
-    exportApp(snapshot);
-  }
-
-  // component code should save before exporting
-  // let currentFile = useSelector((state) => state.canvas.currentFile);
-  // const currentCode = useSelector((state) => state.canvas.code);
-
-  // const exportAppHandleClick = () => {
-  //   dispatch(saveComponentCode({ currentCode, currentFile }));
-  //   exportApp(snapshot);
-  // };
+  const handleSave = () => {
+    saveState(snapshot);
+    alert('Current project saved');
+  };
 
   return (
     <div className='navigation-bar'>
@@ -50,7 +42,7 @@ const Navigation = () => {
         <FaFolderOpen data-testid='filetree-button' onClick={openFileTree} />
       </span>
       <span className='nav-icons'>
-        <FaSave data-testid='save-button' onClick={() => console.log('Save Button pressed')} />{' '}
+        <FaSave data-testid='save-button' onClick={handleSave} />{' '}
       </span>
       <span className='nav-icons'>
         <FaDownload
@@ -60,9 +52,6 @@ const Navigation = () => {
           }}
         />
       </span>
-      {/* <span className='nav-icons'>
-        <FaDownload onClick={exportAppHandleClick} />
-      </span> */}
       <span className='nav-icons'>
         <FaTrash data-testid='trash-button' onClick={clear} />
       </span>

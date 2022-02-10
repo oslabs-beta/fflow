@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import TabContainer from './TabContainer';
 import '../stylesheets/CodePreview.css';
 import '../stylesheets/Terminal.css';
-import { Terminal } from 'xterm';
-import { FitAddon } from 'xterm-addon-fit';
-import * as monaco from 'monaco-editor';
+// import { Terminal } from 'xterm';
+// import { FitAddon } from 'xterm-addon-fit';
+// import * as monaco from 'monaco-editor';
 
 const CodePreview = () => {
   // set initial terminal state to empty string

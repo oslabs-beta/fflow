@@ -46,6 +46,7 @@
     "test": "jest --verbose --env=jsdom"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
     "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.16.2",
@@ -59,7 +60,7 @@
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
     "jscodeshift": "^0.13.1",
-    "monaco-editor-electron": "^1.0.6",
+    "localforage": "^1.10.0",
     "monaco-editor-webpack-plugin": "^7.0.1",
     "node-loader": "^2.0.0",
     "node-pty": "^0.10.1",

@@ -1,11 +1,14 @@
 'use strict';
-
 // Import parts of electron to use
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const Store = require('electron-store');
-const storage = new Store();
+const os = require('os');
 const path = require('path');
 const url = require('url');
+const pty = require('node-pty');
+
+// Determines the type of shell needed for the terminal based on the user's platform
+const shell = os.platform === 'win32' ? 'powershell.exe' : 'zsh';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -18,9 +21,12 @@ if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development'
   dev = true;
 }
 
+const storage = new Store();
+
 function createWindow() {
   const getWinSettings = () => {
-    const defaultBounds = [1280, 768];
+    //Gets and stores the previous window's size upon close and restores them
+    const defaultBounds = [1280, 1024];
     const size = storage.get('win-size');
 
     if (size) return size;
@@ -68,14 +74,29 @@ function createWindow() {
       slashes: true,
     });
   }
-  // if (is.development) {
-  //   mainWindow.webContents.openDevTools({ mode: 'detach' });
-  //   mainWindow.loadURL('http://localhost:3000');
-  // } else {
-  //   mainWindow.loadURL(`file://${path.join(__dirname, 'dist', 'index.html')}`);
-  // }
 
   mainWindow.loadURL(indexPath);
+
+  // For the Terminal
+  const ptyProcess = pty.spawn(shell, [], {
+    name: 'xterm-color',
+    cols: 60,
+    rows: 80,
+    cwd: process.env.HOME,
+    env: process.env,
+  });
+
+  // We send incoming data to the Terminal
+  ptyProcess.on('data', (data) => {
+    mainWindow.webContents.send('terminal.sentData', data);
+    console.log('data sent from main', data);
+  });
+  // in the main process, when data is received in the terminal,
+  // main process will write and add to ptyProcess
+  ipcMain.on('terminal.toTerm', (event, data) => {
+    ptyProcess.write(data);
+    console.log(data, `being written in ptyMain: ${data}`);
+  });
 
   var splash = new BrowserWindow({
     width: 500,
@@ -91,10 +112,10 @@ function createWindow() {
   mainWindow.once('ready-to-show', () => {
     splash.close();
     // uncomment out to maximise app on load
-    mainWindow.maximize();
+    // mainWindow.maximize();
     mainWindow.show();
     mainWindow.focus();
-    mainWindow.center();
+    // mainWindow.center();
 
     // Open the DevTools automatically if developing
     if (dev) {
@@ -105,11 +126,16 @@ function createWindow() {
     }
   });
 
+  mainWindow.on('resize', () => saveBounds(mainWindow.getSize()));
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
+    // mainWindow.webContents.send('terminal.close', () => {
+    //   console.log('SENT CLOSE');
+    // });
+    ptyProcess.kill();
     mainWindow = null;
   });
 }
