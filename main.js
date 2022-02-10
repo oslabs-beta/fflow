@@ -110,12 +110,13 @@ function createWindow() {
 
   // Don't show until we are ready and loaded
   mainWindow.once('ready-to-show', () => {
-    splash.close();
-    // uncomment out to maximise app on load
-    // mainWindow.maximize();
-    mainWindow.show();
-    mainWindow.focus();
-    // mainWindow.center();
+    setTimeout(function () {
+      mainWindow.center();
+      splash.destroy();
+      // mainWindow.maximize();
+      mainWindow.show();
+      mainWindow.focus();
+    }, 3000);
 
     // Open the DevTools automatically if developing
     if (dev) {

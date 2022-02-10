@@ -23,7 +23,7 @@ const FILE_ICONS = {
     </span>
   ),
   css: (
-    <span className='nested-files' style={{ color: '##264de4' }}>
+    <span className='nested-files' style={{ color: 'var(--css-icon-color' }}>
       <DiCss3Full />
     </span>
   ),

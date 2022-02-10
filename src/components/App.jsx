@@ -4,13 +4,9 @@ import Body from './Body';
 import '../stylesheets/App.css';
 import 'regenerator-runtime/runtime';
 import { useDispatch } from 'react-redux';
-import { loadPrevState, refreshCode } from '../redux/canvasSlice';
+// import { loadPrevState, refreshCode } from '../redux/canvasSlice';
 import { loadState } from '../localStorage';
-
-// WIP to fix monaco-editor not displaying in dev mode
-// delete window.require;
-// delete window.exports;
-// delete window.module;
+import { refreshCode } from '../redux/canvasSlice';
 
 const App = () => {
   const dispatch = useDispatch();

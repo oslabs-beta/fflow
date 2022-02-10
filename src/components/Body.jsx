@@ -6,8 +6,7 @@ import CodePreview from './CodePreview';
 import '../stylesheets/BodyContainer.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
-import { addComponent, combineComponents, refreshCode, reorderComponent, saveComponentCode } from '../redux/canvasSlice';
-// import ExportModal from './ExportModal';
+import { addComponent, refreshCode, reorderComponent, saveComponentCode } from '../redux/canvasSlice';
 
 const Body = () => {
   const dispatch = useDispatch();
