@@ -25,10 +25,15 @@ const Navigation = () => {
     if (confirm('Are you sure you want to clear project?')) dispatch(clearProject());
   };
 
+
   const exportClick = () => {
     exportApp(snapshot);
   }
 
+  const handleSave = () => {
+    saveState(snapshot);
+    alert('Current project saved');
+  }
 
   return (
     <div className='navigation-bar'>
@@ -39,7 +44,7 @@ const Navigation = () => {
         <FaFolderOpen data-testid='filetree-button' onClick={openFileTree} />
       </span>
       <span className='nav-icons'>
-        <FaSave data-testid='save-button' onClick={() => console.log('Save Button pressed')} />{' '}
+        <FaSave data-testid='save-button' onClick={handleSave} />{' '}
       </span>
       <span className='nav-icons'>
         <FaDownload

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import JSCodeEditor from './JSCodeEditor';
 import CSSCodeEditor from './CSSCodeEditor';
+import TerminalView from './TerminalView';
 import '../stylesheets/CodePreview.css';
 
 const TabContainer = () => {
@@ -24,7 +25,10 @@ const TabContainer = () => {
         <div className={tabState === 1 ? 'active-content' : 'content'}>
           <JSCodeEditor />
         </div>
-        <div id='terminal' style={{ height: '50vh', width: '100%' }} className={tabState === 2 ? 'active-content' : 'content'}></div>
+        {/* style={{ height: '50vh', width: '10px' }} */}
+        <div id='terminal-viewer' className={tabState === 2 ? 'active-content' : 'content'}>
+          <TerminalView />
+        </div>
         <div className={tabState === 3 ? 'active-content' : 'content'}>
           <CSSCodeEditor />
         </div>
