@@ -37,7 +37,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about">About</a>
+      <a href="#about">About fflow</a>
       <ul>
        <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
@@ -58,11 +58,17 @@
   </ol>
 </details>
 
-## About
+## About fflow
+
+Ever feel like getting started with a React App takes too many files and too much boilerplate code?
+
+Meet fflow.
 
 fflow is a frontend developer tool to create React applications in no time and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience.
 
-👉 https://fflow.dev
+We are really excited to launch our alpha version and hope you will download, play around with it, and provide us feedback.
+
+Visit our website here 👉 https://fflow.dev
 
 GIFS to be inserted here and centered aligned
 
@@ -71,14 +77,14 @@ GIFS to be inserted here and centered aligned
 - Drag, Drop, Reorder and Delete HTML Tags
 - Create Custom React Components
 - Light and Dark Theme based on OS Preferences and Manual Toggle
-- Delete Project to restart project
-- Clear current canvas to restart nesting in a component
-- Live preview in code editor with the ability to edit or add code to your JavaScript, HTML, and CSS files
-- File tree switch between React components
-- Export your code files with webpack to instantly setup your project
-- Terminal initializing to the either powershell.exe or zsh based on the user's OS, so the user can navigate to their exported files and launch their app
-- Localstorage sync
-- Canvas outline when HTML tag or Component is dragged over it
+- Delete Project and Clear Canvas to restart build process
+- Live preview in Code editor
+- Interactable CSS Code Editor
+- Easily switch between files with file tree or on the canvas
+- Easy redirect to App.jsx by clicking on the fflow icon
+- Export app with preconfigured and versatile webpack
+- In-built terminal initializes an instance of the exported app without leaving fflow
+- Accessibility features including canvas item highlighting when the HTML tag or Component is picked up
 
 ### Built with
 
@@ -106,94 +112,47 @@ The following instructions are split into two sections for:
 - [Production Mode](#production-mode)
 - [Development Mode](#development-mode)
 
-### Production Mode
+## Production Mode
 
-Download for [MacOS](https://github.com/oslabs-beta/fflow/releases), [Windows](https://github.com/oslabs-beta/fflow/releases), [Linux](https://github.com/oslabs-beta/fflow/releases).
+Please download the latest release of fflow for [MacOS](https://github.com/oslabs-beta/fflow/releases) or [Windows](https://github.com/oslabs-beta/fflow/releases).
+
+<!-- [Linux](https://github.com/oslabs-beta/fflow/releases) -->
+
+💫 Linux version coming soon. 💫
 
 - **Mac users**: After opening the dmg and dragging fflow into your Applications folder, `CTL + Click` the icon and 'Open' from the context menu to open the app. This extra step is necessary since we don't have an Apple developer license yet.
 
 - **Windows users**: Install the application by running fflow setup 1.0.0.exe.
 
-- **Linux users**: Run the application as a super user in order to read and write files.
+<!-- - **Linux users**: Run the application as a super user in order to read and write files. -->
 
-### Keyboard Shortcuts (Mac and Windows)
+<!-- #### Drag, Drop, Reorder and Delete HTML Tags onto Canvas
 
-| Shortcut         | Description               |
-| ---------------- | ------------------------- |
-| `cmd+e` `ctrl+e` | Export Project            |
-| `cmd+z` `ctrl+z` | Undo last action          |
-| `cmd+y` `ctrl+y` | Redo action               |
-| `del`            | Delete selected component |
-| `c`              | Toggle Code panel         |
-| `t`              | Toggle directory tree     |
+#### Nest HTML Tags and Components within custom React Components
 
-<details>
-  <summary>Mac Shortcuts</summary>
-  <ul>
-    <li>Export Project: Command + e</li>
-    <li>Undo: Command + z</li>
-    <li>Redo: Command + Shift + z</li>
-    <li>Save Project As: Command + s</li>
-    <li>Save Project: Command + shift + s</li>
-    <li>Delete HTML Tag on Canvas: Backspace</li>
-    <li>Delete Project: Command + Backspace</li>
-    <li>Open Project: Command + o</li>
-  </ul>
-</details>
+#### Style your project
 
-<details>
-  <summary>Windows Shortcuts</summary>
-  <ul>    
-    <li>Export Project: Control + e</li>
-    <li>Undo: Control + z</li>
-    <li>Redo: Control + Shift + z</li>
-    <li>Save Project As: Control + s</li>
-    <li>Save Project: Control + shift + s</li>
-    <li>Delete HTML Tag on Canvas: Backspace</li>
-    <li>Delete Project: Control + Backspace</li>
-    <li>Open Project: Control + o</li>
-  </ul>
-</details>
+Add styles to your HTML elements and React Components by editing directly in the CSS Editor. This will then be exported with your app.
 
-### Development Mode
+#### Clearing the Canvas
+
+## Development Mode -->
 
 #### Clone this repo
 
-1. Clone this repo
+1. Clone this repo `git clone https://github.com/oslabs-beta/fflow`
+2. Install the dependencies `npm install`
+3. Run script for development mode `npm run start`
+4. Build the app (automatic) `npm run build`
+5. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
 
-```
-git clone https://github.com/oslabs-beta/fflow
-```
+Note there is currently an issue where the Monaco Code Editor keeps showing 'loading...' in development mode. We are working to solve this. In the meantime, when you drag HTML tags onto canvas you can still see the code editor's contents in the Developer Tools.
 
-2. Install the dependencies
+#### Node versioning error
 
-```
-npm install
-```
+#### Running tests
 
-3. Run script for development mode
-
-```
-npm run start
-```
-
-4. Build the app (automatic)
-
-```
-npm run package
-```
-
-5. Build the app (manual)
-
-```
-npm run build
-```
-
-6. Test the app (after `npm run build` || `yarn run build`)
-
-```
-npm run prod
-```
+Instructions coming soon.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -217,20 +176,10 @@ Below is the generated directory structure of the React and Webpack application 
 
 ```
 
-1. Open exported project directory in your Downloads folder
-2. Install dependencies
-
-```
-npm install
-```
-
+1. Using the inbuilt terminal, `cd` into the Exported Project in your `Downloads` folder
+2. In the root of the Exported Project folder, install dependencies `npm install`
 3. Start an instance
-
-```
-npm run start
-```
-
-4. `Localhost:8080` should open automatically in your default browser. If it does not, open browser and navigate to the specified port
+4. If `Localhost:8080` does not open automatically in your default browser, navigate to the specified port to see your running app with Hot Module Reloading and a pre-configured webpack
 
 <br />
 
@@ -303,31 +252,37 @@ This boilerplate names your project `Exported Project`. You can change the app t
 - Bryanna DeJesus [@BryannaDeJesus](https://github.com/BryannaDeJesus) | [Linkedin](https://www.linkedin.com/in/bryannadejesus/)
 - Ronak Hirpara [@ronakh130](https://github.com/ronakh130) | [Linkedin](https://www.linkedin.com/in/ronak-hirpara/)
 
-Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflow-io) | [Press]
+Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Press]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Roadmap
 
+- Editable JS Code Preview
 - GitHub OAuth Integration and online project save
+- Keyboard shortcuts for Mac and Windows
 - Export in TypeScript
 - Save Multiple Projects
 - Create Custom HTML Elements
 - Open and compose multiple projects in different windows simultaneously
-- Dynamic CSS and HTML Editor
 - BrowserView to preview project
 - Live Editing with other collaborators
 - AWS hosted version
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Contributing Guide
 
 Contributions are what make the open source community an amazing place to learn, inspire, and create. Any contributions are greatly appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion of how to make fflow better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
 1. Fork this repo
-2. Create your Feature Branch (git checkout -b yourgithubhandle/AmazingFeature)
-3. Commit your Changes (git commit -m 'Add some AmazingFeature')
-4. Push to the Branch (git push origin yourgithubhandle/AmazingFeature)
+2. Create your Feature Branch (`git checkout -b` yourgithubhandle/AmazingFeature)
+3. Commit your Changes (`git commit -m` 'Add some AmazingFeature')
+4. Create and push to your remote branch (`git push origin` yourgithubhandle/AmazingFeature)
 5. Open a Pull Request
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Read our [contributing guide](https://github.com/oslabs-beta/CONTRIBUTING.md) for more information on how to propose fixes and improvements to fflow. -->

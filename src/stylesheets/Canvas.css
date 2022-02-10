@@ -25,9 +25,9 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-/* #canvas-item:active {
+#canvas-item:active {
   background-color: var(--canvas-file-name-color);
-} */
+}
 
 .canvas:hover {
   /* border: 0.15rem dashed var(--navigation-panel-background-color); */
@@ -52,9 +52,9 @@
 }
 
 .flex-auto:hover {
-  border: 0.1rem solid var(--navigation-panel-background-color);
+  /* border: 0.1rem solid var(--navigation-panel-background-color); */
   cursor: move;
-  transition: 500ms;
+  /* transition: 500ms; */
 }
 
 ::-webkit-scrollbar-track {

@@ -4,7 +4,7 @@ import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { useSelector } from 'react-redux';
 
 const DragList = () => {
-  const items = useSelector(state => state.tags.tagList);
+  const items = useSelector((state) => state.tags.tagList);
   let count = 0;
   const tags = [];
 

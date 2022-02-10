@@ -34,7 +34,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className='navigation-bar'>
+    <div className='navigation-bar text-white bg-gradient-to-r from-violet-700 to-indigo-500'>
       <span className='nav-icons'>
         <FaPencilRuler data-testid='dnd-button' onClick={openDnD} />
       </span>

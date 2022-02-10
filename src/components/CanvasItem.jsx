@@ -20,10 +20,10 @@ const CanvasItem = (props) => {
   }
 
   return (
-    <div className='container mx-auto px-2 md:px-4 my-4 md:mb-2'>
+    <div className='container mx-auto px-2 md:px-2 my-4 md:mb-2'>
       <div
         // id='canvas-item'
-        className='flex-auto items-center justify-around p-2 md:p-4 shadow-md rounded-lg relative'
+        className='flex-auto items-center justify-around md:p-4 shadow-md rounded-lg relative'
         ref={props.provided.innerRef}
         {...props.provided.draggableProps}
         {...props.provided.dragHandleProps}

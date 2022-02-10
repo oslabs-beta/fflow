@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   padding-left: 1rem;
-  /* margin: 10px 1.5em 10px 0; */
   margin: 1rem 1.8rem 1rem 0rem;
 }
 
@@ -12,14 +11,7 @@
   transition: 200ms;
 }
 
-.headerContainer button:hover {
-  background-color: var(--purple-600);
-  box-shadow: 0 0 0.5rem var(--purple-600);
-  transition: 200ms;
-}
-
 .headerContainer button:active {
-  box-shadow: 0 0 0.5rem #666;
   transform: translateY(1px);
   background-color: var(--purple-500);
   background-size: 100%;
@@ -32,17 +24,13 @@
 }
 
 .label {
-  /* width: 40px; */
   width: 2.5rem;
-  /* height: 20px; */
   height: 1.25rem;
   background-color: #454c52;
   display: flex;
-  /* border-radius: 50px; */
   border-radius: 1rem;
   align-items: center;
   justify-content: space-between;
-  /* padding: 2px; */
   padding: 0.2rem;
   position: relative;
   transform: scale(1.5);
@@ -52,12 +40,12 @@
 .ball {
   border-radius: 50%;
   transition: transform 0.2s linear;
-  left: 1px;
+  left: 2px;
   right: 1px;
   background-color: white;
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 }
 
 /*  target the element after the label*/

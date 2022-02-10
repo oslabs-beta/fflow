@@ -1,7 +1,8 @@
 #comp-create-box {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   /* width: 12rem;
   padding: 0.3rem; */
 }
@@ -26,24 +27,23 @@
   gap: 0.5rem;
 }
 
-#create-react-component-input-field {
+/* #create-react-component-input-field {
   display: flex;
   outline: none;
   margin: 0.3rem;
   margin-left: 0;
   padding-left: 0.5rem;
   background: var(--tag-inputs-backgroundColor);
-  /* border-radius: 5px; */
   border-radius: 0.3rem;
   width: 7rem;
-  /* font-size: 13px; */
   font-size: 0.8rem;
   outline: none;
   height: 1.8rem;
-  /* border: 1px solid var(--navigation-panel-background-color); */
   border: 0.1rem solid var(--navigation-panel-background-color);
-  color: var(--textColor);
-}
+  color: var(--textColor); */
+/* border-radius: 5px; */
+/* font-size: 13px; */
+/* } */
 
 ::placeholder {
   font-size: 0.8em;
@@ -103,8 +103,8 @@ input[type='checkbox']:focus {
 }
 
 #create-react-component-button:active {
-  box-shadow: 0 0 4px #666;
-  transform: translateY(1px);
+  box-shadow: 0 0 2px #666;
+  transform: translateY(0.5px);
   background-color: var(--purple-100);
   background-size: 100%;
   transition: background 0s;

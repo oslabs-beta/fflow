@@ -24,12 +24,13 @@
   /* padding: 10px; */
   padding: 0.8rem;
   text-align: center;
-  transition: 300ms;
+  transition: 200ms;
 }
 
 .tabs:hover {
-  color: var(--navigation-panel-background-color);
-  transition: 300ms;
+  /* color: var(--navigation-panel-background-color); */
+  color: var(--tab-container-color);
+  transition: 200ms;
 }
 
 .active-tab {
@@ -42,10 +43,12 @@
   /* padding: 10px; */
   padding: 0.8rem;
   background: var(--thirdBackgroundColor);
-  border-bottom: 1px solid var(--navigation-panel-background-color);
-  color: var(--navigation-panel-background-color);
+  /* border-bottom: 1px solid var(--navigation-panel-background-color); */
+  border-bottom: 1px solid var(--tab-container-color);
+  color: var(--tab-container-color);
+  /* color: var(--navigation-panel-background-color); */
   font-weight: 600;
-  transition: 300ms;
+  transition: 200ms;
 }
 
 .contentContainer {

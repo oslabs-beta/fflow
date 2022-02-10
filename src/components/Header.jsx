@@ -47,13 +47,13 @@ const Header = () => {
       {/* <!-- App Theme Toggle  --> */}
       <input type='checkbox' className='checkbox' id='checkbox' data-testid='toggle-theme-btn' onChange={() => themeToggle()} />
       <label htmlFor='checkbox' className='label'>
-        <IconContext.Provider value={{ color: '#FFD523', size: '12px' }}>
+        <IconContext.Provider value={{ color: '#FFD523', size: '10px' }}>
           <div>
             <FaSun />
           </div>
         </IconContext.Provider>
 
-        <IconContext.Provider value={{ color: 'var(--lightBlueBackgroundColor)', size: '12px' }}>
+        <IconContext.Provider value={{ color: 'var(--lightBlueBackgroundColor)', size: '10px' }}>
           <div>
             <FaMoon />
           </div>
