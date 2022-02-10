@@ -2,9 +2,36 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   components: [],
-  customComponents: [],
-  tags: [],
   code: '',
+  cssCode: `html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    padding-top: 20%;
+    overflow: hidden;
+    background-color: #272727;
+    font-family: "Helvetica Neue";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  p {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .default-spans {
+    color: #4338ca;
+  }`,
+  tags: [],
+  customComponents: [],
+  imports: ["import React from 'react';\n"],
   codeList: {
     Div: `<div className=''></div>`,
     Paragraph: `<p className=''></p>`,
@@ -22,8 +49,27 @@ const initialState = {
     'Header 3': `<h3 className=''></h3>`,
     'Line Break': `<br>`,
     Table: `<table className=''></table>`,
-    THead: `<thead className=''></thead>`
+    THead: `<thead className=''></thead>`,
   },
+  files: [
+    {
+      type: 'file',
+      name: 'App.js',
+      fileCode: '',
+      fileTags: [],
+      fileImports: [],
+      fileComponents: [],
+    },
+    {
+      type: 'file',
+      name: 'styles.css',
+      fileCode: '',
+      fileTags: [],
+      fileImports: [],
+      fileComponents: [],
+    },
+  ],
+  currentFile: 'App.js',
 };
 
 export const canvasSlice = createSlice({
@@ -31,36 +77,54 @@ export const canvasSlice = createSlice({
   initialState,
   reducers: {
     addComponent: (state, action) => {
-      console.log('addComponent fired');
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
-      state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
+      state.tags.splice(action.payload.destination.index, 0, '\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
     deleteComponent: (state, action) => {
-      console.log('deleteComponent fired');
       if (confirm(`Delete this component?\n${action.payload.name + ' in position ' + action.payload.index}`)) {
         state.components.splice(action.payload.index, 1);
         state.tags.splice(action.payload.index, 1);
+        //if custom component, remove from customComp array, files array, and imports
+        for (let i = 0; i < state.customComponents.length; i++) {
+          const curr = state.customComponents[i];
+          if (curr === action.payload.name) {
+            state.customComponents.splice(i, 1);
+            state.files.splice(i + 1, 1);
+            state.imports.splice(i + 1, 1);
+          }
+        }
       }
     },
     reorderComponent: (state, action) => {
-      console.log('reorderComponent fired');
       const [item] = state.components.splice(action.payload.source.index, 1);
       state.components.splice(action.payload.destination.index, 0, item);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       state.tags.splice(action.payload.destination.index, 0, tag);
     },
-    clearComponents: (state) => {
-      console.log('clearComponents fired');
+    clearProject: (state) => {
       state.components = [];
       state.tags = [];
       state.code = '';
+      state.imports = ["import React from 'react';\n"];
+      state.customComponents = [];
+      state.files = [
+        {
+          type: 'file',
+          name: 'App.js',
+          fileCode: '',
+          fileTags: [],
+          fileImports: [],
+          fileComponents: [],
+        },
+      ];
+      state.currentFile = 'App.js';
     },
     combineComponents: (state, action) => {
-      console.log('combineComponents fired');
+      // console.log('combineComponents fired');
       const [item] = state.components.splice(action.payload.source.index, 1);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       const index = action.payload.combine.draggableId.split('-')[0];
-      console.log('index is: ', index);
+      // console.log('index is: ', index);
       if (Array.isArray(state.components[index])) {
         state.components[index].push(item);
       } else {
@@ -68,30 +132,81 @@ export const canvasSlice = createSlice({
       }
     },
     refreshCode: (state) => {
-      state.code = `import React from 'react';\n\nconst App = () => {\n\treturn (\n\t\t<div className='App'>${state.tags}\n\t\t</div>\n\t)\n}\nexport default App;`;
+      const name = state.currentFile.split('.')[0];
+      state.code = `${state.imports.join('')}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
     },
     createComponent: (state, action) => {
       console.log('createComponent fired');
-      const { text, check } = action.payload;
-      //add to tags array for code preview
-      // text = text[0].toUpperCase() + text.slice(1);
+      const { text } = action.payload;
       const newTag = `\n\t\t\t<${text} />`;
-      // state.tags.splice(0, 0, newTag);
-      state.tags.push(newTag);
-      state.customComponents.push(text);
-      //add to component array for canvas
-      // state.components.splice(0, 0, text);
-      state.components.push(text);
+      const fileName = `${text}.jsx`;
+      state.tags.push(newTag); // add custom comp to code
+      state.customComponents.push(text); // add to list of custom comps
+      state.components.push(text); // add to canvas
+      state.imports.push(`import ${text} from './${text}.jsx';\n`); // add as import
+      state.files.push({
+        // add to file system
+        type: 'file',
+        name: fileName,
+        fileCode: `import React from 'react';\n\nconst ${text} = () => {\n\treturn (\n\t\t<div>\n\t\t</div>\n\t)\n}\nexport default ${text};`,
+        fileTags: [],
+        fileImports: ["import React from 'react';\n"],
+        fileComponents: [],
+      });
     },
-    addCustom: (state) => {
-      // console.log('addCustom fired');
-      // state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
-      // state.tags.push('\n\t\t\t' + state.codeList[action.payload.draggableId]);
-    }
+    renderComponentCode: (state, action) => {
+      const { name } = action.payload;
+      for (const file of state.files) {
+        //iterate thru list of files to find match
+        if (file.name === name) {
+          // if match, pull all values and update outer state
+          state.code = file.fileCode;
+          state.tags = file.fileTags;
+          state.imports = file.fileImports;
+          state.components = file.fileComponents;
+          state.currentFile = file.name;
+        }
+      }
+    },
+    setCurrentFile: (state, action) => {
+      console.log('current file payload:', action.payload);
+      state.currentFile = action.payload;
+    },
+    saveComponentCode: (state) => {
+      // const { currentCode, currentFile } = action.payload;
+      state.files.forEach((file) => {
+        if (file.name === state.currentFile) {
+          // find file in list and take snapshot of code
+          file.fileCode = state.code;
+          file.fileTags = state.tags;
+          file.fileImports = state.imports;
+          file.fileComponents = state.components;
+        }
+      });
+    },
+    updateCss: (state, action) => {
+      state.cssCode = action.payload;
+    },
+    updateJs: (state, action) => {
+      state.code = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addComponent, deleteComponent, reorderComponent, clearComponents, combineComponents, refreshCode, createComponent } = canvasSlice.actions;
+export const {
+  addComponent,
+  deleteComponent,
+  reorderComponent,
+  clearProject,
+  combineComponents,
+  refreshCode,
+  createComponent,
+  renderComponentCode,
+  saveComponentCode,
+  setCurrentFile,
+  updateCss,
+  updateJs,
+} = canvasSlice.actions;
 
 export default canvasSlice.reducer;

@@ -1,8 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { clearComponents, refreshCode } from '../redux/canvasSlice';
+import { clearProject } from '../redux/canvasSlice';
 import { changeTheme } from '../redux/themeSlice';
 import '../stylesheets/Header.css';
+import { IconContext } from 'react-icons';
+import { FaSun, FaMoon } from 'react-icons/fa';
+
+// import Modal from 'react-bootstrap/Modal';
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -12,12 +17,17 @@ const Header = () => {
     dispatch(changeTheme());
   };
 
+  // add trash can sound to this
   const clear = () => {
-    if (confirm('Would you like to clear canvas?')) {
-      dispatch(clearComponents());
-      // dispatch(refreshCode());
+    if (confirm('Are you sure you want to clear project?')) {
+      dispatch(clearProject());
     }
   };
+
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   return (
     <div className='headerContainer'>
@@ -27,16 +37,28 @@ const Header = () => {
         type='button'
         data-modal-toggle='popup-modal'
         id='clear-canvas-button'
+        data-testid='clear-project-button'
         onClick={clear}
+        // onClick={handleShow}
       >
-        Clear Canvas
+        Clear Project
       </button>
 
       {/* <!-- App Theme Toggle  --> */}
-      <input type='checkbox' className='checkbox' id='checkbox' onChange={() => themeToggle()} />
-      <label for='checkbox' className='label'>
-        {/* <i className="fas fa-moon"></i>
-        <i className="fas fa-sun"></i> */}
+      <input type='checkbox' className='checkbox' id='checkbox' data-testid='toggle-theme-btn' onChange={() => themeToggle()} />
+      <label htmlFor='checkbox' className='label'>
+        <IconContext.Provider value={{ color: '#FFD523', size: '10px' }}>
+          <div>
+            <FaSun />
+          </div>
+        </IconContext.Provider>
+
+        <IconContext.Provider value={{ color: 'var(--lightBlueBackgroundColor)', size: '10px' }}>
+          <div>
+            <FaMoon />
+          </div>
+        </IconContext.Provider>
+
         <div className='ball'></div>
       </label>
     </div>

@@ -8,9 +8,7 @@ export const componentCodeSlice = createSlice({
   name: 'componentCodePreview',
   initialState,
   reducers: {
-    addComponentCode: (state) => {
-      console.log('addComponentCode fired');
-    },
+    addComponentCode: (state) => {},
   },
 });
 

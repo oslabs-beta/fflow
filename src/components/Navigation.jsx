@@ -1,51 +1,60 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../stylesheets/Navigation.css';
-// import Login from './Login';
-import { useSelector } from 'react-redux';
-
+import { toggleLeftPanel } from '../redux/navigationSlice';
+import { clearProject, saveComponentCode } from '../redux/canvasSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import exportApp from './ExportApp';
+import { FaPencilRuler, FaFolderOpen, FaSave, FaDownload, FaTrash } from 'react-icons/fa';
 
 const Navigation = () => {
-  const [showFormModal, setShowFormModal] = useState(false);
+  const dispatch = useDispatch();
 
-  const handleClose = (e) => {
-    e.preventDefault();
-    console.log('clicked');
-    setShowFormModal(false);
+  const snapshot = useSelector((state) => state.canvas);
+
+  // functions to toggle between DnD and fileTree
+  const openDnD = () => {
+    console.log('clicked home');
+    console.log('snapshot: ', snapshot);
+    dispatch(toggleLeftPanel('DnD'));
   };
-  const handleShow = () => setShowFormModal(true);
 
-  const codePreviewState = useSelector((state) => state.canvas.code);
+  const openFileTree = () => {
+    console.log('clicked tree');
+    console.log('snapshot: ', snapshot);
+    dispatch(toggleLeftPanel('fileTree'));
+  };
 
-  const exportData = () => {
-    const exportCode = `data:text\;chatset=utf-8,${encodeURIComponent(codePreviewState)}`;
-    const link = document.createElement('a');
-    link.href = exportCode;
-    link.download = 'App.jsx';
-    link.click();
+  const clear = () => {
+    if (confirm('Are you sure you want to clear project?')) dispatch(clearProject());
+  };
+
+  const handleSave = () => {
+    saveState(snapshot);
+    alert('Current project saved');
   };
 
   return (
-    <div className='navigation-bar'>
-      <a href='#'>
-        <i class='fas fa-pencil-ruler'></i>
-      </a>
-      <a href="#"><i class="fas fa-user"></i></a>
-      <a href='#'>
-        <i class='fas fa-cog'></i>
-      </a>
-      <a href='#'>
-        <i class='fas fa-save'></i>
-      </a>
-      <button onClick={exportData}>
-        <i class='fas fa-download'></i>
-      </button>
-
-      {/* <button id='profileButton' onClick={() => setShowFormModal(true)}>
-        <i class='fas fa-user'></i> */}
-        {/* {showFormModal ? <Login handleClose={handleClose} /> : null} */}
-        {/* {<Login showFormModal={showFormModal} setShowFormModal={setShowFormModal} />} */}
-        {/* {<Login showFormModal={showFormModal} handleClose={handleClose} />} */}
-      {/* </button> */}
+    <div className='navigation-bar text-white bg-gradient-to-r from-violet-700 to-indigo-600'>
+      <span className='nav-icons'>
+        <FaPencilRuler data-testid='dnd-button' onClick={openDnD} />
+      </span>
+      <span className='nav-icons'>
+        <FaFolderOpen data-testid='filetree-button' onClick={openFileTree} />
+      </span>
+      {/* <span className='nav-icons'>
+        <FaSave data-testid='save-button' onClick={handleSave} />{' '}
+      </span> */}
+      <span className='nav-icons'>
+        <FaDownload
+          data-testid='export-button'
+          onClick={() => {
+            exportApp(snapshot);
+          }}
+        />
+      </span>
+      <span className='nav-icons'>
+        <FaTrash data-testid='trash-button' onClick={clear} />
+      </span>
     </div>
   );
 };

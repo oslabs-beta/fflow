@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import CodeEditor from './CodeEditor';
+import React, { useState } from 'react';
+import JSCodeEditor from './JSCodeEditor';
 import CSSCodeEditor from './CSSCodeEditor';
+import TerminalView from './TerminalView';
 import '../stylesheets/CodePreview.css';
-import * as monaco from 'monaco-editor';
 
 const TabContainer = () => {
   const [tabState, setTabState] = useState(1);
   const toggleTab = (tabNum) => setTabState(tabNum);
-
-  // useEffect(() => {
-  //   monaco.editor.create(document.getElementById('editor-container'), {
-  //     // language: this._getLanguage(this.props.path),
-  //     wordWrap: 'on',
-  //     scrollBeyondLastLine: false,
-  //     automaticLayout: true,
-  //     minimap: {
-  //       enabled: false
-  //     },
-  //     // glyphMargin: true,
-  //     value: "function hello() {\n\talert('Hello world!');\n}",
-  //     language: 'javascript',
-  //   });
-  // });
 
   return (
     <div>
@@ -38,10 +23,12 @@ const TabContainer = () => {
       </div>
       <div className='contentContainer'>
         <div className={tabState === 1 ? 'active-content' : 'content'}>
-          <CodeEditor />
+          <JSCodeEditor />
         </div>
-        <div id='terminal' style={{ height: '50vh', width: '100%' }} className={tabState === 2 ? 'active-content' : 'content'}></div>
-        <div id='editor-container' style={{ height: '100vh', width: '100%' }} className={tabState === 3 ? 'active-content' : 'content'}>
+        <div id='terminal-viewer' className={tabState === 2 ? 'active-content' : 'content'}>
+          <TerminalView />
+        </div>
+        <div className={tabState === 3 ? 'active-content' : 'content'}>
           <CSSCodeEditor />
         </div>
       </div>

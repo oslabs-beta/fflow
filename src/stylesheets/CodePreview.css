@@ -1,14 +1,14 @@
 .codePreviewContainer {
   position: relative;
-  /* padding: 0 !important;  */
   background-color: var(--thirdBackgroundColor);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: -0.2rem 0rem 0.5rem var(--shadow-color);
   margin-right: 2%;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .tabContainer {
   display: flex;
+  box-shadow: -0.3rem 0rem 1rem var(--shadow-color);
 }
 
 .tabs {
@@ -16,12 +16,21 @@
   background: var(--thirdBackgroundColor);
   color: var(--neutral-600);
   cursor: pointer;
-  border-bottom: 1px solid var(--tab-bottom-borderColor);
+  border-bottom: 0.1rem solid var(--tab-bottom-borderColor);
   position: relative;
   outline: none;
-  font-size: 16px;
-  padding: 10px;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  /* padding: 10px; */
+  padding: 0.8rem;
   text-align: center;
+  transition: 200ms;
+}
+
+.tabs:hover {
+  /* color: var(--navigation-panel-background-color); */
+  color: var(--tab-container-color);
+  transition: 200ms;
 }
 
 .active-tab {
@@ -29,68 +38,39 @@
   cursor: pointer;
   position: relative;
   outline: none;
-  font-size: 16px;
-  padding: 10px;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  /* padding: 10px; */
+  padding: 0.8rem;
   background: var(--thirdBackgroundColor);
-  border-bottom: 1px solid var(--navigation-panel-background-color); 
-  color: var(--navigation-panel-background-color);
+  /* border-bottom: 1px solid var(--navigation-panel-background-color); */
+  border-bottom: 1px solid var(--tab-container-color);
+  color: var(--tab-container-color);
+  /* color: var(--navigation-panel-background-color); */
   font-weight: 600;
+  transition: 200ms;
 }
-
-/* .active-tab::before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  transform: translateX(50%);
-  width: 100%;
-} */
 
 .contentContainer {
   flex-grow: 1;
   width: 100%;
-  /* height: 100%; 
-  this is what rain changed*/
   position: absolute;
   height: 100vh;
   text-align: left;
+  box-shadow: -0.3rem 0rem 0.5rem var(--shadow-color);
 }
+
 .content {
   width: 100%;
   height: 100%;
   display: none;
   text-align: left;
 }
+
 .active-content {
   width: 100%;
-  /* height: 100%;
-  this is what rain changed */
-  /* height: 100%;  */
   height: 100vh;
   text-align: left;
-}
-
-#language-chooser-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.multi-editor-buttons {
-  text-align: center;
-  width: 50%;
-  background: var(--thirdBackgroundColor);
-  color: var(--neutral-600);
-  cursor: pointer;
-  box-sizing: content-box;
-  position: relative;
-  outline: none;
-  font-size: 12px;
-  padding: 8px;
-}
-
-.multi-editor-buttons:hover {
-  background: var(--neutral-300);
 }
 
 #cssContainer {
