@@ -1,8 +1,8 @@
 <br />
 <div align="center">
-  <a href="https://github.com/oslabs-beta/fflow">
+  <!-- <a href="https://github.com/oslabs-beta/fflow">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">fflow</h3>
 
@@ -12,7 +12,7 @@
     <a href="https://github.com/oslabs-beta/fflow"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/oslabs-beta/fflow">View Demo</a>
+    <a href="https://github.com/oslabs-beta/fflow/tree/ronak/gifs#about-fflow">View Demo</a>
     ·
     <a href="https://github.com/oslabs-beta/fflow/issues">Report Bug</a>
     ·
@@ -68,6 +68,8 @@ We are really excited to launch this alpha version and hope you will download, p
 
 Visit our website here 👉 https://fflow.dev
 
+<img src="./src/assets/dnd.gif">
+
 ### Features
 
 - Drag, Drop, Reorder and Delete HTML Tags
@@ -99,6 +101,24 @@ Visit our website here 👉 https://fflow.dev
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Loading Screen
+<img src="./src/assets/splashDemo.gif">
+
+### Light and Dark Mode
+<img src="./src/assets/darkMode.gif">
+
+### Create Custom Components and Nest HTML elements
+<img src="./src/assets/customComps.gif">
+
+### Edit CSS directly in the App
+<img src="./src/assets/cssEditor.gif">
+
+### Export Working Project
+<img src="./src/assets/export.gif">
+
+### Clear canvas to start from scratch
+<img src="./src/assets/clearCanvas.gif">
 
 ## Getting Started
 
