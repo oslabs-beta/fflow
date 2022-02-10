@@ -1,8 +1,8 @@
 <br />
-<div align="center">
+<!-- <div align="center">
   <a href="https://github.com/oslabs-beta/fflow">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">fflow</h3>
 
@@ -284,4 +284,4 @@ If you have a suggestion of how to make fflow better, please fork the repo and c
 
 ## License
 
-Licensed under MIT License © [fflow](fflow.dev).
+Licensed under MIT License © [fflow](https://fflow.dev).
