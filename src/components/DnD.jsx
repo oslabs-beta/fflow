@@ -2,7 +2,6 @@ import * as React from 'react';
 import '../stylesheets/DnD.css';
 import CompCreator from './compCreator';
 import DragList from './DragList';
-import CustomComponents from './CustomComponents';
 import { useSelector, useDispatch } from 'react-redux';
 import Tree from './Tree';
 import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
@@ -51,7 +50,6 @@ const DnD = () => {
           >
             fflow.
           </p>
-
           <CompCreator />
           <DragList />
           <div className='homePageFileTreeContainer'>

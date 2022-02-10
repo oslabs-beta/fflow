@@ -6,6 +6,7 @@ import CodePreview from './CodePreview';
 import '../stylesheets/BodyContainer.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { addComponent, refreshCode, reorderComponent, saveComponentCode } from '../redux/canvasSlice';
 
 const Body = () => {
@@ -38,8 +39,6 @@ const Body = () => {
     dispatch(saveComponentCode());
   }
 
-  // const show = useSelector((state) => state.nav.showModal);
-
   return (
     <div className='bodyContainer'>
       <DragDropContext onDragEnd={dragEnd} onDragStart={dragStart}>
@@ -50,9 +49,6 @@ const Body = () => {
       <div id='headerAndCodePreviewContainer'>
         <Header />
         <CodePreview />
-        {/* <ExportModal show={show} onClose={show}>
-          Modal content
-        </ExportModal> */}
       </div>
     </div>
   );

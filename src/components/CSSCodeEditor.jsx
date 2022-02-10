@@ -14,8 +14,6 @@ const CSSCodeEditor = () => {
     dispatch(updateCss(newValue));
   }
 
-  console.log('code in CSSCodeEditor: ', cssCode);
-
   return (
     <div id='css-code-editor'>
       <Editor

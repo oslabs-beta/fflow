@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const userController = {};
 
 userController.bcrypt = (req, res, next) => {
-  // console.log('bcrypt req body:', req.body);
   const { password } = req.body;
 
   bcrypt.hash(password, 10, (err, hash) => {
@@ -14,7 +13,6 @@ userController.bcrypt = (req, res, next) => {
 };
 
 userController.signup = (req, res, next) => {
-  //console.log(req.body.username);
   User.create({ username: req.body.username, password: res.locals.hashedPassword }, (err, newUser) => {
     if (err) return next(err);
     res.locals.userId = newUser._id;
@@ -24,7 +22,6 @@ userController.signup = (req, res, next) => {
 
 userController.userLogin = (req, res, next) => {
   try {
-    console.log(req.body);
     const { username, password } = req.body;
 
     User.findOne({ username: username }).exec((error, user) => {

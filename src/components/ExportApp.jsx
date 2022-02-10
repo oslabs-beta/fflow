@@ -1,8 +1,6 @@
 const fs = require('fs');
-// const path = require('path');
 const fse = require('fs-extra');
 const df = require('downloads-folder');
-// const dialog = electron.remote.dialog;
 
 export default function exportApp(snapshot) {
   const templateHTML = `<!DOCTYPE html>
@@ -25,8 +23,12 @@ import "./styles.css";
 var mountNode = document.getElementById("root");
 ReactDOM.render(<App />, mountNode);`;
 
+
+  const tags = snapshot.tags.map((ele) => {
+
   const appFile = snapshot.files[0];
   const tags = appFile.fileTags.map((ele) => {
+
     return ele.slice(1);
   });
 

@@ -104,6 +104,7 @@ function createWindow() {
     transparent: true,
     frame: false,
     alwaysOnTop: true,
+    center: true,
   });
 
   splash.loadFile('./src/assets/splash.html');
@@ -113,6 +114,7 @@ function createWindow() {
     setTimeout(function () {
       mainWindow.center();
       splash.destroy();
+
       // mainWindow.maximize();
       mainWindow.show();
       mainWindow.focus();

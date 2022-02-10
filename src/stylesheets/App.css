@@ -88,8 +88,6 @@ body {
   --css-icon-background-color: transparent;
   --css-icon-color: #0098ff;
   --file-tree-hover-color: var(--neutral-800);
-  /* --shadow-color: rgb(31, 31, 31); */
-  /* background-color: #27272a; */
 }
 
 .theme-light {
@@ -111,7 +109,6 @@ body {
   --css-icon-background-color: #0098ff;
   --css-icon-color: white;
   --file-tree-hover-color: var(--neutral-300);
-  /* --shadow-color: rgba(32, 32, 32, 0.24); */
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */

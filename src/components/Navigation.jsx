@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/Navigation.css';
 import { toggleLeftPanel } from '../redux/navigationSlice';
+import { clearProject } from '../redux/canvasSlice';
 import { clearProject, saveComponentCode } from '../redux/canvasSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import exportApp from './ExportApp';
@@ -13,14 +14,10 @@ const Navigation = () => {
 
   // functions to toggle between DnD and fileTree
   const openDnD = () => {
-    console.log('clicked home');
-    console.log('snapshot: ', snapshot);
     dispatch(toggleLeftPanel('DnD'));
   };
 
   const openFileTree = () => {
-    console.log('clicked tree');
-    console.log('snapshot: ', snapshot);
     dispatch(toggleLeftPanel('fileTree'));
   };
 
@@ -28,10 +25,15 @@ const Navigation = () => {
     if (confirm('Are you sure you want to clear project?')) dispatch(clearProject());
   };
 
+
+  const exportClick = () => {
+    exportApp(snapshot);
+  }
+
   const handleSave = () => {
     saveState(snapshot);
     alert('Current project saved');
-  };
+  }
 
   return (
     <div className='navigation-bar'>
