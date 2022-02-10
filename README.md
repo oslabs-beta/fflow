@@ -60,17 +60,13 @@
 
 ## About fflow
 
-Ever feel like getting started with a React App takes too many files and too much boilerplate code?
+React is the most popular library used by frontend developers today. Yet, getting a React application started requires a too much boilerplate code and unnecessary time.
 
-Meet fflow.
+fflow is a free, open-source developer tool to create React applications rapidly and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. Here is a medium article describing the philosophy behind fflow and you can download it here.
 
-fflow is a frontend developer tool to create React applications in no time and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience.
-
-We are really excited to launch our alpha version and hope you will download, play around with it, and provide us feedback.
+We are really excited to launch this alpha version and hope you will download, play around with it, and provide us with feedback.
 
 Visit our website here 👉 https://fflow.dev
-
-GIFS to be inserted here and centered aligned
 
 ### Features
 
@@ -141,13 +137,14 @@ Add styles to your HTML elements and React Components by editing directly in the
 
 1. Clone this repo `git clone https://github.com/oslabs-beta/fflow`
 2. Install the dependencies `npm install`
-3. Run script for development mode `npm run start`
-4. Build the app (automatic) `npm run build`
-5. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
+3. Copy and run this in your terminal (`./node_modules/.bin/electron-rebuild`) or `.\node_modules\.bin\electron-rebuild.cmd` for Windows
+4. Run script for development mode `npm run start`
+5. Build the app (automatic) `npm run build`
+6. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
+
+#### Current issues
 
 Note there is currently an issue where the Monaco Code Editor keeps showing 'loading...' in development mode. We are working to solve this. In the meantime, when you drag HTML tags onto canvas you can still see the code editor's contents in the Developer Tools.
-
-#### Node versioning error
 
 #### Running tests
 
