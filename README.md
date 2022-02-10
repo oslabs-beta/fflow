@@ -68,6 +68,8 @@ We are really excited to launch this alpha version and hope you will download, p
 
 Visit our website here 👉 https://fflow.dev
 
+<img src="./src/assets/dnd.gif">
+
 ### Features
 
 - Drag, Drop, Reorder and Delete HTML Tags
@@ -100,19 +102,16 @@ Visit our website here 👉 https://fflow.dev
 - [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Drag and Drop Interface
-<img src="./src/assets/dnd.gif">
-
 ### Loading Screen
 <img src="./src/assets/splashDemo.gif">
 
-### Dark Mode
+### Light and Dark Mode
 <img src="./src/assets/darkMode.gif">
 
-### Create Custom Components
+### Create Custom Components and Nest HTML elements
 <img src="./src/assets/customComps.gif">
 
-### Export Working App
+### Export Working Project
 <img src="./src/assets/export.gif">
 
 ## Getting Started
