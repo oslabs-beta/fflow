@@ -17,7 +17,7 @@ const StyledFolder = styled.div`
   }
 
   .folder--label:hover {
-    background-color: var(--neutral-800);
+    background-color: var(--file-tree-hover-color);
   }
 `;
 

@@ -1,4 +1,4 @@
-.bodyContainer { 
+.bodyContainer {
   display: flex;
   flex: 1 1;
   /* gap: 30px; */
@@ -13,8 +13,12 @@
 #headerAndCodePreviewContainer {
   display: flex;
   flex-direction: column;
-  /* flex: 1 1 400px; */
   flex: 1 1 20rem;
   max-width: 35%;
   height: 100%;
+  border-left: 1px solid var(--file-tree-hover-color);
 }
+
+/* background-color: #44403c; */
+/* background-color: #404040;
+   */

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 40px; */
   width: 2.5rem;
   gap: 1rem;
   background-color: var(--navigation-panel-background-color);

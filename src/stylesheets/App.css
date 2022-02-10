@@ -73,7 +73,8 @@ body {
 body {
   --backgroundColor: var(--secondaryBackgroundColor);
   --textColor: #ffffff;
-  --thirdBackgroundColor: var(--secondaryBackgroundColor);
+  /* --thirdBackgroundColor: var(--secondaryBackgroundColor); */
+  --thirdBackgroundColor: #27272a;
   --errorColor: #cf6679;
   --navigation-panel-background-color: var(--purple-200);
   --navigation-panel-border-color: var(--neutral-600);
@@ -84,7 +85,11 @@ body {
   --canvas-file-name-color: #61dbfb;
   --javascript-icon-color: #f7df1e;
   --javascript-icon-background-color: transparent;
-  --shadow-color: rgb(31, 31, 31);
+  --css-icon-background-color: transparent;
+  --css-icon-color: #0098ff;
+  --file-tree-hover-color: var(--neutral-800);
+  /* --shadow-color: rgb(31, 31, 31); */
+  /* background-color: #27272a; */
 }
 
 .theme-light {
@@ -103,7 +108,10 @@ body {
   --canvas-file-name-color: #4338ca;
   --javascript-icon-color: black;
   --javascript-icon-background-color: #f7df1e;
-  --shadow-color: rgba(32, 32, 32, 0.24);
+  --css-icon-background-color: #0098ff;
+  --css-icon-color: white;
+  --file-tree-hover-color: var(--neutral-300);
+  /* --shadow-color: rgba(32, 32, 32, 0.24); */
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */

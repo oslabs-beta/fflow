@@ -53,15 +53,16 @@
     <li><a href="#run-exported-project">Run Exported Project</a></li>
     <li><a href="#contributors">Contributors</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing-guide">Contributing Guide</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
 
 ## About
 
-fflow is a frontend developer tool to create React applications in no time and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. 
+fflow is a frontend developer tool to create React applications in no time and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience.
 
-👉 https://openfflow.dev
+👉 https://fflow.dev
 
 GIFS to be inserted here and centered aligned
 
@@ -72,8 +73,10 @@ GIFS to be inserted here and centered aligned
 - Light and Dark Theme based on OS Preferences and Manual Toggle
 - Delete Project to restart project
 - Clear current canvas to restart nesting in a component
-- Live preview and add to your JavaScript code
-- Export your code with webpack to instantly setup your project
+- Live preview in code editor with the ability to edit or add code to your JavaScript, HTML, and CSS files
+- File tree switch between React components
+- Export your code files with webpack to instantly setup your project
+- Terminal initializing to the either powershell.exe or zsh based on the user's OS, so the user can navigate to their exported files and launch their app
 - Localstorage sync
 - Canvas outline when HTML tag or Component is dragged over it
 
@@ -88,8 +91,12 @@ GIFS to be inserted here and centered aligned
 - [Redux Toolkit](https://redux-toolkit.js.org)
 - [React Beautiful DnD](https://github.com/atlassian/react-beautiful-dnd)
 - [React Icons](https://react-icons.github.io/react-icons/)
+- [Xterm.js](https://xtermjs.org/)
+- [node-pty](https://www.npmjs.com/package/node-pty)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Modal](https://github.com/reactjs/react-modal)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
@@ -196,13 +203,13 @@ Below is the generated directory structure of the React and Webpack application 
 
 ```
 ├── dist                    # Compiled files
-│    └── index.html     
+│    └── index.html
 ├── src                     # Source files
 │    └── App.js
 │    └── index.js
 │    └── styles.css
 ├── test                    # Automated tests (alternatively `spec` or `tests`)
-├── webpack.config.js       # Webpack configuration 
+├── webpack.config.js       # Webpack configuration
 ├── .babelrc                # Babel configuration
 ├── .gitignore              # Git ignore file
 ├── package.json            # Dependencies file
@@ -228,10 +235,12 @@ npm run start
 <br />
 
 ### Add Sass
+
 Adding Sass to your exported project requires updating webpack configs and adding necessary loaders.
 
 1. Install loaders for sass, `sass-loader` and `node-sass`
 2. Add another object to the rules in `webpack.config` with the following:
+
 ```javascript
  {
         test: /\.scss$/,
@@ -242,20 +251,27 @@ Adding Sass to your exported project requires updating webpack configs and addin
         ]
       }
 ```
+
 3. Rename `styles.css` to `styles.scss`
 
 ### Add Tailwind
-Adding Tailwind to your exported project requires updating webpack configs, adding necessary loaders and tailwind config. 
+
+Adding Tailwind to your exported project requires updating webpack configs, adding necessary loaders and tailwind config.
+
 1. Install tailwind as a dependency
+
 ```
 npm install tailwindcss
 ```
 
 2. Install postcss-loader and autoprefixer as development dependencies
+
 ```
 npm install -D postcss-loader autoprefixer
 ```
+
 3. Copy the following copy into `src/styles.css`
+
 ```css
 @tailwind base;
 
@@ -263,19 +279,20 @@ npm install -D postcss-loader autoprefixer
 
 @tailwind utilities;
 ```
+
 4. Create a `postcss.config.js` file and copy the following code in
+
 ```javascript
 module.exports = {
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer')
-  ]
+  plugins: [require('tailwindcss'), require('autoprefixer')],
 };
 ```
+
 5. Add `'postcss-loader'` to the css rules in `webpack.config`
 
 ### Change App Title
-This boilerplate names your project `Exported Project`. You can change the app title by inserting the app title within the `<title> </title>` tags in `index.html`. 
+
+This boilerplate names your project `Exported Project`. You can change the app title by inserting the app title within the `<title> </title>` tags in `index.html`.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -300,8 +317,21 @@ Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https
 - Live Editing with other collaborators
 - AWS hosted version
 
-Read our [contributing guide](https://github.com/oslabs-beta/CONTRIBUTING.md) for more information on how to propose fixes and improvements to fflow.
+## Contributing Guide
+
+Contributions are what make the open source community an amazing place to learn, inspire, and create. Any contributions are greatly appreciated.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork this repo
+2. Create your Feature Branch (git checkout -b yourgithubhandle/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin yourgithubhandle/AmazingFeature)
+5. Open a Pull Request
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Read our [contributing guide](https://github.com/oslabs-beta/CONTRIBUTING.md) for more information on how to propose fixes and improvements to fflow. -->
 
 ## License
 
-Licensed under MIT License © [fflow](fflow.io).
+Licensed under MIT License © [fflow](fflow.dev).
