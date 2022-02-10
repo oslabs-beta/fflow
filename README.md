@@ -76,6 +76,7 @@ GIFS to be inserted here and centered aligned
 - Live preview in code editor with the ability to edit or add code to your JavaScript, HTML, and CSS files
 - File tree switch between React components
 - Export your code files with webpack to instantly setup your project
+- Terminal initializing to the either powershell.exe or zsh based on the user's OS, so the user can navigate to their exported files and launch their app
 - Localstorage sync
 - Canvas outline when HTML tag or Component is dragged over it
 
@@ -90,8 +91,12 @@ GIFS to be inserted here and centered aligned
 - [Redux Toolkit](https://redux-toolkit.js.org)
 - [React Beautiful DnD](https://github.com/atlassian/react-beautiful-dnd)
 - [React Icons](https://react-icons.github.io/react-icons/)
+- [Xterm.js](https://xtermjs.org/)
+- [node-pty](https://www.npmjs.com/package/node-pty)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Modal](https://github.com/reactjs/react-modal)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
@@ -323,6 +328,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 3. Commit your Changes (git commit -m 'Add some AmazingFeature')
 4. Push to the Branch (git push origin yourgithubhandle/AmazingFeature)
 5. Open a Pull Request
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Read our [contributing guide](https://github.com/oslabs-beta/CONTRIBUTING.md) for more information on how to propose fixes and improvements to fflow. -->
 
