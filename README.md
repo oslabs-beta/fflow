@@ -1,8 +1,8 @@
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/oslabs-beta/fflow">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
+  <a href="https://github.com/oslabs-beta/fflow">
+    <img src="./src/assets/GitHub_README_logo.png" alt="Logo">
+  </a>
 
 <h3 align="center">fflow</h3>
 
