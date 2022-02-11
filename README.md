@@ -267,7 +267,7 @@ This boilerplate names your project `Exported Project`. You can change the app t
 - Bryanna DeJesus [@BryannaDeJesus](https://github.com/BryannaDeJesus) | [Linkedin](https://www.linkedin.com/in/bryannadejesus/)
 - Ronak Hirpara [@ronakh130](https://github.com/ronakh130) | [Linkedin](https://www.linkedin.com/in/ronak-hirpara/)
 
-Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Press]
+Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Medium](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
