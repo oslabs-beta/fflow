@@ -103,27 +103,21 @@ Visit our website here 👉 https://fflow.dev
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Loading Screen
-
 <img src="./src/assets/splashDemo.gif">
 
 ### Light and Dark Mode
-
 <img src="./src/assets/darkMode.gif">
 
 ### Create Custom Components and Nest HTML elements
-
 <img src="./src/assets/customComps.gif">
 
-### Edit CSS directly in the App (Feature Coming Soon)
-
+### Edit CSS directly in the App
 <img src="./src/assets/cssEditor.gif">
 
 ### Export Working Project
-
 <img src="./src/assets/export.gif">
 
 ### Clear canvas to start from scratch
-
 <img src="./src/assets/clearCanvas.gif">
 
 ## Getting Started
