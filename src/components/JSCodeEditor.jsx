@@ -28,7 +28,6 @@ const JSCodeEditor = () => {
   const dispatch = useDispatch();
 
   const onChange = (newValue) => {
-    console.log('updatedValue:', newValue);
     dispatch(updateJs(newValue));
     dispatch(saveComponentCode());
   };

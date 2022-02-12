@@ -1,4 +1,12 @@
-import reducer, { addComponent, clearProject, createComponent, deleteComponent, reorderComponent, saveComponentCode, setCurrentFile } from '../src/redux/canvasSlice';
+import reducer, {
+  addComponent,
+  clearProject,
+  createComponent,
+  deleteComponent,
+  reorderComponent,
+  saveComponentCode,
+  setCurrentFile,
+} from '../src/redux/canvasSlice';
 
 describe('canvasSlice reducers', () => {
   let initialState;

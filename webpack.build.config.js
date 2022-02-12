@@ -47,8 +47,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ title: 'fflow' }),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: 'bundle.css',
       chunkFilename: '[id].css',
     }),
@@ -58,8 +56,6 @@ module.exports = {
     new MonacoWebpackPlugin({
       languages: ['javascript', 'html', 'css'],
     }),
-
-    // new MinifyPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

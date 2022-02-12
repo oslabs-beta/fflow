@@ -30,10 +30,6 @@ const TerminalView = () => {
       term.write(data);
     });
 
-    // ipc.on('terminal.close', () => {
-    //   term.clear();
-    // });
-
     term.onData((data) => {
       ipc.send('terminal.toTerm', data);
     });

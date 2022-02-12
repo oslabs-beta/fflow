@@ -1,3 +1,5 @@
+// export modal that shows when user clicks exports on next release
+
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { modalToggle } from '../redux/navigationSlice';

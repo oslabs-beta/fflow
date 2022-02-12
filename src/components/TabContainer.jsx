@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import JSCodeEditor from './JSCodeEditor';
-import CSSCodeEditor from './CSSCodeEditor';
 import TerminalView from './TerminalView';
 import '../stylesheets/CodePreview.css';
+
+// css editor not implemented for release 1.0
+// import CSSCodeEditor from './CSSCodeEditor';
 
 const TabContainer = () => {
   const [tabState, setTabState] = useState(1);

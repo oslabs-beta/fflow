@@ -7,15 +7,6 @@ const CustomComponents = () => {
   const custom = useSelector((state) => state.canvas.customComponents);
   if (custom.length) {
     return (
-      // <div id='custom-components-container'>
-      //   {custom.map((ele) => {
-      //     const id = ele.toLowerCase();
-      //     return (
-      //       <div className='custom-components' key={id}>
-      //         {ele}
-      //       </div>
-      //     );
-      //   })}
       <Droppable droppableId='customComponents'>
         {(providedDrop) => (
           <div id='custom-components-container' {...providedDrop.droppableProps} ref={providedDrop.innerRef}>

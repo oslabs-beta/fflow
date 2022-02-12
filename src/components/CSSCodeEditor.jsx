@@ -20,7 +20,6 @@ const CSSCodeEditor = () => {
         height='100vh'
         theme={theme}
         language='css'
-        // defaultValue={cssCode}
         value={cssCode}
         onChange={onChange}
         options={{

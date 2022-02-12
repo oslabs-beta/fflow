@@ -1,4 +1,5 @@
 // Creates all component files (but not the full application files) and places them in a "components" directory
+// To be added as export option in next release
 
 const fs = require('fs');
 const fse = require('fs-extra');
@@ -46,7 +47,7 @@ export default hot(App);`;
   const path = df();
   const name = 'Exported_Project';
 
-  //iterate through files array, create file for each, fill with its code key
+  // iterate through files array, create file for each, fill with its code key
 
   const files = snapshot.files;
   for (let i = 1; i < files.length; i++) {

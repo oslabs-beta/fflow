@@ -1,3 +1,5 @@
+// login component developed for next release
+
 import React from 'react';
 import '../stylesheets/Login.css';
 import '../stylesheets/Navigation.css';

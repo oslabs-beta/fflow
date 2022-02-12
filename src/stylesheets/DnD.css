@@ -7,11 +7,8 @@
   align-items: center;
   background-color: var(--thirdBackgroundColor);
   overflow: hidden;
-  
   max-width: 16rem;
-  
   min-width: 14rem;
-  
   box-shadow: 0.3rem 0.3rem 0.5rem var(--shadow-color);
   border-right: 0.1rem solid var(--file-tree-hover-color);
 }
@@ -25,9 +22,7 @@
   align-items: center;
   background-color: var(--thirdBackgroundColor);
   overflow: hidden;
-  
   max-width: 16rem;
-  
   min-width: 14rem;
   padding: 3rem auto;
   border-right: 0.1rem solid var(--file-tree-hover-color);
@@ -38,7 +33,6 @@ h3 {
 }
 
 #app-name {
-  
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--navigation-panel-background-color);

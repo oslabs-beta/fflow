@@ -50,7 +50,6 @@ function createWindow() {
     height: 880,
     show: false,
     webPreferences: {
-      preload: path.join(__dirname, './src/electron/preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     },
@@ -138,7 +137,7 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     // mainWindow.webContents.send('terminal.close', () => {
-    //   console.log('SENT CLOSE');
+
     // });
     ptyProcess.kill();
     mainWindow = null;

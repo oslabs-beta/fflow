@@ -18,7 +18,7 @@ npm-debug.log*
 
 # New Features under Development #
 **Login
-
+./src/server
 
 # Packages #
 # it's better to unpack these files and commit the raw source
@@ -39,3 +39,5 @@ ehthumbs.db
 
 # Windows shortcuts #
 *.lnk
+
+__tests__

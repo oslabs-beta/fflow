@@ -6,7 +6,6 @@ import '../stylesheets/CompCreator.css';
 const CompCreator = () => {
   const dispatch = useDispatch();
   const custom = useSelector((state) => state.canvas.customComponents);
-  const tags = useSelector((state) => state.canvas.tags);
 
   function onClick(e) {
     e.preventDefault();

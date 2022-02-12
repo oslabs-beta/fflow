@@ -6,12 +6,12 @@ import { renderComponentCode, saveComponentCode, setCurrentFile } from '../redux
 
 const CanvasItem = (props) => {
   const dispatch = useDispatch();
-  // let currentFile = useSelector((state) => state.canvas.currentFile);
+
   const custom = useSelector((state) => state.canvas.customComponents);
 
   function onClick(e) {
     const name = e.target.innerText + '.jsx';
-    // dispatch(saveComponentCode({ currentCode, currentFile }));
+
     if (custom.includes(e.target.innerText)) {
       dispatch(saveComponentCode());
       dispatch(setCurrentFile(name));
@@ -22,7 +22,6 @@ const CanvasItem = (props) => {
   return (
     <div className='container mx-auto px-2 md:px-2 my-4 md:mb-2'>
       <div
-        // id='canvas-item'
         className='flex-auto items-center justify-around md:p-4 shadow-md rounded-lg relative'
         ref={props.provided.innerRef}
         {...props.provided.draggableProps}

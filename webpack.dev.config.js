@@ -52,7 +52,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'fflow',
-      // template: 'public/index.html'
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
