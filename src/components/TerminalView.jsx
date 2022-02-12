@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Terminal } from 'xterm';
 import { FitAddon } from 'xterm-addon-fit';
 import { ipcRenderer } from 'electron';
-// import '../stylesheets/Terminal.css';
+
 const ipc = ipcRenderer;
 
 const terminalArgs = {
