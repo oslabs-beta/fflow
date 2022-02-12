@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/oslabs-beta/fflow">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./src/assets/GitHub_README_logo.png" alt="Logo">
   </a>
 
 <h3 align="center">fflow</h3>
@@ -12,7 +12,7 @@
     <a href="https://github.com/oslabs-beta/fflow"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/oslabs-beta/fflow">View Demo</a>
+    <a href="https://github.com/oslabs-beta/fflow/tree/ronak/gifs#about-fflow">View Demo</a>
     ·
     <a href="https://github.com/oslabs-beta/fflow/issues">Report Bug</a>
     ·
@@ -60,17 +60,15 @@
 
 ## About fflow
 
-Ever feel like getting started with a React App takes too many files and too much boilerplate code?
+React is the most popular library used by frontend developers today. Yet, getting a React application started requires a too much boilerplate code and unnecessary time.
 
-Meet fflow.
+fflow is a free, open-source developer tool to create React applications rapidly and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. Here is a medium article describing the philosophy behind fflow and you can download it here.
 
-fflow is a frontend developer tool to create React applications in no time and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience.
-
-We are really excited to launch our alpha version and hope you will download, play around with it, and provide us feedback.
+We are really excited to launch this alpha version and hope you will download, play around with it, and provide us with feedback.
 
 Visit our website here 👉 https://fflow.dev
 
-GIFS to be inserted here and centered aligned
+<img src="./src/assets/dnd.gif">
 
 ### Features
 
@@ -103,6 +101,30 @@ GIFS to be inserted here and centered aligned
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Playwright](https://playwright.dev/docs/api/class-electronapplication)
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Loading Screen
+
+<img src="./src/assets/splashDemo.gif">
+
+### Light and Dark Mode
+
+<img src="./src/assets/darkMode.gif">
+
+### Create Custom Components and Nest HTML elements
+
+<img src="./src/assets/customComps.gif">
+
+### Edit CSS directly in the App (Feature Coming Soon)
+
+<img src="./src/assets/cssEditor.gif">
+
+### Export Working Project
+
+<img src="./src/assets/export.gif">
+
+### Clear canvas to start from scratch
+
+<img src="./src/assets/clearCanvas.gif">
 
 ## Getting Started
 
@@ -141,13 +163,14 @@ Add styles to your HTML elements and React Components by editing directly in the
 
 1. Clone this repo `git clone https://github.com/oslabs-beta/fflow`
 2. Install the dependencies `npm install`
-3. Run script for development mode `npm run start`
-4. Build the app (automatic) `npm run build`
-5. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
+3. Copy and run this in your terminal (`./node_modules/.bin/electron-rebuild`) or `.\node_modules\.bin\electron-rebuild.cmd` for Windows
+4. Run script for development mode `npm run start`
+5. Build the app (automatic) `npm run build`
+6. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
+
+#### Current issues
 
 Note there is currently an issue where the Monaco Code Editor keeps showing 'loading...' in development mode. We are working to solve this. In the meantime, when you drag HTML tags onto canvas you can still see the code editor's contents in the Developer Tools.
-
-#### Node versioning error
 
 #### Running tests
 
@@ -250,7 +273,7 @@ This boilerplate names your project `Exported Project`. You can change the app t
 - Bryanna DeJesus [@BryannaDeJesus](https://github.com/BryannaDeJesus) | [Linkedin](https://www.linkedin.com/in/bryannadejesus/)
 - Ronak Hirpara [@ronakh130](https://github.com/ronakh130) | [Linkedin](https://www.linkedin.com/in/ronak-hirpara/)
 
-Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Press]
+Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Medium](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
