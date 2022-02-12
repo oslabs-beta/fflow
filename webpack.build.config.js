@@ -55,6 +55,10 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    new MonacoWebpackPlugin({
+      languages: ['javascript', 'html', 'css'],
+    }),
+
     // new MinifyPlugin()
   ],
   resolve: {

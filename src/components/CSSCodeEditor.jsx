@@ -1,5 +1,6 @@
 import React from 'react';
-import Editor from '@monaco-editor/react';
+// import Editor from '@monaco-editor/react';
+import MonacoEditor from 'react-monaco-editor';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { updateCss } from '../redux/canvasSlice';
@@ -18,7 +19,7 @@ const CSSCodeEditor = () => {
 
   return (
     <div id='css-code-editor'>
-      <Editor
+      <MonacoEditor
         height='100vh'
         theme={theme}
         language='css'
