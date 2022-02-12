@@ -25,9 +25,9 @@ const CompCreator = () => {
     <div id='comp-create-box'>
       <form className='create-component-form'>
         <div id='create-react-component-inputs'>
-          <div class='relative text-gray-700'>
+          <div className='relative text-gray-700'>
             <input
-              id='create-react-component-input-field'
+              data-testid='create-react-component-input-field'
               className='w-44 h-8 pl-3 pr-8 text-sm placeholder-gray-600 border rounded-lg focus:shadow-outline'
               type='text'
               placeholder='Component Name'

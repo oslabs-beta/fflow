@@ -22,15 +22,6 @@ describe('Navigation', () => {
     expect(mockFunction()).toBe(true);
   });
 
-  test('renders Navigation component with save icon button with on click functionality', () => {
-    const { getByTestId } = render(<Navigation />);
-    const saveButton = getByTestId('save-button');
-    expect(saveButton).toBeInTheDocument();
-    const mockFunction = jest.fn(() => true);
-    fireEvent.click(saveButton);
-    expect(mockFunction()).toBe(true);
-  });
-
   test('renders Navigation component with export icon button with on click functionality', () => {
     const { getByTestId } = render(<Navigation />);
     const exportButton = getByTestId('export-button');
