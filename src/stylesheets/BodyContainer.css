@@ -1,7 +1,6 @@
 .bodyContainer {
   display: flex;
   flex: 1 1;
-  /* gap: 30px; */
   gap: 3rem;
   height: 100%;
 }
@@ -18,7 +17,3 @@
   height: 100%;
   border-left: 1px solid var(--file-tree-hover-color);
 }
-
-/* background-color: #44403c; */
-/* background-color: #404040;
-   */

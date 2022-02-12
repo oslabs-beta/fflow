@@ -50,9 +50,7 @@ const Body = () => {
       <div id='headerAndCodePreviewContainer'>
         <Header />
         <CodePreview />
-        {/* <ExportModal show={show} onClose={show}>
-          Modal content
-        </ExportModal> */}
+
       </div>
     </div>
   );

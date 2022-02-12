@@ -1,7 +1,7 @@
 import React from 'react';
 // import Editor, { monaco, loader } from '@monaco-editor/react';
 import MonacoEditor from 'react-monaco-editor';
-import { renderComponentCode, saveComponentCode, updateJs } from '../redux/canvasSlice';
+import { saveComponentCode, updateJs } from '../redux/canvasSlice';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 

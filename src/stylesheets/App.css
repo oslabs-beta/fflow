@@ -17,6 +17,16 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
+.App {
+  display: flex;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+}
+
 :root {
   --backgroundColor: #121212;
   --secondaryBackgroundColor: #272727;
@@ -26,13 +36,6 @@ body {
 
   --lightBlueBackgroundColor: #d0f0fd;
   --darkBlueBackgroundColor: #100635;
-
-  /* Shades of Green */
-  --green-500: #03aa99;
-  --green-400: #03b9a7;
-  --green-300: #03c9b5;
-  --green-200: #03dac6;
-  --green-100: #04ecd5;
 
   /* Shades of purple */
   --purple-900: #390089;
@@ -49,11 +52,6 @@ body {
   --orange-500: #ffc600;
   --orange-400: #ffd523;
   --orange-tang: #ed7e00;
-
-  /* Shades of Grey */
-  --medium-grey: #656565;
-  --light-grey: #989898;
-  --dove-grey: #6c6c6c;
 
   /* Neutrals Palette */
   --neutral-50: #f8f9fa;
@@ -73,7 +71,6 @@ body {
 body {
   --backgroundColor: var(--secondaryBackgroundColor);
   --textColor: #ffffff;
-  /* --thirdBackgroundColor: var(--secondaryBackgroundColor); */
   --thirdBackgroundColor: #27272a;
   --errorColor: #cf6679;
   --navigation-panel-background-color: var(--purple-200);
@@ -88,9 +85,6 @@ body {
   --css-icon-background-color: transparent;
   --css-icon-color: #0098ff;
   --file-tree-hover-color: var(--neutral-800);
-  /* --shadow-color: rgb(31, 31, 31); */
-  /* background-color: #27272a; */
-  /* --tab-container-color:  #4f46e5; */
   --tab-container-color: #818cf8;
 }
 
@@ -115,7 +109,6 @@ body {
   --file-tree-hover-color: var(--neutral-300);
   --react-icon-background-color: #27272a;
   --tab-container-color: #4f46e5;
-  /* --shadow-color: rgba(32, 32, 32, 0.24); */
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */
@@ -159,13 +152,4 @@ body {
     --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
   }
-}
-
-.App {
-  display: flex;
-  height: 100vh;
-  background-color: var(--backgroundColor);
-  color: var(--textColor);
-  transition: all 0.2s ease-in;
-  box-sizing: border-box;
 }

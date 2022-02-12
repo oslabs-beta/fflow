@@ -24,10 +24,6 @@ const Header = () => {
     }
   };
 
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
 
   return (
     <div className='headerContainer'>
@@ -39,7 +35,7 @@ const Header = () => {
         id='clear-canvas-button'
         data-testid='clear-project-button'
         onClick={clear}
-        // onClick={handleShow}
+        
       >
         Clear Project
       </button>

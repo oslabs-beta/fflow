@@ -1,8 +1,7 @@
 import React from 'react';
 // import Editor from '@monaco-editor/react';
 import MonacoEditor from 'react-monaco-editor';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { updateCss } from '../redux/canvasSlice';
 
 const CSSCodeEditor = () => {
@@ -10,12 +9,10 @@ const CSSCodeEditor = () => {
   const cssCode = useSelector((state) => state.canvas.cssCode);
   const dispatch = useDispatch();
 
-  const onChange = (newValue) => {
-    console.log('cssEditorCode after edits: ', newValue);
+  const onChange = (newValue, e) => {
+    console.log('cssEditorCode after edits: ', newValue, e);
     dispatch(updateCss(newValue));
   };
-
-  console.log('code in CSSCodeEditor: ', cssCode);
 
   return (
     <div id='css-code-editor'>
@@ -23,7 +20,8 @@ const CSSCodeEditor = () => {
         height='100vh'
         theme={theme}
         language='css'
-        defaultValue={cssCode}
+        // defaultValue={cssCode}
+        value={cssCode}
         onChange={onChange}
         options={{
           minimap: {
