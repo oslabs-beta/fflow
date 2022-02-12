@@ -89,8 +89,8 @@ export const canvasSlice = createSlice({
           const curr = state.customComponents[i];
           if (curr === action.payload.name) {
             state.customComponents.splice(i, 1);
-            state.files.splice(i + 1, 1);
-            state.imports.splice(i + 1, 1);
+            state.files.splice(i + 2, 1);
+            state.imports.splice(i + 2, 1);
           }
         }
       }
@@ -111,6 +111,14 @@ export const canvasSlice = createSlice({
         {
           type: 'file',
           name: 'App.js',
+          fileCode: '',
+          fileTags: [],
+          fileImports: [],
+          fileComponents: [],
+        },
+        {
+          type: 'file',
+          name: 'styles.css',
           fileCode: '',
           fileTags: [],
           fileImports: [],

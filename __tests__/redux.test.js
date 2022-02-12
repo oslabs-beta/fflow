@@ -1,12 +1,4 @@
-import reducer, {
-  addComponent,
-  clearProject,
-  createComponent,
-  deleteComponent,
-  reorderComponent,
-  saveComponentCode,
-  setCurrentFile,
-} from '../src/redux/canvasSlice';
+import reducer, { addComponent, clearProject, createComponent, reorderComponent, setCurrentFile } from '../src/redux/canvasSlice';
 
 describe('canvasSlice reducers', () => {
   let initialState;
@@ -34,6 +26,32 @@ describe('canvasSlice reducers', () => {
     initialState = {
       components: [],
       code: '',
+      cssCode: `html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    padding-top: 20%;
+    overflow: hidden;
+    background-color: #272727;
+    font-family: "Helvetica Neue";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
+  p {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .default-spans {
+    color: #4338ca;
+  }`,
       tags: [],
       customComponents: [],
       imports: ["import React from 'react';\n"],
@@ -65,6 +83,14 @@ describe('canvasSlice reducers', () => {
           fileImports: [],
           fileComponents: [],
         },
+        {
+          type: 'file',
+          name: 'styles.css',
+          fileCode: '',
+          fileTags: [],
+          fileImports: [],
+          fileComponents: [],
+        },
       ],
       currentFile: 'App.js',
     };
@@ -90,13 +116,6 @@ describe('canvasSlice reducers', () => {
       expect(reducer(initialState, addComponent(action))).toEqual(addCompTest(initialState, action));
     });
   });
-
-  // describe('deleteComponent:', () => {
-  //   test('should remove from middle of array', () => {
-  //     const action = createAction(1, 'Anchor');
-  //     expect(reducer(initialState, deleteComponent(action))).toEqual({...initialState, components: ['Div', 'Button']});
-  //   });
-  // });
 
   describe('reorderComponent:', () => {
     test('should swap 2 items', () => {
@@ -141,6 +160,14 @@ describe('canvasSlice reducers', () => {
           },
           {
             type: 'file',
+            name: 'styles.css',
+            fileCode: '',
+            fileTags: [],
+            fileImports: [],
+            fileComponents: [],
+          },
+          {
+            type: 'file',
             name: 'TestFile.jsx',
             fileCode: `import React from 'react';\n\nconst TestFile = () => {\n\treturn (\n\t\t<div>\n\t\t</div>\n\t)\n}\nexport default TestFile;`,
             fileTags: [],
@@ -158,23 +185,4 @@ describe('canvasSlice reducers', () => {
       expect(reducer(initialState, setCurrentFile('TestFile.jsx'))).toEqual({ ...initialState, currentFile: 'TestFile.jsx' });
     });
   });
-
-  // describe('saveComponentCode:', () => {
-  //   test('should save state into files', () => {
-  //     initialState.files.push({
-  //       type: 'file',
-  //       name: 'TestFile.jsx',
-  //       fileCode: `import React from 'react';\n\nconst TestFile = () => {\n\treturn (\n\t\t<div>\n\t\t</div>\n\t)\n}\nexport default TestFile;`,
-  //       fileTags: [],
-  //       fileImports: ["import React from 'react';\n"],
-  //       fileComponents: [],
-  //     });
-
-  //     initialState.currentFile = 'TestFile.jsx';
-
-  //     const newState = {...initialState, code: 'test'}
-
-  //     expect(reducer(initialState, saveComponentCode())).toEqual({newState});
-  //   });
-  // });
 });
