@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { DiJavascript1, DiCss3Full, DiHtml5, DiReact } from 'react-icons/di';
 import { useSelector, useDispatch } from 'react-redux';
-import { renderComponentCode, setCurrentFile, saveComponentCode, refreshCode } from '../redux/canvasSlice';
+import { renderComponentCode, saveComponentCode } from '../redux/canvasSlice';
 
 const StyledFile = styled.div`
   padding-left: 20px;

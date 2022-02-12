@@ -4,7 +4,8 @@ import Body from './Body';
 import '../stylesheets/App.css';
 import 'regenerator-runtime/runtime';
 import { useDispatch } from 'react-redux';
-// import { loadPrevState, refreshCode } from '../redux/canvasSlice';
+
+// local storage to be added in next release
 import { loadState } from '../localStorage';
 import { refreshCode } from '../redux/canvasSlice';
 
@@ -13,12 +14,11 @@ const App = () => {
 
   const checkForPrevState = async () => {
     const isPrev = await loadState();
-    console.log(isPrev, 'checkForPrevState');
+
     return isPrev ? isPrev : null;
   };
 
   useEffect(() => {
-    console.log('useEffect ran');
     checkForPrevState().then((res) => {
       if (res) {
         dispatch(loadPrevState(res));

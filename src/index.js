@@ -13,11 +13,6 @@ const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
 
-// let script = document.createElement('script');
-// script.setAttribute("src", "https://unpkg.com/monaco-editor@latest/min/vs/loader.js")
-// script.setAttribute("type", "text/javascript");
-// document.body.appendChild(script)
-
 // Now we can render our application into it
 ReactDOM.render(
   <Provider store={store}>

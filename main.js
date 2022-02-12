@@ -50,7 +50,6 @@ function createWindow() {
     height: 880,
     show: false,
     webPreferences: {
-      preload: path.join(__dirname, './src/electron/preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     },
@@ -95,13 +94,11 @@ function createWindow() {
   // We send incoming data to the Terminal
   ptyProcess.on('data', (data) => {
     mainWindow.webContents.send('terminal.sentData', data);
-    console.log('data sent from main', data);
   });
   // in the main process, when data is received in the terminal,
   // main process will write and add to ptyProcess
   ipcMain.on('terminal.toTerm', (event, data) => {
     ptyProcess.write(data);
-    console.log(data, `being written in ptyMain: ${data}`);
   });
 
   var splash = new BrowserWindow({
@@ -140,7 +137,7 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     // mainWindow.webContents.send('terminal.close', () => {
-    //   console.log('SENT CLOSE');
+
     // });
     ptyProcess.kill();
     mainWindow = null;

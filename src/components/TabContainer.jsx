@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import JSCodeEditor from './JSCodeEditor';
-import CSSCodeEditor from './CSSCodeEditor';
 import TerminalView from './TerminalView';
 import '../stylesheets/CodePreview.css';
+
+// css editor not implemented for release 1.0
+// import CSSCodeEditor from './CSSCodeEditor';
 
 const TabContainer = () => {
   const [tabState, setTabState] = useState(1);
@@ -17,20 +19,20 @@ const TabContainer = () => {
         <button className={tabState === 2 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(2)}>
           Terminal
         </button>
-        <button className={tabState === 3 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(3)}>
+        {/* <button className={tabState === 3 ? 'active-tab' : 'tabs'} onClick={() => toggleTab(3)}>
           CSS Editor
-        </button>
+        </button> */}
       </div>
       <div className='contentContainer'>
         <div className={tabState === 1 ? 'active-content' : 'content'}>
           <JSCodeEditor />
         </div>
-        <div id='terminal-viewer' className={tabState === 2 ? 'active-content' : 'content'}>
+        <div id='terminal' className={tabState === 2 ? 'active-content' : 'content'}>
           <TerminalView />
         </div>
-        <div className={tabState === 3 ? 'active-content' : 'content'}>
+        {/* <div className={tabState === 3 ? 'active-content' : 'content'}>
           <CSSCodeEditor />
-        </div>
+        </div> */}
       </div>
     </div>
   );

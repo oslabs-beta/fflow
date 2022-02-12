@@ -1,14 +1,13 @@
+// export modal that shows when user clicks exports on next release
+
 import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { modalToggle } from '../redux/navigationSlice';
 import '../stylesheets/ExportModal.css';
 
 import Modal from 'react-bootstrap/Modal';
-
 import Button from 'react-bootstrap/Button';
-
 import exportApp from './Export';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ExportModal = () => {
   const show = useSelector((state) => state.navigation.showModal);
@@ -16,7 +15,6 @@ const ExportModal = () => {
   const dispatch = useDispatch();
 
   if (!show) return null;
-
 
   const closeClick = (e) => {
     console.log('close button clicked');

@@ -20,25 +20,23 @@ const Body = () => {
   }
 
   function dragEnd(dragItem) {
-    //update state with what's dragged onto canvas
+    // update state with what's dragged onto canvas
     if (dragItem.source.droppableId === 'canvas') {
-      //if dragged from canvas
+      // if dragged from canvas
       document.getElementById(dragItem.draggableId).style.backgroundColor = 'inherit';
     }
     if (!dragItem.destination) return;
     if (dragItem.source.droppableId === 'htmlTags' && dragItem.destination.droppableId === 'canvas') {
-      //if dragged from tags to canvas
+      // if dragged from tags to canvas
       dispatch(addComponent(dragItem));
       dispatch(refreshCode());
     } else if (dragItem.source.droppableId === 'canvas' && dragItem.destination.droppableId === 'canvas') {
-      //if dragged to and from canvas
+      // if dragged to and from canvas
       dispatch(reorderComponent(dragItem));
       dispatch(refreshCode());
     }
     dispatch(saveComponentCode());
   }
-
-  // const show = useSelector((state) => state.nav.showModal);
 
   return (
     <div className='bodyContainer'>
@@ -50,9 +48,6 @@ const Body = () => {
       <div id='headerAndCodePreviewContainer'>
         <Header />
         <CodePreview />
-        {/* <ExportModal show={show} onClose={show}>
-          Modal content
-        </ExportModal> */}
       </div>
     </div>
   );
