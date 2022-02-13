@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = `mongodb+srv://OspDatabase:TempPassword@cluster0.6uvsd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const mongoURI = ``;
 
 mongoose
   .connect(mongoURI, {

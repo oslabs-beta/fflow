@@ -73,7 +73,6 @@ body {
 body {
   --backgroundColor: var(--secondaryBackgroundColor);
   --textColor: #ffffff;
-  /* --thirdBackgroundColor: var(--secondaryBackgroundColor); */
   --thirdBackgroundColor: #27272a;
   --errorColor: #cf6679;
   --navigation-panel-background-color: var(--purple-200);
@@ -88,9 +87,6 @@ body {
   --css-icon-background-color: transparent;
   --css-icon-color: #0098ff;
   --file-tree-hover-color: var(--neutral-800);
-  /* --shadow-color: rgb(31, 31, 31); */
-  /* background-color: #27272a; */
-  /* --tab-container-color:  #4f46e5; */
   --tab-container-color: #818cf8;
 }
 
@@ -115,7 +111,6 @@ body {
   --file-tree-hover-color: var(--neutral-300);
   --react-icon-background-color: #27272a;
   --tab-container-color: #4f46e5;
-  /* --shadow-color: rgba(32, 32, 32, 0.24); */
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */

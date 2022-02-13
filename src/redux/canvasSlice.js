@@ -6,29 +6,29 @@ const initialState = {
   cssCode: `html {
     box-sizing: border-box;
     height: 100%;
-  }
-  body {
-    margin: 0;
-    padding-top: 20%;
-    overflow: hidden;
-    background-color: #272727;
-    font-family: "Helvetica Neue";
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-  }
-  h1 {
-    color: white;
-    font-size: 3rem;
-  }
-  p {
-    color: white;
-    font-size: 1.5rem;
-  }
-  .default-spans {
-    color: #4338ca;
-  }`,
+}
+body {
+  margin: 0;
+  padding-top: 20%;
+  overflow: hidden;
+  background-color: #272727;
+  font-family: "Helvetica Neue";
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+h1 {
+  color: white;
+  font-size: 3rem;
+}
+p {
+  color: white;
+  font-size: 1.5rem;
+}
+.default-spans {
+  color: #4338ca;
+}`,
   tags: [],
   customComponents: [],
   imports: ["import React from 'react';\n"],
@@ -89,8 +89,8 @@ export const canvasSlice = createSlice({
           const curr = state.customComponents[i];
           if (curr === action.payload.name) {
             state.customComponents.splice(i, 1);
-            state.files.splice(i + 1, 1);
-            state.imports.splice(i + 1, 1);
+            state.files.splice(i + 2, 1);
+            state.imports.splice(i + 2, 1);
           }
         }
       }
@@ -120,11 +120,10 @@ export const canvasSlice = createSlice({
       state.currentFile = 'App.js';
     },
     combineComponents: (state, action) => {
-      // console.log('combineComponents fired');
       const [item] = state.components.splice(action.payload.source.index, 1);
       const [tag] = state.tags.splice(action.payload.source.index, 1);
       const index = action.payload.combine.draggableId.split('-')[0];
-      // console.log('index is: ', index);
+
       if (Array.isArray(state.components[index])) {
         state.components[index].push(item);
       } else {
@@ -136,7 +135,6 @@ export const canvasSlice = createSlice({
       state.code = `${state.imports.join('')}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
     },
     createComponent: (state, action) => {
-      console.log('createComponent fired');
       const { text } = action.payload;
       const newTag = `\n\t\t\t<${text} />`;
       const fileName = `${text}.jsx`;
@@ -169,7 +167,6 @@ export const canvasSlice = createSlice({
       }
     },
     setCurrentFile: (state, action) => {
-      console.log('current file payload:', action.payload);
       state.currentFile = action.payload;
     },
     saveComponentCode: (state) => {
