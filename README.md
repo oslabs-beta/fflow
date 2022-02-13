@@ -152,7 +152,7 @@ Please download the latest release of fflow for [MacOS](https://github.com/oslab
 
 1. Clone this repo `git clone https://github.com/oslabs-beta/fflow`
 2. Install the dependencies `npm install`
-3. Copy and run this in your terminal (`./node_modules/.bin/electron-rebuild`) or `.\node_modules\.bin\electron-rebuild.cmd` for Windows
+3. On a Mac, run `./node_modules/.bin/electron-rebuild` in your terminal or `.\node_modules\.bin\electron-rebuild.cmd` on Windows
 4. Run script for development mode `npm run start`
 5. Build the app (automatic) `npm run package`
 6. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
