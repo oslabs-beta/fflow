@@ -8,9 +8,7 @@ export const fileTreeSlice = createSlice({
   name: 'fileTree',
   initialState,
   reducers: {
-    addFile: (state) => {
-      console.log('addFile fired');
-    },
+    addFile: (state) => {},
   },
 });
 

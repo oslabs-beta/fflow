@@ -24,12 +24,9 @@ const CompCreator = () => {
 
   return (
     <div id='comp-create-box'>
-      {/* <p id='create-react-component-header'>React Component</p> */}
       <form className='create-component-form'>
         <div id='create-react-component-inputs'>
-          {/* <input id='create-react-component-input-field' placeholder='Component Name'></input> */}
-
-          <div class='relative text-gray-700'>
+          <div className='relative text-gray-700'>
             <input
               id='create-react-component-input-field'
               className='w-44 h-8 pl-3 pr-8 text-sm placeholder-gray-600 border rounded-lg focus:shadow-outline'
@@ -44,26 +41,7 @@ const CompCreator = () => {
             >
               Add
             </button>
-            {/* <button
-              type='submit'
-              data-testid='add-button'
-              onClick={(e) => onClick(e)}
-              className='absolute inset-y-0 right-0 flex items-center px-2 font-medium text-white bg-gradient-to-b from-violet-700 to-cyan-400 bg-violet-700 rounded-r-md hover:bg-violet-400 focus:bg-violet-600'
-            >
-              Add
-            </button> */}
           </div>
-
-          {/* <label for='component' className='form-label'>
-          Create Component
-        </label> */}
-          {/* <span id='create-react-component-root-check'>
-            <label name='root-check'>Root</label>
-            <input id='root-checkbox' type='checkbox' name='root-check'></input>
-          </span> */}
-          {/* <button id='create-react-component-button' data-testid='add-button' type='submit' onClick={(e) => onClick(e)}>
-            Add
-          </button> */}
         </div>
       </form>
     </div>

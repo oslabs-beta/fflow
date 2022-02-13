@@ -6,7 +6,6 @@ import { renderComponentCode, saveComponentCode, setCurrentFile } from '../redux
 
 const CanvasItem = (props) => {
   const dispatch = useDispatch();
-  // let currentFile = useSelector((state) => state.canvas.currentFile);
   const custom = useSelector((state) => state.canvas.customComponents);
 
   function onClick(e) {

@@ -12,17 +12,8 @@ const Navigation = () => {
   const snapshot = useSelector((state) => state.canvas);
 
   // functions to toggle between DnD and fileTree
-  const openDnD = () => {
-    console.log('clicked home');
-    console.log('snapshot: ', snapshot);
-    dispatch(toggleLeftPanel('DnD'));
-  };
-
-  const openFileTree = () => {
-    console.log('clicked tree');
-    console.log('snapshot: ', snapshot);
-    dispatch(toggleLeftPanel('fileTree'));
-  };
+  const openDnD = () => dispatch(toggleLeftPanel('DnD'));
+  const openFileTree = () => dispatch(toggleLeftPanel('fileTree'));
 
   const clear = () => {
     if (confirm('Are you sure you want to clear project?')) dispatch(clearProject());

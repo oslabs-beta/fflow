@@ -103,21 +103,28 @@ Visit our website here 👉 https://fflow.dev
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Loading Screen
+
 <img src="./src/assets/splashDemo.gif">
 
 ### Light and Dark Mode
+
 <img src="./src/assets/darkMode.gif">
 
 ### Create Custom Components and Nest HTML elements
+
 <img src="./src/assets/customComps.gif">
 
-### Edit CSS directly in the App (Feature Coming Soon)
+### Edit CSS directly in the App (Currently only on Mac version)
+
+💫💫 Coming soon to Windows 💫💫
 <img src="./src/assets/cssEditor.gif">
 
 ### Export Working Project
+
 <img src="./src/assets/export.gif">
 
 ### Clear canvas to start from scratch
+
 <img src="./src/assets/clearCanvas.gif">
 
 ## Getting Started
@@ -141,25 +148,13 @@ Please download the latest release of fflow for [MacOS](https://github.com/oslab
 
 <!-- - **Linux users**: Run the application as a super user in order to read and write files. -->
 
-<!-- #### Drag, Drop, Reorder and Delete HTML Tags onto Canvas
-
-#### Nest HTML Tags and Components within custom React Components
-
-#### Style your project
-
-Add styles to your HTML elements and React Components by editing directly in the CSS Editor. This will then be exported with your app.
-
-#### Clearing the Canvas
-
-## Development Mode -->
-
 #### Clone this repo
 
 1. Clone this repo `git clone https://github.com/oslabs-beta/fflow`
 2. Install the dependencies `npm install`
 3. Copy and run this in your terminal (`./node_modules/.bin/electron-rebuild`) or `.\node_modules\.bin\electron-rebuild.cmd` for Windows
 4. Run script for development mode `npm run start`
-5. Build the app (automatic) `npm run build`
+5. Build the app (automatic) `npm run package`
 6. Test the app (after `npm run build` || `yarn run build`) `npm run prod`
 
 #### Current issues

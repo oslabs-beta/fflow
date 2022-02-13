@@ -38,8 +38,6 @@ const Body = () => {
     dispatch(saveComponentCode());
   }
 
-  // const show = useSelector((state) => state.nav.showModal);
-
   return (
     <div className='bodyContainer'>
       <DragDropContext onDragEnd={dragEnd} onDragStart={dragStart}>
@@ -50,9 +48,6 @@ const Body = () => {
       <div id='headerAndCodePreviewContainer'>
         <Header />
         <CodePreview />
-        {/* <ExportModal show={show} onClose={show}>
-          Modal content
-        </ExportModal> */}
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ import Folder from './TreeFolder';
 
 const TreeRecursive = ({ data }) => {
   // loop through the data
-  console.log(data);
   return data.map((item) => {
     // if its a file render <File />
     if (item.type === 'file') {
