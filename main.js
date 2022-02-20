@@ -23,7 +23,8 @@ if (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'development'
 
 const storage = new Store();
 
-function createWindow() {
+const createWindow = () => {
+  
   const getWinSettings = () => {
     //Gets and stores the previous window's size upon close and restores them
     const defaultBounds = [1280, 1024];
@@ -83,25 +84,24 @@ function createWindow() {
   // For the Terminal
   const ptyProcess = pty.spawn(shell, [], {
     name: 'xterm-color',
-    // cols: 60,
-    // cols: 40,
     rows: 25,
     cols: 70,
     cwd: process.env.HOME,
     env: process.env,
   });
 
-  // We send incoming data to the Terminal
+  // Send incoming data to the Terminal
   ptyProcess.on('data', (data) => {
     mainWindow.webContents.send('terminal.sentData', data);
   });
   // in the main process, when data is received in the terminal,
-  // main process will write and add to ptyProcess
+  // main process writes and adds to ptyProcess
   ipcMain.on('terminal.toTerm', (event, data) => {
     ptyProcess.write(data);
     console.log(data, `being written in ptyMain: ${data}`);
   });
 
+  // in main process, create new window for splash screen
   var splash = new BrowserWindow({
     width: 500,
     height: 300,
@@ -109,14 +109,17 @@ function createWindow() {
     frame: false,
     alwaysOnTop: true,
   });
-
+  // load splashscreen content into created window
   splash.loadFile('./src/assets/splash.html');
 
-  // Don't show until we are ready and loaded
+  // Don't show main app window until we are ready and loaded
   mainWindow.once('ready-to-show', () => {
-    setTimeout(function () {
+    // splashscreen to show for 3 seconds minimum
+    setTimeout(() => {
       mainWindow.center();
       splash.destroy();
+      // uncomment the below and comment out the maximum and minimum height and width
+      // in main window to maximise the app
       // mainWindow.maximize();
       mainWindow.show();
       mainWindow.focus();
@@ -133,7 +136,7 @@ function createWindow() {
 
   mainWindow.on('resize', () => saveBounds(mainWindow.getSize()));
   // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
+  mainWindow.on('closed', () => {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
@@ -142,7 +145,7 @@ function createWindow() {
     ptyProcess.kill();
     mainWindow = null;
   });
-}
+};
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

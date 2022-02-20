@@ -1,3 +1,5 @@
+// Not currently used in alpha release
+
 // All of the Node.js APIs are available in the preload process.
 // preload script runs before the renderer process is loaded and
 // has access to both renderer globals (window and document) and a Node.js environment
