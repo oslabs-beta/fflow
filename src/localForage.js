@@ -1,3 +1,5 @@
+// this could be added all into App.jsx
+
 import localforage from 'localforage';
 
 export const saveState = (state) => {

@@ -13,13 +13,13 @@ const Body = () => {
   // to pull array of all components that were dragged on
   const components = useSelector((state) => state.canvas.components);
 
-  function dragStart(dragItem) {
+  const dragStart = dragItem => {
     if (dragItem.source.droppableId === 'canvas') {
-      document.getElementById(dragItem.draggableId).style.backgroundColor = 'lightblue';
+      document.getElementById(dragItem.draggableId).style.backgroundColor = '#d0f0fd';
     }
   }
 
-  function dragEnd(dragItem) {
+  const dragEnd = dragItem => {
     //update state with what's dragged onto canvas
     if (dragItem.source.droppableId === 'canvas') {
       //if dragged from canvas

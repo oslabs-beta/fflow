@@ -17,16 +17,20 @@ body {
   margin: 0;
   overflow: hidden;
 }
+
+.App {
+  display: flex;
+  height: 100vh;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
+}
+
+/** COMPLETE COLOR PALETTE OF FFLOW
+* NOT ALL COLORS ARE USED CURRENTLY
+**/
 :root {
-  --backgroundColor: #121212;
-  --secondaryBackgroundColor: #272727;
-  --thirdBackgroundColor: var(--neutral-50);
-  --textColor: #ffffff;
-  --textColorInverse: #000000;
-
-  --lightBlueBackgroundColor: #d0f0fd;
-  --darkBlueBackgroundColor: #100635;
-
   /* Shades of Green */
   --green-500: #03aa99;
   --green-400: #03b9a7;
@@ -43,17 +47,10 @@ body {
   --purple-300: #a565ff;
   --purple-200: #bb8bff;
   --purple-100: #ddc5ff;
-  --purple-electric-violet: #902bf5;
 
   /* Shades of orange */
-  --orange-500: #ffc600;
   --orange-400: #ffd523;
-  --orange-tang: #ed7e00;
-
-  /* Shades of Grey */
-  --medium-grey: #656565;
-  --light-grey: #989898;
-  --dove-grey: #6c6c6c;
+  --orange-500: #ffc600;
 
   /* Neutrals Palette */
   --neutral-50: #f8f9fa;
@@ -71,15 +68,13 @@ body {
 
 /* DEFAULT THEME IS DARK */
 body {
-  --backgroundColor: var(--secondaryBackgroundColor);
+  --backgroundColor: #272727;
   --textColor: #ffffff;
   --thirdBackgroundColor: #27272a;
   --errorColor: #cf6679;
   --navigation-panel-background-color: var(--purple-200);
   --navigation-panel-border-color: var(--neutral-600);
-  --navigation-panel-textColor: #ffffff;
   --tab-bottom-borderColor: #5b5a5f;
-  --drag-items-hover-background-color: var(--purple-200);
   --file-tree-folder-color: #ffffff;
   --canvas-file-name-color: #61dbfb;
   --javascript-icon-color: #f7df1e;
@@ -97,11 +92,7 @@ body {
   --errorColor: #b00020;
   --navigation-panel-background-color: #4338ca;
   --navigation-panel-border-color: none;
-  --navigation-panel-textColor: #ffffff;
-  --tag-inputs-backgroundColor: var(--neutral-200);
-  --tag-inputs-borderColor: #4338ca;
   --tab-bottom-borderColor: var(--neutral-200);
-  --drag-items-hover-background-color: var(--lightBlueBackgroundColor);
   --file-tree-folder-color: var(--orange-500);
   --canvas-file-name-color: #4338ca;
   --javascript-icon-color: black;
@@ -114,7 +105,7 @@ body {
 }
 
 /* THEME BASED ON USER'S OS PREFERENCE */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     --backgroundColor: var(--secondaryBackgroundColor);
     --textColor: #ffffff;
@@ -123,7 +114,6 @@ body {
     --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600);
     --navigation-panel-textColor: #ffffff;
-    --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
   }
 }
@@ -137,7 +127,6 @@ body {
     --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600);
     --navigation-panel-textColor: #ffffff;
-    --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
   }
 }
@@ -151,16 +140,6 @@ body {
     --navigation-panel-background-color: var(--purple-200);
     --navigation-panel-border-color: var(--neutral-600);
     --navigation-panel-textColor: #ffffff;
-    --navigation-panel-backgroundColor: var(--green-200);
     --tab-bottom-borderColor: #5b5a5f;
   }
-}
-
-.App {
-  display: flex;
-  height: 100vh;
-  background-color: var(--backgroundColor);
-  color: var(--textColor);
-  transition: all 0.2s ease-in;
-  box-sizing: border-box;
-}
+} */

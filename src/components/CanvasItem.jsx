@@ -8,7 +8,7 @@ const CanvasItem = (props) => {
   const dispatch = useDispatch();
   const custom = useSelector((state) => state.canvas.customComponents);
 
-  function onClick(e) {
+  const onClick = e => {
     const name = e.target.innerText + '.jsx';
     // dispatch(saveComponentCode({ currentCode, currentFile }));
     if (custom.includes(e.target.innerText)) {

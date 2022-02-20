@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const path = require('path');
 
-function ensureFirstBackSlash(str) {
+const ensureFirstBackSlash = (str) => {
   return str.length > 0 && str.charAt(0) !== '/' ? '/' + str : str;
 }
 
