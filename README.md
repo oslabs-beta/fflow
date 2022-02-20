@@ -62,9 +62,9 @@
 
 React is the most popular library used by frontend developers today. Yet, getting a React application started requires a too much boilerplate code and unnecessary time.
 
-fflow is a free, open-source developer tool to create React applications rapidly and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. Here is a medium article describing the philosophy behind fflow and you can download it here.
+fflow is a free, open-source developer tool to create React applications rapidly and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. We are really excited to launch this alpha version and hope you will download, play around with it, and provide us with feedback.
 
-We are really excited to launch this alpha version and hope you will download, play around with it, and provide us with feedback.
+[Here](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817) is a medium article describing the philosophy behind fflow and you can download it [here](https://github.com/oslabs-beta/fflow/releases/tag/v1.0-alpha-mac-intel-win32).
 
 Visit our website here 👉 https://fflow.dev
 
@@ -262,7 +262,7 @@ This boilerplate names your project `Exported Project`. You can change the app t
 - Bryanna DeJesus [@BryannaDeJesus](https://github.com/BryannaDeJesus) | [Linkedin](https://www.linkedin.com/in/bryannadejesus/)
 - Ronak Hirpara [@ronakh130](https://github.com/ronakh130) | [Linkedin](https://www.linkedin.com/in/ronak-hirpara/)
 
-Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Medium](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817)
+Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https://www.linkedin.com/company/fflowdev) | [Media](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
