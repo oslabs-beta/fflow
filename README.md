@@ -12,7 +12,7 @@
     <a href="https://github.com/oslabs-beta/fflow"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/oslabs-beta/fflow/tree/ronak/gifs#about-fflow">View Demo</a>
+    <a href="https://github.com/oslabs-beta/fflow/#about-fflow">View Demo</a>
     ·
     <a href="https://github.com/oslabs-beta/fflow/issues">Report Bug</a>
     ·
@@ -64,7 +64,7 @@ React is the most popular library used by frontend developers today. Yet, gettin
 
 fflow is a free, open-source developer tool to create React applications rapidly and with minimal effort using the simple drag and drop UI. It combines the most compelling features of Create React App, React ES6 snippets, and a beautiful user experience. We are really excited to launch this alpha version and hope you will download, play around with it, and provide us with feedback.
 
-[Here](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817) is a medium article describing the philosophy behind fflow and you can download it [here](https://github.com/oslabs-beta/fflow/releases/tag/v1.0-alpha-mac-intel-win32).
+[Here](https://jpino831.medium.com/ease-into-your-next-react-app-with-fflow-f60c5a899817) is a medium article describing the philosophy behind fflow and you can download it [here](https://github.com/oslabs-beta/fflow/releases).
 
 Visit our website here 👉 https://fflow.dev
 
@@ -99,7 +99,7 @@ Visit our website here 👉 https://fflow.dev
 - [node-pty](https://www.npmjs.com/package/node-pty)
 - [Jest](https://jestjs.io)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- [Playwright](https://playwright.dev/docs/api/class-electronapplication)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Loading Screen
@@ -257,6 +257,10 @@ This boilerplate names your project `Exported Project`. You can change the app t
 
 ## Contributors
 
+<a href="https://github.com/oslabs-beta/fflow/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=oslabs-beta/fflow" />
+</a>
+
 - Rain Hsu [@crumblepie](https://github.com/crumblepie) | [Linkedin](https://www.linkedin.com/in/rainhsu/)
 - Jake Pino [@jakepino](https://github.com/jakepino) | [Linkedin](https://www.linkedin.com/in/jakepino/)
 - Bryanna DeJesus [@BryannaDeJesus](https://github.com/BryannaDeJesus) | [Linkedin](https://www.linkedin.com/in/bryannadejesus/)
@@ -269,6 +273,7 @@ Project Links: [Github](https://github.com/oslabs-beta/fflow) | [Linkedin](https
 ## Roadmap
 
 - Editable JS Code Preview
+- Nesting HTML elements
 - GitHub OAuth Integration and online project save
 - Keyboard shortcuts for Mac and Windows
 - Export in TypeScript

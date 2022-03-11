@@ -1,3 +1,5 @@
+// Not currently used in alpha release
+
 const { app, Menu } = require('electron')
 
 const isMac = process.platform === 'darwin'

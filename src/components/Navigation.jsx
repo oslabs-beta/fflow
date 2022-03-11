@@ -20,7 +20,12 @@ const Navigation = () => {
   };
 
   const handleSave = () => {
-    saveState(snapshot);
+    // saveState is in localForage.js - should we be importing this or did you mean
+    // to dispatch saveComponentCode reducer here instead?
+    dispatch(saveComponentCode(snapshot));
+    console.log('saveComponentCode fired');
+    // saveState(snapshot);
+    console.log('snapshot: ', snapshot);
     alert('Current project saved');
   };
 
@@ -32,9 +37,9 @@ const Navigation = () => {
       <span className='nav-icons'>
         <FaFolderOpen data-testid='filetree-button' onClick={openFileTree} />
       </span>
-      {/* <span className='nav-icons'>
+      <span className='nav-icons'>
         <FaSave data-testid='save-button' onClick={handleSave} />{' '}
-      </span> */}
+      </span>
       <span className='nav-icons'>
         <FaDownload
           data-testid='export-button'

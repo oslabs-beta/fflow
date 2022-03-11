@@ -187,6 +187,18 @@ export const canvasSlice = createSlice({
     updateJs: (state, action) => {
       state.code = action.payload;
     },
+    loadPrevState: (state, action) => {
+      const newState = action.payload;
+      state.components = newState.components;
+      state.code = newState.code;
+      state.cssCode = newState.cssCode;
+      state.tags = newState.tags;
+      state.customComponents = newState.customComponents;
+      state.imports = newState.imports;
+      state.codeList = newState.codeList;
+      state.files = newState.files;
+      state.currentFile = newState.currentFile;
+    },
   },
 });
 
@@ -204,6 +216,7 @@ export const {
   setCurrentFile,
   updateCss,
   updateJs,
+  loadPrevState,
 } = canvasSlice.actions;
 
 export default canvasSlice.reducer;

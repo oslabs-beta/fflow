@@ -8,7 +8,7 @@ const CompCreator = () => {
   const custom = useSelector((state) => state.canvas.customComponents);
   const tags = useSelector((state) => state.canvas.tags);
 
-  function onClick(e) {
+  const onClick = (e) => {
     e.preventDefault();
     const input = document.getElementById('create-react-component-input-field');
     const text = input.value[0].toUpperCase() + input.value.slice(1);
@@ -20,7 +20,7 @@ const CompCreator = () => {
       alert('Component with that name already exists');
     }
     input.value = '';
-  }
+  };
 
   return (
     <div id='comp-create-box'>
