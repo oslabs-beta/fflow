@@ -77,6 +77,7 @@ export const canvasSlice = createSlice({
   initialState,
   reducers: {
     addComponent: (state, action) => {
+      // insert action.payload.draggableId at action.payload.destination.index
       state.components.splice(action.payload.destination.index, 0, action.payload.draggableId);
       state.tags.splice(action.payload.destination.index, 0, '\n\t\t\t' + state.codeList[action.payload.draggableId]);
     },
@@ -116,6 +117,14 @@ export const canvasSlice = createSlice({
           fileImports: [],
           fileComponents: [],
         },
+        {
+          type: 'file',
+          name: 'styles.css',
+          fileCode: '',
+          fileTags: [],
+          fileImports: [],
+          fileComponents: [],
+        },
       ];
       state.currentFile = 'App.js';
     },
@@ -132,7 +141,9 @@ export const canvasSlice = createSlice({
     },
     refreshCode: (state) => {
       const name = state.currentFile.split('.')[0];
-      state.code = `${state.imports.join('')}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
+      state.code = `${state.imports.join('')}\nconst ${name} = () => {\n\treturn (\n\t\t<div>${state.tags.join(
+        ';'
+      )}\n\t\t</div>\n\t)\n}\nexport default ${name};`;
     },
     createComponent: (state, action) => {
       const { text } = action.payload;
@@ -220,3 +231,4 @@ export const {
 } = canvasSlice.actions;
 
 export default canvasSlice.reducer;
+
