@@ -21,11 +21,10 @@
 </div>
 
 <p align="center">
-<img alt="GitHub contributors" src="https://img.shields.io/github/contributors/oslabs-beta/fflow">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/oslabs-beta/fflow?color=brightgreen">
   <img alt="GitHub license" src="https://img.shields.io/github/license/oslabs-beta/fflow?color=blue">
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/oslabs-beta/fflow?color=yellow">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/oslabs-beta/fflow?color=blueviolet">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/oslabs-beta/fflow?style=social">  
+  <img alt="Contributions Welcome" src="https://img.shields.io/badge/contributions-welcome-orange">  
   <br />
   <br />
   Give a ⭐️ if our project helped or interests you!
